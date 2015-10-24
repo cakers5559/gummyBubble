@@ -1,0 +1,90 @@
+{
+  "ID": "3697a805-13c4-4c6a-a49a-5127e7a2e1e1",
+  "Version": "2.3.2.3",
+  "Name": "gummy_bubbles_title",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 992,
+        "Children": [
+          {
+            "FontSize": 100,
+            "LabelText": "Gummy Bubbles\t",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "main_menu_assets/Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "OutlineSize": 3,
+            "OutlineColor": {
+              "R": 155,
+              "G": 155,
+              "B": 155
+            },
+            "OutlineEnabled": true,
+            "ShadowColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "ShadowOffsetX": -7.0,
+            "ShadowOffsetY": -7.0,
+            "ShadowEnabled": true,
+            "AnchorPoint": {
+              "ScaleX": 1.0,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1639.3458,
+              "Y": 734.4199
+            },
+            "Scale": {
+              "ScaleX": 1.5219,
+              "ScaleY": 1.5219
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7425,
+              "Y": 0.5913
+            },
+            "PreSize": {
+              "X": 0.3197,
+              "Y": 0.0942
+            },
+            "LeftMargin": 933.3458,
+            "RightMargin": 568.6542,
+            "TopMargin": 446.0801,
+            "BottomMargin": 672.9199,
+            "Tag": 1021,
+            "ActionTag": 1363971764,
+            "Size": {
+              "X": 706.0,
+              "Y": 123.0
+            },
+            "Name": "gummy_bubbles_title",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 2208.0,
+          "Y": 1242.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "../Bobbleboddy.ttf"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

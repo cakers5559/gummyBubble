@@ -1,0 +1,75 @@
+<Solution>
+  <PropertyGroup Name="GummyBubbles" Version="2.3.2.3" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="main_menu_assets">
+          <TTF Name="Bobbleboddy.ttf" />
+          <Folder Name="layers">
+            <Project Name="bg_small.csd" Type="Layer" />
+            <Project Name="bg_super_large.csd" Type="Layer" />
+            <Project Name="bg_medium.csd" Type="Layer" />
+            <Project Name="bg_large.csd" Type="Layer" />
+          </Folder>
+        </Folder>
+        <Project Name="MainScene.csd" Type="Scene" />
+        <Folder Name="game_screen_assets">
+          <PlistParticleFile Name="rain.plist" />
+        </Folder>
+        <Folder Name="images">
+          <Folder Name="largeRes">
+            <Image Name="blank_button-161x62@3x.png" />
+            <Image Name="cloud-70x38@3x.png" />
+            <Image Name="landscape-736x220@3x.png" />
+            <Image Name="mountains-620x317@3x.png" />
+            <Image Name="blank_button_dark-161x62@3x.png" />
+            <Image Name="sunbrust-736x414@3x.png" />
+            <Image Name="basket-114x86@3x.png" />
+            <Image Name="basket-empty-114x74@3x.png" />
+            <Image Name="bubble-89x84@3x.png" />
+            <Image Name="bubble-pop-133x134@3x.png" />
+            <Image Name="pause-53x54@3x.png" />
+            <Image Name="sun-84x84@3x.png" />
+            <Image Name="bear-41x42@3x.png" />
+            <Image Name="fish.png" />
+            <Image Name="worm-34x42@3x.png" />
+          </Folder>
+          <Folder Name="mediumRes">
+            <Image Name="basket-114x86@2x.png" />
+            <Image Name="basket-empty-114x74@2x.png" />
+            <Image Name="blank_button-161x62@2x.png" />
+            <Image Name="bubble-89x84@2x.png" />
+            <Image Name="bubble-pop-133x134@2x.png" />
+            <Image Name="cloud-70x38@2x.png" />
+            <Image Name="landscape-736x220@2x.png" />
+            <Image Name="mountains-620x317@2x.png" />
+            <Image Name="pause-53x54@2x.png" />
+            <Image Name="sun-84x84@2x.png" />
+            <Image Name="sunbrust-736x414@2x.png" />
+            <Image Name="blank_button_dark-161x62@2x.png" />
+            <Image Name="bear-41x42@2x.png" />
+            <Image Name="fish-41x41@2x.png" />
+            <Image Name="worm-34x42@2x.png" />
+          </Folder>
+          <Folder Name="smallRes">
+            <Image Name="basket-114x86.png" />
+            <Image Name="basket-empty-114x74.png" />
+            <Image Name="blank_button-161x62.png" />
+            <Image Name="bubble-89x84.png" />
+            <Image Name="bubble-pop-133x134.png" />
+            <Image Name="cloud-70x38.png" />
+            <Image Name="mountains-620x317.png" />
+            <Image Name="pause-53x54.png" />
+            <Image Name="sun-84x84.png" />
+            <Image Name="sunbrust-736x414.png" />
+            <Image Name="landscape-736x220.png" />
+            <Image Name="blank_button_dark-161x62.png" />
+            <Image Name="bear-41x42.png" />
+            <Image Name="fish-41x41.png" />
+            <Image Name="worm-34x42.png" />
+          </Folder>
+        </Folder>
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

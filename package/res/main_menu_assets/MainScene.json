@@ -1,0 +1,505 @@
+{
+  "ID": "a2ee0952-26b5-49ae-8bf9-4f1d6279b798",
+  "Version": "2.3.2.3",
+  "Name": "MainScene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Children": [
+          {
+            "BackColorAlpha": 102,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "StretchWidthEnable": true,
+            "StretchHeightEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": -0.0007
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 74,
+              "G": 144,
+              "B": 226
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "TopMargin": 0.0007,
+            "BottomMargin": -0.0007,
+            "Tag": 23,
+            "ActionTag": -1379857081,
+            "Size": {
+              "X": 2208.0,
+              "Y": 1242.0
+            },
+            "Name": "background_layer",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "main_menu_assets/images/sunbrust.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.7788,
+              "ScaleY": 0.406
+            },
+            "Position": {
+              "X": 2016.9827,
+              "Y": 544.3845
+            },
+            "Scale": {
+              "ScaleX": 1.5072,
+              "ScaleY": 1.5072
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9135,
+              "Y": 0.4383
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "LeftMargin": 297.2898,
+            "RightMargin": -297.2898,
+            "TopMargin": -40.1538,
+            "BottomMargin": 40.1538,
+            "Tag": 5,
+            "ActionTag": 453478129,
+            "Size": {
+              "X": 2208.0,
+              "Y": 1242.0
+            },
+            "Name": "sunbrust",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "main_menu_assets/images/mountains.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1288.9136,
+              "Y": 641.0784
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5837,
+              "Y": 0.5162
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "HorizontalEdge": "RightEdge",
+            "LeftMargin": 357.9136,
+            "RightMargin": -11.9136,
+            "TopMargin": 124.9216,
+            "BottomMargin": 165.0784,
+            "Tag": 10,
+            "ActionTag": 1815827572,
+            "Size": {
+              "X": 1862.0,
+              "Y": 952.0
+            },
+            "Name": "mountains",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "main_menu_assets/images/landscape.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1100.4602,
+              "Y": 334.3831
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4984,
+              "Y": 0.2692
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BottomEdge",
+            "LeftMargin": -3.5398,
+            "RightMargin": 3.5398,
+            "TopMargin": 577.6169,
+            "BottomMargin": 4.3831,
+            "Tag": 9,
+            "ActionTag": 1948015716,
+            "Size": {
+              "X": 2208.0,
+              "Y": 660.0
+            },
+            "Name": "landscape",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "main_menu_assets/images/cloud.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 438.7655,
+              "Y": 1118.1454
+            },
+            "Scale": {
+              "ScaleX": 0.7045,
+              "ScaleY": 0.7045
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1987,
+              "Y": 0.9003
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 211.2655,
+            "RightMargin": 1541.7345,
+            "TopMargin": -0.1454,
+            "BottomMargin": 994.1454,
+            "Tag": 24,
+            "ActionTag": 631494916,
+            "Size": {
+              "X": 455.0,
+              "Y": 248.0
+            },
+            "Name": "cloud_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "main_menu_assets/images/cloud.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 716.5383,
+              "Y": 691.7686
+            },
+            "Scale": {
+              "ScaleX": 0.4867,
+              "ScaleY": 0.4867
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3245,
+              "Y": 0.557
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 489.0383,
+            "RightMargin": 1263.9617,
+            "TopMargin": 426.2314,
+            "BottomMargin": 567.7686,
+            "Tag": 25,
+            "ActionTag": -1706200631,
+            "Size": {
+              "X": 455.0,
+              "Y": 248.0
+            },
+            "Name": "cloud_2",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "main_menu_assets/images/cloud.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1795.7651,
+              "Y": 1119.9222
+            },
+            "Scale": {
+              "ScaleX": 0.5178,
+              "ScaleY": 0.5178
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8133,
+              "Y": 0.9017
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 1568.2651,
+            "RightMargin": 184.7349,
+            "TopMargin": -1.9222,
+            "BottomMargin": 995.9222,
+            "Tag": 26,
+            "ActionTag": -1959000332,
+            "Size": {
+              "X": 455.0,
+              "Y": 248.0
+            },
+            "Name": "cloud_3",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 100,
+            "LabelText": "Gummy Bubbles\t",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "main_menu_assets/Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "ShadowEnabled": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1103.9999,
+              "Y": 944.6862
+            },
+            "Scale": {
+              "ScaleX": 2.1612,
+              "ScaleY": 2.1612
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.7606
+            },
+            "PreSize": {
+              "X": 0.2056,
+              "Y": 0.0942
+            },
+            "LeftMargin": 750.9999,
+            "RightMargin": 751.0001,
+            "TopMargin": 238.8138,
+            "BottomMargin": 886.1862,
+            "Tag": 30,
+            "ActionTag": 734287333,
+            "Size": {
+              "X": 706.0,
+              "Y": 117.0
+            },
+            "Name": "gummy_bubbles_title",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 40,
+            "ButtonText": "Play",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Press.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "main_menu_assets/images/blank-button.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 155,
+            "Scale9Height": 49,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1104.0001,
+              "Y": 202.4627
+            },
+            "Scale": {
+              "ScaleX": 2.8863,
+              "ScaleY": 2.8863
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.163
+            },
+            "PercentWidthEnable": true,
+            "PercentHeightEnable": true,
+            "PercentWidthEnabled": true,
+            "PercentHeightEnabled": true,
+            "PreSize": {
+              "X": 0.0838,
+              "Y": 0.0572
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BottomEdge",
+            "LeftMargin": 1011.5001,
+            "RightMargin": 1011.4999,
+            "TopMargin": 1004.0374,
+            "BottomMargin": 166.9627,
+            "Tag": 34,
+            "ActionTag": 1047982253,
+            "Size": {
+              "X": 185.0,
+              "Y": 71.0
+            },
+            "Name": "play_btn",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 2208.0,
+          "Y": 1242.0
+        },
+        "Name": "MainScene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "../Bobbleboddy.ttf",
+        "../Default/Button_Disable.png",
+        "../Default/Button_Press.png",
+        "Bobbleboddy.ttf",
+        "images/blank-button.png",
+        "images/cloud.png",
+        "images/landscape.png",
+        "images/mountains.png",
+        "images/sunbrust.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}
