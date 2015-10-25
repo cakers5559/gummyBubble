@@ -12,6 +12,8 @@
 
     "jsList" : [
         "src/resource.js",
-        "src/app.js"
+        "src/app.js",
+        "src/gummyBubbles.js",
+        "src/physics.js"
     ]
 }

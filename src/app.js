@@ -5,11 +5,11 @@ var MainScene = cc.Scene.extend({
      * private variables
      */        
     mainscene: null,
-    space: null,
+    space: null,    
     resFolderName:  "smallRes",
-    resScaledTimes: "",         
+    resScaledTimes: "",            
     gummyBubbleSpeed: 10,                
-    gummyBubblesOnScreen: 2,         
+    gummyBubblesOnScreen: 4,         
     gummyBubblesTypes: ['LEFT-RIGHT','RIGHT-LEFT','LEFT-UP-DIAGONAL-DOWN','RIGHT-UP-DIAGONAL-DOWN','LEFT-DOWN-DIAGONAL-UP',
                         'RIGHT-DOWN-DIAGONAL-UP','LEFT-CURVE-UP-DOWN','LEFT-CURVE-DOWN-UP','RIGHT-CURVE-UP-DOWN','RIGHT-CURVE-DOWN-UP',
                         'LEFT-RIGHT-SHAKE','RIGHT-LEFT-SHAKE'],
@@ -17,17 +17,9 @@ var MainScene = cc.Scene.extend({
     gummyBubbleTag: 1,
     gummyBubbleTags: [],                
     gummyLastRandomNumbers: [],
-    
-    
-    /*
-     * construtor
-     */
-    ctor:function (space) {
-        this._super();
-        this.space = space;
-        this.init();
-    },
-        
+    gummyPoppedItems: [],
+    messageDisplay: false,    
+           
     /*
      * initial setup, treat as contructor
      */
@@ -37,7 +29,7 @@ var MainScene = cc.Scene.extend({
         
         // init physics        
         this.initPhysics();        
-        this.scheduleUpdate();                
+        this.scheduleUpdate();                              
         
         this.mainscene = ccs.load(res.MainScene_json);        
         
@@ -59,12 +51,24 @@ var MainScene = cc.Scene.extend({
         studioObj.sunbrust.setPosition( size.width / 2 , ((size.height / 2) / 2) / 3);                       
                 
         // start shooting out gummy bubbles                
-        for(var g = 0; g < this.gummyBubblesOnScreen; g++) {
+        for(var g = 0; g < this.gummyBubblesOnScreen; g++) {                        
             var gummyRandom = this.generateRandomNumber();            
-            this.bubbleInit(this.gummyBubblesTypes[gummyRandom]);
-            this.gummyBubbleTag++;
-        }
-    },                                  
+            this.bubbleInit(this.gummyBubblesTypes[gummyRandom]);                                              
+            this.gummyBubbleTag++;            
+        } 
+        
+        this.space.addCollisionHandler( 1 , 2,
+                this.collisionBegin.bind(this),
+                null,
+                null,
+                this.collisionEnd.bind(this)
+        );                                     
+    },
+    
+    onExit : function() {        
+        this.space.removeCollisionHandler(  1  , 2 );          
+    },
+                                  
       
        
     /*
@@ -115,84 +119,12 @@ var MainScene = cc.Scene.extend({
         } 
         
         return studioObj;       
-    },
+    },            
     
     
-    /*
-     * generates a geniune random number for bubble maker
-     */
-    generateRandomNumber: function() {                
-        var random = Math.floor(Math.random() * (this.gummyBubblesTypes.length));        
-        
-        if (this.gummyLastRandomNumbers.indexOf(random) > -1) { 
-            return this.generateRandomNumber(); 
-        }
-        else {
-            this.gummyLastRandomNumbers.push(random);
-            return random;
-        }               
-    },
-    
-    
-    /*
-     * touch event for when a bubble is tapped/touched
-     */
-    bubbleTouchEvent: function(self) {
-        return {
-            event: cc.EventListener.TOUCH_ONE_BY_ONE,
-            onTouchBegan: function (touch, event) {                   
-                // event.getCurrentTarget() returns the *listener's* sceneGraphPriority node.   
-                var target = event.getCurrentTarget();  
-        
-                //Get the position of the current point relative to the button
-                var locationInNode = target.convertToNodeSpace(touch.getLocation());    
-                var s = target.getContentSize();
-                var rect = cc.rect(0, 0, s.width, s.height);
-        
-                //Check the click area
-                if (cc.rectContainsPoint(rect, locationInNode)) {                                                       
-                    target.setVisible( false );                                        
-                    cc.eventManager.removeListeners( target );
-                    self.bubblePop(target.getPosition() , target.childGummyPath, target.getTag());                                        
-                    return true;
-                }
-                return false;                                                      
-            }
-        }
-    },
-    
-    
-    /*
-     * effect for when a bubble is popped
-     */
-    bubblePop: function(loc, gummyPath, tagNumber) {        
-        console.log('TEST LOCATION : '+gummyPath);
-        var size = cc.winSize;                                  
-        var pathToAssets = 'res/images/' + this.resFolderName;
-                   
-        
-        // bubble splash   
-        var bubbleSplash = new cc.Sprite( pathToAssets + '/bubble-pop-133x134' + this.resScaledTimes + '.png' );        
-        this.addChild(bubbleSplash);
-        bubbleSplash.setPosition( loc.x , loc.y );         
-        
-        // create gummy                  
-        var gummy = this.createPhysicsSprite(gummyPath , loc.x , loc.y , tagNumber);        
-        this.addChild(gummy);  
-        
-        console.log('TAG NUMBER '+tagNumber);
-        this.space.addCollisionHandler( tagNumber, 20,
-            function() { console.log("collision begin")},
-            null,
-            function() { console.log("collision pos")},
-            function() { console.log("collision end")}
-        );                                          
-    },                              
-    
-    
-    /*
-     * starts up the GummyBubbles shooter
-     */
+    /************************************************************
+     * Starts up the GummyBubbles shooter
+     *************************************************************/
     bubbleInit: function(bubbleType) {
         var size = cc.winSize;                                  
         var pathToAssets = 'res/images/' + this.resFolderName;                 
@@ -306,7 +238,7 @@ var MainScene = cc.Scene.extend({
         bubble.addChild(gummy);
         bubble.childGummyPath = pathToAssets + '/' + this.gummyBubbleImages[gummyRandom] + this.resScaledTimes + '.png';
         gummy.setPosition( bubble.width / 2 , bubble.height / 2 );       
-        gummy.setOpacity( 100 ); 
+        gummy.setOpacity( 150 ); 
         // Adds a up an down shake to bubble
         if(shake) {             
             // shake
@@ -337,9 +269,84 @@ var MainScene = cc.Scene.extend({
         var bubblePulse = new cc.ScaleTo( 1, imageScale + 0.1);
         var bubblePulseBack = new cc.ScaleTo( 1, imageScale ); 
         bubble.runAction(cc.sequence(bubblePulse, bubblePulseBack).repeatForever());                                                                                                     
-    },          
+    },
     
     
+    /*
+     * generates a geniune random number for bubble maker
+     */
+    generateRandomNumber: function() {                
+        var random = Math.floor(Math.random() * (this.gummyBubblesTypes.length));        
+        
+        if (this.gummyLastRandomNumbers.indexOf(random) > -1) { 
+            return this.generateRandomNumber(); 
+        }
+        else {
+            this.gummyLastRandomNumbers.push(random);
+            return random;
+        }               
+    },
+    
+    
+    /*
+     * touch event for when a bubble is tapped/touched
+     */
+    bubbleTouchEvent: function(self) {
+        return {
+            event: cc.EventListener.TOUCH_ONE_BY_ONE,
+            onTouchBegan: function (touch, event) {                   
+                // event.getCurrentTarget() returns the *listener's* sceneGraphPriority node.   
+                var target = event.getCurrentTarget();  
+        
+                //Get the position of the current point relative to the button
+                var locationInNode = target.convertToNodeSpace(touch.getLocation());    
+                var s = target.getContentSize();
+                var rect = cc.rect(0, 0, s.width, s.height);
+        
+                //Check the click area
+                if (cc.rectContainsPoint(rect, locationInNode)) {                                                       
+                    target.setVisible( false );                                        
+                    cc.eventManager.removeListeners( target );
+                    self.bubblePop(target.getPosition() , target.childGummyPath, target.getTag());                                        
+                    return true;
+                }
+                return false;                                                      
+            }
+        }
+    },
+    
+    
+    /*
+     * effect for when a bubble is popped
+     */
+    bubblePop: function(loc, gummyPath, tagNumber) {               
+        var size = cc.winSize;                                  
+        var pathToAssets = 'res/images/' + this.resFolderName;
+        
+        var removeSplash = function(splash) {
+            splash.removeFromParent();
+            console.log('Splash Removed ');
+        }          
+        
+        // bubble splash   
+        var bubbleSplash = new cc.Sprite( pathToAssets + '/bubble-pop-133x134' + this.resScaledTimes + '.png' );        
+        this.addChild(bubbleSplash);
+        bubbleSplash.setPosition( loc.x , loc.y ); 
+        
+        var splashOut = cc.fadeOut(1.0);                
+        bubbleSplash.runAction(cc.sequence(splashOut, cc.callFunc(removeSplash, this)));                                            
+        
+        // create gummy                  
+        var gummy = this.createPhysicsSprite(gummyPath , loc.x , loc.y , tagNumber);        
+        this.addChild(gummy);                          
+        
+        console.log('TAG NUMBER '+tagNumber);                                        
+    },                                        
+    
+    
+    /*
+     * Callback for when all fired bubbles is out of view
+     */ 
     onFireBubbleComplete: function() {                                    
         //cc.eventManager.removeListeners(cc.EventListener.TOUCH_ONE_BY_ONE);
         
@@ -349,50 +356,55 @@ var MainScene = cc.Scene.extend({
         for(var i = 0; i < this.gummyBubbleTags.length; i++) {            
             this.mainscene.node.removeChildByTag( this.gummyBubbleTags[i] );
         }        
-        
-        console.log("fire bubble done! - "+this.gummyLastRandomNumbers.join(","));
-        
+                        
         this.gummyBubbleTag = 1;
         this.gummyBubbleTags = [];
         this.gummyLastRandomNumbers = [];                  
+        
+        console.log("SHOOT ANOTHER ROUND OF BUBBLES! ITEM LEN - "+this.gummyPoppedItems.length);
+        
+        for(var g = 0; g < this.gummyBubblesOnScreen; g++) {                        
+            var gummyRandom = this.generateRandomNumber();            
+            this.bubbleInit(this.gummyBubblesTypes[gummyRandom]);                                               
+            this.gummyBubbleTag++;            
+        }   
+                      
+        
+        for( var i = 0; i < this.gummyPoppedItems.length; i++) { 
+                var sprite = this.gummyPoppedItems[i].sprite;
+                var body = this.gummyPoppedItems[i].body;
+                var shape = this.gummyPoppedItems[i].shape;                                             
                 
-        // start shooting out gummy bubbles                
-        for(var g = 0; g < this.gummyBubblesOnScreen; g++) {
-            var gummyRandom = this.generateRandomNumber();                        
-            this.bubbleInit(this.gummyBubblesTypes[gummyRandom]);
-            this.gummyBubbleTag++;
-        }                            
+                if(body) {                    
+                    console.log("IN THE BODY");
+                    this.space.removeShape(shape);
+                    this.space.removeBody(body);
+                    sprite.removeFromParent();                                                    
+                }
+        } 
+           
+        this.gummyPoppedItems = [];                              
     },
     
     // PHYSICS METHODS BELOW
     /*************************************
      * init space of chipmunk physics
      *************************************/
-    initPhysics:function() {
-        //1. new space object 
-        this.space = new cp.Space();
-        //2. setup the  Gravity
+    initPhysics:function() {        
+        this.space = new cp.Space();       
         this.space.gravity = cp.v(0, -350);
-                           
-        // 3. set up Walls
-        /*var wallBottom = new cp.SegmentShape(this.space.staticBody,
-            cp.v(0, g_groundHeight),// start point
-            cp.v(4294967295, g_groundHeight),// MAX INT:4294967295
-            0);// thickness of wall  
-                
-        wallBottom.setCollisionType( 2 );*/
-                
+      
         var w = cc.winSize.width,
         h = cc.winSize.height;                        
         
-        console.log("HEIGHT "+ h);
-        
-        var box = new cp.BoxShape(this.space.staticBody, 4294967295, (h / 4));
-        box.body.setPos(cp.v(0 * .5, 0 * .5));        
-        box.setCollisionType(20);
-        this.space.addStaticShape(box);        
-      
-        //this.space.addStaticShape(wallBottom);                    
+        console.log("HEIGHT "+ h);     
+                
+        var box = new cp.BoxShape(this.space.staticBody, 4294967295, 0 );
+        //box.body.setPos(cp.v(0 * .5, 0 * .5));        
+        box.setCollisionType( 2 );
+        box.setElasticity( 0 );
+        box.setFriction( 1 ); 
+        this.space.addStaticShape(box);                                                                                
     },
     
     
@@ -402,20 +414,14 @@ var MainScene = cc.Scene.extend({
     },
     
     
-    collisionBegin : function ( arbiter, space ) {
-       
-        console.log('collision begin');
-        var shapes = arbiter.getShapes();
-        var collTypeA = shapes[0].collision_type;
-        var collTypeB = shapes[1].collision_type;
-        console.log( 'Collision Type A:' + collTypeA );
-        console.log( 'Collision Type B:' + collTypeB );
+    collisionBegin : function ( arbiter, space ) {       
+        console.log('collision begin');                       
         return true;
     },
     
 
     collisionPre : function ( arbiter, space ) {
-        //console.log('collision pre');
+        console.log('collision pre');
         return true;
     },
     
@@ -429,6 +435,11 @@ var MainScene = cc.Scene.extend({
         console.log('collision separate');
     },
     
+    collisionEnd : function ( arbiter , space ) {
+        console.log('collision end');                                
+        return true;                
+    },  
+    
     
     createPhysicsSprite: function(path, x , y , tagNumber) {
                 
@@ -439,12 +450,14 @@ var MainScene = cc.Scene.extend({
         this.space.addBody(body);
         
         var shape = new cp.BoxShape( body, contentSize.width - 14, contentSize.height);
-        shape.setElasticity( 0.5 );
-        shape.setFriction( 0.5 );                                 
-        shape.setCollisionType( tagNumber );       
+        shape.setElasticity( 0 );
+        shape.setFriction( 1 );                                         
+        shape.setCollisionType( 1 );                          
         this.space.addShape( shape );        
-        
+        shape.group = 10;                                        
         sprite.setBody( body ); 
+        
+        this.gummyPoppedItems.push({ sprite : sprite , body : body , shape : shape });        
         
         return sprite
     }                    
