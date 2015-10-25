@@ -31,7 +31,7 @@
             <Image Name="pause-53x54@3x.png" />
             <Image Name="sun-84x84@3x.png" />
             <Image Name="bear-41x42@3x.png" />
-            <Image Name="fish.png" />
+            <Image Name="fish-41x41@3x.png" />
             <Image Name="worm-34x42@3x.png" />
           </Folder>
           <Folder Name="mediumRes">

@@ -146,11 +146,8 @@ cc.game.onStart = function(){
     }
         
     //load resources
-    cc.LoaderScene.preload(g_resources, function () {
-        sceneGB = new MainScene();
-        cc.director.runScene(sceneGB);
-        
-        console.log(sceneGB.resFolderName);
+    cc.LoaderScene.preload(g_resources, function () {        
+        cc.director.runScene(new MainScene());                
     }, this);
 };
 cc.game.run();
