@@ -1,0 +1,187 @@
+{
+  "ID": "9c683865-49e8-402e-9941-705a4145b464",
+  "Version": "2.3.2.3",
+  "Name": "GameScene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 175,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game_screen_assets/layers/how_to_play_screen/how_to_play_super_large.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "Tag": 221,
+            "ActionTag": -791219751,
+            "Size": {
+              "X": 2208.0,
+              "Y": 1242.0
+            },
+            "VisibleForFrame": false,
+            "Name": "how_to_play_super_large",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game_screen_assets/layers/how_to_play_screen/how_to_play_large.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "Tag": 258,
+            "ActionTag": -1391247423,
+            "Size": {
+              "X": 1334.0,
+              "Y": 750.0
+            },
+            "VisibleForFrame": false,
+            "Name": "how_to_play_large",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game_screen_assets/layers/how_to_play_screen/how_to_play_medium.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "Tag": 263,
+            "ActionTag": 1440023423,
+            "Size": {
+              "X": 1136.0,
+              "Y": 640.0
+            },
+            "VisibleForFrame": false,
+            "Name": "how_to_play_medium",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "game_screen_assets/layers/how_to_play_screen/how_to_play_small.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "Tag": 268,
+            "ActionTag": -1765824072,
+            "Size": {
+              "X": 960.0,
+              "Y": 640.0
+            },
+            "VisibleForFrame": false,
+            "Name": "how_to_play_small",
+            "ctype": "ProjectNodeObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "GameScene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "game_screen_assets/layers/how_to_play_screen/how_to_play_large.json",
+        "game_screen_assets/layers/how_to_play_screen/how_to_play_medium.json",
+        "game_screen_assets/layers/how_to_play_screen/how_to_play_small.json",
+        "game_screen_assets/layers/how_to_play_screen/how_to_play_super_large.json"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}

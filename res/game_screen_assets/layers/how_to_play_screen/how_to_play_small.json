@@ -1,0 +1,181 @@
+{
+  "ID": "289de477-b1cd-477c-826e-e15094d6a160",
+  "Version": "2.3.2.3",
+  "Name": "how_to_play_small",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 204,
+        "Children": [
+          {
+            "ScrollDirectionType": 0,
+            "BackColorAlpha": 102,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 150,
+              "B": 100
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "RightMargin": 2008.0,
+            "TopMargin": 1042.0,
+            "Tag": 208,
+            "ActionTag": 1662950656,
+            "Size": {
+              "X": 960.0,
+              "Y": 640.0
+            },
+            "Name": "bg_how_to_play",
+            "ctype": "PageViewObjectData"
+          },
+          {
+            "FontSize": 40,
+            "LabelText": "Tap Screen to Start\t",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 488.2602,
+              "Y": 561.9943
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5086,
+              "Y": 0.8781
+            },
+            "PreSize": {
+              "X": 0.3899,
+              "Y": 0.0942
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "TopEdge",
+            "LeftMargin": 317.7602,
+            "RightMargin": 301.2399,
+            "TopMargin": 54.5057,
+            "BottomMargin": 538.4943,
+            "Tag": 210,
+            "ActionTag": -2038979879,
+            "Size": {
+              "X": 341.0,
+              "Y": 47.0
+            },
+            "Name": "tap_screen",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/how_to_play-512x392.png",
+              "Plist": ""
+            },
+            "Scale9Width": 512,
+            "Scale9Height": 392,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 371.6397,
+              "Y": 241.1695
+            },
+            "Scale": {
+              "ScaleX": 1.2853,
+              "ScaleY": 1.2853
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3871,
+              "Y": 0.3768
+            },
+            "PreSize": {
+              "X": 0.5333,
+              "Y": 0.6125
+            },
+            "LeftMargin": 115.6397,
+            "RightMargin": 332.3603,
+            "TopMargin": 202.8305,
+            "BottomMargin": 45.1695,
+            "Tag": 216,
+            "ActionTag": -1419702612,
+            "Size": {
+              "X": 512.0,
+              "Y": 392.0
+            },
+            "Name": "Image_1",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "how_to_play_small",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "../../../Bobbleboddy.ttf",
+        "../../../images/smallRes/how_to_play-512x392.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

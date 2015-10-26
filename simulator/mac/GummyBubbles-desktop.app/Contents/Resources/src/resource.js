@@ -1,5 +1,6 @@
 var res = {    
     MainScene_json : "res/MainScene.json",
+    GameScene_json : "res/GameScene.json",
     bubble: "res/main_menu_assets"
 };
 
@@ -8,5 +9,3 @@ for (var i in res) {
     g_resources.push(res[i]);
 }
 
-var g_groundHeight = 0;
-var g_runnerStartX = 80;

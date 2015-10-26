@@ -18,7 +18,7 @@
         <iOS_Target Value="GummyBubbles-mobile" />
         <iOS_BundleID Value="iPhone Developer: kenneth bland (W9WPW5QJ9C)" />
         <Platform Value="Web" />
-        <RunPlatform Value="Mac" />
+        <RunPlatform Value="Android" />
         <FrameworkVersion Value="cocos2d-x-3.8" />
         <IsDebugKeystore Value="True" />
         <KeystorePassword Value="" />

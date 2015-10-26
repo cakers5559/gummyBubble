@@ -4,17 +4,29 @@
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Folder Name="main_menu_assets">
-          <TTF Name="Bobbleboddy.ttf" />
           <Folder Name="layers">
+            <Project Name="bg_large.csd" Type="Layer" />
+            <Project Name="bg_medium.csd" Type="Layer" />
             <Project Name="bg_small.csd" Type="Layer" />
             <Project Name="bg_super_large.csd" Type="Layer" />
-            <Project Name="bg_medium.csd" Type="Layer" />
-            <Project Name="bg_large.csd" Type="Layer" />
           </Folder>
         </Folder>
         <Project Name="MainScene.csd" Type="Scene" />
         <Folder Name="game_screen_assets">
-          <PlistParticleFile Name="rain.plist" />
+          <Folder Name="layers">
+            <Folder Name="level_1">
+              <Project Name="bg_large_level_1.csd" Type="Layer" />
+              <Project Name="bg_medium_level_1.csd" Type="Layer" />
+              <Project Name="bg_small_level_1.csd" Type="Layer" />
+              <Project Name="bg_super_large_level_1.csd" Type="Layer" />
+            </Folder>
+            <Folder Name="how_to_play_screen">
+              <Project Name="how_to_play_large.csd" Type="Layer" />
+              <Project Name="how_to_play_medium.csd" Type="Layer" />
+              <Project Name="how_to_play_small.csd" Type="Layer" />
+              <Project Name="how_to_play_super_large.csd" Type="Layer" />
+            </Folder>
+          </Folder>
         </Folder>
         <Folder Name="images">
           <Folder Name="largeRes">
@@ -33,6 +45,7 @@
             <Image Name="bear-41x42@3x.png" />
             <Image Name="fish-41x41@3x.png" />
             <Image Name="worm-34x42@3x.png" />
+            <Image Name="how_to_play-512x392@3x.png" />
           </Folder>
           <Folder Name="mediumRes">
             <Image Name="basket-114x86@2x.png" />
@@ -50,6 +63,7 @@
             <Image Name="bear-41x42@2x.png" />
             <Image Name="fish-41x41@2x.png" />
             <Image Name="worm-34x42@2x.png" />
+            <Image Name="how_to_play-512x392@2x.png" />
           </Folder>
           <Folder Name="smallRes">
             <Image Name="basket-114x86.png" />
@@ -67,8 +81,11 @@
             <Image Name="bear-41x42.png" />
             <Image Name="fish-41x41.png" />
             <Image Name="worm-34x42.png" />
+            <Image Name="how_to_play-512x392.png" />
           </Folder>
         </Folder>
+        <Project Name="GameScene.csd" Type="Scene" />
+        <TTF Name="Bobbleboddy.ttf" />
       </RootFolder>
     </Group>
   </SolutionFolder>
