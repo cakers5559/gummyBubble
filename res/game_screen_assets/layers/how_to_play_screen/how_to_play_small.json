@@ -16,7 +16,7 @@
         "Children": [
           {
             "ScrollDirectionType": 0,
-            "BackColorAlpha": 102,
+            "BackColorAlpha": 191,
             "ComboBoxIndex": 1,
             "SingleColor": {
               "R": 0,
@@ -161,7 +161,7 @@
               "X": 1024.0,
               "Y": 784.0
             },
-            "Name": "Sprite_1",
+            "Name": "instructions",
             "ctype": "SpriteObjectData"
           }
         ],

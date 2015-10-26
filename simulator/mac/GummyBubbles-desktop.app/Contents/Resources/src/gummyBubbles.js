@@ -7,9 +7,9 @@ var GummyBubbles = {
     scene: null,
     resFolderName:  "smallRes",
     resScaledTimes: "",       
-	gummyBubbleSpeed: 1,                
-    gummyBubblesOnScreen: 1,
-    gummyBubbleDelayBetweenShoot: 5,         
+	gummyBubbleSpeed: 10,                
+    gummyBubblesOnScreen: 5,
+    gummyBubbleDelayBetweenShoot: 2,         
     gummyBubblesTypes: ['LEFT-RIGHT','RIGHT-LEFT','LEFT-UP-DIAGONAL-DOWN','RIGHT-UP-DIAGONAL-DOWN',
                         'LEFT-DOWN-DIAGONAL-UP','RIGHT-DOWN-DIAGONAL-UP','LEFT-CURVE-UP-DOWN','LEFT-CURVE-DOWN-UP',
                         'RIGHT-CURVE-UP-DOWN','RIGHT-CURVE-DOWN-UP','LEFT-RIGHT-SHAKE','RIGHT-LEFT-SHAKE'],
@@ -253,7 +253,8 @@ var GummyBubbles = {
         
         // clean up            
         for(var i = 0; i < this.gummyBubbleTags.length; i++) {            
-            this.scene.mainscene.node.removeChildByTag( this.gummyBubbleTags[i] );
+            if(this.scene.mainscene) this.scene.mainscene.node.removeChildByTag( this.gummyBubbleTags[i] );
+            else this.scene.gamescene.node.removeChildByTag( this.gummyBubbleTags[i] );
         }        
                         
         this.gummyBubbleTag = 1;

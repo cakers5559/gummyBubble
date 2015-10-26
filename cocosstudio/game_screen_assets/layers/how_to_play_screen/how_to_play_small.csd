@@ -6,7 +6,7 @@
       <ObjectData Name="how_to_play_small" Tag="204" ctype="GameLayerObjectData">
         <Size X="960.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="bg_how_to_play" CanEdit="False" ActionTag="1662950656" Tag="208" IconVisible="False" RightMargin="2008.0000" TopMargin="1042.0000" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ScrollDirectionType="0" ctype="PageViewObjectData">
+          <AbstractNodeData Name="bg_how_to_play" CanEdit="False" ActionTag="1662950656" Tag="208" IconVisible="False" RightMargin="2008.0000" TopMargin="1042.0000" TouchEnable="True" BackColorAlpha="191" ComboBoxIndex="1" ColorAngle="90.0000" ScrollDirectionType="0" ctype="PageViewObjectData">
             <Size X="960.0000" Y="640.0000" />
             <AnchorPoint />
             <Position />
@@ -31,7 +31,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Sprite_1" ActionTag="-1205251509" Tag="685" IconVisible="False" LeftMargin="-146.3981" RightMargin="82.3981" TopMargin="15.6182" BottomMargin="-159.6181" ctype="SpriteObjectData">
+          <AbstractNodeData Name="instructions" ActionTag="-1205251509" Tag="685" IconVisible="False" LeftMargin="-146.3981" RightMargin="82.3981" TopMargin="15.6182" BottomMargin="-159.6181" ctype="SpriteObjectData">
             <Size X="1024.0000" Y="784.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="365.6019" Y="232.3819" />

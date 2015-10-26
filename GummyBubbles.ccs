@@ -19,12 +19,17 @@
               <Project Name="bg_medium_level_1.csd" Type="Layer" />
               <Project Name="bg_small_level_1.csd" Type="Layer" />
               <Project Name="bg_super_large_level_1.csd" Type="Layer" />
+              <Project Name="clouds_layer.csd" Type="Layer" />
+              <Project Name="mountains.csd" Type="Layer" />
             </Folder>
             <Folder Name="how_to_play_screen">
               <Project Name="how_to_play_large.csd" Type="Layer" />
               <Project Name="how_to_play_medium.csd" Type="Layer" />
               <Project Name="how_to_play_small.csd" Type="Layer" />
               <Project Name="how_to_play_super_large.csd" Type="Layer" />
+            </Folder>
+            <Folder Name="pause_screen">
+              <Project Name="pause_small.csd" Type="Layer" />
             </Folder>
           </Folder>
         </Folder>

@@ -1,0 +1,160 @@
+{
+  "ID": "d46dcba2-5b2b-4182-8b00-fe522a85252a",
+  "Version": "2.3.2.3",
+  "Name": "pause_small",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 1157,
+        "Children": [
+          {
+            "BackColorAlpha": 102,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 1158,
+            "ActionTag": 774452958,
+            "Size": {
+              "X": 960.0,
+              "Y": 640.0
+            },
+            "Alpha": 229,
+            "Name": "Panel_1",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FontSize": 25,
+            "ButtonText": "Retry",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/blank_button_dark-161x62.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/blank_button-161x62.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 131,
+            "Scale9Height": 40,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 469.7193,
+              "Y": 443.2847
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4893,
+              "Y": 0.6926
+            },
+            "PreSize": {
+              "X": 0.1677,
+              "Y": 0.0969
+            },
+            "LeftMargin": 389.2193,
+            "RightMargin": 409.7806,
+            "TopMargin": 165.7153,
+            "BottomMargin": 412.2847,
+            "Tag": 1159,
+            "ActionTag": 787861656,
+            "Size": {
+              "X": 161.0,
+              "Y": 62.0
+            },
+            "Name": "retry_btn",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "../../../Bobbleboddy.ttf",
+        "../../../Default/Button_Disable.png",
+        "../../../images/smallRes/blank_button_dark-161x62.png",
+        "../../../images/smallRes/blank_button-161x62.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

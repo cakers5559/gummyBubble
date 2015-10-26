@@ -1,5 +1,5 @@
 <GameProjectFile>
-  <PropertyGroup Type="Layer" Name="bg_super_large_0" ID="ef8ca31c-4546-498b-a1e5-28ae6013f4fc" Version="2.3.2.3" />
+  <PropertyGroup Type="Layer" Name="bg_super_large_level_1" ID="ef8ca31c-4546-498b-a1e5-28ae6013f4fc" Version="2.3.2.3" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="0.0833" />
@@ -19,7 +19,7 @@
           <AbstractNodeData Name="landscape" ActionTag="-1490592521" Tag="64" IconVisible="False" HorizontalEdge="BothEdge" LeftMargin="-196.4428" RightMargin="196.4427" TopMargin="614.1189" BottomMargin="-32.1189" Scale9Width="2208" Scale9Height="660" ctype="ImageViewObjectData">
             <Size X="2208.0000" Y="660.0000" />
             <AnchorPoint ScaleY="0.5000" />
-            <Position X="-196.4428" Y="297.8811" />
+            <Position X="-196.5120" Y="297.8811" />
             <Scale ScaleX="1.1625" ScaleY="1.1625" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="-0.0890" Y="0.2398" />
@@ -68,6 +68,17 @@
             <PrePosition X="0.4401" Y="0.8797" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="images/largeRes/cloud-70x38@3x.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Sprite_1" ActionTag="-382197599" Tag="1204" IconVisible="False" LeftMargin="1438.4597" RightMargin="517.5403" TopMargin="65.6173" BottomMargin="924.3827" ctype="SpriteObjectData">
+            <Size X="252.0000" Y="252.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1564.4597" Y="1050.3827" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.7085" Y="0.8457" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/largeRes/sun-84x84@3x.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
         </Children>

@@ -81,8 +81,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 481.9399,
-              "Y": 270.8737
+              "X": 1028.0959,
+              "Y": 650.0352
             },
             "Scale": {
               "ScaleX": 1.1987,
@@ -120,7 +120,7 @@
               "Path": "main_menu_assets/layers/bg_super_large.json",
               "Plist": ""
             },
-            "InnerActionSpeed": 1.0,
+            "InnerActionSpeed": 2.0,
             "AnchorPoint": {},
             "Position": {
               "X": -2.3481,
@@ -137,12 +137,12 @@
               "Y": -0.0021
             },
             "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
+              "X": 2.3,
+              "Y": 1.9406
             },
             "LeftMargin": -2.3481,
-            "RightMargin": 2.3481,
-            "TopMargin": 2.5619,
+            "RightMargin": -1245.6519,
+            "TopMargin": -599.4381,
             "BottomMargin": -2.5619,
             "Tag": 2781,
             "ActionTag": -1604815211,
@@ -160,10 +160,10 @@
               "Path": "main_menu_assets/layers/bg_large.json",
               "Plist": ""
             },
-            "InnerActionSpeed": 1.0,
+            "InnerActionSpeed": 2.0,
             "AnchorPoint": {},
             "Position": {
-              "X": 4.8,
+              "X": 10.24,
               "Y": 4.1257
             },
             "Scale": {
@@ -177,13 +177,13 @@
               "Y": 0.0055
             },
             "PreSize": {
-              "X": 0.6042,
-              "Y": 0.6039
+              "X": 1.3896,
+              "Y": 1.1719
             },
             "HorizontalEdge": "BothEdge",
-            "LeftMargin": 11.04,
-            "RightMargin": 862.96,
-            "TopMargin": 487.8743,
+            "LeftMargin": 4.8,
+            "RightMargin": -378.8,
+            "TopMargin": -114.1257,
             "BottomMargin": 4.1257,
             "Tag": 431,
             "ActionTag": 1749652499,
@@ -201,10 +201,10 @@
               "Path": "main_menu_assets/layers/bg_medium.json",
               "Plist": ""
             },
-            "InnerActionSpeed": 1.0,
+            "InnerActionSpeed": 2.0,
             "AnchorPoint": {},
             "Position": {
-              "X": 1.728,
+              "X": 3.6864,
               "Y": -9.6
             },
             "Scale": {
@@ -218,13 +218,13 @@
               "Y": -0.015
             },
             "PreSize": {
-              "X": 0.5145,
-              "Y": 0.5153
+              "X": 1.1833,
+              "Y": 1.0
             },
             "HorizontalEdge": "BothEdge",
-            "LeftMargin": 3.9744,
-            "RightMargin": 1068.0256,
-            "TopMargin": 611.6,
+            "LeftMargin": 1.728,
+            "RightMargin": -177.728,
+            "TopMargin": 9.6,
             "BottomMargin": -9.6,
             "Tag": 439,
             "ActionTag": 812577999,
@@ -242,10 +242,10 @@
               "Path": "main_menu_assets/layers/bg_small.json",
               "Plist": ""
             },
-            "InnerActionSpeed": 1.0,
+            "InnerActionSpeed": 2.0,
             "AnchorPoint": {},
             "Position": {
-              "X": 0.288,
+              "X": 0.6144,
               "Y": -3.878
             },
             "Scale": {
@@ -259,13 +259,13 @@
               "Y": -0.0061
             },
             "PreSize": {
-              "X": 0.4348,
-              "Y": 0.5153
+              "X": 1.0,
+              "Y": 1.0
             },
             "HorizontalEdge": "BothEdge",
-            "LeftMargin": 0.6624,
-            "RightMargin": 1247.3376,
-            "TopMargin": 605.878,
+            "LeftMargin": 0.288,
+            "RightMargin": -0.288,
+            "TopMargin": 3.878,
             "BottomMargin": -3.878,
             "Tag": 447,
             "ActionTag": -546113980,
@@ -322,7 +322,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 472.8,
+              "X": 1008.64,
               "Y": 297.8923
             },
             "Scale": {
@@ -399,7 +399,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 472.512,
+              "X": 1008.0256,
               "Y": 194.8769
             },
             "Scale": {
@@ -476,7 +476,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 469.056,
+              "X": 1000.6528,
               "Y": 85.3838
             },
             "Scale": {
@@ -536,8 +536,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 475.008,
-              "Y": 520.0
+              "X": 1013.3504,
+              "Y": 1248.0
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -570,8 +570,8 @@
           }
         ],
         "Size": {
-          "X": 960.0,
-          "Y": 640.0
+          "X": 2048.0,
+          "Y": 1536.0
         },
         "Name": "MainScene",
         "ctype": "SingleNodeObjectData"

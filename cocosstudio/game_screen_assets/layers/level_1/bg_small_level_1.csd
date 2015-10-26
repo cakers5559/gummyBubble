@@ -1,5 +1,5 @@
 <GameProjectFile>
-  <PropertyGroup Type="Layer" Name="bg_small_0" ID="2bfd3e6c-8b76-4e46-b0fa-cc75d618fdb9" Version="2.3.2.3" />
+  <PropertyGroup Type="Layer" Name="bg_small_level_1" ID="2bfd3e6c-8b76-4e46-b0fa-cc75d618fdb9" Version="2.3.2.3" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -68,6 +68,17 @@
             <PrePosition X="0.7234" Y="0.8797" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="images/smallRes/cloud-70x38.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Sprite_1" ActionTag="-282794270" Tag="1213" IconVisible="False" LeftMargin="522.9414" RightMargin="353.0586" TopMargin="52.2981" BottomMargin="503.7019" ctype="SpriteObjectData">
+            <Size X="84.0000" Y="84.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="564.9414" Y="545.7019" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5885" Y="0.8527" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/smallRes/sun-84x84.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
         </Children>

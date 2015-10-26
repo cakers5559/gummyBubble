@@ -279,6 +279,51 @@
             },
             "Name": "cloud_4",
             "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/sun-84x84.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 806.0861,
+              "Y": 552.5598
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7096,
+              "Y": 0.8634
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 764.0861,
+            "RightMargin": 287.9139,
+            "TopMargin": 45.4402,
+            "BottomMargin": 510.5598,
+            "Tag": 1205,
+            "ActionTag": -1265192124,
+            "Size": {
+              "X": 84.0,
+              "Y": 84.0
+            },
+            "Name": "Sprite_6",
+            "ctype": "SpriteObjectData"
           }
         ],
         "Size": {
@@ -291,7 +336,8 @@
       "UsedResources": [
         "../../../images/mediumRes/cloud-70x38@2x.png",
         "../../../images/mediumRes/landscape-736x220@2x.png",
-        "../../../images/mediumRes/mountains-620x317@2x.png"
+        "../../../images/mediumRes/mountains-620x317@2x.png",
+        "../../../images/smallRes/sun-84x84.png"
       ],
       "ctype": "GameProjectData"
     }

@@ -5,9 +5,108 @@
   "Content": {
     "Content": {
       "Animation": {
-        "Duration": 0,
+        "Duration": 17,
         "Speed": 1.0,
-        "Timelines": [],
+        "Timelines": [
+          {
+            "ActionTag": -155669652,
+            "Property": "ActionValue",
+            "Frames": [
+              {
+                "InnerActionType": "SingleFrame",
+                "CurrentAniamtionName": "-- ALL --",
+                "SingleFrameIndex": 0,
+                "FrameIndex": 0,
+                "Tween": false,
+                "ctype": "InnerActionFrameData"
+              },
+              {
+                "InnerActionType": "SingleFrame",
+                "CurrentAniamtionName": "-- ALL --",
+                "SingleFrameIndex": 0,
+                "FrameIndex": 17,
+                "Tween": false,
+                "ctype": "InnerActionFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -155669652,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 10.5386,
+                "Y": 0.4247,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 624.7635,
+                "Y": 0.425,
+                "FrameIndex": 17,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -155669652,
+            "Property": "Scale",
+            "Frames": [
+              {
+                "X": 0.8614,
+                "Y": 0.8614,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 0.8614,
+                "Y": 0.8614,
+                "FrameIndex": 17,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -155669652,
+            "Property": "RotationSkew",
+            "Frames": [
+              {
+                "X": 0.0,
+                "Y": 0.0,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 0.0,
+                "Y": 0.0,
+                "FrameIndex": 17,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          }
+        ],
         "ctype": "TimelineActionData"
       },
       "AnimationList": [],
@@ -15,12 +114,321 @@
         "Tag": 175,
         "Children": [
           {
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 74,
+              "G": 144,
+              "B": 226
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "StretchWidthEnable": true,
+            "StretchHeightEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "Tag": 1230,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "game_screen_assets/layers/level_1/mountains.json",
+                  "Plist": ""
+                },
+                "InnerActionSpeed": 1.0,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": -97.7766,
+                  "Y": 33.1604
+                },
+                "Scale": {
+                  "ScaleX": 0.7468,
+                  "ScaleY": 0.7468
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": -0.0477,
+                  "Y": 0.0267
+                },
+                "PreSize": {
+                  "X": 0.6042,
+                  "Y": 0.6039
+                },
+                "HorizontalEdge": "BothEdge",
+                "LeftMargin": -105.4153,
+                "RightMargin": 979.4153,
+                "TopMargin": 458.8396,
+                "BottomMargin": 33.1604,
+                "Tag": 1146,
+                "ActionTag": -444028172,
+                "Size": {
+                  "X": 1334.0,
+                  "Y": 750.0
+                },
+                "Name": "mountains",
+                "ctype": "ProjectNodeObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "game_screen_assets/layers/level_1/bg_large_level_1.json",
+                  "Plist": ""
+                },
+                "InnerActionSpeed": 2.0,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 10.5386,
+                  "Y": 0.4247
+                },
+                "Scale": {
+                  "ScaleX": 0.8614,
+                  "ScaleY": 0.8614
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.0051,
+                  "Y": 0.0003
+                },
+                "PreSize": {
+                  "X": 1.0,
+                  "Y": 1.0
+                },
+                "HorizontalEdge": "BothEdge",
+                "VerticalEdge": "BottomEdge",
+                "LeftMargin": 10.5386,
+                "RightMargin": 703.4614,
+                "TopMargin": 785.5753,
+                "BottomMargin": 0.4247,
+                "Tag": 1632,
+                "ActionTag": -155669652,
+                "Size": {
+                  "X": 1334.0,
+                  "Y": 750.0
+                },
+                "Name": "bg_level_1",
+                "ctype": "ProjectNodeObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "game_screen_assets/layers/level_1/clouds_layer.json",
+                  "Plist": ""
+                },
+                "InnerActionSpeed": 1.0,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": -101.7198,
+                  "Y": 66.1386
+                },
+                "Scale": {
+                  "ScaleX": 0.4559,
+                  "ScaleY": 0.4559
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": -0.0497,
+                  "Y": 0.0431
+                },
+                "PreSize": {
+                  "X": 1.6552,
+                  "Y": 1.656
+                },
+                "HorizontalEdge": "BothEdge",
+                "VerticalEdge": "TopEdge",
+                "LeftMargin": -101.7198,
+                "RightMargin": -58.2803,
+                "TopMargin": 227.8613,
+                "BottomMargin": 66.1386,
+                "Tag": 573,
+                "ActionTag": -200723507,
+                "Size": {
+                  "X": 2208.0,
+                  "Y": 1242.0
+                },
+                "Name": "clouds",
+                "ctype": "ProjectNodeObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "images/mediumRes/pause-53x54@2x.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 76,
+                "Scale9Height": 86,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 53.8107,
+                  "Y": 575.9581
+                },
+                "Scale": {
+                  "ScaleX": 0.6091,
+                  "ScaleY": 0.6091
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0263,
+                  "Y": 0.375
+                },
+                "PreSize": {
+                  "X": 0.048,
+                  "Y": 0.087
+                },
+                "HorizontalEdge": "LeftEdge",
+                "VerticalEdge": "TopEdge",
+                "LeftMargin": 0.8107,
+                "RightMargin": 1941.1893,
+                "TopMargin": 906.0419,
+                "BottomMargin": 521.9581,
+                "Tag": 1183,
+                "ActionTag": 1899077289,
+                "Size": {
+                  "X": 106.0,
+                  "Y": 108.0
+                },
+                "Name": "pause_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 40,
+                "LabelText": "Gummies : 0\t",
+                "FontResource": {
+                  "Type": "Normal",
+                  "Path": "Bobbleboddy.ttf",
+                  "Plist": ""
+                },
+                "HorizontalAlignmentType": "HT_Right",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "R": 127,
+                  "G": 127,
+                  "B": 127
+                },
+                "OutlineEnabled": true,
+                "ShadowColor": {
+                  "R": 0,
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "ShadowEnabled": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.451,
+                  "ScaleY": 0.4234
+                },
+                "Position": {
+                  "X": 787.4174,
+                  "Y": 571.6836
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.3845,
+                  "Y": 0.3722
+                },
+                "PreSize": {
+                  "X": 0.0498,
+                  "Y": 0.0185
+                },
+                "HorizontalEdge": "BothEdge",
+                "VerticalEdge": "BothEdge",
+                "LeftMargin": 693.6075,
+                "RightMargin": 1146.3926,
+                "TopMargin": 936.0616,
+                "BottomMargin": 550.9384,
+                "Tag": 1184,
+                "ActionTag": -528661809,
+                "Size": {
+                  "X": 208.0,
+                  "Y": 49.0
+                },
+                "Name": "gummies_txt",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": 1761969222,
+            "Size": {
+              "X": 2048.0,
+              "Y": 1536.0
+            },
+            "Name": "panel_level_1",
+            "ctype": "PanelObjectData"
+          },
+          {
             "FileData": {
               "Type": "Normal",
               "Path": "game_screen_assets/layers/how_to_play_screen/how_to_play_super_large.json",
               "Plist": ""
             },
-            "InnerActionSpeed": 1.0,
+            "InnerActionSpeed": 2.0,
             "AnchorPoint": {},
             "Position": {
               "X": 0.0,
@@ -37,11 +445,13 @@
               "Y": 0.0
             },
             "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
+              "X": 1.0781,
+              "Y": 0.8086
             },
             "HorizontalEdge": "BothEdge",
             "VerticalEdge": "BothEdge",
+            "RightMargin": -160.0,
+            "TopMargin": 294.0,
             "Tag": 221,
             "ActionTag": -791219751,
             "Size": {
@@ -58,7 +468,7 @@
               "Path": "game_screen_assets/layers/how_to_play_screen/how_to_play_large.json",
               "Plist": ""
             },
-            "InnerActionSpeed": 1.0,
+            "InnerActionSpeed": 2.0,
             "AnchorPoint": {},
             "Position": {
               "X": 0.0,
@@ -75,11 +485,13 @@
               "Y": 0.0
             },
             "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
+              "X": 0.6514,
+              "Y": 0.4883
             },
             "HorizontalEdge": "BothEdge",
             "VerticalEdge": "BothEdge",
+            "RightMargin": 714.0,
+            "TopMargin": 786.0,
             "Tag": 258,
             "ActionTag": -1391247423,
             "Size": {
@@ -96,7 +508,7 @@
               "Path": "game_screen_assets/layers/how_to_play_screen/how_to_play_medium.json",
               "Plist": ""
             },
-            "InnerActionSpeed": 1.0,
+            "InnerActionSpeed": 2.0,
             "AnchorPoint": {},
             "Position": {
               "X": 0.0,
@@ -113,11 +525,13 @@
               "Y": 0.0
             },
             "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
+              "X": 0.5547,
+              "Y": 0.4167
             },
             "HorizontalEdge": "BothEdge",
             "VerticalEdge": "BothEdge",
+            "RightMargin": 912.0,
+            "TopMargin": 896.0,
             "Tag": 263,
             "ActionTag": 1440023423,
             "Size": {
@@ -134,7 +548,7 @@
               "Path": "game_screen_assets/layers/how_to_play_screen/how_to_play_small.json",
               "Plist": ""
             },
-            "InnerActionSpeed": 1.0,
+            "InnerActionSpeed": 2.0,
             "AnchorPoint": {},
             "Position": {
               "X": 0.0,
@@ -151,11 +565,13 @@
               "Y": 0.0
             },
             "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
+              "X": 0.4688,
+              "Y": 0.4167
             },
             "HorizontalEdge": "BothEdge",
             "VerticalEdge": "BothEdge",
+            "RightMargin": 1088.0,
+            "TopMargin": 896.0,
             "Tag": 268,
             "ActionTag": -1765824072,
             "Size": {
@@ -165,20 +581,76 @@
             "VisibleForFrame": false,
             "Name": "how_to_play_small",
             "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "BackColorAlpha": 0,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "StretchWidthEnable": true,
+            "StretchHeightEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "Tag": 1423,
+            "ActionTag": -1627601985,
+            "Size": {
+              "X": 2048.0,
+              "Y": 1536.0
+            },
+            "Alpha": 0,
+            "Name": "tap_to_start_screen",
+            "ctype": "PanelObjectData"
           }
         ],
         "Size": {
-          "X": 960.0,
-          "Y": 640.0
+          "X": 2048.0,
+          "Y": 1536.0
         },
         "Name": "GameScene",
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
+        "Bobbleboddy.ttf",
+        "Default/Button_Disable.png",
+        "Default/Button_Press.png",
         "game_screen_assets/layers/how_to_play_screen/how_to_play_large.json",
         "game_screen_assets/layers/how_to_play_screen/how_to_play_medium.json",
         "game_screen_assets/layers/how_to_play_screen/how_to_play_small.json",
-        "game_screen_assets/layers/how_to_play_screen/how_to_play_super_large.json"
+        "game_screen_assets/layers/how_to_play_screen/how_to_play_super_large.json",
+        "game_screen_assets/layers/level_1/bg_large_level_1.json",
+        "game_screen_assets/layers/level_1/clouds_layer.json",
+        "game_screen_assets/layers/level_1/mountains.json",
+        "images/mediumRes/pause-53x54@2x.png"
       ],
       "ctype": "GameProjectData"
     }

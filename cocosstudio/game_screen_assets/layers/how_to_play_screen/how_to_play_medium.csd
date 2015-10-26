@@ -6,7 +6,7 @@
       <ObjectData Name="how_to_play_medium" Tag="203" ctype="GameLayerObjectData">
         <Size X="1136.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="bg_how_to_play" CanEdit="False" ActionTag="64790723" Tag="207" IconVisible="False" RightMargin="2008.0000" TopMargin="1042.0000" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ScrollDirectionType="0" ctype="PageViewObjectData">
+          <AbstractNodeData Name="bg_how_to_play" CanEdit="False" ActionTag="64790723" Tag="207" IconVisible="False" RightMargin="2008.0000" TopMargin="1042.0000" TouchEnable="True" BackColorAlpha="191" ComboBoxIndex="1" ColorAngle="90.0000" ScrollDirectionType="0" ctype="PageViewObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint />
             <Position />

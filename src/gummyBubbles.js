@@ -253,7 +253,8 @@ var GummyBubbles = {
         
         // clean up            
         for(var i = 0; i < this.gummyBubbleTags.length; i++) {            
-            this.scene.mainscene.node.removeChildByTag( this.gummyBubbleTags[i] );
+            if(this.scene.mainscene) this.scene.mainscene.node.removeChildByTag( this.gummyBubbleTags[i] );
+            else this.scene.gamescene.node.removeChildByTag( this.gummyBubbleTags[i] );
         }        
                         
         this.gummyBubbleTag = 1;

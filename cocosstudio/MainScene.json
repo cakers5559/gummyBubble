@@ -1,0 +1,598 @@
+{
+  "ID": "a2ee0952-26b5-49ae-8bf9-4f1d6279b798",
+  "Version": "2.3.2.3",
+  "Name": "MainScene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Children": [
+          {
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5022,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1120.2467,
+              "Y": 613.9413
+            },
+            "Scale": {
+              "ScaleX": 23.917,
+              "ScaleY": 15.1649
+            },
+            "CColor": {
+              "R": 74,
+              "G": 144,
+              "B": 226
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5074,
+              "Y": 0.4943
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 1019.8073,
+            "RightMargin": 988.1927,
+            "TopMargin": 528.0587,
+            "BottomMargin": 513.9413,
+            "Tag": 455,
+            "ActionTag": 370568056,
+            "Size": {
+              "X": 200.0,
+              "Y": 200.0
+            },
+            "Name": "bg_color",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/sunbrust-736x414@3x.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.4967,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1108.4159,
+              "Y": 525.6144
+            },
+            "Scale": {
+              "ScaleX": 1.1987,
+              "ScaleY": 1.1987
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.502,
+              "Y": 0.4232
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "LeftMargin": -381.5386,
+            "RightMargin": -410.4614,
+            "TopMargin": -783.6643,
+            "BottomMargin": -974.3357,
+            "Tag": 118,
+            "ActionTag": 43340222,
+            "Size": {
+              "X": 3000.0,
+              "Y": 3000.0
+            },
+            "Alpha": 25,
+            "Name": "sunbrust",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "main_menu_assets/layers/bg_super_large.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": -2.3481,
+              "Y": -2.5619
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": -0.0011,
+              "Y": -0.0021
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "LeftMargin": -2.3481,
+            "RightMargin": 2.3481,
+            "TopMargin": 2.5619,
+            "BottomMargin": -2.5619,
+            "Tag": 2781,
+            "ActionTag": -1604815211,
+            "Size": {
+              "X": 2208.0,
+              "Y": 1242.0
+            },
+            "VisibleForFrame": false,
+            "Name": "bg_super_large",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "main_menu_assets/layers/bg_large.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 11.04,
+              "Y": 4.1257
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.005,
+              "Y": 0.0055
+            },
+            "PreSize": {
+              "X": 0.6042,
+              "Y": 0.6039
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 11.04,
+            "RightMargin": 862.96,
+            "TopMargin": 487.8743,
+            "BottomMargin": 4.1257,
+            "Tag": 431,
+            "ActionTag": 1749652499,
+            "Size": {
+              "X": 1334.0,
+              "Y": 750.0
+            },
+            "VisibleForFrame": false,
+            "Name": "bg_large",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "main_menu_assets/layers/bg_medium.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 3.9744,
+              "Y": -9.6
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0018,
+              "Y": -0.015
+            },
+            "PreSize": {
+              "X": 0.5145,
+              "Y": 0.5153
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 3.9744,
+            "RightMargin": 1068.0256,
+            "TopMargin": 611.6,
+            "BottomMargin": -9.6,
+            "Tag": 439,
+            "ActionTag": 812577999,
+            "Size": {
+              "X": 1136.0,
+              "Y": 640.0
+            },
+            "VisibleForFrame": false,
+            "Name": "bg_medium",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "main_menu_assets/layers/bg_small.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.6624,
+              "Y": -3.878
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0003,
+              "Y": -0.0061
+            },
+            "PreSize": {
+              "X": 0.4348,
+              "Y": 0.5153
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 0.6624,
+            "RightMargin": 1247.3376,
+            "TopMargin": 605.878,
+            "BottomMargin": -3.878,
+            "Tag": 447,
+            "ActionTag": -546113980,
+            "Size": {
+              "X": 960.0,
+              "Y": 640.0
+            },
+            "VisibleForFrame": false,
+            "Name": "bg_small",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FontSize": 100,
+            "ButtonText": "Play",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button-161x62@3x.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 453,
+            "Scale9Height": 164,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1087.4401,
+              "Y": 297.8923
+            },
+            "Scale": {
+              "ScaleX": 0.4165,
+              "ScaleY": 0.4165
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4925,
+              "Y": 0.4655
+            },
+            "PreSize": {
+              "X": 0.2188,
+              "Y": 0.1498
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 231.3184,
+            "RightMargin": 245.6816,
+            "TopMargin": 249.1077,
+            "BottomMargin": 204.8923,
+            "Tag": 456,
+            "ActionTag": 974831853,
+            "Size": {
+              "X": 483.0,
+              "Y": 186.0
+            },
+            "VisibleForFrame": false,
+            "Name": "play_btn_big",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 80,
+            "ButtonText": "Play",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/mediumRes/blank_button_dark-161x62@2x.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/mediumRes/blank_button-161x62@2x.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 292,
+            "Scale9Height": 102,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1086.7776,
+              "Y": 194.8769
+            },
+            "Scale": {
+              "ScaleX": 0.549,
+              "ScaleY": 0.549
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4922,
+              "Y": 0.2598
+            },
+            "PreSize": {
+              "X": 0.1458,
+              "Y": 0.0998
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 495.6061,
+            "RightMargin": 516.3939,
+            "TopMargin": 493.123,
+            "BottomMargin": 132.8769,
+            "Tag": 457,
+            "ActionTag": 1644927524,
+            "Size": {
+              "X": 322.0,
+              "Y": 124.0
+            },
+            "VisibleForFrame": false,
+            "Name": "play_btn_medium",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 38,
+            "ButtonText": "Play",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/blank_button_dark-161x62.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/blank_button-161x62.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 131,
+            "Scale9Height": 40,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1078.8287,
+              "Y": 85.3838
+            },
+            "Scale": {
+              "ScaleX": 0.9211,
+              "ScaleY": 0.9211
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4886,
+              "Y": 0.1334
+            },
+            "PreSize": {
+              "X": 0.1207,
+              "Y": 0.0827
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 388.5486,
+            "RightMargin": 410.4514,
+            "TopMargin": 523.6162,
+            "BottomMargin": 54.3838,
+            "Tag": 458,
+            "ActionTag": 338944045,
+            "Size": {
+              "X": 161.0,
+              "Y": 62.0
+            },
+            "VisibleForFrame": false,
+            "Name": "play_btn_small",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 100,
+            "LabelText": "Gummy Bubbles",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "OutlineSize": 4,
+            "OutlineColor": {
+              "R": 155,
+              "G": 155,
+              "B": 155
+            },
+            "OutlineEnabled": true,
+            "ShadowColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "ShadowOffsetX": -5.0,
+            "ShadowOffsetY": -10.0,
+            "ShadowEnabled": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1092.5184,
+              "Y": 1009.125
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4948,
+              "Y": 0.8125
+            },
+            "PreSize": {
+              "X": 0.1481,
+              "Y": 0.0684
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "LeftMargin": 121.9938,
+            "RightMargin": 132.0062,
+            "TopMargin": 57.5014,
+            "BottomMargin": 457.4986,
+            "Tag": 1898,
+            "ActionTag": -2061358656,
+            "Size": {
+              "X": 706.0,
+              "Y": 125.0
+            },
+            "Name": "gummy_bubbles_title",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 2208.0,
+          "Y": 1242.0
+        },
+        "Name": "MainScene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Bobbleboddy.ttf",
+        "Default/Button_Disable.png",
+        "images/largeRes/blank_button_dark-161x62@3x.png",
+        "images/largeRes/blank_button-161x62@3x.png",
+        "images/largeRes/sunbrust-736x414@3x.png",
+        "images/mediumRes/blank_button_dark-161x62@2x.png",
+        "images/mediumRes/blank_button-161x62@2x.png",
+        "images/smallRes/blank_button_dark-161x62.png",
+        "images/smallRes/blank_button-161x62.png",
+        "main_menu_assets/layers/bg_large.json",
+        "main_menu_assets/layers/bg_medium.json",
+        "main_menu_assets/layers/bg_small.json",
+        "main_menu_assets/layers/bg_super_large.json"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}
