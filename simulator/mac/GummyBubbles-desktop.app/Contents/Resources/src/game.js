@@ -77,7 +77,7 @@ var GameScene = cc.Scene.extend({
                 // ipad retina
                 if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) {                                                           
                     console.log("Instruction Layer x postion: "+studioObj.instructionLayer.x);
-                    studioObj.instructionLayer.setPositionX( 100.0 );
+                    studioObj.instructionLayer.setPosition( cc.p(-100, 0) );
                     
                 }
                 

@@ -7,8 +7,9 @@ var GummyBubbles = {
     scene: null,
     resFolderName:  "smallRes",
     resScaledTimes: "",       
-	gummyBubbleSpeed: 10,                
-    gummyBubblesOnScreen: 4,         
+	gummyBubbleSpeed: 1,                
+    gummyBubblesOnScreen: 1,
+    gummyBubbleDelayBetweenShoot: 5,         
     gummyBubblesTypes: ['LEFT-RIGHT','RIGHT-LEFT','LEFT-UP-DIAGONAL-DOWN','RIGHT-UP-DIAGONAL-DOWN',
                         'LEFT-DOWN-DIAGONAL-UP','RIGHT-DOWN-DIAGONAL-UP','LEFT-CURVE-UP-DOWN','LEFT-CURVE-DOWN-UP',
                         'RIGHT-CURVE-UP-DOWN','RIGHT-CURVE-DOWN-UP','LEFT-RIGHT-SHAKE','RIGHT-LEFT-SHAKE'],
@@ -28,7 +29,7 @@ var GummyBubbles = {
         // Set the Bubble scale base on device        
         var imageScale = 1;                        
         if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) imageScale = 0.8;        
-        else if (this.resScaledTimes === '@3x' && cc.view.getFrameSize().width !== 2048 && cc.view.getFrameSize().height !== 1536) imageScale = 0.4;       
+        else if (this.resScaledTimes === '@3x' && cc.view.getFrameSize().width !== 2048 && cc.view.getFrameSize().height !== 1536) imageScale = 0.5;       
         else if (this.resScaledTimes === '@2x') imageScale = 0.7;                          
      
         // Fire a bubble
@@ -132,6 +133,7 @@ var GummyBubbles = {
         var gummy = new cc.Sprite( pathToAssets + '/' + this.gummyBubbleImages[gummyRandom] + this.resScaledTimes + '.png' );
         bubble.addChild(gummy);
         bubble.childGummyPath = pathToAssets + '/' + this.gummyBubbleImages[gummyRandom] + this.resScaledTimes + '.png';
+        bubble.bubbleScale = imageScale;
         gummy.setPosition( bubble.width / 2 , bubble.height / 2 );       
         gummy.setOpacity( 150 ); 
         
@@ -151,13 +153,13 @@ var GummyBubbles = {
                 //var controlPoints = [ cc.p(size.width / 2, size.height), cc.p(size.width / 2, size.height), cc.p(size.width, 0) ];
                 var bezier = cc.bezierTo(this.gummyBubbleSpeed, bezierTo);
                 
-                if (this.gummyBubbleTags.length === this.gummyBubblesOnScreen) bubble.runAction(cc.sequence(bezier, cc.callFunc(this.onFireBubbleComplete, this)));
+                if (this.gummyBubbleTags.length === this.gummyBubblesOnScreen) bubble.runAction(cc.sequence(bezier, cc.delayTime(this.gummyBubbleDelayBetweenShoot), cc.callFunc(this.onFireBubbleComplete, this)));
                 else bubble.runAction(bezier);                 
         }
         // Shoot bubble in straight direction
         else {                
                 var actionTo = cc.moveTo(this.gummyBubbleSpeed, cc.p(endPoints[0], endPoints[1]));                
-                if (this.gummyBubbleTags.length === this.gummyBubblesOnScreen) bubble.runAction(cc.sequence(actionTo, cc.callFunc(this.onFireBubbleComplete, this)));
+                if (this.gummyBubbleTags.length === this.gummyBubblesOnScreen) bubble.runAction(cc.sequence(actionTo, cc.delayTime(this.gummyBubbleDelayBetweenShoot), cc.callFunc(this.onFireBubbleComplete, this)));
                 else bubble.runAction(actionTo); 
         }                               
             
@@ -203,7 +205,7 @@ var GummyBubbles = {
                 if (cc.rectContainsPoint(rect, locationInNode)) {                                                       
                     target.setVisible( false );                                        
                     cc.eventManager.removeListeners( target );
-                    self.bubblePop(target.getPosition() , target.childGummyPath, target.getTag());                                        
+                    self.bubblePop(target.getPosition() , target.childGummyPath, target.getTag(), target.bubbleScale);                                        
                     return true;
                 }
                 return false;                                                      
@@ -215,7 +217,7 @@ var GummyBubbles = {
     /*
      * effect for when a bubble is popped
      */
-    bubblePop: function(loc, gummyPath, tagNumber) {               
+    bubblePop: function(loc, gummyPath, tagNumber, scale) {               
         var size = cc.winSize;                                  
         var pathToAssets = 'res/images/' + this.resFolderName;
         
@@ -234,6 +236,7 @@ var GummyBubbles = {
         
         // create gummy                  
         var gummy = Physics.createPhysicsSprite(gummyPath , loc.x , loc.y , tagNumber);        
+        gummy.setScale(scale);
         this.scene.addChild(gummy);                          
         
         console.log('TAG NUMBER '+tagNumber);                                        

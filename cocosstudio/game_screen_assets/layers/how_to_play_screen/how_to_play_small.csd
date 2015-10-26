@@ -31,15 +31,16 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_1" ActionTag="-1419702612" Tag="216" IconVisible="False" LeftMargin="115.6397" RightMargin="332.3603" TopMargin="202.8305" BottomMargin="45.1695" Scale9Width="512" Scale9Height="392" ctype="ImageViewObjectData">
-            <Size X="512.0000" Y="392.0000" />
+          <AbstractNodeData Name="Sprite_1" ActionTag="-1205251509" Tag="685" IconVisible="False" LeftMargin="-146.3981" RightMargin="82.3981" TopMargin="15.6182" BottomMargin="-159.6181" ctype="SpriteObjectData">
+            <Size X="1024.0000" Y="784.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="371.6397" Y="241.1695" />
-            <Scale ScaleX="1.2853" ScaleY="1.2853" />
+            <Position X="365.6019" Y="232.3819" />
+            <Scale ScaleX="0.6108" ScaleY="0.6108" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3871" Y="0.3768" />
-            <PreSize X="0.5333" Y="0.6125" />
-            <FileData Type="Normal" Path="images/smallRes/how_to_play-512x392.png" Plist="" />
+            <PrePosition X="0.3808" Y="0.3631" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/mediumRes/how_to_play-512x392@2x.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

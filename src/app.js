@@ -95,7 +95,7 @@ var MainScene = cc.Scene.extend({
                 studioObj.playBtn.setScale( 0.7 );   
             }
             else if (cc.view.getFrameSize().width >= 1136) {                               
-                setProperties( 'bg_medium' , 'play_btn_small' , 'mediumRes' , '@2x' );                                                            
+                setProperties( 'bg_medium' , 'play_btn_small' , 'mediumRes' , '@2x' );                                                                            
             }
             else {                               
                 setProperties( 'bg_small' , 'play_btn_small');               
@@ -143,7 +143,9 @@ var MainScene = cc.Scene.extend({
      * perform some cleanup
      */  
     onExit : function() {        
-                                         
+        Physics.space.removeCollisionHandler(  1  , 2 );
+        GummyBubbles.cleanUp();
+        this.unschedule();                                  
     },                                                        
     
     

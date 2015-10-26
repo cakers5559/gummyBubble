@@ -25,7 +25,8 @@ var Physics = {
     
                     
     collisionBegin: function ( arbiter, space ) {       
-        console.log('collision begin');                       
+        console.log('collision begin'); 
+        GummyBubbles.gummyBubbleCollide = true;                             
         return true;
     },
     
@@ -55,6 +56,7 @@ var Physics = {
     createPhysicsSprite: function(path, x , y , tagNumber) {
                 
         var sprite = new cc.PhysicsSprite(path);
+        sprite.setTag( tagNumber );
         var contentSize = sprite.getContentSize();        
         var body = new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));                
         body.p = cc.p( x , y );                
