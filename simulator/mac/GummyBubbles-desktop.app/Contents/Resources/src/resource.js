@@ -1,6 +1,7 @@
 var res = {    
     MainScene_json : "res/MainScene.json",
-    GameScene_json : "res/GameScene.json",   
+    GameScene_json : "res/GameScene.json",
+    SettingsScene_json : "res/SettingScene.json",   
     bubble: "res/main_menu_assets",
     
     //Levels one json

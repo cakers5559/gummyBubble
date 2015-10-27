@@ -32,7 +32,9 @@ var MainScene = cc.Scene.extend({
         
         studioObj.playBtn.setVisible( true );                
         studioObj.playBtn.setPosition( size.width / 2 , (size.height / 2) / 2 );        
-        studioObj.playBtn.addTouchEventListener( this.touchEvent, this );        
+        studioObj.playBtn.addTouchEventListener( this.touchEvent, this );  
+        
+        studioObj.settingsBtn.addTouchEventListener( this.touchSettingsEvent, this );      
         
         studioObj.title.setPosition( size.width / 2 , ((size.height / 2) / 2) * 3 );   
                
@@ -67,6 +69,9 @@ var MainScene = cc.Scene.extend({
         // Get the main screen title and the background sunbrust
         studioObj.title = scene.node.getChildByName( 'gummy_bubbles_title' );
         studioObj.sunbrust = scene.node.getChildByName( 'sunbrust' );
+        studioObj.panel_settings = scene.node.getChildByName( "panel_settings" );
+        studioObj.settingsBtn = studioObj.panel_settings.getChildByName( "settings_btn" );
+        studioObj.settingsBtn.setPositionX( studioObj.settingsBtn.width - ( studioObj.settingsBtn.width / 2) );
         
         var setProperties = function(screen, btn, res, scale) {
                 console.log(screen + "  " + btn);
@@ -85,6 +90,10 @@ var MainScene = cc.Scene.extend({
                 if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) {                                       
                     studioObj.title.setScale( 2.0 );
                     studioObj.playBtn.setScale( 1.0 );
+                    studioObj.panel_settings.setScale( 2.0 );
+                    studioObj.panel_settings.setPosition( cc.p(-100, 0) ); 
+                    studioObj.settingsBtn.setPositionX( studioObj.settingsBtn.width );
+                    studioObj.settingsBtn.setPositionY( studioObj.settingsBtn.y + 125 );                    
                 }
                 
                 // iphone plus
@@ -122,19 +131,25 @@ var MainScene = cc.Scene.extend({
             console.log("PLAY BUTTON TOUCHED!");            
             cc.director.runScene( new cc.TransitionFade( 1.0, new GameScene() ) );
                         
-            break;
+            break;        
+        }
+    }, 
     
-        case ccui.Widget.TOUCH_MOVED:
-            
-            break;
     
-        case ccui.Widget.TOUCH_ENDED:
-            
-            break;
-    
-        case ccui.Widget.TOUCH_CANCELLED:
-            
-            break;                
+     /*
+     * when play button is tapped
+     */ 
+    touchSettingsEvent: function(sender, type) {
+        switch (type)
+        {
+        case ccui.Widget.TOUCH_BEGAN:            
+            Physics.space.removeCollisionHandler(  1  , 2 );
+            GummyBubbles.cleanUp();
+            this.unschedule();   
+            console.log("Setting TOUCHED!");            
+            cc.director.runScene( new cc.TransitionFade( 1.0, new SettingsScene() ) );
+                        
+            break;        
         }
     }, 
     

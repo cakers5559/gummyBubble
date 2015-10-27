@@ -31,9 +31,12 @@ var GameScene = cc.Scene.extend({
         this.studio = this.getCocosStudioAssets(this.gamescene);                        
 		this.studio.instructionLayer.setVisible( true );      
         this.studio.tapScreen.addTouchEventListener( this.touchEvent, this );
-        this.studio.pauseBtn.addTouchEventListener( this.onPause, this );        
-        
-        this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 25 );                                        
+        this.studio.pauseBtn.addTouchEventListener( this.onPause, this );                
+        this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 10 );
+        if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) {
+                this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 125 );
+                this.studio.pauseBtn.setPositionY( this.studio.pauseBtn.y + 125 );
+        }                                        
     },
     
     
@@ -106,7 +109,7 @@ var GameScene = cc.Scene.extend({
         studioObj.pauseBtn = studioObj.panel_level.getChildByName( "pause_btn" );
         studioObj.gummiesTxt = studioObj.panel_level.getChildByName( "gummies_txt" );              
         studioObj.gummiesTxt.width = studioObj.gummiesTxt.width + 50;
-        
+        console.log("THE POSITION "+studioObj.gummiesTxt.x);
         studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width - ( studioObj.pauseBtn.width / 2) );
         studioObj.gummiesTxt.setPositionX( size.width - ( studioObj.gummiesTxt.width + 20 ) );                                
         console.log("CLOUDS");        
@@ -130,8 +133,8 @@ var GameScene = cc.Scene.extend({
                     studioObj.panel_level.setScale( 2.0 );
                     studioObj.panel_level.setPosition( cc.p(-100, 0) ); 
                     studioObj.tapScreen.setPosition( cc.p(-100, 0) );  
-                    studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width );
-                    studioObj.gummiesTxt.setPositionX( size.width - ( size.width / 3 ) );                 
+                    studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width );                     
+                    studioObj.gummiesTxt.setPositionX( 790.00 );                
                 }
                 
                 // iphone plus

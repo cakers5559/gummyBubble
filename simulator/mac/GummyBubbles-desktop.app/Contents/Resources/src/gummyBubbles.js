@@ -1,4 +1,6 @@
+var gummyMode = "normal";
 console.log("Gummy Bubles");
+
 var GummyBubbles = {
     
     /*
@@ -186,7 +188,7 @@ var GummyBubbles = {
                                 size.width / 2 , basket.height / 2 , imageScale ); */
         this.basket = new cc.Sprite( pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png' );        
         this.scene.addChild(this.basket , 100000);
-        this.basket.setPosition( size.width / 2 , this.basket.height / 2 );
+        this.basket.setPosition( size.width / 2 , this.basket.height / 3 );
         this.basket.setScale(imageScale);                          
                         
         //if ( cc.sys.capabilities.hasOwnProperty( 'touches' ) )

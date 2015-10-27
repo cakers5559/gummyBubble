@@ -51,6 +51,10 @@
             <Image Name="fish-41x41@3x.png" />
             <Image Name="worm-34x42@3x.png" />
             <Image Name="how_to_play-512x392@3x.png" />
+            <Image Name="home-53x54@3x.png" />
+            <Image Name="settings-53x54@3x.png" />
+            <Image Name="home-dark-53x54@3x.png" />
+            <Image Name="settings-dark-53x54@3x.png" />
           </Folder>
           <Folder Name="mediumRes">
             <Image Name="basket-114x86@2x.png" />
@@ -98,6 +102,7 @@
           <Audio Name="sunny_day.mp3" />
           <Audio Name="shoot_out_bubble.mp3" />
         </Folder>
+        <Project Name="SettingScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>
