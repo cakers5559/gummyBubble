@@ -579,45 +579,6 @@
             "ctype": "ProjectNodeObjectData"
           },
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "game_screen_assets/layers/pause_screen/pause_small.json",
-              "Plist": ""
-            },
-            "InnerActionSpeed": 1.0,
-            "AnchorPoint": {},
-            "Position": {
-              "X": 0.0,
-              "Y": 1.0841
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": true,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0009
-            },
-            "PreSize": {
-              "X": 0.4348,
-              "Y": 0.5153
-            },
-            "RightMargin": 1248.0,
-            "TopMargin": 600.9159,
-            "BottomMargin": 1.0841,
-            "Tag": 96,
-            "ActionTag": 710557269,
-            "Size": {
-              "X": 960.0,
-              "Y": 640.0
-            },
-            "VisibleForFrame": false,
-            "Name": "pause_layer",
-            "ctype": "ProjectNodeObjectData"
-          },
-          {
             "BackColorAlpha": 0,
             "ComboBoxIndex": 1,
             "SingleColor": {
@@ -684,7 +645,6 @@
         "game_screen_assets/layers/level_1/bg_large_level_1.json",
         "game_screen_assets/layers/level_1/clouds_layer.json",
         "game_screen_assets/layers/level_1/mountains.json",
-        "game_screen_assets/layers/pause_screen/pause_small.json",
         "images/mediumRes/pause-53x54@2x.png",
         "images/mediumRes/pause-dark-53x54@2x.png"
       ],

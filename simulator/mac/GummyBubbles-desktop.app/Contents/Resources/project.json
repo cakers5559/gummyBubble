@@ -16,6 +16,7 @@
         "src/gummyBubbles.js",             
         "src/app.js",
         "src/game.js",
-        "src/settings.js"        
+        "src/settings.js",
+        "src/pause.js"
     ]
 }

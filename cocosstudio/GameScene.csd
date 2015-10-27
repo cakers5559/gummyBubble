@@ -147,16 +147,6 @@
             <PreSize X="0.4348" Y="0.5153" />
             <FileData Type="Normal" Path="game_screen_assets/layers/how_to_play_screen/how_to_play_small.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pause_layer" ActionTag="710557269" VisibleForFrame="False" Tag="96" IconVisible="True" RightMargin="1248.0000" TopMargin="600.9159" BottomMargin="1.0841" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
-            <Size X="960.0000" Y="640.0000" />
-            <AnchorPoint />
-            <Position Y="1.0841" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition Y="0.0009" />
-            <PreSize X="0.4348" Y="0.5153" />
-            <FileData Type="Normal" Path="game_screen_assets/layers/pause_screen/pause_small.csd" Plist="" />
-          </AbstractNodeData>
           <AbstractNodeData Name="tap_to_start_screen" CanEdit="False" ActionTag="-1627601985" Alpha="0" Tag="1423" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" TouchEnable="True" StretchWidthEnable="True" StretchHeightEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="2208.0000" Y="1242.0000" />
             <AnchorPoint />

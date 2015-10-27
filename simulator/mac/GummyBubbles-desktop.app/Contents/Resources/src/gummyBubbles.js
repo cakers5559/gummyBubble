@@ -1,5 +1,3 @@
-console.log("Gummy Bubles");
-
 var GummyBubbles = {
     
     /*
@@ -17,10 +15,12 @@ var GummyBubbles = {
                         'RIGHT-CURVE-UP-DOWN','RIGHT-CURVE-DOWN-UP','LEFT-RIGHT-SHAKE','RIGHT-LEFT-SHAKE'],
     gummyBubbleImages: ['bear-41x42','worm-34x42','fish-41x41'],
     gummyBubbleTag: 1,
-    gummyBubbleTags: [],                    
+    gummyBubbleTags: [], 
+    gummyBubblesStored: [],                   
     gummyLastRandomNumbers: [],    
-    gummyPoppedItems: [],
-    gummyScore: 0,                    
+    gummyPoppedItems: [],    
+    gummyScore: 0,
+    gummyPaused: false,                         
     
 	/************************************************************
      * Starts up the GummyBubbles shooter
@@ -125,7 +125,7 @@ var GummyBubbles = {
         bubble.setScale(imageScale);
         bubble.setTag( this.gummyBubbleTag );                       
         this.gummyBubbleTags.push(this.gummyBubbleTag);                                                               
-        
+        this.gummyBubblesStored.push( bubble );
         //if ( cc.sys.capabilities.hasOwnProperty( 'touches' ) )
         //{            
             cc.eventManager.addListener(this.bubbleTouchEvent(this), bubble);
@@ -188,7 +188,7 @@ var GummyBubbles = {
         this.basket = new cc.Sprite( pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png' );        
         this.scene.addChild(this.basket , 1000);                         
         this.basket.setPosition( size.width / 2 , this.basket.height / 3 );
-        this.basket.setScale(imageScale);                          
+        this.basket.setScale(imageScale);                                 
                         
         //if ( cc.sys.capabilities.hasOwnProperty( 'touches' ) )
         //{            
@@ -314,8 +314,7 @@ var GummyBubbles = {
         var pathToAssets = 'res/images/' + this.resFolderName;
         
         var removeSplash = function(splash) {
-            splash.removeFromParent();
-            console.log('Splash Removed ');
+            splash.removeFromParent();            
         }          
         
         // bubble splash   
@@ -329,20 +328,14 @@ var GummyBubbles = {
         // create gummy                  
         var gummy = Physics.createPhysicsSprite(gummyPath , loc.x , loc.y , tagNumber);        
         gummy.setScale(scale);
-        this.scene.addChild(gummy);                          
-        
-        console.log('TAG NUMBER '+tagNumber);                                        
+        this.scene.addChild(gummy);                                                                                  
     },                                        
     
     
     /*
      * Callback for when all fired bubbles is out of view
      */ 
-    onFireBubbleComplete: function() {                                    
-        //cc.eventManager.removeListeners(cc.EventListener.TOUCH_ONE_BY_ONE);
-        
-        console.log(this.gummyBubbleTags.join(","));
-        
+    onFireBubbleComplete: function() {                                                                    
         // clean up            
         for(var i = 0; i < this.gummyBubbleTags.length; i++) {            
             if(this.scene.mainscene) this.scene.mainscene.node.removeChildByTag( this.gummyBubbleTags[i] );
@@ -351,7 +344,8 @@ var GummyBubbles = {
                         
         this.gummyBubbleTag = 1;
         this.gummyBubbleTags = [];
-        this.gummyLastRandomNumbers = [];                  
+        this.gummyLastRandomNumbers = []; 
+        this.gummyBubblesStored = [];                 
         
         console.log("SHOOT ANOTHER ROUND OF BUBBLES! ITEM LEN - "+this.gummyPoppedItems.length);
         
@@ -366,8 +360,7 @@ var GummyBubbles = {
                 var body = this.gummyPoppedItems[i].body;
                 var shape = this.gummyPoppedItems[i].shape;                                             
                 
-                if(body) {                    
-                    console.log("IN THE BODY");
+                if(body) {                                        
                     Physics.space.removeShape(shape);
                     Physics.space.removeBody(body);
                     sprite.removeFromParent();                                                    
@@ -379,33 +372,35 @@ var GummyBubbles = {
     
     
     hideAllBubbles: function() {
-        for(var i = 0; i < this.gummyBubbleTags.length; i++) {                        
-            this.scene.gamescene.node.setVisible( false );
-        }  
         this.basket.setVisible( false );
+        
+        for(var i = 0; i < this.gummyBubblesStored.length; i++) {                                    
+            this.gummyBubblesStored[i].setVisible( false );            
+        }          
     },
     
     
     showAllBubbles: function() {                  
-        for(var i = 0; i < this.gummyBubbleTags.length; i++) {                        
-            this.scene.gamescene.node.setVisible( true );
-        }      
         this.basket.setVisible( true );
+        
+        for(var i = 0; i < this.gummyBubblesStored.length; i++) {                                    
+            this.gummyBubblesStored[i].setVisible( true );            
+        }   
     },
     
     
     cleanUp: function() {
         this.gummyBubbleTag = 1;
         this.gummyBubbleTags = [];
-        this.gummyLastRandomNumbers = []; 
+        this.gummyLastRandomNumbers = [];
+        this.gummyBubblesStored = []; 
         
         for( var i = 0; i < this.gummyPoppedItems.length; i++) { 
                 var sprite = this.gummyPoppedItems[i].sprite;
                 var body = this.gummyPoppedItems[i].body;
                 var shape = this.gummyPoppedItems[i].shape;                                             
                 
-                if(body) {                    
-                    console.log("IN THE BODY");
+                if(body) {                                        
                     Physics.space.removeShape(shape);
                     Physics.space.removeBody(body);
                     sprite.removeFromParent();                                                    

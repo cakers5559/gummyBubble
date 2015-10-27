@@ -28,9 +28,6 @@
               <Project Name="how_to_play_small.csd" Type="Layer" />
               <Project Name="how_to_play_super_large.csd" Type="Layer" />
             </Folder>
-            <Folder Name="pause_screen">
-              <Project Name="pause_small.csd" Type="Layer" />
-            </Folder>
           </Folder>
         </Folder>
         <Folder Name="images">
@@ -106,6 +103,7 @@
           <Audio Name="shoot_out_bubble.mp3" />
         </Folder>
         <Project Name="SettingScene.csd" Type="Scene" />
+        <Project Name="PauseScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

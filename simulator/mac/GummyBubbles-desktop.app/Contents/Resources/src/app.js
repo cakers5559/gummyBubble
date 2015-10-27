@@ -56,7 +56,9 @@ var MainScene = cc.Scene.extend({
                 null,
                 null,
                 Physics.collisionEnd.bind(this)
-        );                                     
+        );   
+        
+        if(GummyBubbles.gummyExit) cc.director.popToSceneStackLevel(1);                                  
     },
                
     
@@ -129,7 +131,7 @@ var MainScene = cc.Scene.extend({
             GummyBubbles.cleanUp();
             this.unschedule();   
             console.log("PLAY BUTTON TOUCHED!");            
-            cc.director.runScene( new cc.TransitionFade( 1.0, new GameScene() ) );
+            cc.director.replaceScene( new cc.TransitionFade( 1.0, new GameScene() ) );
                         
             break;        
         }

@@ -41,7 +41,7 @@ var SettingsScene = cc.Scene.extend({
             {
             case ccui.Widget.TOUCH_BEGAN:                        
                 kiddiesBtn.setEnabled(false);
-                normal.setEnabled(true);
+                normalBtn.setEnabled(true);
                 crazeBtn.setEnabled(true); 
                 gummyMode = "easy";                            
                 break;        
@@ -53,7 +53,7 @@ var SettingsScene = cc.Scene.extend({
             {
             case ccui.Widget.TOUCH_BEGAN:                        
                 kiddiesBtn.setEnabled(true);
-                normal.setEnabled(false);
+                normalBtn.setEnabled(false);
                 crazeBtn.setEnabled(true);
                 gummyMode = "normal";                                     
                 break;        
@@ -65,7 +65,7 @@ var SettingsScene = cc.Scene.extend({
             {
             case ccui.Widget.TOUCH_BEGAN:                        
                 kiddiesBtn.setEnabled(true);
-                normal.setEnabled(true);
+                normalBtn.setEnabled(true);
                 crazeBtn.setEnabled(false);
                 gummyMode = "hard";                                     
                 break;        
@@ -85,7 +85,7 @@ var SettingsScene = cc.Scene.extend({
         case ccui.Widget.TOUCH_BEGAN:                        
             GummyBubbles.cleanUp();            
             console.log("Back Home TOUCHED!");            
-            cc.director.runScene( new cc.TransitionFade( 1.0, new MainScene() ) );                        
+            cc.director.replaceScene( new cc.TransitionFade( 1.0, new MainScene() ) );                        
             break;        
         }
     }, 		
