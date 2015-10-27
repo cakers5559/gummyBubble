@@ -31,20 +31,30 @@ var GameScene = cc.Scene.extend({
         this.studio = this.getCocosStudioAssets(this.gamescene);                        
 		this.studio.instructionLayer.setVisible( true );      
         this.studio.tapScreen.addTouchEventListener( this.touchEvent, this );
+        this.studio.pauseBtn.addTouchEventListener( this.onPause, this );
+        
         this.studio.pauseBtn.addTouchEventListener( this.onPause, this );                
         this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 10 );
         if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) {
                 this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 125 );
                 this.studio.pauseBtn.setPositionY( this.studio.pauseBtn.y + 125 );
-        }                                        
+        } 
+        
+        var exit = this.studio.pauseScreen.node.getChildByName( "exit_btn" );
+        for(var i in exit) console.log(i);                                       
     },
     
     
-    onPause: function() {
+    onPause: function() {        
+        this.studio.pauseScreen.setVisible( true );
+        
+        //cc.director.pause();
+        //cc.director.stopAnimation();
+        //for(var i in cc.director) console.log(i);
+                
+        //this.studio.pauseScreen.node.removeFromParent(); 
+        //GummyBubbles.hideAllBubbles(); 
         console.log("PAUSED!!!");
-        cc.director.pause();
-        cc.director.stopAnimation();
-        for(var i in cc.director) console.log(i);
     },  
     
     /*
@@ -102,17 +112,16 @@ var GameScene = cc.Scene.extend({
         var size = cc.winSize;
         var studioObj = {};
         
-        studioObj.tapScreen = scene.node.getChildByName( "tap_to_start_screen" );
+        studioObj.tapScreen = scene.node.getChildByName( "tap_to_start_screen" );        
         studioObj.panel_level = scene.node.getChildByName( "panel_level_"+this.level.toString() );                                                         
         studioObj.clouds = studioObj.panel_level.getChildByName( "clouds" );                
         studioObj.mountains = studioObj.panel_level.getChildByName( "mountains" ); 
         studioObj.pauseBtn = studioObj.panel_level.getChildByName( "pause_btn" );
-        studioObj.gummiesTxt = studioObj.panel_level.getChildByName( "gummies_txt" );              
-        studioObj.gummiesTxt.width = studioObj.gummiesTxt.width + 50;
-        console.log("THE POSITION "+studioObj.gummiesTxt.x);
+        studioObj.gummiesTxt = studioObj.panel_level.getChildByName( "gummies_txt" );             
+        studioObj.pauseScreen = scene.node.getChildByName( "pause_layer" ); 
+        studioObj.gummiesTxt.width = studioObj.gummiesTxt.width + 50;        
         studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width - ( studioObj.pauseBtn.width / 2) );
-        studioObj.gummiesTxt.setPositionX( size.width - ( studioObj.gummiesTxt.width + 20 ) );                                
-        console.log("CLOUDS");        
+        studioObj.gummiesTxt.setPositionX( size.width - ( studioObj.gummiesTxt.width + 20 ) );                                                                       
         
         var setProperties = function(screen, btn, res, scale) {
                 console.log(screen + "  " + btn);
@@ -178,10 +187,7 @@ var GameScene = cc.Scene.extend({
         var starsDelay = cc.delayTime(1.0);                
         stars.runAction(cc.sequence(starsDelay, cc.callFunc(removeStars, this)));                        
     },     
-    
-    removeScoreEffect: function() {
-        
-    },
+           
     
     /*
      * when play button is tapped

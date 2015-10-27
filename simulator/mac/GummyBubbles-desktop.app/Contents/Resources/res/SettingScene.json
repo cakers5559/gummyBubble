@@ -30,9 +30,11 @@
               "ScaleY": 1.0
             },
             "TouchEnable": true,
-            "AnchorPoint": {},
+            "AnchorPoint": {
+              "ScaleX": 0.5
+            },
             "Position": {
-              "X": 0.0,
+              "X": 1104.0,
               "Y": 0.0
             },
             "Scale": {
@@ -42,7 +44,7 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.0,
+              "X": 0.5,
               "Y": 0.0
             },
             "PreSize": {
@@ -62,12 +64,11 @@
                   "Dst": 771
                 },
                 "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
+                  "ScaleX": 0.5
                 },
                 "Position": {
-                  "X": 457.4805,
-                  "Y": 247.088
+                  "X": 498.4817,
+                  "Y": -470.5698
                 },
                 "Scale": {
                   "ScaleX": 0.4784,
@@ -76,24 +77,25 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.2072,
-                  "Y": 0.1989
+                  "X": 0.2258,
+                  "Y": -0.3789
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": -1042.5195,
-                "RightMargin": 250.5195,
-                "TopMargin": -505.088,
-                "BottomMargin": -1252.912,
+                "HorizontalEdge": "BothEdge",
+                "LeftMargin": -1001.5183,
+                "RightMargin": 209.5183,
+                "TopMargin": -1287.4302,
+                "BottomMargin": -470.5698,
                 "Tag": 3484,
                 "ActionTag": -1925562501,
                 "Size": {
                   "X": 3000.0,
                   "Y": 3000.0
                 },
-                "Alpha": 25,
+                "Alpha": 12,
                 "Name": "sunbrust",
                 "ctype": "SpriteObjectData"
               }
@@ -344,6 +346,7 @@
               "Plist": ""
             },
             "HorizontalAlignmentType": "HT_Center",
+            "OutlineSize": 3,
             "OutlineColor": {
               "R": 127,
               "G": 127,
@@ -356,7 +359,7 @@
               "B": 0
             },
             "ShadowOffsetX": 5.0,
-            "ShadowOffsetY": -15.0,
+            "ShadowOffsetY": -10.0,
             "ShadowEnabled": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -390,7 +393,7 @@
             "ActionTag": -62075805,
             "Size": {
               "X": 796.0,
-              "Y": 119.0
+              "Y": 123.0
             },
             "Name": "settings_txt",
             "ctype": "TextObjectData"

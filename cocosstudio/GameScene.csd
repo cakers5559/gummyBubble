@@ -38,10 +38,10 @@
           <AbstractNodeData Name="panel_level_1" ActionTag="1761969222" Tag="1230" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" StretchWidthEnable="True" StretchHeightEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="2208.0000" Y="1242.0000" />
             <Children>
-              <AbstractNodeData Name="mountains" ActionTag="-444028172" Tag="1146" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="-105.4153" RightMargin="979.4153" TopMargin="458.8396" BottomMargin="33.1604" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="mountains" ActionTag="-444028172" Tag="1146" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="-105.3216" RightMargin="979.3215" TopMargin="458.8396" BottomMargin="33.1604" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
                 <Size X="1334.0000" Y="750.0000" />
                 <AnchorPoint />
-                <Position X="-105.4153" Y="33.1604" />
+                <Position X="-105.3216" Y="33.1604" />
                 <Scale ScaleX="0.7468" ScaleY="0.7468" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0477" Y="0.0267" />
@@ -58,17 +58,17 @@
                 <PreSize X="0.6042" Y="0.6039" />
                 <FileData Type="Normal" Path="game_screen_assets/layers/level_1/bg_large_level_1.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="clouds" ActionTag="-200723507" Tag="573" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="-109.6666" RightMargin="109.6665" TopMargin="-66.1389" BottomMargin="66.1389" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="clouds" ActionTag="-200723507" Tag="573" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="-109.7376" RightMargin="109.7375" TopMargin="-66.1389" BottomMargin="66.1389" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
                 <Size X="2208.0000" Y="1242.0000" />
                 <AnchorPoint />
-                <Position X="-109.6666" Y="66.1389" />
+                <Position X="-109.7376" Y="66.1389" />
                 <Scale ScaleX="0.4559" ScaleY="0.4559" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0497" Y="0.0533" />
                 <PreSize X="1.0000" Y="1.0000" />
                 <FileData Type="Normal" Path="game_screen_assets/layers/level_1/clouds_layer.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="pause_btn" ActionTag="1899077289" Tag="1183" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="0.8108" RightMargin="2101.1892" TopMargin="601.0432" BottomMargin="532.9568" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="76" Scale9Height="86" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="pause_btn" ActionTag="1899077289" Tag="1183" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="0.8108" RightMargin="2101.1892" TopMargin="601.0432" BottomMargin="532.9568" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="76" Scale9Height="86" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="106.0000" Y="108.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="53.8108" Y="586.9568" />
@@ -78,7 +78,7 @@
                 <PreSize X="0.0480" Y="0.0870" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                <PressedFileData Type="Normal" Path="images/mediumRes/pause-dark-53x54@2x.png" Plist="" />
                 <NormalFileData Type="Normal" Path="images/mediumRes/pause-53x54@2x.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -146,6 +146,16 @@
             <PrePosition />
             <PreSize X="0.4348" Y="0.5153" />
             <FileData Type="Normal" Path="game_screen_assets/layers/how_to_play_screen/how_to_play_small.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="pause_layer" ActionTag="710557269" VisibleForFrame="False" Tag="96" IconVisible="True" RightMargin="1248.0000" TopMargin="600.9159" BottomMargin="1.0841" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+            <Size X="960.0000" Y="640.0000" />
+            <AnchorPoint />
+            <Position Y="1.0841" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition Y="0.0009" />
+            <PreSize X="0.4348" Y="0.5153" />
+            <FileData Type="Normal" Path="game_screen_assets/layers/pause_screen/pause_small.csd" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="tap_to_start_screen" CanEdit="False" ActionTag="-1627601985" Alpha="0" Tag="1423" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" TouchEnable="True" StretchWidthEnable="True" StretchHeightEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="2208.0000" Y="1242.0000" />

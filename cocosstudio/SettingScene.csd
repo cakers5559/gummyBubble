@@ -9,23 +9,23 @@
           <AbstractNodeData Name="setting_panel" ActionTag="284772710" Tag="3483" IconVisible="False" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="2208.0000" Y="1242.0000" />
             <Children>
-              <AbstractNodeData Name="sunbrust" ActionTag="-1925562501" Alpha="25" Tag="3484" IconVisible="False" LeftMargin="-1042.5195" RightMargin="250.5195" TopMargin="-505.0880" BottomMargin="-1252.9120" ctype="SpriteObjectData">
+              <AbstractNodeData Name="sunbrust" ActionTag="-1925562501" Alpha="12" Tag="3484" IconVisible="False" HorizontalEdge="BothEdge" LeftMargin="-1001.5183" RightMargin="209.5183" TopMargin="-1287.4302" BottomMargin="-470.5698" ctype="SpriteObjectData">
                 <Size X="3000.0000" Y="3000.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="457.4805" Y="247.0880" />
+                <AnchorPoint ScaleX="0.5000" />
+                <Position X="498.4817" Y="-470.5698" />
                 <Scale ScaleX="0.4784" ScaleY="0.4784" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2072" Y="0.1989" />
+                <PrePosition X="0.2258" Y="-0.3789" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="images/largeRes/sunbrust-736x414@3x.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
             </Children>
-            <AnchorPoint />
-            <Position />
+            <AnchorPoint ScaleX="0.5000" />
+            <Position X="1104.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
+            <PrePosition X="0.5000" />
             <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="74" G="144" B="226" />
             <FirstColor A="255" R="150" G="200" B="255" />
@@ -80,8 +80,8 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="settings_txt" ActionTag="-62075805" Tag="3579" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="96.5627" RightMargin="1369.4374" TopMargin="679.4500" BottomMargin="443.5501" FontSize="100" LabelText="Gummy Difficulty" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="5.0000" ShadowOffsetY="-15.0000" ShadowEnabled="True" ctype="TextObjectData">
-            <Size X="796.0000" Y="119.0000" />
+          <AbstractNodeData Name="settings_txt" ActionTag="-62075805" Tag="3579" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="96.5627" RightMargin="1369.4374" TopMargin="679.4500" BottomMargin="443.5501" FontSize="100" LabelText="Gummy Difficulty" HorizontalAlignmentType="HT_Center" OutlineSize="3" OutlineEnabled="True" ShadowOffsetX="5.0000" ShadowOffsetY="-10.0000" ShadowEnabled="True" ctype="TextObjectData">
+            <Size X="796.0000" Y="123.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="467.5627" Y="503.0500" />
             <Scale ScaleX="0.4941" ScaleY="0.4941" />

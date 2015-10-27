@@ -1,4 +1,3 @@
-var gummyMode = "normal";
 console.log("Gummy Bubles");
 
 var GummyBubbles = {
@@ -18,8 +17,8 @@ var GummyBubbles = {
                         'RIGHT-CURVE-UP-DOWN','RIGHT-CURVE-DOWN-UP','LEFT-RIGHT-SHAKE','RIGHT-LEFT-SHAKE'],
     gummyBubbleImages: ['bear-41x42','worm-34x42','fish-41x41'],
     gummyBubbleTag: 1,
-    gummyBubbleTags: [],                
-    gummyLastRandomNumbers: [],
+    gummyBubbleTags: [],                    
+    gummyLastRandomNumbers: [],    
     gummyPoppedItems: [],
     gummyScore: 0,                    
     
@@ -121,10 +120,10 @@ var GummyBubbles = {
                  
         // create bubble   
         var bubble = new cc.Sprite( pathToAssets + '/bubble-89x84' + this.resScaledTimes + '.png' );        
-        this.scene.addChild(bubble);
+        this.scene.addChild(bubble , 1000);
         bubble.setPosition( startPoints[0] , startPoints[1] );
         bubble.setScale(imageScale);
-        bubble.setTag( this.gummyBubbleTag );
+        bubble.setTag( this.gummyBubbleTag );                       
         this.gummyBubbleTags.push(this.gummyBubbleTag);                                                               
         
         //if ( cc.sys.capabilities.hasOwnProperty( 'touches' ) )
@@ -187,7 +186,7 @@ var GummyBubbles = {
                                 pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png',
                                 size.width / 2 , basket.height / 2 , imageScale ); */
         this.basket = new cc.Sprite( pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png' );        
-        this.scene.addChild(this.basket , 100000);
+        this.scene.addChild(this.basket , 1000);                         
         this.basket.setPosition( size.width / 2 , this.basket.height / 3 );
         this.basket.setScale(imageScale);                          
                         
@@ -376,6 +375,22 @@ var GummyBubbles = {
         } 
            
         this.gummyPoppedItems = [];                              
+    },
+    
+    
+    hideAllBubbles: function() {
+        for(var i = 0; i < this.gummyBubbleTags.length; i++) {                        
+            this.scene.gamescene.node.setVisible( false );
+        }  
+        this.basket.setVisible( false );
+    },
+    
+    
+    showAllBubbles: function() {                  
+        for(var i = 0; i < this.gummyBubbleTags.length; i++) {                        
+            this.scene.gamescene.node.setVisible( true );
+        }      
+        this.basket.setVisible( true );
     },
     
     

@@ -55,6 +55,7 @@
             <Image Name="settings-53x54@3x.png" />
             <Image Name="home-dark-53x54@3x.png" />
             <Image Name="settings-dark-53x54@3x.png" />
+            <Image Name="pause-dark-53x54@3x.png" />
           </Folder>
           <Folder Name="mediumRes">
             <Image Name="basket-114x86@2x.png" />
@@ -73,6 +74,7 @@
             <Image Name="fish-41x41@2x.png" />
             <Image Name="worm-34x42@2x.png" />
             <Image Name="how_to_play-512x392@2x.png" />
+            <Image Name="pause-dark-53x54@2x.png" />
           </Folder>
           <Folder Name="smallRes">
             <Image Name="basket-114x86.png" />
@@ -91,6 +93,7 @@
             <Image Name="fish-41x41.png" />
             <Image Name="worm-34x42.png" />
             <Image Name="how_to_play-512x392.png" />
+            <Image Name="pause-dark-53x54.png" />
           </Folder>
           <PlistParticleFile Name="score.plist" />
         </Folder>
