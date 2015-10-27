@@ -54,7 +54,7 @@ var PauseScene = cc.Scene.extend({
             switch (type)
             {
             case ccui.Widget.TOUCH_BEGAN:                                                                                                                               
-                    console.log("Exit the pause");
+                    console.log("Exit the pause");                    
                     cc.director.resume();              
                     cc.director.popToSceneStackLevel(1);
                     cc.director.replaceScene(new MainScene());                                                                                                                                                                    

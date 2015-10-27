@@ -9,7 +9,8 @@ var GummyBubbles = {
     basket: null,      
 	gummyBubbleSpeed: 10,                
     gummyBubblesOnScreen: 5,
-    gummyBubbleDelayBetweenShoot: 2,         
+    gummyLevel: 1,
+    gummyBubbleDelayBetweenShoot: 1,           
     gummyBubblesTypes: ['LEFT-RIGHT','RIGHT-LEFT','LEFT-UP-DIAGONAL-DOWN','RIGHT-UP-DIAGONAL-DOWN',
                         'LEFT-DOWN-DIAGONAL-UP','RIGHT-DOWN-DIAGONAL-UP','LEFT-CURVE-UP-DOWN','LEFT-CURVE-DOWN-UP',
                         'RIGHT-CURVE-UP-DOWN','RIGHT-CURVE-DOWN-UP','LEFT-RIGHT-SHAKE','RIGHT-LEFT-SHAKE'],
@@ -20,7 +21,9 @@ var GummyBubbles = {
     gummyLastRandomNumbers: [],    
     gummyPoppedItems: [],    
     gummyScore: 0,
-    gummyPaused: false,                         
+    gummyPaused: false,
+    gummyComboTouches: 0,
+    gummyInBasket: 0,                        
     
 	/************************************************************
      * Starts up the GummyBubbles shooter
@@ -123,7 +126,8 @@ var GummyBubbles = {
         this.scene.addChild(bubble , 1000);
         bubble.setPosition( startPoints[0] , startPoints[1] );
         bubble.setScale(imageScale);
-        bubble.setTag( this.gummyBubbleTag );                       
+        bubble.setTag( this.gummyBubbleTag );
+        bubble.isPopped = false;                               
         this.gummyBubbleTags.push(this.gummyBubbleTag);                                                               
         this.gummyBubblesStored.push( bubble );
         //if ( cc.sys.capabilities.hasOwnProperty( 'touches' ) )
@@ -150,7 +154,7 @@ var GummyBubbles = {
             var move_rep = move_seq.repeatForever();
             bubble.runAction( move_rep );           
         }   
-                                    
+                                   
         // Add the bezier wave motion to bubble
         if(bezierTo) {                
                 //var controlPoints = [ cc.p(size.width / 2, size.height), cc.p(size.width / 2, size.height), cc.p(size.width, 0) ];
@@ -230,23 +234,31 @@ var GummyBubbles = {
     bubbleTouchEvent: function(self) {
         return {
             event: cc.EventListener.TOUCH_ONE_BY_ONE,
-            onTouchBegan: function (touch, event) {                   
+            onTouchBegan: function (touch, event) {                                                                   
                 // event.getCurrentTarget() returns the *listener's* sceneGraphPriority node.   
                 var target = event.getCurrentTarget();  
-        
+                
                 //Get the position of the current point relative to the button
                 var locationInNode = target.convertToNodeSpace(touch.getLocation());    
                 var s = target.getContentSize();
                 var rect = cc.rect(0, 0, s.width, s.height);
         
                 //Check the click area
-                if (cc.rectContainsPoint(rect, locationInNode)) {                                                       
-                    target.setVisible( false );                                        
+                if (cc.rectContainsPoint(rect, locationInNode)) { 
+                    self.gummyComboTouches++; 
+                    console.log("Combo Touches: "+self.gummyComboTouches);                                                     
+                    target.setVisible( false ); 
+                    target.isPopped = true;                                       
                     cc.eventManager.removeListeners( target );
                     self.bubblePop(target.getPosition() , target.childGummyPath, target.getTag(), target.bubbleScale);                                        
                     return true;
                 }
                 return false;                                                      
+            },
+            
+            onTouchEnded: function (touch, event) {
+               console.log("Touch Ended");
+               self.gummyComboTouches = 0;  
             }
         }
     },
@@ -335,26 +347,45 @@ var GummyBubbles = {
     /*
      * Callback for when all fired bubbles is out of view
      */ 
-    onFireBubbleComplete: function() {                                                                    
-        // clean up            
+    onFireBubbleComplete: function() {                                                                            
+        var poppedTotal = this.gummyBubblesStored.length;
+        var howManyPopped = 0;
+        
+        // clean up                   
         for(var i = 0; i < this.gummyBubbleTags.length; i++) {            
             if(this.scene.mainscene) this.scene.mainscene.node.removeChildByTag( this.gummyBubbleTags[i] );
-            else this.scene.gamescene.node.removeChildByTag( this.gummyBubbleTags[i] );
-        }        
+            else this.scene.gamescene.node.removeChildByTag( this.gummyBubbleTags[i] );                            
+        }                                        
+        
+        if(this.scene.gamescene) {
+            for(var i = 0; i < this.gummyBubblesStored.length; i++) {
+                var bub = this.gummyBubblesStored[i];
+                if(bub.isPopped) {
+                    console.log("Popped");               
+                    howManyPopped++;
+                }
+                else {
+                    console.log("Not Popped");
+                    this.gummyScore--;
+                    this.scene.studio.gummiesTxt.setString( "Gummies: "+ this.gummyScore);
+                }
+            } 
+            console.log("H: "+howManyPopped+"  P: "+poppedTotal+"  B: "+this.gummyInBasket);
+            if(howManyPopped === poppedTotal && this.gummyInBasket === poppedTotal) {            
+                this.gummyLevel++;
+                this.scene.levelChange();
+            }
+            else if(howManyPopped !== this.gummyInBasket) {
+                
+            } 
+        }      
                         
         this.gummyBubbleTag = 1;
         this.gummyBubbleTags = [];
         this.gummyLastRandomNumbers = []; 
         this.gummyBubblesStored = [];                 
+        this.gummyInBasket = [];                         
         
-        console.log("SHOOT ANOTHER ROUND OF BUBBLES! ITEM LEN - "+this.gummyPoppedItems.length);
-        
-        for(var g = 0; g < this.gummyBubblesOnScreen; g++) {                        
-            var gummyRandom = this.generateRandomNumber();            
-            this.bubbleInit(this.gummyBubblesTypes[gummyRandom]);                                               
-            this.gummyBubbleTag++;            
-        }   
-                              
         for( var i = 0; i < this.gummyPoppedItems.length; i++) { 
                 var sprite = this.gummyPoppedItems[i].sprite;
                 var body = this.gummyPoppedItems[i].body;
@@ -365,9 +396,17 @@ var GummyBubbles = {
                     Physics.space.removeBody(body);
                     sprite.removeFromParent();                                                    
                 }
-        } 
-           
-        this.gummyPoppedItems = [];                              
+        }                   
+        
+        this.gummyPoppedItems = [];  
+        
+        console.log("YOUR GUMMY SCORE IS - "+this.gummyScore);
+        
+        for(var g = 0; g < this.gummyBubblesOnScreen; g++) {                        
+            var gummyRandom = this.generateRandomNumber();            
+            this.bubbleInit(this.gummyBubblesTypes[gummyRandom]);                                               
+            this.gummyBubbleTag++;            
+        }                                                                                                         
     },
     
     
@@ -393,7 +432,14 @@ var GummyBubbles = {
         this.gummyBubbleTag = 1;
         this.gummyBubbleTags = [];
         this.gummyLastRandomNumbers = [];
-        this.gummyBubblesStored = []; 
+        this.gummyBubblesStored = [];
+        this.gummyInBasket = [];
+        this.gummyLevel = 1; 
+        this.gummyScore = 0;
+        if(!this.scene.gamescene) {
+            this.gummyBubbleSpeed = 10;                
+            this.gummyBubblesOnScreen = 5;
+        }
         
         for( var i = 0; i < this.gummyPoppedItems.length; i++) { 
                 var sprite = this.gummyPoppedItems[i].sprite;

@@ -104,6 +104,7 @@
         </Folder>
         <Project Name="SettingScene.csd" Type="Scene" />
         <Project Name="PauseScene.csd" Type="Scene" />
+        <Project Name="GameOverScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -15,8 +15,10 @@ var GameScene = cc.Scene.extend({
      */
     onEnter:function () {
         this._super();                                                       
-        
-        if(!GummyBubbles.gummyPaused) {
+                        
+        if(!GummyBubbles.gummyPaused) {           
+            this.levelChange();
+            
             // init Physics        
             Physics.initPhysics();        
             this.scheduleUpdate();                              
@@ -82,7 +84,7 @@ var GameScene = cc.Scene.extend({
         
         // create the gummies basket
         GummyBubbles.basketInit();
-        
+        console.log("The Gummy Mode is: "+GummyBubbles.gummyBubblesOnScreen + "  "+ GummyBubbles.gummyBubbleSpeed);
         // start shooting out gummy bubbles                
         for(var g = 0; g < GummyBubbles.gummyBubblesOnScreen; g++) {                        
             var gummyRandom = GummyBubbles.generateRandomNumber();            
@@ -177,8 +179,23 @@ var GameScene = cc.Scene.extend({
         this.addChild(stars);  
         console.log("YOUR GUMMY SCORE IS: "+GummyBubbles.gummyScore);
         var starsDelay = cc.delayTime(1.0);                
-        stars.runAction(cc.sequence(starsDelay, cc.callFunc(removeStars, this)));                        
-    },     
+        stars.runAction(cc.sequence(starsDelay, cc.callFunc(removeStars, this)));                                      
+    }, 
+    
+    
+    levelChange: function() {  
+       console.log("THIS LEVEL IS: "+GummyBubbles.gummyLevel)
+       if("level"+GummyBubbles.gummyLevel in this.Level) {
+            GummyBubbles.gummyBubblesOnScreen = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][0];
+            GummyBubbles.gummyBubbleSpeed = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][1];
+       }
+       else {            
+            console.log("YOU WIN!!!");
+            GummyBubbles.gummyLevel--;
+            GummyBubbles.gummyBubblesOnScreen = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][0];
+            GummyBubbles.gummyBubbleSpeed = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][1];
+       }
+    },    
            
     
     /*
@@ -190,7 +207,7 @@ var GameScene = cc.Scene.extend({
         case ccui.Widget.TOUCH_BEGAN:  
             console.log("Start the Game");            
             this.studio.tapScreen.removeFromParent();                      
-            this.studio.instructionLayer.removeFromParent();            
+            this.studio.instructionLayer.removeFromParent();                        
             this.initGame();            
             break;        
         }
@@ -219,11 +236,48 @@ var GameScene = cc.Scene.extend({
                     sprite.removeFromParent();                                                    
                 }
                 GummyBubbles.gummyPoppedItems.splice( i , 1);
-                GummyBubbles.gummyScore++;                                                
+                GummyBubbles.gummyScore++; 
+                GummyBubbles.gummyInBasket++;                                               
                 this.studio.gummiesTxt.setString( "Gummies: "+ GummyBubbles.gummyScore);                                 
                 this.scoreEffect( GummyBubbles.basket.x , GummyBubbles.basket.height+40 );        
             }
+        }
+        
+        if(GummyBubbles.gummyScore < 0) {
+            console.log("GAME OVER!")
+            cc.director.pause();
         }     
+    },
+    
+    
+    /*************************
+     * LEVELS
+     * ************************ */
+    Level : {
+	
+        level1 : {
+            easy: [1,10],
+            normal:	[1,8],
+            hard: [2,8],
+        },
+        
+        level2 : {
+            easy: [2,10],
+            normal:	[2,7],
+            hard: [3,8],
+        },
+        
+        level3 : {
+            easy: [2,8],
+            normal:	[2,7],
+            hard: [3,8],
+        },
+        
+        level4 : {
+            easy: [3,8],
+            normal:	[3,7],
+            hard: [4,8],
+        }
     }	       
 });
  

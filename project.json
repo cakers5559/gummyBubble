@@ -15,8 +15,9 @@
         "src/physics.js",
         "src/gummyBubbles.js",             
         "src/app.js",
-        "src/game.js",
+        "src/game.js",        
         "src/settings.js",
-        "src/pause.js"
+        "src/pause.js",
+        "src/gameOver.js"
     ]
 }
