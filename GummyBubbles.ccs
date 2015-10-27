@@ -88,6 +88,7 @@
             <Image Name="worm-34x42.png" />
             <Image Name="how_to_play-512x392.png" />
           </Folder>
+          <PlistParticleFile Name="score.plist" />
         </Folder>
         <Project Name="GameScene.csd" Type="Scene" />
         <TTF Name="Bobbleboddy.ttf" />

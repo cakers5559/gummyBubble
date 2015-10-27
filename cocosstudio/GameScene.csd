@@ -61,20 +61,20 @@
               <AbstractNodeData Name="clouds" ActionTag="-200723507" Tag="573" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="-101.7198" RightMargin="-58.2803" TopMargin="227.8613" BottomMargin="66.1386" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
                 <Size X="2208.0000" Y="1242.0000" />
                 <AnchorPoint />
-                <Position X="-101.7198" Y="66.1386" />
+                <Position X="-101.7198" Y="66.1387" />
                 <Scale ScaleX="0.4559" ScaleY="0.4559" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0497" Y="0.0431" />
                 <PreSize X="1.6552" Y="1.6560" />
                 <FileData Type="Normal" Path="game_screen_assets/layers/level_1/clouds_layer.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="pause_btn" ActionTag="1899077289" Tag="1183" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="0.8107" RightMargin="1941.1893" TopMargin="906.0419" BottomMargin="521.9581" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="76" Scale9Height="86" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="pause_btn" ActionTag="1899077289" Tag="1183" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="0.8108" RightMargin="1941.1892" TopMargin="895.0426" BottomMargin="532.9574" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="76" Scale9Height="86" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="106.0000" Y="108.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="53.8107" Y="575.9581" />
+                <Position X="53.8108" Y="586.9574" />
                 <Scale ScaleX="0.6091" ScaleY="0.6091" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0263" Y="0.3750" />
+                <PrePosition X="0.0263" Y="0.3821" />
                 <PreSize X="0.0480" Y="0.0870" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
@@ -83,13 +83,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gummies_txt" ActionTag="-528661809" Tag="1184" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="693.6075" RightMargin="1146.3926" TopMargin="936.0616" BottomMargin="550.9384" FontSize="40" LabelText="Gummies : 0	" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
-                <Size X="208.0000" Y="49.0000" />
-                <AnchorPoint ScaleX="0.4510" ScaleY="0.4234" />
-                <Position X="787.4174" Y="571.6836" />
+              <AbstractNodeData Name="gummies_txt" ActionTag="-528661809" Tag="1184" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="TopEdge" LeftMargin="733.2155" RightMargin="1115.7844" TopMargin="922.0618" BottomMargin="564.9382" IsCustomSize="True" FontSize="40" LabelText="Gummies: 0" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+                <Size X="199.0000" Y="49.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="733.2156" Y="589.4382" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3845" Y="0.3722" />
+                <PrePosition X="0.3580" Y="0.3837" />
                 <PreSize X="0.0498" Y="0.0185" />
                 <FontResource Type="Normal" Path="Bobbleboddy.ttf" Plist="" />
                 <OutlineColor A="255" R="127" G="127" B="127" />

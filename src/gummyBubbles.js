@@ -6,7 +6,8 @@ var GummyBubbles = {
      */
     scene: null,
     resFolderName:  "smallRes",
-    resScaledTimes: "",       
+    resScaledTimes: "", 
+    basket: null,      
 	gummyBubbleSpeed: 10,                
     gummyBubblesOnScreen: 5,
     gummyBubbleDelayBetweenShoot: 2,         
@@ -17,7 +18,8 @@ var GummyBubbles = {
     gummyBubbleTag: 1,
     gummyBubbleTags: [],                
     gummyLastRandomNumbers: [],
-    gummyPoppedItems: [],                    
+    gummyPoppedItems: [],
+    gummyScore: 0,                    
     
 	/************************************************************
      * Starts up the GummyBubbles shooter
@@ -27,10 +29,7 @@ var GummyBubbles = {
         var pathToAssets = 'res/images/' + this.resFolderName;                 
                        
         // Set the Bubble scale base on device        
-        var imageScale = 1;                        
-        if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) imageScale = 0.8;        
-        else if (this.resScaledTimes === '@3x' && cc.view.getFrameSize().width !== 2048 && cc.view.getFrameSize().height !== 1536) imageScale = 0.5;       
-        else if (this.resScaledTimes === '@2x') imageScale = 0.7;                          
+        var imageScale = this.getImageScale();                    
      
         // Fire a bubble
         var RIGHT = (size.width + (size.width / 4));
@@ -113,7 +112,7 @@ var GummyBubbles = {
                 startPoints = [ LEFT , MIDDLEY ];
                 endPoints = [ RIGHT , MIDDLEY ]; 
             break;                  
-        }
+        }                
                  
         // create bubble   
         var bubble = new cc.Sprite( pathToAssets + '/bubble-89x84' + this.resScaledTimes + '.png' );        
@@ -171,6 +170,41 @@ var GummyBubbles = {
     
     
     /*
+     * create the basket for catching gummies
+     */
+    basketInit: function() {
+        var size = cc.winSize;                                  
+        var pathToAssets = 'res/images/' + this.resFolderName;
+        var imageScale = this.getImageScale();
+        
+        // create basket
+        /*var basket = Physics.addStaticObject( this.scene, 
+                                pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png',
+                                size.width / 2 , basket.height / 2 , imageScale ); */
+        this.basket = new cc.Sprite( pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png' );        
+        this.scene.addChild(this.basket , 100000);
+        this.basket.setPosition( size.width / 2 , this.basket.height / 2 );
+        this.basket.setScale(imageScale);                          
+                        
+        //if ( cc.sys.capabilities.hasOwnProperty( 'touches' ) )
+        //{            
+            cc.eventManager.addListener(this.basketTouchEvent(this), this.basket);
+        //}  
+    },
+    
+    
+    getImageScale: function() {
+        // Set the Bubble scale base on device        
+        var imageScale = 1;                        
+        if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) imageScale = 0.8;        
+        else if (this.resScaledTimes === '@3x' && cc.view.getFrameSize().width !== 2048 && cc.view.getFrameSize().height !== 1536) imageScale = 0.5;       
+        else if (this.resScaledTimes === '@2x') imageScale = 0.7;    
+        
+        return imageScale;
+    },
+    
+    
+    /*
      * generates a geniune random number for bubble maker
      */
     generateRandomNumber: function() {                
@@ -209,6 +243,57 @@ var GummyBubbles = {
                     return true;
                 }
                 return false;                                                      
+            }
+        }
+    },
+    
+    
+    /*
+     * touch event for when a bubble is tapped/touched
+     */
+    basketTouchEvent: function(self) {
+        var size = cc.winSize;
+        
+        return {
+            event: cc.EventListener.TOUCH_ONE_BY_ONE,
+            swallowTouches: true,
+            onTouchBegan: function (touch, event) {
+                var target = event.getCurrentTarget();
+        
+                var locationInNode = target.convertToNodeSpace(touch.getLocation());
+                var s = target.getContentSize();
+                var rect = cc.rect(0, 0, s.width, s.height);
+        
+                if (cc.rectContainsPoint(rect, locationInNode)) {
+                    cc.log("sprite began... x = " + locationInNode.x + ", y = " + locationInNode.y);
+                    target.opacity = 180;
+                    return true;
+                }
+                return false;
+            },
+            onTouchMoved: function (touch, event) {
+                var target = event.getCurrentTarget();
+                var delta = touch.getDelta();
+                if( target.x >= (target.width/2) && target.x <= (size.width - (target.width/2))) {
+                    target.x += delta.x;
+                }              
+                else if( target.x < target.width ) {
+                    target.x = (target.width/2) + 10;
+                }
+                else if( target.x > (size.width - (target.width/2))) {
+                    target.x = size.width - (target.width/2) - 10;
+                }
+                //target.y += delta.y;
+            },
+            onTouchEnded: function (touch, event) {
+                var target = event.getCurrentTarget();
+                cc.log("sprite onTouchesEnded.. ");
+                target.setOpacity(255);
+                if (target == sprite2) {
+                    containerForSprite1.setLocalZOrder(100);
+                } else if (target == sprite1) {
+                    containerForSprite1.setLocalZOrder(0);
+                }
             }
         }
     },

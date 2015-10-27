@@ -244,7 +244,7 @@
                 "AnchorPoint": {},
                 "Position": {
                   "X": -101.7198,
-                  "Y": 66.1386
+                  "Y": 66.1387
                 },
                 "Scale": {
                   "ScaleX": 0.4559,
@@ -320,8 +320,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 53.8107,
-                  "Y": 575.9581
+                  "X": 53.8108,
+                  "Y": 586.9574
                 },
                 "Scale": {
                   "ScaleX": 0.6091,
@@ -331,7 +331,7 @@
                 "IconVisible": false,
                 "PrePosition": {
                   "X": 0.0263,
-                  "Y": 0.375
+                  "Y": 0.3821
                 },
                 "PreSize": {
                   "X": 0.048,
@@ -339,10 +339,10 @@
                 },
                 "HorizontalEdge": "LeftEdge",
                 "VerticalEdge": "TopEdge",
-                "LeftMargin": 0.8107,
-                "RightMargin": 1941.1893,
-                "TopMargin": 906.0419,
-                "BottomMargin": 521.9581,
+                "LeftMargin": 0.8108,
+                "RightMargin": 1941.1892,
+                "TopMargin": 895.0426,
+                "BottomMargin": 532.9574,
                 "Tag": 1183,
                 "ActionTag": 1899077289,
                 "Size": {
@@ -353,8 +353,9 @@
                 "ctype": "ButtonObjectData"
               },
               {
+                "IsCustomSize": true,
                 "FontSize": 40,
-                "LabelText": "Gummies : 0\t",
+                "LabelText": "Gummies: 0",
                 "FontResource": {
                   "Type": "Normal",
                   "Path": "Bobbleboddy.ttf",
@@ -377,12 +378,11 @@
                 "ShadowOffsetY": -2.0,
                 "ShadowEnabled": true,
                 "AnchorPoint": {
-                  "ScaleX": 0.451,
-                  "ScaleY": 0.4234
+                  "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 787.4174,
-                  "Y": 571.6836
+                  "X": 733.2156,
+                  "Y": 589.4382
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -391,23 +391,23 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.3845,
-                  "Y": 0.3722
+                  "X": 0.358,
+                  "Y": 0.3837
                 },
                 "PreSize": {
                   "X": 0.0498,
                   "Y": 0.0185
                 },
-                "HorizontalEdge": "BothEdge",
-                "VerticalEdge": "BothEdge",
-                "LeftMargin": 693.6075,
-                "RightMargin": 1146.3926,
-                "TopMargin": 936.0616,
-                "BottomMargin": 550.9384,
+                "HorizontalEdge": "RightEdge",
+                "VerticalEdge": "TopEdge",
+                "LeftMargin": 733.2155,
+                "RightMargin": 1115.7844,
+                "TopMargin": 922.0618,
+                "BottomMargin": 564.9382,
                 "Tag": 1184,
                 "ActionTag": -528661809,
                 "Size": {
-                  "X": 208.0,
+                  "X": 199.0,
                   "Y": 49.0
                 },
                 "Name": "gummies_txt",

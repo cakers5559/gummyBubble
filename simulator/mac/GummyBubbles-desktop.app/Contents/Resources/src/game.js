@@ -14,8 +14,7 @@ var GameScene = cc.Scene.extend({
      * initial setup, treat as contructor
      */
     onEnter:function () {
-        this._super();                                       
-        var size = cc.winSize;
+        this._super();                                                       
         
         // init Physics        
         Physics.initPhysics();        
@@ -26,12 +25,13 @@ var GameScene = cc.Scene.extend({
                         
         // add the scene to the view
         this.gamescene = ccs.load(res.GameScene_json);                        
-        this.addChild(this.gamescene.node);                        
-      
+        this.addChild(this.gamescene.node);                                              
+        
         // setup Studio assets    
-        studio = this.getCocosStudioAssets(this.gamescene);                        
-		studio.instructionLayer.setVisible( true );
-        studio.tapScreen.addTouchEventListener( this.touchEvent, this );                                        
+        this.studio = this.getCocosStudioAssets(this.gamescene);                        
+		this.studio.instructionLayer.setVisible( true );      
+        this.studio.tapScreen.addTouchEventListener( this.touchEvent, this );
+        this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 25 );                                        
     },
     
     
@@ -46,20 +46,22 @@ var GameScene = cc.Scene.extend({
     /*
      * start the game
      */  
-    initGame : function() {        
-        
-        var moveAnimation = function( pXY ) {
-            var move = cc.moveBy( 400.0 , pXY );
+    initGame : function() {                        
+        var moveAnimation = function( time , pXY ) {
+            var move = cc.moveBy( time , pXY );
             var move_back = move.reverse();
             var delay = cc.delayTime(0.25);
             var move_seq = cc.sequence( move, move_back );
             var move_rep = move_seq.repeatForever(); 
             return move_rep;        
         };
-        
+                       
+        this.studio.clouds.runAction( moveAnimation( 400.0 , cc.p(0 - this.studio.clouds.width , this.studio.clouds.y) ) );  
+        this.studio.mountains.runAction( moveAnimation( 20.0 , cc.p( 40  , this.studio.mountains.y) ) );                        
         console.log("Starte ititidka");
-        studio.clouds.runAction( moveAnimation( cc.p(0 - studio.clouds.width , studio.clouds.y) ) );  
-        studio.mountains.runAction( moveAnimation( cc.p( studio.mountains.x + 250 , studio.mountains.y) ) );
+        
+        // create the gummies basket
+        GummyBubbles.basketInit();
         
         // start shooting out gummy bubbles                
         for(var g = 0; g < GummyBubbles.gummyBubblesOnScreen; g++) {                        
@@ -82,14 +84,19 @@ var GameScene = cc.Scene.extend({
      * get and set all the studio assets from Cocos Studio
      */  
     getCocosStudioAssets: function(scene) {                                                         
+        var size = cc.winSize;
         var studioObj = {};
         
         studioObj.tapScreen = scene.node.getChildByName( "tap_to_start_screen" );
         studioObj.panel_level = scene.node.getChildByName( "panel_level_"+this.level.toString() );                                                         
         studioObj.clouds = studioObj.panel_level.getChildByName( "clouds" );                
-        studioObj.mountains = studioObj.panel_level.getChildByName( "mountains" );                
-                                
-        console.log("CLOUDS");
+        studioObj.mountains = studioObj.panel_level.getChildByName( "mountains" ); 
+        studioObj.pauseBtn = studioObj.panel_level.getChildByName( "pause_btn" );
+        studioObj.gummiesTxt = studioObj.panel_level.getChildByName( "gummies_txt" );              
+        
+        studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width - ( studioObj.pauseBtn.width / 2) );
+        studioObj.gummiesTxt.setPositionX( size.width - ( studioObj.gummiesTxt.width + 20 ) );                                
+        console.log("CLOUDS");        
         
         var setProperties = function(screen, btn, res, scale) {
                 console.log(screen + "  " + btn);
@@ -109,7 +116,9 @@ var GameScene = cc.Scene.extend({
                     studioObj.instructionLayer.setPosition( cc.p(-100, 0) );
                     studioObj.panel_level.setScale( 2.0 );
                     studioObj.panel_level.setPosition( cc.p(-100, 0) ); 
-                    studioObj.tapScreen.setPosition( cc.p(-100, 0) );                   
+                    studioObj.tapScreen.setPosition( cc.p(-100, 0) );  
+                    studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width );
+                    studioObj.gummiesTxt.setPositionX( size.width - ( size.width / 3 ) );                 
                 }
                 
                 // iphone plus
@@ -132,8 +141,28 @@ var GameScene = cc.Scene.extend({
         } 
         
         return studioObj;       
-    }, 
+    },
     
+    
+    scoreEffect: function(x , y) {
+        var stars = cc.ParticleSystem( "res/images/score.plist" );        
+        
+        var removeStars = function(s) {
+            s.removeFromParent();
+            console.log('Stars Removed ');
+        }    
+        
+        stars.setScale( 0.3 );
+        stars.setPosition( x , y );        
+        this.addChild(stars);  
+        console.log("YOUR GUMMY SCORE IS: "+GummyBubbles.gummyScore);
+        var starsDelay = cc.delayTime(3.0);                
+        stars.runAction(cc.sequence(starsDelay, cc.callFunc(removeStars, this)));                        
+    },     
+    
+    removeScoreEffect: function() {
+        
+    },
     
     /*
      * when play button is tapped
@@ -143,8 +172,8 @@ var GameScene = cc.Scene.extend({
         {
         case ccui.Widget.TOUCH_BEGAN:  
             console.log("Start the Game");            
-            studio.tapScreen.removeFromParent();                      
-            studio.instructionLayer.removeFromParent();            
+            this.studio.tapScreen.removeFromParent();                      
+            this.studio.instructionLayer.removeFromParent();            
             this.initGame();            
             break;        
         }
@@ -157,8 +186,30 @@ var GameScene = cc.Scene.extend({
      */        
     update:function (dt) {
         // chipmunk step
-        Physics.space.step(dt);       
-    }	
-		
+        Physics.space.step(dt);  
+                
+        for(var i = 0; i < GummyBubbles.gummyPoppedItems.length; i++) {
+            var gummyRect = GummyBubbles.gummyPoppedItems[i].sprite.getBoundingBox();
+            var basketRect = GummyBubbles.basket.getBoundingBox();          
+            if (cc.rectContainsPoint(basketRect, gummyRect)) {            
+                console.log("COOOOOOL!!!!");
+                var sprite = GummyBubbles.gummyPoppedItems[i].sprite;
+                var body = GummyBubbles.gummyPoppedItems[i].body;
+                var shape = GummyBubbles.gummyPoppedItems[i].shape;                                             
+                
+                if(body) {                    
+                    console.log("IN THE BODY");
+                    Physics.space.removeShape(shape);
+                    Physics.space.removeBody(body);
+                    sprite.removeFromParent();                                                    
+                }
+                GummyBubbles.gummyPoppedItems.splice( i , 1);
+                GummyBubbles.gummyScore += 10;                                
+                var y = this.studio.gummiesTxt.y;
+                this.studio.gummiesTxt.setString( "Gummies: "+ GummyBubbles.gummyScore);                
+                this.scoreEffect( GummyBubbles.basket.x , GummyBubbles.basket.height+40 );        
+            }
+        }     
+    }	       
 });
  
