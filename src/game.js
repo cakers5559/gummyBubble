@@ -31,22 +31,34 @@ var GameScene = cc.Scene.extend({
         this.studio = this.getCocosStudioAssets(this.gamescene);                        
 		this.studio.instructionLayer.setVisible( true );      
         this.studio.tapScreen.addTouchEventListener( this.touchEvent, this );
+        this.studio.pauseBtn.addTouchEventListener( this.onPause, this );        
+        
         this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 25 );                                        
     },
     
     
+    onPause: function() {
+        console.log("PAUSED!!!");
+        cc.director.pause();
+        cc.director.stopAnimation();
+        for(var i in cc.director) console.log(i);
+    },  
+    
     /*
      * perform some cleanup
      */  
-    onExit : function() {        
+    onExit: function() {        
         Physics.space.removeCollisionHandler(  1  , 2 );          
-    }, 
+    },         
     
     
     /*
      * start the game
      */  
-    initGame : function() {                        
+    initGame : function() {
+        cc.audioEngine.playMusic( "res/audio/sunny_day.mp3", true );
+        cc.audioEngine.setMusicVolume( 0.10 );
+                                
         var moveAnimation = function( time , pXY ) {
             var move = cc.moveBy( time , pXY );
             var move_back = move.reverse();
@@ -93,6 +105,7 @@ var GameScene = cc.Scene.extend({
         studioObj.mountains = studioObj.panel_level.getChildByName( "mountains" ); 
         studioObj.pauseBtn = studioObj.panel_level.getChildByName( "pause_btn" );
         studioObj.gummiesTxt = studioObj.panel_level.getChildByName( "gummies_txt" );              
+        studioObj.gummiesTxt.width = studioObj.gummiesTxt.width + 50;
         
         studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width - ( studioObj.pauseBtn.width / 2) );
         studioObj.gummiesTxt.setPositionX( size.width - ( studioObj.gummiesTxt.width + 20 ) );                                
@@ -145,6 +158,9 @@ var GameScene = cc.Scene.extend({
     
     
     scoreEffect: function(x , y) {
+        // unload the sound file from memory when it no longer needs to be used
+        cc.audioEngine.playEffect( "res/audio/gotitem.mp3" );
+        
         var stars = cc.ParticleSystem( "res/images/score.plist" );        
         
         var removeStars = function(s) {
@@ -204,9 +220,8 @@ var GameScene = cc.Scene.extend({
                     sprite.removeFromParent();                                                    
                 }
                 GummyBubbles.gummyPoppedItems.splice( i , 1);
-                GummyBubbles.gummyScore += 10;                                
-                var y = this.studio.gummiesTxt.y;
-                this.studio.gummiesTxt.setString( "Gummies: "+ GummyBubbles.gummyScore);                
+                GummyBubbles.gummyScore++;                                                
+                this.studio.gummiesTxt.setString( "Gummies: "+ GummyBubbles.gummyScore);                                 
                 this.scoreEffect( GummyBubbles.basket.x , GummyBubbles.basket.height+40 );        
             }
         }     

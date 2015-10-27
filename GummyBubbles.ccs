@@ -92,6 +92,12 @@
         </Folder>
         <Project Name="GameScene.csd" Type="Scene" />
         <TTF Name="Bobbleboddy.ttf" />
+        <Folder Name="audio">
+          <Audio Name="gotitem.mp3" />
+          <Audio Name="pop.mp3" />
+          <Audio Name="sunny_day.mp3" />
+          <Audio Name="shoot_out_bubble.mp3" />
+        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -25,6 +25,9 @@ var GummyBubbles = {
      * Starts up the GummyBubbles shooter
      *************************************************************/
     bubbleInit: function(bubbleType) {
+        //cc.audioEngine.playEffect( "res/audio/shoot_out_bubble.mp3" );
+        //cc.audioEngine.setEffectsVolume( 0.25 );
+        
         var size = cc.winSize;                                  
         var pathToAssets = 'res/images/' + this.resFolderName;                 
                        
@@ -266,7 +269,7 @@ var GummyBubbles = {
         
                 if (cc.rectContainsPoint(rect, locationInNode)) {
                     cc.log("sprite began... x = " + locationInNode.x + ", y = " + locationInNode.y);
-                    target.opacity = 180;
+                    target.opacity = 250;
                     return true;
                 }
                 return false;
@@ -303,6 +306,9 @@ var GummyBubbles = {
      * effect for when a bubble is popped
      */
     bubblePop: function(loc, gummyPath, tagNumber, scale) {               
+        // unload the sound file from memory when it no longer needs to be used
+        cc.audioEngine.playEffect( "res/audio/pop.mp3" );
+        
         var size = cc.winSize;                                  
         var pathToAssets = 'res/images/' + this.resFolderName;
         
