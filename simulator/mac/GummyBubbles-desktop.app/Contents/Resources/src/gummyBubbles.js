@@ -11,10 +11,9 @@ var GummyBubbles = {
     gummyBubblesOnScreen: 5,
     gummyLevel: 1,
     gummyBubbleDelayBetweenShoot: 0.05,           
-    gummyBubblesTypes: ['LEFT-RIGHT','RIGHT-LEFT','LEFT-UP-DIAGONAL-DOWN','RIGHT-UP-DIAGONAL-DOWN',
+    gummyBubblesTypes: ['UP-DOWN','DOWN-UP','LEFT-RIGHT','RIGHT-LEFT','LEFT-UP-DIAGONAL-DOWN','RIGHT-UP-DIAGONAL-DOWN',
                         'LEFT-DOWN-DIAGONAL-UP','RIGHT-DOWN-DIAGONAL-UP','LEFT-CURVE-UP-DOWN','LEFT-CURVE-DOWN-UP',
-                        'RIGHT-CURVE-UP-DOWN','RIGHT-CURVE-DOWN-UP','LEFT-RIGHT-SHAKE','RIGHT-LEFT-SHAKE',
-                        'UP-DOWN','DOWN-UP'],
+                        'RIGHT-CURVE-UP-DOWN','RIGHT-CURVE-DOWN-UP','LEFT-RIGHT-SHAKE','RIGHT-LEFT-SHAKE'],
     gummyBubbleImages: ['bear-41x42','worm-34x42','fish-41x41'],
     gummyBubbleTag: 1,
     gummyBubbleTags: [], 
@@ -25,7 +24,9 @@ var GummyBubbles = {
     gummyPaused: false,
     gummyComboTouches: 0,
     gummyInBasket: 0,
-    isGameActive : false,                        
+    isGameActive : false,
+    touchTransition: false,
+    gummyMisses: 0,                        
     
 	/************************************************************
      * Starts up the GummyBubbles shooter
@@ -44,9 +45,7 @@ var GummyBubbles = {
         var MIDDLELEVELX = [size.width - (size.width / 5) , size.width / 2 , size.width / 5];
         var MIDDLELEVELY = [size.height - (size.height / 5) , size.height / 2 , size.height / 5];
         var randomX = Math.floor(Math.random() * (MIDDLELEVELX.length));
-        var randomY = Math.floor(Math.random() * (MIDDLELEVELY.length));
-        
-        
+        var randomY = Math.floor(Math.random() * (MIDDLELEVELY.length));                
         
         // Fire a bubble
         var RIGHT = (size.width + (size.width / 4));
@@ -220,7 +219,7 @@ var GummyBubbles = {
                         
         //if ( cc.sys.capabilities.hasOwnProperty( 'touches' ) )
         //{            
-            
+           // if(this.basket) cc.eventManager.addListener(this.screenEvent(this), this.scene);   
         //}  
     },
     
@@ -228,9 +227,10 @@ var GummyBubbles = {
     getImageScale: function() {
         // Set the Bubble scale base on device        
         var imageScale = 1;                        
-        if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) imageScale = 0.8;        
-        else if (this.resScaledTimes === '@3x' && cc.view.getFrameSize().width !== 2048 && cc.view.getFrameSize().height !== 1536) imageScale = 0.5;       
-        else if (this.resScaledTimes === '@2x') imageScale = 0.7;    
+        if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) imageScale = 1.0;        
+        else if (this.resScaledTimes === '@3x' && cc.view.getFrameSize().width !== 2048 && cc.view.getFrameSize().height !== 1536) imageScale = 0.6;       
+        else if (this.resScaledTimes === '@2x') imageScale = 0.75;
+        else if (cc.view.getFrameSize().width == 960 && cc.view.getFrameSize().height == 640) imageScale = 1.4;    
         
         return imageScale;
     },
@@ -249,7 +249,7 @@ var GummyBubbles = {
             this.gummyLastRandomNumbers.push(random);
             return random;
         }               
-    },
+    },          
     
     
     /*
@@ -258,9 +258,24 @@ var GummyBubbles = {
     bubbleTouchEvent: function(self) {
         return {
             event: cc.EventListener.TOUCH_ONE_BY_ONE,
-            onTouchBegan: function (touch, event) {                                                                   
+            onTouchBegan: function (touch, event) {     
+                
+                // move the basket to the tap location                                                                              
+                if(self.basket && !self.touchTransition) {
+                    self.touchTransition = true;
+                    var screen = touch.getLocation();
+                    
+                    var touchDone = function() {
+                        console.log('TOUCH DONW');
+                        self.touchTransition = false;
+                    }
+                    
+                    var actionTo = cc.moveTo( 0.1 , cc.p(screen.x, self.basket.y));
+                    self.basket.runAction(cc.sequence(actionTo, cc.callFunc(touchDone, this)));                                                                                         
+                }
+                
                 // event.getCurrentTarget() returns the *listener's* sceneGraphPriority node.   
-                var target = event.getCurrentTarget();  
+                var target = event.getCurrentTarget();                                                  
                 
                 //Get the position of the current point relative to the button
                 var locationInNode = target.convertToNodeSpace(touch.getLocation());    
@@ -269,20 +284,34 @@ var GummyBubbles = {
         
                 //Check the click area
                 if (cc.rectContainsPoint(rect, locationInNode)) { 
-                    self.gummyComboTouches++; 
-                    console.log("Combo Touches: "+self.gummyComboTouches);                                                     
+                    self.gummyComboTouches++;                                                                          
                     target.setVisible( false ); 
                     target.isPopped = true;                                       
-                    cc.eventManager.removeListeners( target );
+                    //cc.eventManager.removeListeners( target );
+                    console.log("Combo Touches: "+self.gummyComboTouches);
                     self.bubblePop(target.getPosition() , target.childGummyPath, target.getTag(), target.bubbleScale);                                        
                     return true;
                 }
                 return false;                                                      
             },
             
-            onTouchEnded: function (touch, event) {
-               console.log("Touch Ended");
-               self.gummyComboTouches = 0;  
+            onTouchEnded: function (touch, event) {               
+               // event.getCurrentTarget() returns the *listener's* sceneGraphPriority node.   
+               var target = event.getCurrentTarget();                                                  
+                
+               //Get the position of the current point relative to the button
+               var locationInNode = target.convertToNodeSpace(touch.getLocation());    
+               var s = target.getContentSize();
+               var rect = cc.rect(0, 0, s.width, s.height);
+               
+               if (cc.rectContainsPoint(rect, locationInNode)) {                     
+                    console.log("Touch Ended");  
+                    self.gummyComboTouches = 0;                
+                    cc.eventManager.removeListeners( target );                          
+                    return true;
+                }
+               
+               return false;
             }
         }
     },
@@ -350,6 +379,8 @@ var GummyBubbles = {
         
         var size = cc.winSize;                                  
         var pathToAssets = 'res/images/' + this.resFolderName;
+        var locX = (loc.x) ? loc.x : 0;
+        var locY = (loc.y) ? loc.y : 0;
         
         var removeSplash = function(splash) {
             splash.removeFromParent();            
@@ -358,13 +389,14 @@ var GummyBubbles = {
         // bubble splash   
         var bubbleSplash = new cc.Sprite( pathToAssets + '/bubble-pop-133x134' + this.resScaledTimes + '.png' );        
         this.scene.addChild(bubbleSplash);
-        bubbleSplash.setPosition( loc.x , loc.y ); 
+        
+        bubbleSplash.setPosition( locX , locY ); 
         
         var splashOut = cc.fadeOut(1.0);                
         bubbleSplash.runAction(cc.sequence(splashOut, cc.callFunc(removeSplash, this)));                                            
         
         // create gummy                  
-        var gummy = Physics.createPhysicsSprite(gummyPath , loc.x , loc.y , tagNumber);        
+        var gummy = Physics.createPhysicsSprite(gummyPath , locX , locY , tagNumber);        
         gummy.setScale(scale);
         this.scene.addChild(gummy);
         
@@ -399,7 +431,7 @@ var GummyBubbles = {
                 }
                 else {
                     console.log("Not Popped");
-                    this.gummyScore--;
+                    this.gummyMisses++;
                     this.scene.studio.gummiesTxt.setString( "Gummies: "+ this.gummyScore);
                 }                
                 bub.removeFromParent();
@@ -478,6 +510,9 @@ var GummyBubbles = {
         this.gummyInBasket = [];
         this.gummyLevel = 1; 
         this.gummyScore = 0;
+        this.gummyMisses = 0;
+        this.touchTransition = false
+        
         if(!this.scene.gamescene && !this.isGameActive) {
             this.gummyBubbleSpeed = 10;                
             this.gummyBubblesOnScreen = 5;

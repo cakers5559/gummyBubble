@@ -269,9 +269,10 @@ var GameScene = cc.Scene.extend({
             }
         }
         
-        if(GummyBubbles.gummyScore < 0) {
-            console.log("GAME OVER!")
+        if(GummyBubbles.gummyMisses > 3) {
+            console.log("GAME OVER!");            
             this.gameOver();
+            GummyBubbles.gummyMisses = 0;
         }     
     },
     
@@ -282,39 +283,39 @@ var GameScene = cc.Scene.extend({
     Level : {
 	
         level1 : {
-            easy: [1,8],
-            normal:	[1,6],
-            hard: [2,6],
+            easy: [1,6],
+            normal:	[1,4],
+            hard: [2,4],
         },
         
         level2 : {
-            easy: [2,8],
-            normal:	[2,5],
-            hard: [3,6],
+            easy: [2,6],
+            normal:	[2,3],
+            hard: [3,4],
         },
         
         level3 : {
-            easy: [2,6],
-            normal:	[2,5],
-            hard: [3,6],
+            easy: [2,4],
+            normal:	[2,3],
+            hard: [3,4],
         },
         
         level4 : {
-            easy: [3,6],
-            normal:	[3,5],
-            hard: [4,6],
+            easy: [3,4],
+            normal:	[3,3],
+            hard: [4,5],
         },
         
         level5 : {
-            easy: [4,6],
-            normal:	[4,4],
-            hard: [5,4],
+            easy: [4,4],
+            normal:	[4,2],
+            hard: [5,3],
         },
         
         level6 : {
-            easy: [5,6],
-            normal:	[5,4],
-            hard: [6,3],
+            easy: [5,4],
+            normal:	[5,2],
+            hard: [6,1],
         },
         
         level7 : {
