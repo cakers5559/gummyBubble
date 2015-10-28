@@ -282,33 +282,33 @@ var GameScene = cc.Scene.extend({
     Level : {
 	
         level1 : {
-            easy: [1,9],
-            normal:	[1,7],
-            hard: [2,7],
+            easy: [1,8],
+            normal:	[1,6],
+            hard: [2,6],
         },
         
         level2 : {
-            easy: [2,9],
-            normal:	[2,6],
-            hard: [3,7],
+            easy: [2,8],
+            normal:	[2,5],
+            hard: [3,6],
         },
         
         level3 : {
-            easy: [2,7],
-            normal:	[2,6],
-            hard: [3,7],
+            easy: [2,6],
+            normal:	[2,5],
+            hard: [3,6],
         },
         
         level4 : {
-            easy: [3,7],
-            normal:	[3,6],
-            hard: [4,7],
+            easy: [3,6],
+            normal:	[3,5],
+            hard: [4,6],
         },
         
         level5 : {
-            easy: [4,7],
-            normal:	[4,5],
-            hard: [5,5],
+            easy: [4,6],
+            normal:	[4,4],
+            hard: [5,4],
         }
     }	       
 });

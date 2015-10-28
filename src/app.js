@@ -23,6 +23,7 @@ var MainScene = cc.Scene.extend({
         
         // attached the GummyBubble singleton        
         GummyBubbles.scene = this;
+        this.isGameActive = false;
         
         // add the scene to the view
         this.mainscene = ccs.load(res.MainScene_json);                
@@ -172,8 +173,8 @@ var MainScene = cc.Scene.extend({
      */  
     onExit : function() {        
         console.log("EXITING!");
-        Physics.space.removeCollisionHandler(  1  , 2 );
-        GummyBubbles.cleanUp();
+        Physics.space.removeCollisionHandler(  1  , 2 );        
+        GummyBubbles.cleanUp();        
         // stops the background music
         cc.audioEngine.stopMusic( );
         this.unschedule();                                  
