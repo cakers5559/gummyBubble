@@ -13,7 +13,8 @@ var GummyBubbles = {
     gummyBubbleDelayBetweenShoot: 0.05,           
     gummyBubblesTypes: ['LEFT-RIGHT','RIGHT-LEFT','LEFT-UP-DIAGONAL-DOWN','RIGHT-UP-DIAGONAL-DOWN',
                         'LEFT-DOWN-DIAGONAL-UP','RIGHT-DOWN-DIAGONAL-UP','LEFT-CURVE-UP-DOWN','LEFT-CURVE-DOWN-UP',
-                        'RIGHT-CURVE-UP-DOWN','RIGHT-CURVE-DOWN-UP','LEFT-RIGHT-SHAKE','RIGHT-LEFT-SHAKE'],
+                        'RIGHT-CURVE-UP-DOWN','RIGHT-CURVE-DOWN-UP','LEFT-RIGHT-SHAKE','RIGHT-LEFT-SHAKE',
+                        'UP-DOWN','DOWN-UP'],
     gummyBubbleImages: ['bear-41x42','worm-34x42','fish-41x41'],
     gummyBubbleTag: 1,
     gummyBubbleTags: [], 
@@ -38,12 +39,20 @@ var GummyBubbles = {
                        
         // Set the Bubble scale base on device        
         var imageScale = this.getImageScale();                    
-     
+        
+        
+        var MIDDLELEVELX = [size.width - (size.width / 5) , size.width / 2 , size.width / 5];
+        var MIDDLELEVELY = [size.height - (size.height / 5) , size.height / 2 , size.height / 5];
+        var randomX = Math.floor(Math.random() * (MIDDLELEVELX.length));
+        var randomY = Math.floor(Math.random() * (MIDDLELEVELY.length));
+        
+        
+        
         // Fire a bubble
         var RIGHT = (size.width + (size.width / 4));
         var LEFT = (0 - (size.width / 4));
-        var MIDDLEX = (size.width / 2);
-        var MIDDLEY = (size.height / 2);
+        var MIDDLEX = MIDDLELEVELX[randomX];
+        var MIDDLEY = MIDDLELEVELY[randomY];
         var DOWN = 0;
         var UP = size.height;
            
@@ -63,6 +72,16 @@ var GummyBubbles = {
                 console.log("RIGHT TO LEFT");                               
                 startPoints = [ RIGHT , MIDDLEY ];
                 endPoints = [ LEFT , MIDDLEY]; 
+            break;
+            case 'UP-DOWN':
+                console.log("UP TO DOWN");
+                startPoints = [ MIDDLEX , UP + (size.height/3) ];
+                endPoints = [ MIDDLEX , DOWN - (size.height/3) ];                  
+            break;
+            case 'DOWN-UP':               
+                console.log("DOWN TO UP");                               
+                startPoints = [ MIDDLEX , DOWN - (size.height/3) ];
+                endPoints = [ MIDDLEX , UP + (size.height/3) ]; 
             break;
             case 'LEFT-UP-DIAGONAL-DOWN':
                 console.log("LEFT UP DIAGONAL TO DOWN");
@@ -148,7 +167,7 @@ var GummyBubbles = {
         // Adds a up an down shake to bubble
         if(shake) {             
             // shake
-            var move = cc.moveBy(0.2, cc.p(0,50));
+            var move = cc.moveBy(0.2, cc.p(0,100));
             var move_back = move.reverse();
             var delay = cc.delayTime(0.25);
             var move_seq = cc.sequence( move, move_back );
@@ -165,8 +184,8 @@ var GummyBubbles = {
                 else bubble.runAction(bezier);                 
         }
         // Shoot bubble in straight direction
-        else {                
-                var actionTo = cc.moveTo(this.gummyBubbleSpeed, cc.p(endPoints[0], endPoints[1]));                
+        else {                                                                                
+                var actionTo = cc.moveTo( this.gummyBubbleSpeed , cc.p(endPoints[0], endPoints[1]));                
                 if (this.gummyBubbleTags.length === this.gummyBubblesOnScreen) bubble.runAction(cc.sequence(actionTo, cc.delayTime(this.gummyBubbleDelayBetweenShoot), cc.callFunc(this.onFireBubbleComplete, this)));
                 else bubble.runAction(actionTo); 
         }                               
@@ -366,10 +385,10 @@ var GummyBubbles = {
         var howManyPopped = 0;
         
         // clean up                   
-        for(var i = 0; i < this.gummyBubbleTags.length; i++) {            
+        /*for(var i = 0; i < this.gummyBubbleTags.length; i++) {            
             if(this.scene.mainscene) this.scene.mainscene.node.removeChildByTag( this.gummyBubbleTags[i] );
             else this.scene.gamescene.node.removeChildByTag( this.gummyBubbleTags[i] );                            
-        }                                        
+        } */                                       
         
         if(this.scene.gamescene && this.isGameActive) {
             for(var i = 0; i < this.gummyBubblesStored.length; i++) {
@@ -382,7 +401,9 @@ var GummyBubbles = {
                     console.log("Not Popped");
                     this.gummyScore--;
                     this.scene.studio.gummiesTxt.setString( "Gummies: "+ this.gummyScore);
-                }
+                }                
+                bub.removeFromParent();
+                console.log("GAME - BUBBLE REMOVED!!!!");
             } 
             console.log("H: "+howManyPopped+"  P: "+poppedTotal+"  B: "+this.gummyInBasket);
             if(howManyPopped === poppedTotal && this.gummyInBasket === poppedTotal) {            
@@ -392,7 +413,14 @@ var GummyBubbles = {
             else if(howManyPopped !== this.gummyInBasket) {
                 this.scene.gameOver();
             } 
-        }      
+        } 
+        else {
+            for(var i = 0; i < this.gummyBubblesStored.length; i++) {
+                var bub = this.gummyBubblesStored[i];
+                bub.removeFromParent();
+                console.log("MAIN - BUBBLE REMOVED!!!!"); 
+            }
+        }     
                         
         this.gummyBubbleTag = 1;
         this.gummyBubbleTags = [];

@@ -309,7 +309,21 @@ var GameScene = cc.Scene.extend({
             easy: [4,6],
             normal:	[4,4],
             hard: [5,4],
+        },
+        
+        level6 : {
+            easy: [5,6],
+            normal:	[5,4],
+            hard: [6,3],
+        },
+        
+        level7 : {
+            easy: [5,5],
+            normal:	[5,3],
+            hard: [6,2],
         }
+        
+        
     }	       
 });
  
