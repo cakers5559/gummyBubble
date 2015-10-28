@@ -18,7 +18,10 @@ var MainScene = cc.Scene.extend({
         Physics.initPhysics();        
         this.scheduleUpdate();                              
         
-        // attached the GummyBubble singleton
+        cc.audioEngine.playMusic( "res/audio/intro.mp3", true );
+        cc.audioEngine.setMusicVolume( 0.10 );
+        
+        // attached the GummyBubble singleton        
         GummyBubbles.scene = this;
         
         // add the scene to the view
@@ -108,6 +111,9 @@ var MainScene = cc.Scene.extend({
             else if (cc.view.getFrameSize().width >= 1136) {                               
                 setProperties( 'bg_medium' , 'play_btn_small' , 'mediumRes' , '@2x' );                                                                            
             }
+            else if (cc.view.getFrameSize().width >= 1024) {  
+                setProperties( 'bg_medium' , 'play_btn_small' , 'mediumRes' , '@2x' );
+            }
             else {                               
                 setProperties( 'bg_small' , 'play_btn_small');               
             }                           
@@ -126,7 +132,10 @@ var MainScene = cc.Scene.extend({
     touchEvent: function(sender, type) {
         switch (type)
         {
-        case ccui.Widget.TOUCH_BEGAN:            
+        case ccui.Widget.TOUCH_BEGAN: 
+            cc.audioEngine.setEffectsVolume( 3.25 );
+            cc.audioEngine.playEffect( "res/audio/click.mp3" );           
+            
             Physics.space.removeCollisionHandler(  1  , 2 );
             GummyBubbles.cleanUp();
             this.unschedule();   
@@ -144,7 +153,9 @@ var MainScene = cc.Scene.extend({
     touchSettingsEvent: function(sender, type) {
         switch (type)
         {
-        case ccui.Widget.TOUCH_BEGAN:            
+        case ccui.Widget.TOUCH_BEGAN: 
+            cc.audioEngine.setEffectsVolume( 3.25 );
+            cc.audioEngine.playEffect( "res/audio/click.mp3" );           
             Physics.space.removeCollisionHandler(  1  , 2 );
             GummyBubbles.cleanUp();
             this.unschedule();   
@@ -160,8 +171,11 @@ var MainScene = cc.Scene.extend({
      * perform some cleanup
      */  
     onExit : function() {        
+        console.log("EXITING!");
         Physics.space.removeCollisionHandler(  1  , 2 );
         GummyBubbles.cleanUp();
+        // stops the background music
+        cc.audioEngine.stopMusic( );
         this.unschedule();                                  
     },                                                        
     

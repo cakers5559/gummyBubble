@@ -10,7 +10,7 @@ var GummyBubbles = {
 	gummyBubbleSpeed: 10,                
     gummyBubblesOnScreen: 5,
     gummyLevel: 1,
-    gummyBubbleDelayBetweenShoot: 1,           
+    gummyBubbleDelayBetweenShoot: 0.05,           
     gummyBubblesTypes: ['LEFT-RIGHT','RIGHT-LEFT','LEFT-UP-DIAGONAL-DOWN','RIGHT-UP-DIAGONAL-DOWN',
                         'LEFT-DOWN-DIAGONAL-UP','RIGHT-DOWN-DIAGONAL-UP','LEFT-CURVE-UP-DOWN','LEFT-CURVE-DOWN-UP',
                         'RIGHT-CURVE-UP-DOWN','RIGHT-CURVE-DOWN-UP','LEFT-RIGHT-SHAKE','RIGHT-LEFT-SHAKE'],
@@ -23,7 +23,8 @@ var GummyBubbles = {
     gummyScore: 0,
     gummyPaused: false,
     gummyComboTouches: 0,
-    gummyInBasket: 0,                        
+    gummyInBasket: 0,
+    isGameActive : false,                        
     
 	/************************************************************
      * Starts up the GummyBubbles shooter
@@ -189,14 +190,18 @@ var GummyBubbles = {
         /*var basket = Physics.addStaticObject( this.scene, 
                                 pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png',
                                 size.width / 2 , basket.height / 2 , imageScale ); */
-        this.basket = new cc.Sprite( pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png' );        
-        this.scene.addChild(this.basket , 1000);                         
-        this.basket.setPosition( size.width / 2 , this.basket.height / 3 );
-        this.basket.setScale(imageScale);                                 
+        
+        
+            this.basket = new cc.Sprite( pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png' );        
+            this.scene.addChild(this.basket , 1000);                         
+            this.basket.setPosition( size.width / 2 , this.basket.height / 3 );
+            this.basket.setScale(imageScale);
+            cc.eventManager.addListener(this.basketTouchEvent(this), this.basket);
+                                        
                         
         //if ( cc.sys.capabilities.hasOwnProperty( 'touches' ) )
         //{            
-            cc.eventManager.addListener(this.basketTouchEvent(this), this.basket);
+            
         //}  
     },
     
@@ -320,7 +325,9 @@ var GummyBubbles = {
      */
     bubblePop: function(loc, gummyPath, tagNumber, scale) {               
         // unload the sound file from memory when it no longer needs to be used
+        cc.audioEngine.setEffectsVolume( 3.25 );
         cc.audioEngine.playEffect( "res/audio/pop.mp3" );
+        
         
         var size = cc.winSize;                                  
         var pathToAssets = 'res/images/' + this.resFolderName;
@@ -340,7 +347,14 @@ var GummyBubbles = {
         // create gummy                  
         var gummy = Physics.createPhysicsSprite(gummyPath , loc.x , loc.y , tagNumber);        
         gummy.setScale(scale);
-        this.scene.addChild(gummy);                                                                                  
+        this.scene.addChild(gummy);
+        
+        var playSound = function() {
+            cc.audioEngine.setEffectsVolume( 0.10 );
+            cc.audioEngine.playEffect( "res/audio/fall_and_spat.mp3" );            
+        }
+        
+        setTimeout(playSound , 500);                                                                                          
     },                                        
     
     
@@ -357,7 +371,7 @@ var GummyBubbles = {
             else this.scene.gamescene.node.removeChildByTag( this.gummyBubbleTags[i] );                            
         }                                        
         
-        if(this.scene.gamescene) {
+        if(this.scene.gamescene && this.isGameActive) {
             for(var i = 0; i < this.gummyBubblesStored.length; i++) {
                 var bub = this.gummyBubblesStored[i];
                 if(bub.isPopped) {
@@ -376,7 +390,7 @@ var GummyBubbles = {
                 this.scene.levelChange();
             }
             else if(howManyPopped !== this.gummyInBasket) {
-                
+                this.scene.gameOver();
             } 
         }      
                         
@@ -436,7 +450,7 @@ var GummyBubbles = {
         this.gummyInBasket = [];
         this.gummyLevel = 1; 
         this.gummyScore = 0;
-        if(!this.scene.gamescene) {
+        if(!this.scene.gamescene && !this.isGameActive) {
             this.gummyBubbleSpeed = 10;                
             this.gummyBubblesOnScreen = 5;
         }

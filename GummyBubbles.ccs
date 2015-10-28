@@ -101,10 +101,14 @@
           <Audio Name="pop.mp3" />
           <Audio Name="sunny_day.mp3" />
           <Audio Name="shoot_out_bubble.mp3" />
+          <Audio Name="fall_and_spat.mp3" />
+          <Audio Name="party_horn.mp3" />
+          <Audio Name="click.mp3" />
+          <Audio Name="intro.mp3" />
         </Folder>
         <Project Name="SettingScene.csd" Type="Scene" />
-        <Project Name="PauseScene.csd" Type="Scene" />
         <Project Name="GameOverScene.csd" Type="Scene" />
+        <Project Name="PauseScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

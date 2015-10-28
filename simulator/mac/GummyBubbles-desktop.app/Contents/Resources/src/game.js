@@ -7,6 +7,7 @@ var GameScene = cc.Scene.extend({
     gamescene: null,
     gamelevel: null,
     level: 1,
+    didPause: false,
     studio: {},             
        
            
@@ -15,6 +16,9 @@ var GameScene = cc.Scene.extend({
      */
     onEnter:function () {
         this._super();                                                       
+        
+        GummyBubbles.isGameActive = true;
+        this.didPause = false;
                         
         if(!GummyBubbles.gummyPaused) {           
             this.levelChange();
@@ -24,7 +28,7 @@ var GameScene = cc.Scene.extend({
             this.scheduleUpdate();                              
             
             // attached the GummyBubble singleton
-            GummyBubbles.scene = this;
+            GummyBubbles.scene = this;            
                             
             // add the scene to the view
             this.gamescene = ccs.load(res.GameScene_json);                        
@@ -48,18 +52,31 @@ var GameScene = cc.Scene.extend({
     },
     
     
-    onPause: function() {        
-        console.log("PAUSED!!!");                                             
-        cc.director.pushScene(  new PauseScene() );                               
+    onPause: function(sender, type) {         
+         switch (type)
+            {
+            case ccui.Widget.TOUCH_BEGAN: 
+                this.didPause = true;
+                cc.audioEngine.setEffectsVolume( 3.25 );
+                cc.audioEngine.playEffect( "res/audio/click.mp3" );       
+                console.log("PAUSED!!!");                                             
+                cc.director.pushScene(  new PauseScene() );                                                         
+                break;        
+        }                               
     },  
     
     /*
      * perform some cleanup
      */  
     onExit: function() {        
-        Physics.space.removeCollisionHandler(  1  , 2 );        
-        GummyBubbles.cleanUp();
-        this.unschedule();         
+        // stops the background music
+       if(!this.didPause) {
+            GummyBubbles.isGameActive = false;
+            cc.audioEngine.stopMusic();
+            Physics.space.removeCollisionHandler(  1  , 2 );                    
+            GummyBubbles.cleanUp();        
+            this.unschedule();  
+       }       
     },         
     
     
@@ -166,6 +183,7 @@ var GameScene = cc.Scene.extend({
     
     scoreEffect: function(x , y) {
         // unload the sound file from memory when it no longer needs to be used
+        cc.audioEngine.setEffectsVolume( 3.25 );
         cc.audioEngine.playEffect( "res/audio/gotitem.mp3" );
         
         var stars = cc.ParticleSystem( "res/images/score.plist" );        
@@ -179,7 +197,7 @@ var GameScene = cc.Scene.extend({
         this.addChild(stars);  
         console.log("YOUR GUMMY SCORE IS: "+GummyBubbles.gummyScore);
         var starsDelay = cc.delayTime(1.0);                
-        stars.runAction(cc.sequence(starsDelay, cc.callFunc(removeStars, this)));                                      
+        stars.runAction(cc.sequence(starsDelay, cc.callFunc(removeStars, stars)));                                      
     }, 
     
     
@@ -195,16 +213,24 @@ var GameScene = cc.Scene.extend({
             GummyBubbles.gummyBubblesOnScreen = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][0];
             GummyBubbles.gummyBubbleSpeed = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][1];
        }
-    },    
+    }, 
+    
+    gameOver: function() {
+        console.log("Game Over!!!");
+        cc.audioEngine.playEffect( "res/audio/party_horn.mp3" );                                             
+        cc.director.pushScene(  new GameOverScene() );
+    },   
            
     
     /*
      * when play button is tapped
      */ 
-    touchEvent: function(sender, type) {
+    touchEvent: function(sender, type) {        
         switch (type)
         {
         case ccui.Widget.TOUCH_BEGAN:  
+            cc.audioEngine.setEffectsVolume( 3.25 );
+            cc.audioEngine.playEffect( "res/audio/click.mp3" );
             console.log("Start the Game");            
             this.studio.tapScreen.removeFromParent();                      
             this.studio.instructionLayer.removeFromParent();                        
@@ -245,7 +271,7 @@ var GameScene = cc.Scene.extend({
         
         if(GummyBubbles.gummyScore < 0) {
             console.log("GAME OVER!")
-            cc.director.pause();
+            this.gameOver();
         }     
     },
     
@@ -256,27 +282,33 @@ var GameScene = cc.Scene.extend({
     Level : {
 	
         level1 : {
-            easy: [1,10],
-            normal:	[1,8],
-            hard: [2,8],
+            easy: [1,9],
+            normal:	[1,7],
+            hard: [2,7],
         },
         
         level2 : {
-            easy: [2,10],
-            normal:	[2,7],
-            hard: [3,8],
+            easy: [2,9],
+            normal:	[2,6],
+            hard: [3,7],
         },
         
         level3 : {
-            easy: [2,8],
-            normal:	[2,7],
-            hard: [3,8],
+            easy: [2,7],
+            normal:	[2,6],
+            hard: [3,7],
         },
         
         level4 : {
-            easy: [3,8],
-            normal:	[3,7],
-            hard: [4,8],
+            easy: [3,7],
+            normal:	[3,6],
+            hard: [4,7],
+        },
+        
+        level5 : {
+            easy: [4,7],
+            normal:	[4,5],
+            hard: [5,5],
         }
     }	       
 });

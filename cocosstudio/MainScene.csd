@@ -6,14 +6,14 @@
       <ObjectData Name="MainScene" Visible="False" ctype="GameNodeObjectData">
         <Size X="2208.0000" Y="1242.0000" />
         <Children>
-          <AbstractNodeData Name="bg_color" Visible="False" ActionTag="370568056" Tag="455" IconVisible="False" LeftMargin="1019.8073" RightMargin="988.1927" TopMargin="528.0587" BottomMargin="513.9413" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="bg_color" Visible="False" ActionTag="370568056" Tag="455" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="1019.8067" RightMargin="988.1934" TopMargin="528.0587" BottomMargin="513.9413" StretchWidthEnable="True" StretchHeightEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="200.0000" Y="200.0000" />
             <AnchorPoint ScaleX="0.5022" ScaleY="0.5000" />
             <Position X="1120.2467" Y="613.9413" />
             <Scale ScaleX="23.9170" ScaleY="15.1649" />
             <CColor A="255" R="74" G="144" B="226" />
             <PrePosition X="0.5074" Y="0.4943" />
-            <PreSize X="0.0000" Y="0.0000" />
+            <PreSize X="0.0906" Y="0.1610" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />

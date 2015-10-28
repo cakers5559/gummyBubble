@@ -10,7 +10,7 @@ var Physics = {
     // initial the chipmunk physics engine     
     initPhysics: function() {                        
         this.space = new cp.Space();       
-        this.space.gravity = cp.v(0, -350);
+        this.space.gravity = cp.v(0, -1500);
       
         var w = cc.winSize.width,
         h = cc.winSize.height;                        
