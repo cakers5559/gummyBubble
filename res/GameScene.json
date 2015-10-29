@@ -353,6 +353,65 @@
               },
               {
                 "FontSize": 40,
+                "LabelText": "Chances: 3",
+                "FontResource": {
+                  "Type": "Normal",
+                  "Path": "Bobbleboddy.ttf",
+                  "Plist": ""
+                },
+                "HorizontalAlignmentType": "HT_Right",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "R": 77,
+                  "G": 77,
+                  "B": 77
+                },
+                "OutlineEnabled": true,
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "ShadowEnabled": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 968.1462,
+                  "Y": 587.876
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4385,
+                  "Y": 0.4733
+                },
+                "PreSize": {
+                  "X": 0.0684,
+                  "Y": 0.0378
+                },
+                "LeftMargin": 872.1462,
+                "RightMargin": 1143.8538,
+                "TopMargin": 629.624,
+                "BottomMargin": 563.376,
+                "Tag": 9275,
+                "ActionTag": 113688738,
+                "Size": {
+                  "X": 192.0,
+                  "Y": 49.0
+                },
+                "Name": "misses_txt",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 40,
                 "LabelText": "Gummies: 0",
                 "FontResource": {
                   "Type": "Normal",

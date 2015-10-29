@@ -30,7 +30,13 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <ActiveDocument />
+        <OpenedDocuments>
+          <FilePathData Path="GameScene.csd" />
+          <FilePathData Path="GameOverScene.csd" />
+          <FilePathData Path="MainScene.csd" />
+          <FilePathData Path="PauseScene.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="GameScene.csd" />
       </Value>
     </Item>
   </Properties>
