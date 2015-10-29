@@ -15,7 +15,7 @@ var GameOverScene = cc.Scene.extend({
         
         //add the scene to the view
         this.gameoverscene = ccs.load(res.GameOverScene_json);                
-        this.addChild(this.gameoverscene.node);                       
+        this.addChild(this.gameoverscene.node);                               
         
         console.log("OH!!! Game Over");
         
@@ -46,7 +46,8 @@ var GameOverScene = cc.Scene.extend({
         retryBtn.addTouchEventListener( function(sender, type) {
             switch (type)
             {
-            case ccui.Widget.TOUCH_BEGAN: 
+            case ccui.Widget.TOUCH_BEGAN:                     
+                    GummyBubbles.gummyBubbleCollide = false;
                     cc.audioEngine.setEffectsVolume( 3.25 );
                     cc.audioEngine.playEffect( "res/audio/click.mp3" );                   
                     console.log("Retry the pause");
@@ -80,8 +81,10 @@ var GameOverScene = cc.Scene.extend({
     /*
      * perform some cleanup
      */  
-    onExit: function() {   
-        GummyBubbles.isGameActive = false;                           
+    onExit: function() {  
+        console.log("DID EXIT"); 
+        GummyBubbles.isGameActive = false;
+        GummyBubbles.gummyBubbleCollide = false;                           
         GummyBubbles.cleanUp();           
     }               
 	

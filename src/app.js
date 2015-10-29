@@ -135,13 +135,13 @@ var MainScene = cc.Scene.extend({
         {
         case ccui.Widget.TOUCH_BEGAN: 
             cc.audioEngine.setEffectsVolume( 3.25 );
-            cc.audioEngine.playEffect( "res/audio/click.mp3" );           
-            
+            cc.audioEngine.playEffect( "res/audio/click.mp3" );                       
             Physics.space.removeCollisionHandler(  1  , 2 );
             GummyBubbles.cleanUp();
             this.unschedule();   
             console.log("PLAY BUTTON TOUCHED!");            
-            cc.director.replaceScene( new cc.TransitionFade( 1.0, new GameScene() ) );
+            cc.director.popToSceneStackLevel(1);
+            cc.director.replaceScene( new GameScene());
                         
             break;        
         }
@@ -177,7 +177,8 @@ var MainScene = cc.Scene.extend({
         GummyBubbles.cleanUp();        
         // stops the background music
         cc.audioEngine.stopMusic( );
-        this.unschedule();                                  
+        this.unschedule(); 
+        cc.director.resume();                                 
     },                                                        
     
     

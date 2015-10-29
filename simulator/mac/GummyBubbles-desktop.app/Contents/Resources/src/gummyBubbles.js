@@ -10,7 +10,7 @@ var GummyBubbles = {
 	gummyBubbleSpeed: 10,                
     gummyBubblesOnScreen: 5,
     gummyLevel: 1,
-    gummyBubbleDelayBetweenShoot: 0.05,           
+    gummyBubbleDelayBetweenShoot: 0.5,           
     gummyBubblesTypes: ['UP-DOWN','DOWN-UP','LEFT-RIGHT','RIGHT-LEFT','LEFT-UP-DIAGONAL-DOWN','RIGHT-UP-DIAGONAL-DOWN',
                         'LEFT-DOWN-DIAGONAL-UP','RIGHT-DOWN-DIAGONAL-UP','LEFT-CURVE-UP-DOWN','LEFT-CURVE-DOWN-UP',
                         'RIGHT-CURVE-UP-DOWN','RIGHT-CURVE-DOWN-UP','LEFT-RIGHT-SHAKE','RIGHT-LEFT-SHAKE'],
@@ -19,14 +19,15 @@ var GummyBubbles = {
     gummyBubbleTags: [], 
     gummyBubblesStored: [],                   
     gummyLastRandomNumbers: [],    
-    gummyPoppedItems: [],    
+    gummyPoppedItems: [], 
+    gummyBubbleCollide: false,   
     gummyScore: 0,
     gummyPaused: false,
     gummyComboTouches: 0,
     gummyInBasket: 0,
     isGameActive : false,
     touchTransition: false,
-    gummyMisses: 0,                        
+    gummyMisses: 3,                            
     
 	/************************************************************
      * Starts up the GummyBubbles shooter
@@ -146,7 +147,8 @@ var GummyBubbles = {
         bubble.setPosition( startPoints[0] , startPoints[1] );
         bubble.setScale(imageScale);
         bubble.setTag( this.gummyBubbleTag );
-        bubble.isPopped = false;                               
+        bubble.isPopped = false;  
+        bubble.isCallBack = false;                             
         this.gummyBubbleTags.push(this.gummyBubbleTag);                                                               
         this.gummyBubblesStored.push( bubble );
         //if ( cc.sys.capabilities.hasOwnProperty( 'touches' ) )
@@ -179,20 +181,33 @@ var GummyBubbles = {
                 //var controlPoints = [ cc.p(size.width / 2, size.height), cc.p(size.width / 2, size.height), cc.p(size.width, 0) ];
                 var bezier = cc.bezierTo(this.gummyBubbleSpeed, bezierTo);
                 
-                if (this.gummyBubbleTags.length === this.gummyBubblesOnScreen) bubble.runAction(cc.sequence(bezier, cc.delayTime(this.gummyBubbleDelayBetweenShoot), cc.callFunc(this.onFireBubbleComplete, this)));
+                if (this.gummyBubbleTags.length === this.gummyBubblesOnScreen) {
+                    bubble.runAction(cc.sequence(bezier, cc.delayTime(this.gummyBubbleDelayBetweenShoot), cc.callFunc(this.onFireBubbleComplete, this)));
+                    bubble.isCallBack = true;
+                }
                 else bubble.runAction(bezier);                 
         }
         // Shoot bubble in straight direction
         else {                                                                                
                 var actionTo = cc.moveTo( this.gummyBubbleSpeed , cc.p(endPoints[0], endPoints[1]));                
-                if (this.gummyBubbleTags.length === this.gummyBubblesOnScreen) bubble.runAction(cc.sequence(actionTo, cc.delayTime(this.gummyBubbleDelayBetweenShoot), cc.callFunc(this.onFireBubbleComplete, this)));
+                if (this.gummyBubbleTags.length === this.gummyBubblesOnScreen) {
+                    bubble.runAction(cc.sequence(actionTo, cc.delayTime(this.gummyBubbleDelayBetweenShoot), cc.callFunc(this.onFireBubbleComplete, this)));
+                    bubble.isCallBack = true;
+                }
                 else bubble.runAction(actionTo); 
         }                               
             
         // Scales bubble in and out for pulse effect
         var bubblePulse = new cc.ScaleTo( 1, imageScale + 0.1);
         var bubblePulseBack = new cc.ScaleTo( 1, imageScale ); 
-        bubble.runAction(cc.sequence(bubblePulse, bubblePulseBack).repeatForever());                                                                                                     
+        bubble.runAction(cc.sequence(bubblePulse, bubblePulseBack).repeatForever()); 
+        
+        var playSound = function() {
+            cc.audioEngine.setEffectsVolume( 0.1 );
+            cc.audioEngine.playEffect( "res/audio/shoot_out_bubble.mp3" );            
+        }
+        
+        setTimeout(playSound , 500);                                                                                                    
     },
     
     
@@ -209,9 +224,11 @@ var GummyBubbles = {
                                 pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png',
                                 size.width / 2 , basket.height / 2 , imageScale ); */
         
-        
-            this.basket = new cc.Sprite( pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png' );        
+            
+            
+            this.basket = new cc.Sprite( pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png' );                    
             this.scene.addChild(this.basket , 1000);                         
+            console.log("This Basket");
             this.basket.setPosition( size.width / 2 , this.basket.height / 3 );
             this.basket.setScale(imageScale);
             cc.eventManager.addListener(this.basketTouchEvent(this), this.basket);
@@ -282,34 +299,51 @@ var GummyBubbles = {
                 var s = target.getContentSize();
                 var rect = cc.rect(0, 0, s.width, s.height);
         
-                //Check the click area
-                if (cc.rectContainsPoint(rect, locationInNode)) { 
-                    self.gummyComboTouches++;                                                                          
-                    target.setVisible( false ); 
-                    target.isPopped = true;                                       
-                    //cc.eventManager.removeListeners( target );
-                    console.log("Combo Touches: "+self.gummyComboTouches);
-                    self.bubblePop(target.getPosition() , target.childGummyPath, target.getTag(), target.bubbleScale);                                        
-                    return true;
-                }
+                //Check the click area                                   
+                    if (cc.rectContainsPoint(rect, locationInNode)) {                                                                                                                                                           
+                        //cc.eventManager.removeListeners( target );
+                        console.log("Combo Touches: "+self.gummyComboTouches);                    
+                        if(!target.isPopped) { 
+                            target.setVisible( false ); 
+                            target.isPopped = true;                            
+                                
+                            self.bubblePop(target.getPosition() , target.childGummyPath, target.getTag(), target.bubbleScale);
+                            self.gummyComboTouches++;
+                        }                        
+                        return true; 
+                    }                                                                                                                                                                                           
                 return false;                                                      
             },
             
             onTouchEnded: function (touch, event) {               
-               // event.getCurrentTarget() returns the *listener's* sceneGraphPriority node.   
-               var target = event.getCurrentTarget();                                                  
-                
-               //Get the position of the current point relative to the button
-               var locationInNode = target.convertToNodeSpace(touch.getLocation());    
-               var s = target.getContentSize();
-               var rect = cc.rect(0, 0, s.width, s.height);
-               
-               if (cc.rectContainsPoint(rect, locationInNode)) {                     
-                    console.log("Touch Ended");  
-                    self.gummyComboTouches = 0;                
-                    cc.eventManager.removeListeners( target );                          
-                    return true;
-                }
+                                                      
+                // event.getCurrentTarget() returns the *listener's* sceneGraphPriority node.   
+                var target = event.getCurrentTarget();                                                  
+                            
+                //Get the position of the current point relative to the button
+                var locationInNode = target.convertToNodeSpace(touch.getLocation());    
+                var s = target.getContentSize();
+                var rect = cc.rect(0, 0, s.width+100, s.height+100);
+                var pos = touch.getLocation();
+    
+                if (cc.rectContainsPoint(rect, locationInNode)) { 
+                            if(self.gummyComboTouches > 1 && self.gummyComboTouches <= 5) {                                                                                                                                                           
+                                self.comboEffect(pos , self.gummyComboTouches , self);                              
+                                console.log("Touch Ended"); 
+                                self.gummyComboTouches = 0;
+                                //if(target.isCallBack) self.onFireBubbleComplete();
+                                //cc.eventManager.removeListeners( target );                                                                                                                                                                                                                            //target.removeFromParent();
+                                var pos = touch.getLocation();
+                                var id = touch.getID();
+                                console.log("onTouchEnded at: " + pos.x + " " + pos.y + " Id:" + id );
+                                target.release_id(id,pos);                    
+                                return true;
+                             }
+                            else {
+                                self.gummyComboTouches = 0;
+                                return true;
+                            }
+                        }                                                                                  
                
                return false;
             }
@@ -397,15 +431,50 @@ var GummyBubbles = {
         
         // create gummy                  
         var gummy = Physics.createPhysicsSprite(gummyPath , locX , locY , tagNumber);        
-        gummy.setScale(scale);
+        gummy.setScale(scale);        
         this.scene.addChild(gummy);
         
-        var playSound = function() {
+        /*var playSound = function() {
             cc.audioEngine.setEffectsVolume( 0.10 );
             cc.audioEngine.playEffect( "res/audio/fall_and_spat.mp3" );            
         }
         
-        setTimeout(playSound , 500);                                                                                          
+        setTimeout(playSound , 500);*/                                                                                          
+    }, 
+    
+    
+    comboEffect: function(loc , comboNumber , self) { 
+        cc.audioEngine.setEffectsVolume( 0.30 );
+        cc.audioEngine.playEffect( "res/audio/combo.mp3" ); 
+                                       
+        var pathToAssets = 'res/images/' + self.resFolderName;
+        
+         // particle combo
+        var removeStars = function(s) {
+           
+            s.removeFromParent();            
+        }    
+        console.log("test");
+        var stars = cc.ParticleSystem( "res/images/fireworks.plist" );
+        stars.setScale( "1."+comboNumber );
+        stars.setPosition( loc.x , loc.y );        
+        self.scene.addChild(stars);         
+        var starsDelay = cc.delayTime(1.0);                
+        stars.runAction(cc.sequence(starsDelay, cc.callFunc(removeStars, stars)));   
+        
+        // bubble combo                                                        
+        var removeCombo = function(combo) {
+            combo.removeFromParent();            
+        }                                  
+        console.log("COMBO NUMBER: "+comboNumber);           
+        var bubbleCombo = new cc.Sprite( pathToAssets + '/x'+ comboNumber + self.resScaledTimes + '.png' );                
+        bubbleCombo.setScale( 0.3 );
+        self.scene.addChild(bubbleCombo);                        
+        bubbleCombo.setPosition( loc.x , loc.y );         
+                        
+        var comboOut = cc.fadeOut(0.5);
+        var nodeAction = cc.scaleTo( 0.5, 0.7, 0.7 );               
+        bubbleCombo.runAction(cc.sequence(nodeAction, comboOut, cc.callFunc(removeCombo, bubbleCombo)));                                                                             
     },                                        
     
     
@@ -431,8 +500,8 @@ var GummyBubbles = {
                 }
                 else {
                     console.log("Not Popped");
-                    this.gummyMisses++;
-                    this.scene.studio.gummiesTxt.setString( "Gummies: "+ this.gummyScore);
+                    this.gummyMisses--;
+                    this.scene.studio.gummiesTxt.setString( "Gummies: "+ this.gummyScore+"  |  Chances: "+this.gummyMisses);
                 }                
                 bub.removeFromParent();
                 console.log("GAME - BUBBLE REMOVED!!!!");
@@ -442,7 +511,8 @@ var GummyBubbles = {
                 this.gummyLevel++;
                 this.scene.levelChange();
             }
-            else if(howManyPopped !== this.gummyInBasket) {
+            else if(howManyPopped !== this.gummyInBasket && this.gummyBubbleCollide) {
+                this.gummyBubbleCollide = false;
                 this.scene.gameOver();
             } 
         } 
@@ -452,13 +522,7 @@ var GummyBubbles = {
                 bub.removeFromParent();
                 console.log("MAIN - BUBBLE REMOVED!!!!"); 
             }
-        }     
-                        
-        this.gummyBubbleTag = 1;
-        this.gummyBubbleTags = [];
-        this.gummyLastRandomNumbers = []; 
-        this.gummyBubblesStored = [];                 
-        this.gummyInBasket = [];                         
+        } 
         
         for( var i = 0; i < this.gummyPoppedItems.length; i++) { 
                 var sprite = this.gummyPoppedItems[i].sprite;
@@ -470,11 +534,16 @@ var GummyBubbles = {
                     Physics.space.removeBody(body);
                     sprite.removeFromParent();                                                    
                 }
-        }                   
-        
-        this.gummyPoppedItems = [];  
-        
-        console.log("YOUR GUMMY SCORE IS - "+this.gummyScore);
+                console.log("REMOVING THE PHYSIC BODY!!!");
+        }            
+                        
+        this.gummyBubbleTag = 1;
+        this.gummyBubbleTags = [];
+        this.gummyLastRandomNumbers = []; 
+        this.gummyBubblesStored = [];                 
+        this.gummyInBasket = 0;                         
+                                     
+        this.gummyPoppedItems = [];                              
         
         for(var g = 0; g < this.gummyBubblesOnScreen; g++) {                        
             var gummyRandom = this.generateRandomNumber();            
@@ -507,11 +576,12 @@ var GummyBubbles = {
         this.gummyBubbleTags = [];
         this.gummyLastRandomNumbers = [];
         this.gummyBubblesStored = [];
-        this.gummyInBasket = [];
+        this.gummyInBasket = 0;
         this.gummyLevel = 1; 
         this.gummyScore = 0;
-        this.gummyMisses = 0;
-        this.touchTransition = false
+        this.gummyMisses = 3;
+        this.touchTransition = false;
+        this.gummyBubbleCollide = false;
         
         if(!this.scene.gamescene && !this.isGameActive) {
             this.gummyBubbleSpeed = 10;                
@@ -530,6 +600,7 @@ var GummyBubbles = {
                 }
         }
         
+        //this.scene = null;
         this.gummyPoppedItems = [];                    
     }        
 };

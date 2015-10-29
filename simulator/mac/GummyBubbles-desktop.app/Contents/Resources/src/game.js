@@ -8,15 +8,16 @@ var GameScene = cc.Scene.extend({
     gamelevel: null,
     level: 1,
     didPause: false,
-    studio: {},             
+    studio: {}, 
+    gummies: [],            
        
            
     /*
      * initial setup, treat as contructor
      */
     onEnter:function () {
-        this._super();                                                       
-        
+        this._super();                                                                       
+                
         GummyBubbles.isGameActive = true;
         this.didPause = false;
                         
@@ -45,7 +46,20 @@ var GameScene = cc.Scene.extend({
             if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) {
                     this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 125 );
                     this.studio.pauseBtn.setPositionY( this.studio.pauseBtn.y + 125 );
-            }         
+            } 
+            
+             // create gummy 
+            var gumm = ['bear-41x42','worm-34x42','fish-41x41'];
+            var pathToAssets = 'res/images/' + GummyBubbles.resFolderName;
+            var imageScale = GummyBubbles.getImageScale();
+            
+            for(var i = 0; i < gumm.length; i++) {                    
+                var gummy = new cc.Sprite( pathToAssets + '/' + gumm[i] + GummyBubbles.resScaledTimes + '.png' );
+                this.addChild(gummy);                                
+                gummy.setPosition( gummy.width / (2 + i) , gummy.height / 2 );       
+                gummy.setOpacity( 50 ); 
+                this.gummies.push(gummy);        
+            }                       
         }          
         
         GummyBubbles.gummyPaused = false;                                                                          
@@ -133,7 +147,7 @@ var GameScene = cc.Scene.extend({
         studioObj.pauseBtn = studioObj.panel_level.getChildByName( "pause_btn" );
         studioObj.gummiesTxt = studioObj.panel_level.getChildByName( "gummies_txt" );             
         studioObj.pauseScreen = scene.node.getChildByName( "pause_layer" ); 
-        studioObj.gummiesTxt.width = studioObj.gummiesTxt.width + 50;        
+        studioObj.gummiesTxt.width = studioObj.gummiesTxt.width + 150;        
         studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width - ( studioObj.pauseBtn.width / 2) );
         studioObj.gummiesTxt.setPositionX( size.width - ( studioObj.gummiesTxt.width + 20 ) );                                                                       
         
@@ -250,7 +264,8 @@ var GameScene = cc.Scene.extend({
                 
         for(var i = 0; i < GummyBubbles.gummyPoppedItems.length; i++) {
             var gummyRect = GummyBubbles.gummyPoppedItems[i].sprite.getBoundingBox();
-            var basketRect = GummyBubbles.basket.getBoundingBox();          
+            var basketRect = GummyBubbles.basket.getBoundingBox();
+            //var bigger = cc.rect          
             if (cc.rectContainsPoint(basketRect, gummyRect)) {                            
                 var sprite = GummyBubbles.gummyPoppedItems[i].sprite;
                 var body = GummyBubbles.gummyPoppedItems[i].body;
@@ -264,15 +279,15 @@ var GameScene = cc.Scene.extend({
                 GummyBubbles.gummyPoppedItems.splice( i , 1);
                 GummyBubbles.gummyScore++; 
                 GummyBubbles.gummyInBasket++;                                               
-                this.studio.gummiesTxt.setString( "Gummies: "+ GummyBubbles.gummyScore);                                 
+                this.studio.gummiesTxt.setString( "Gummies: "+ GummyBubbles.gummyScore+"  |   Chances: "+GummyBubbles.gummyMisses);                                 
                 this.scoreEffect( GummyBubbles.basket.x , GummyBubbles.basket.height+40 );        
             }
         }
         
-        if(GummyBubbles.gummyMisses > 3) {
-            console.log("GAME OVER!");            
+        if(GummyBubbles.gummyMisses <= 0) {
+            console.log("GAME OVER!");                        
             this.gameOver();
-            GummyBubbles.gummyMisses = 0;
+            GummyBubbles.gummyMisses = 3;            
         }     
     },
     
