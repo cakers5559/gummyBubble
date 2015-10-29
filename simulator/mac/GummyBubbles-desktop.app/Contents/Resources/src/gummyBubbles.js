@@ -237,8 +237,15 @@ var GummyBubbles = {
             this.basket = new cc.Sprite( pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png' );                    
             this.scene.addChild(this.basket , 1000);                         
             console.log("This Basket");
-            this.basket.setPosition( size.width / 2 , this.basket.height / 3 );
             this.basket.setScale(imageScale);
+            
+            if(cc.view.getFrameSize().width === 960) {
+                this.basket.setPosition( size.width / 2 , this.basket.height / 2 );
+                this.basket.setScale(imageScale - 0.2);
+            }           
+            else if(cc.view.getFrameSize().width >= 2208) this.basket.setPosition( size.width / 2 , this.basket.height / 4 );    		    
+            else this.basket.setPosition( size.width / 2 , this.basket.height / 3 );               
+            
             cc.eventManager.addListener(this.basketTouchEvent(this), this.basket);
                                         
                         
@@ -252,7 +259,7 @@ var GummyBubbles = {
     getImageScale: function() {
         // Set the Bubble scale base on device        
         var imageScale = 1;                        
-        if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) imageScale = 1.0;        
+        if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) imageScale = 1.2;        
         else if (this.resScaledTimes === '@3x' && cc.view.getFrameSize().width !== 2048 && cc.view.getFrameSize().height !== 1536) imageScale = 0.6;       
         else if (this.resScaledTimes === '@2x') imageScale = 0.75;
         else if (cc.view.getFrameSize().width == 960 && cc.view.getFrameSize().height == 640) imageScale = 1.4;    
@@ -308,8 +315,7 @@ var GummyBubbles = {
                 var rect = cc.rect(0, 0, s.width, s.height);
         
                 //Check the click area                                   
-                    if (cc.rectContainsPoint(rect, locationInNode)) {                                                                                                                                                           
-                        //cc.eventManager.removeListeners( target );
+                    if (cc.rectContainsPoint(rect, locationInNode)) {                                                                                                                                                                                   
                         console.log("Combo Touches: "+self.gummyComboTouches);                    
                         if(!target.isPopped) { 
                             target.setVisible( false );                                                         
@@ -338,23 +344,21 @@ var GummyBubbles = {
                             for(var i = 0; i < self.gummyBubblesStored.length; i++) {                                    
                                 if(!self.gummyBubblesStored[i].isRemoved && !target.isRemoved) {
                                     if(self.gummyBubblesStored[i].getTag() === target.getTag()) {
-                                        console.log("Touch Ended One "+self.gummyBubblesStored[i].getTag()+"  "+target.getTag());
-                                        //self.gummyBubblesStored.splice(i, 1, replaceBub);
-                                        //console.log("Touch Ended "+self.gummyBubblesStored[i].getTag()+"  "+target.getTag());                                                                              
+                                        console.log("Touch Ended One "+self.gummyBubblesStored[i].getTag()+"  "+target.getTag());                                                                                                                                                              
                                         target.removeFromParent(); 
                                         target.isRemoved = true;
                                         self.gummyBubblesStored[i] = { isPopped: true , isRemoved: true };
+                                        
+                                        if(self.gummyComboTouches > 1) {                                                                                                                                    
+                                            var comboNum = self.gummyComboTouches;
+                                            self.gummyComboTouches = 0;
+                                            self.comboEffect(pos , comboNum , self);
+                                            self.gummyScore += self.gummyComboTouches*2;                                
+                                                                                                                                                                    
+                                        }
                                     }
                                 }                                
-                              }            
-                            if(self.gummyComboTouches > 1) {                                                                                                                                    
-                                self.comboEffect(pos , self.gummyComboTouches , self);
-                                self.gummyScore += self.gummyComboTouches*2;                                
-                                self.gummyComboTouches = 0;                                                                                                                        
-                            }
-                            else {
-                                self.gummyComboTouches = 0; 
-                            }           
+                              }                                      
                             self.gummyComboTouches = 0;                                                                                                                                                            
                             return true; 
                 } 
@@ -472,7 +476,8 @@ var GummyBubbles = {
         console.log("test");
         var stars = cc.ParticleSystem( "res/images/fireworks.plist" );
         stars.setScale( "1."+comboNumber );
-        stars.setPosition( loc.x , loc.y );        
+        stars.setPosition( loc.x , loc.y );
+        stars.setLocalZOrder(100);        
         self.scene.addChild(stars);         
         var starsDelay = cc.delayTime(1.0);                
         stars.runAction(cc.sequence(starsDelay, cc.callFunc(removeStars, stars)));   
@@ -484,6 +489,7 @@ var GummyBubbles = {
         console.log("COMBO NUMBER: "+comboNumber);           
         var bubbleCombo = new cc.Sprite( pathToAssets + '/x'+ comboNumber + self.resScaledTimes + '.png' );                
         bubbleCombo.setScale( 0.3 );
+        bubbleCombo.setLocalZOrder(101);
         self.scene.addChild(bubbleCombo);                        
         bubbleCombo.setPosition( loc.x , loc.y );         
                         
@@ -491,7 +497,7 @@ var GummyBubbles = {
         var nodeAction = cc.scaleTo( 0.5, 0.7, 0.7 );               
         bubbleCombo.runAction(cc.sequence(nodeAction, comboOut, cc.callFunc(removeCombo, bubbleCombo)));
         
-        self.gummyMisses = self.gummyMisses + Math.abs(comboNumber/2);
+        self.gummyMisses = self.gummyMisses + Math.floor(comboNumber/2);
         self.scene.studio.missesTxt.setString( "Chances: "+ self.gummyMisses);
                                                                                                                      
     },                                        

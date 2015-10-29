@@ -74,8 +74,8 @@
             <OutlineColor A="255" R="77" G="77" B="77" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="gummy_score" ActionTag="1806008376" Tag="284" IconVisible="False" HorizontalEdge="BothEdge" LeftMargin="312.9839" RightMargin="1757.0161" TopMargin="1122.5356" BottomMargin="82.4644" FontSize="30" LabelText="Text Label" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="138.0000" Y="37.0000" />
+          <AbstractNodeData Name="gummy_score" ActionTag="1806008376" Tag="284" IconVisible="False" HorizontalEdge="BothEdge" LeftMargin="312.9839" RightMargin="1757.0161" TopMargin="1122.5356" BottomMargin="82.4644" FontSize="45" LabelText="Text Label" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="202.0000" Y="55.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="381.9840" Y="100.9644" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

@@ -174,7 +174,7 @@ var GameScene = cc.Scene.extend({
                     studioObj.panel_level.setPosition( cc.p(-100, 0) ); 
                     studioObj.tapScreen.setPosition( cc.p(-100, 0) );  
                     studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width );                     
-                    studioObj.gummiesTxt.setPositionX( 790.00 );
+                    studioObj.gummiesTxt.setPositionX( 690.00 );
                     studioObj.missesTxt.setPositionX( 590.00 );                
                 }
                 
@@ -238,9 +238,12 @@ var GameScene = cc.Scene.extend({
     gameOver: function() {
         var ls = cc.sys.localStorage;                
         ls.setItem("gummyScore", GummyBubbles.gummyScore);
-        if("bestScore" in ls) {
+        if (ls.getItem("bestScore") !== null) {        
             var bestScore = ls.getItem("bestScore");            
-            if(bestScore > GummyBubbles.gummyScore) ls.setItem("bestScore" , GummyBubbles.gummyScore);
+            if(bestScore < GummyBubbles.gummyScore) ls.setItem("bestScore" , GummyBubbles.gummyScore);            
+        }
+        else {
+            ls.setItem("bestScore" , GummyBubbles.gummyScore);
         }        
         
         cc.audioEngine.playEffect( "res/audio/party_horn.mp3" );                                             

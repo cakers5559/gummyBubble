@@ -57,6 +57,7 @@
             <Image Name="x2@3x.png" />
             <Image Name="x5@3x.png" />
             <Image Name="x4@3x.png" />
+            <Image Name="basket-empty@3x.png" />
           </Folder>
           <Folder Name="mediumRes">
             <Image Name="basket-114x86@2x.png" />

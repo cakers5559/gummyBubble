@@ -322,7 +322,7 @@
             "ctype": "TextObjectData"
           },
           {
-            "FontSize": 30,
+            "FontSize": 45,
             "LabelText": "Text Label",
             "FontResource": {
               "Type": "Normal",
@@ -373,8 +373,8 @@
             "Tag": 284,
             "ActionTag": 1806008376,
             "Size": {
-              "X": 138.0,
-              "Y": 37.0
+              "X": 202.0,
+              "Y": 55.0
             },
             "Name": "gummy_score",
             "ctype": "TextObjectData"

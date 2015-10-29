@@ -32,20 +32,14 @@ var GameOverScene = cc.Scene.extend({
         gummyBasket.setPositionX( size.width / 2 );
         retryBtn.setPositionX( size.width / 2 );        
         exitBtn.setPositionX( size.width / 2 );   
-        
-        var ls = cc.sys.localStorage; 
-        var gummyScore = ("gummyScore" in ls) ? ls.getItem("gummyScore") : 0;
-        var bestScore = ("bestScore" in ls) ? ls.getItem("bestScore") : 0;               
-      
-        gummyScoreTxt.setString( "Gummy Score: "+ gummyScore + "    |    Your Best Score: "+bestScore);      		        
-       
+                    		               
        if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) {                                                                                                   
                     gameOverPanel.setScale( 2.0 );
                     //pausePanel.setPosition( cc.p(-100, 0) );
                     gameOverTxt.setPositionY( size.height - (gameOverTxt.height + 20) );
                     gameOverTxt.setScale( 1.0 );
-                    gummyScoreTxt.setPositionY( size.height - (gummyScoreTxt.height + 10) );
-                    gummyScoreTxt.setScale( 1.0 );
+                    gummyScoreTxt.setPositionY( size.height / 5 );
+                    gummyScoreTxt.setScale( 2.0 );
                     gummyBasket.setPositionY( size.height - (gummyBasket.height + 30) );
                     gummyBasket.setScale( 1.0 );
                     retryBtn.setScale( 1.0 );
@@ -53,6 +47,12 @@ var GameOverScene = cc.Scene.extend({
                     exitBtn.setScale( 1.0 );
                     exitBtn.setPositionY( (size.height / 2) - exitBtn.height );                                                                                                                                                                                                                                                                                                            
         }
+        
+        var ls = cc.sys.localStorage; 
+        var gummyScore = ls.getItem("gummyScore");
+        var bestScore = ls.getItem("bestScore");               
+      
+        gummyScoreTxt.setString( "Gummy Score: "+ gummyScore + "      |      Your Best Score: "+ bestScore );  
        
         retryBtn.addTouchEventListener( function(sender, type) {
             switch (type)
