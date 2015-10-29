@@ -27,7 +27,7 @@ var GummyBubbles = {
     gummyInBasket: 0,
     isGameActive : false,
     touchTransition: false,
-    gummyMisses: 3,
+    gummyMisses: 1,
     poppedLength: 0, 
     timer: null,                           
     
@@ -349,7 +349,7 @@ var GummyBubbles = {
                               }            
                             if(self.gummyComboTouches > 1) {                                                                                                                                    
                                 self.comboEffect(pos , self.gummyComboTouches , self);
-                                self.gummyScore += self.gummyComboTouches*2;
+                                self.gummyScore += self.gummyComboTouches*2;                                
                                 self.gummyComboTouches = 0;                                                                                                                        
                             }
                             else {
@@ -489,7 +489,11 @@ var GummyBubbles = {
                         
         var comboOut = cc.fadeOut(0.5);
         var nodeAction = cc.scaleTo( 0.5, 0.7, 0.7 );               
-        bubbleCombo.runAction(cc.sequence(nodeAction, comboOut, cc.callFunc(removeCombo, bubbleCombo)));                                                                             
+        bubbleCombo.runAction(cc.sequence(nodeAction, comboOut, cc.callFunc(removeCombo, bubbleCombo)));
+        
+        self.gummyMisses = self.gummyMisses + Math.abs(comboNumber/2);
+        self.scene.studio.missesTxt.setString( "Chances: "+ self.gummyMisses);
+                                                                                                                     
     },                                        
     
     
@@ -516,6 +520,7 @@ var GummyBubbles = {
                 else {
                     console.log("Not Popped");
                     this.gummyMisses--;
+                    this.scene.studio.missesTxt.setString( "Chances: "+ this.gummyMisses);
                     this.scene.studio.gummiesTxt.setString( "Gummies: "+ this.gummyScore);
                 }                
                 
@@ -595,7 +600,7 @@ var GummyBubbles = {
         this.gummyInBasket = 0;
         this.gummyLevel = 1; 
         this.gummyScore = 0;
-        this.gummyMisses = 3;
+        this.gummyMisses = 1;
         this.touchTransition = false;
         this.gummyBubbleCollide = false;
         this.poppedLength = 0;

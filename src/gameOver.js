@@ -21,20 +21,31 @@ var GameOverScene = cc.Scene.extend({
         
         var gameOverPanel = this.gameoverscene.node.getChildByName( 'gameover_panel' );                		                
         var gameOverTxt = this.gameoverscene.node.getChildByName( 'game_over_txt' );
+        var gummyScoreTxt = this.gameoverscene.node.getChildByName( 'gummy_score' );
         var gummyBasket = this.gameoverscene.node.getChildByName( 'gummy_basket' );
         var retryBtn = this.gameoverscene.node.getChildByName( 'retry_btn' );        
         var exitBtn = this.gameoverscene.node.getChildByName( 'exit_btn' );
         		
-		gameOverTxt.setPositionX( size.width / 2 );                                             
+		gameOverTxt.setPositionX( size.width / 2 );
+        gummyScoreTxt.setPositionX( size.width / 2 );                                             
+        gummyScoreTxt.width = size.width;
         gummyBasket.setPositionX( size.width / 2 );
         retryBtn.setPositionX( size.width / 2 );        
-        exitBtn.setPositionX( size.width / 2 );           		        
+        exitBtn.setPositionX( size.width / 2 );   
+        
+        var ls = cc.sys.localStorage; 
+        var gummyScore = ("gummyScore" in ls) ? ls.getItem("gummyScore") : 0;
+        var bestScore = ("bestScore" in ls) ? ls.getItem("bestScore") : 0;               
+      
+        gummyScoreTxt.setString( "Gummy Score: "+ gummyScore + "    |    Your Best Score: "+bestScore);      		        
        
        if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) {                                                                                                   
                     gameOverPanel.setScale( 2.0 );
                     //pausePanel.setPosition( cc.p(-100, 0) );
                     gameOverTxt.setPositionY( size.height - (gameOverTxt.height + 20) );
                     gameOverTxt.setScale( 1.0 );
+                    gummyScoreTxt.setPositionY( size.height - (gummyScoreTxt.height + 10) );
+                    gummyScoreTxt.setScale( 1.0 );
                     gummyBasket.setPositionY( size.height - (gummyBasket.height + 30) );
                     gummyBasket.setScale( 1.0 );
                     retryBtn.setScale( 1.0 );

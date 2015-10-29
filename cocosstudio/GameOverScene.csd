@@ -22,7 +22,7 @@
           <AbstractNodeData Name="retry_btn" ActionTag="-1313419742" Tag="3486" IconVisible="False" HorizontalEdge="BothEdge" LeftMargin="219.9721" RightMargin="1505.0278" TopMargin="812.2004" BottomMargin="243.7996" TouchEnable="True" FontSize="72" ButtonText="Retry" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="453" Scale9Height="164" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="483.0000" Y="186.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="461.4721" Y="336.7996" />
+            <Position X="461.4720" Y="336.7996" />
             <Scale ScaleX="0.3597" ScaleY="0.3597" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2090" Y="0.2712" />
@@ -38,7 +38,7 @@
           <AbstractNodeData Name="exit_btn" ActionTag="402511199" Tag="3487" IconVisible="False" HorizontalEdge="BothEdge" LeftMargin="219.9721" RightMargin="1505.0278" TopMargin="909.1096" BottomMargin="146.8904" TouchEnable="True" FontSize="72" ButtonText="Exit" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="453" Scale9Height="164" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="483.0000" Y="186.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="461.4721" Y="239.8904" />
+            <Position X="461.4720" Y="239.8904" />
             <Scale ScaleX="0.3597" ScaleY="0.3597" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2090" Y="0.1931" />
@@ -70,6 +70,18 @@
             <CColor A="255" R="255" G="165" B="0" />
             <PrePosition X="0.2090" Y="0.3604" />
             <PreSize X="0.1603" Y="0.0684" />
+            <FontResource Type="Normal" Path="Bobbleboddy.ttf" Plist="" />
+            <OutlineColor A="255" R="77" G="77" B="77" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="gummy_score" ActionTag="1806008376" Tag="284" IconVisible="False" HorizontalEdge="BothEdge" LeftMargin="312.9839" RightMargin="1757.0161" TopMargin="1122.5356" BottomMargin="82.4644" FontSize="30" LabelText="Text Label" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="138.0000" Y="37.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="381.9840" Y="100.9644" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.1730" Y="0.0813" />
+            <PreSize X="0.0426" Y="0.0185" />
             <FontResource Type="Normal" Path="Bobbleboddy.ttf" Plist="" />
             <OutlineColor A="255" R="77" G="77" B="77" />
             <ShadowColor A="255" R="110" G="110" B="110" />

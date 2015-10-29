@@ -109,7 +109,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 461.4721,
+              "X": 461.472,
               "Y": 336.7996
             },
             "Scale": {
@@ -185,7 +185,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 461.4721,
+              "X": 461.472,
               "Y": 239.8904
             },
             "Scale": {
@@ -319,6 +319,64 @@
               "Y": 87.0
             },
             "Name": "game_over_txt",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 30,
+            "LabelText": "Text Label",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "HorizontalAlignmentType": "HT_Center",
+            "OutlineColor": {
+              "R": 77,
+              "G": 77,
+              "B": 77
+            },
+            "OutlineEnabled": true,
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 381.984,
+              "Y": 100.9644
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.173,
+              "Y": 0.0813
+            },
+            "PreSize": {
+              "X": 0.0426,
+              "Y": 0.0185
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 312.9839,
+            "RightMargin": 1757.0161,
+            "TopMargin": 1122.5356,
+            "BottomMargin": 82.4644,
+            "Tag": 284,
+            "ActionTag": 1806008376,
+            "Size": {
+              "X": 138.0,
+              "Y": 37.0
+            },
+            "Name": "gummy_score",
             "ctype": "TextObjectData"
           }
         ],

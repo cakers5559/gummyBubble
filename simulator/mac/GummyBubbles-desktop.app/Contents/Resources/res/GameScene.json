@@ -353,24 +353,24 @@
               },
               {
                 "FontSize": 40,
-                "LabelText": "Chances: 3",
+                "LabelText": "Chances: 1",
                 "FontResource": {
                   "Type": "Normal",
                   "Path": "Bobbleboddy.ttf",
                   "Plist": ""
                 },
-                "HorizontalAlignmentType": "HT_Right",
+                "HorizontalAlignmentType": "HT_Center",
                 "VerticalAlignmentType": "VT_Center",
                 "OutlineColor": {
-                  "R": 77,
-                  "G": 77,
-                  "B": 77
+                  "R": 127,
+                  "G": 127,
+                  "B": 127
                 },
                 "OutlineEnabled": true,
                 "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
+                  "R": 0,
+                  "G": 0,
+                  "B": 0
                 },
                 "ShadowOffsetX": 2.0,
                 "ShadowOffsetY": -2.0,
@@ -404,7 +404,7 @@
                 "Tag": 9275,
                 "ActionTag": 113688738,
                 "Size": {
-                  "X": 192.0,
+                  "X": 184.0,
                   "Y": 49.0
                 },
                 "Name": "misses_txt",

@@ -151,6 +151,7 @@ var GameScene = cc.Scene.extend({
         studioObj.missesTxt = studioObj.panel_level.getChildByName( "misses_txt" );             
         studioObj.pauseScreen = scene.node.getChildByName( "pause_layer" ); 
         studioObj.gummiesTxt.width = studioObj.gummiesTxt.width + 150;        
+        studioObj.missesTxt.width = studioObj.missesTxt.width + 150;
         studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width - ( studioObj.pauseBtn.width / 2) );
         studioObj.gummiesTxt.setPositionX( size.width - ( studioObj.gummiesTxt.width + 20 ) );
         studioObj.missesTxt.setPositionX( size.width / 2 );                                                                       
@@ -235,7 +236,13 @@ var GameScene = cc.Scene.extend({
     }, 
     
     gameOver: function() {
-        console.log("Game Over!!!");
+        var ls = cc.sys.localStorage;                
+        ls.setItem("gummyScore", GummyBubbles.gummyScore);
+        if("bestScore" in ls) {
+            var bestScore = ls.getItem("bestScore");            
+            if(bestScore > GummyBubbles.gummyScore) ls.setItem("bestScore" , GummyBubbles.gummyScore);
+        }        
+        
         cc.audioEngine.playEffect( "res/audio/party_horn.mp3" );                                             
         cc.director.pushScene(  new GameOverScene() );
     },   
@@ -292,7 +299,7 @@ var GameScene = cc.Scene.extend({
         if(GummyBubbles.gummyMisses <= 0) {
             console.log("GAME OVER!");                        
             this.gameOver();
-            GummyBubbles.gummyMisses = 3;            
+            GummyBubbles.gummyMisses = 1;            
         }     
     },
     
