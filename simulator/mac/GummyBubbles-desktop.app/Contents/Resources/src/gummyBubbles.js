@@ -609,7 +609,8 @@ var GummyBubbles = {
         this.gummyMisses = 1;
         this.touchTransition = false;
         this.gummyBubbleCollide = false;
-        this.poppedLength = 0;
+        this.poppedLength = 0;        
+        this.basket = null;
         
         if(this.timer) clearTimeout(this.timer);
         

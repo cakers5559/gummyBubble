@@ -134,6 +134,7 @@ var MainScene = cc.Scene.extend({
         switch (type)
         {
         case ccui.Widget.TOUCH_BEGAN: 
+            if(GummyBubbles.timer) clearTimeout(GummyBubbles.timer);
             cc.audioEngine.setEffectsVolume( 3.25 );
             cc.audioEngine.playEffect( "res/audio/click.mp3" );                       
             Physics.space.removeCollisionHandler(  1  , 2 );
@@ -141,8 +142,7 @@ var MainScene = cc.Scene.extend({
             this.unschedule();   
             console.log("PLAY BUTTON TOUCHED!");            
             cc.director.popToSceneStackLevel(1);
-            cc.director.replaceScene( new GameScene());
-                        
+            cc.director.replaceScene( new GameScene());                        
             break;        
         }
     }, 
@@ -176,8 +176,10 @@ var MainScene = cc.Scene.extend({
         Physics.space.removeCollisionHandler(  1  , 2 );        
         GummyBubbles.cleanUp();        
         // stops the background music
+        
         cc.audioEngine.stopMusic( );
-        this.unschedule(); 
+        this.unschedule();
+        this.removeAllChildrenWithCleanup( true ); 
         cc.director.resume();                                 
     },                                                        
     

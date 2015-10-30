@@ -92,7 +92,7 @@ var GameOverScene = cc.Scene.extend({
     /*
      * perform some cleanup
      */  
-    onExit: function() {  
+    onExit: function() {          
         console.log("DID EXIT"); 
         GummyBubbles.isGameActive = false;
         GummyBubbles.gummyBubbleCollide = false;                           

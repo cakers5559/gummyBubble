@@ -48,20 +48,7 @@ var GameScene = cc.Scene.extend({
                     this.studio.missesTxt.setPositionY( this.studio.missesTxt.y + 125 );
                     this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 125 );
                     this.studio.pauseBtn.setPositionY( this.studio.pauseBtn.y + 125 );
-            }            
-            
-             // create gummy 
-            var gumm = ['bear-41x42','worm-34x42','fish-41x41'];
-            var pathToAssets = 'res/images/' + GummyBubbles.resFolderName;
-            var imageScale = GummyBubbles.getImageScale();
-            
-            for(var i = 0; i < gumm.length; i++) {                    
-                var gummy = new cc.Sprite( pathToAssets + '/' + gumm[i] + GummyBubbles.resScaledTimes + '.png' );
-                this.addChild(gummy);                                
-                gummy.setPosition( gummy.width / (2 + i) , gummy.height / 2 );       
-                gummy.setOpacity( 50 ); 
-                this.gummies.push(gummy);        
-            }                       
+            }                                         
         }          
         
         GummyBubbles.gummyPaused = false;                                                                          
@@ -71,8 +58,7 @@ var GameScene = cc.Scene.extend({
     onPause: function(sender, type) {         
          switch (type)
             {
-            case ccui.Widget.TOUCH_BEGAN: 
-                this.didPause = true;
+            case ccui.Widget.TOUCH_BEGAN:                                
                 cc.audioEngine.setEffectsVolume( 3.25 );
                 cc.audioEngine.playEffect( "res/audio/click.mp3" );       
                 console.log("PAUSED!!!");                                             
@@ -84,15 +70,15 @@ var GameScene = cc.Scene.extend({
     /*
      * perform some cleanup
      */  
-    onExit: function() {        
-        // stops the background music
-       if(!this.didPause) {
+    onExit: function() {
+        console.log("AINA EXITING");        
+        // stops the background music                   
+            console.log("CHRISTOPHER EXITING");
             GummyBubbles.isGameActive = false;
             cc.audioEngine.stopMusic();
             Physics.space.removeCollisionHandler(  1  , 2 );                    
             GummyBubbles.cleanUp();        
-            this.unschedule();  
-       }       
+            this.unschedule();              
     },         
     
     
@@ -103,18 +89,19 @@ var GameScene = cc.Scene.extend({
         cc.audioEngine.playMusic( "res/audio/sunny_day.mp3", true );
         cc.audioEngine.setMusicVolume( 0.10 );
                                 
-        var moveAnimation = function( time , pXY ) {
+        var moveAnimation = function( time , pXY , tag ) {
             var move = cc.moveBy( time , pXY );
             var move_back = move.reverse();
             var delay = cc.delayTime(0.25);
             var move_seq = cc.sequence( move, move_back );
+            move_seq.setTag(tag);
             var move_rep = move_seq.repeatForever(); 
             return move_rep;        
         };
                        
-        this.studio.clouds.runAction( moveAnimation( 400.0 , cc.p(0 - this.studio.clouds.width , this.studio.clouds.y) ) );  
-        this.studio.mountains.runAction( moveAnimation( 20.0 , cc.p( 40  , this.studio.mountains.y) ) );                                
-        
+        this.studio.clouds.runAction( moveAnimation( 400.0 , cc.p(0 - this.studio.clouds.width , this.studio.clouds.y), 104 ) );  
+        this.studio.mountains.runAction( moveAnimation( 20.0 , cc.p( 40  , this.studio.mountains.y) , 105 ) );                                
+                
         // create the gummies basket
         GummyBubbles.basketInit();
         console.log("The Gummy Mode is: "+GummyBubbles.gummyBubblesOnScreen + "  "+ GummyBubbles.gummyBubbleSpeed);
