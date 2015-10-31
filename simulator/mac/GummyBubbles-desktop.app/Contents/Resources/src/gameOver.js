@@ -15,9 +15,7 @@ var GameOverScene = cc.Scene.extend({
         
         //add the scene to the view
         this.gameoverscene = ccs.load(res.GameOverScene_json);                
-        this.addChild(this.gameoverscene.node);                               
-        
-        console.log("OH!!! Game Over");
+        this.addChild(this.gameoverscene.node);                                              
         
         var gameOverPanel = this.gameoverscene.node.getChildByName( 'gameover_panel' );                		                
         var gameOverTxt = this.gameoverscene.node.getChildByName( 'game_over_txt' );
@@ -32,13 +30,15 @@ var GameOverScene = cc.Scene.extend({
         gummyBasket.setPositionX( size.width / 2 );
         retryBtn.setPositionX( size.width / 2 );        
         exitBtn.setPositionX( size.width / 2 );   
-                    		               
+        
+        gummyScoreTxt.setPositionY( size.height - (size.height / 8) );
+              		               
        if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) {                                                                                                   
                     gameOverPanel.setScale( 2.0 );
                     //pausePanel.setPosition( cc.p(-100, 0) );
                     gameOverTxt.setPositionY( size.height - (gameOverTxt.height + 20) );
                     gameOverTxt.setScale( 1.0 );
-                    gummyScoreTxt.setPositionY( size.height / 5 );
+                    gummyScoreTxt.setPositionY( size.height - (size.height / 5) );
                     gummyScoreTxt.setScale( 2.0 );
                     gummyBasket.setPositionY( size.height - (gummyBasket.height + 30) );
                     gummyBasket.setScale( 1.0 );
@@ -60,8 +60,7 @@ var GameOverScene = cc.Scene.extend({
             case ccui.Widget.TOUCH_BEGAN:                     
                     GummyBubbles.gummyBubbleCollide = false;
                     cc.audioEngine.setEffectsVolume( 3.25 );
-                    cc.audioEngine.playEffect( "res/audio/click.mp3" );                   
-                    console.log("Retry the pause");
+                    cc.audioEngine.playEffect( "res/audio/click.mp3" );                                       
                     cc.director.resume();              
                     cc.director.popToSceneStackLevel(1);
                     cc.director.replaceScene(new GameScene());                                                          
@@ -74,8 +73,7 @@ var GameOverScene = cc.Scene.extend({
             {
             case ccui.Widget.TOUCH_BEGAN:
                     cc.audioEngine.setEffectsVolume( 3.25 );
-                    cc.audioEngine.playEffect( "res/audio/click.mp3" );                                                                                                                               
-                    console.log("Exit the pause"); 
+                    cc.audioEngine.playEffect( "res/audio/click.mp3" );                                                                                                                                                    
                     GummyBubbles.scene.gamescene = null;                   
                     cc.director.resume();              
                     cc.director.popToSceneStackLevel(1);
@@ -92,8 +90,7 @@ var GameOverScene = cc.Scene.extend({
     /*
      * perform some cleanup
      */  
-    onExit: function() {          
-        console.log("DID EXIT"); 
+    onExit: function() {                  
         GummyBubbles.isGameActive = false;
         GummyBubbles.gummyBubbleCollide = false;                           
         GummyBubbles.cleanUp();           

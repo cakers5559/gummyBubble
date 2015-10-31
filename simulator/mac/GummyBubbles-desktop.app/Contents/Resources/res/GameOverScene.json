@@ -322,7 +322,7 @@
             "ctype": "TextObjectData"
           },
           {
-            "FontSize": 45,
+            "FontSize": 40,
             "LabelText": "Text Label",
             "FontResource": {
               "Type": "Normal",
@@ -349,7 +349,7 @@
             },
             "Position": {
               "X": 381.984,
-              "Y": 100.9644
+              "Y": 94.9644
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -366,6 +366,7 @@
               "Y": 0.0185
             },
             "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "TopEdge",
             "LeftMargin": 312.9839,
             "RightMargin": 1757.0161,
             "TopMargin": 1122.5356,
@@ -373,8 +374,8 @@
             "Tag": 284,
             "ActionTag": 1806008376,
             "Size": {
-              "X": 202.0,
-              "Y": 55.0
+              "X": 180.0,
+              "Y": 49.0
             },
             "Name": "gummy_score",
             "ctype": "TextObjectData"

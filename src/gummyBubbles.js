@@ -208,8 +208,7 @@ var GummyBubbles = {
             cc.audioEngine.playEffect( "res/audio/shoot_out_bubble.mp3" );            
         }
         
-        if (this.gummyBubbleTags.length === this.gummyBubblesOnScreen) {           
-            console.log("The GUMMY SPEED "+((this.gummyBubbleSpeed*1000) + 1000));
+        if (this.gummyBubbleTags.length === this.gummyBubblesOnScreen) {                       
             var self = this;             
             this.timer = setTimeout(function() {
                 self.onFireBubbleComplete();
@@ -235,8 +234,7 @@ var GummyBubbles = {
             
             
             this.basket = new cc.Sprite( pathToAssets + '/basket-empty-114x74' + this.resScaledTimes + '.png' );                    
-            this.scene.addChild(this.basket , 1000);                         
-            console.log("This Basket");
+            this.scene.addChild(this.basket , 1000);                                     
             this.basket.setScale(imageScale);
             
             if(cc.view.getFrameSize().width === 960) {
@@ -297,8 +295,7 @@ var GummyBubbles = {
                     self.touchTransition = true;
                     var screen = touch.getLocation();
                     
-                    var touchDone = function() {
-                        console.log('TOUCH DONW');
+                    var touchDone = function() {                       
                         self.touchTransition = false;
                     }
                     
@@ -315,8 +312,7 @@ var GummyBubbles = {
                 var rect = cc.rect(0, 0, s.width, s.height);
         
                 //Check the click area                                   
-                    if (cc.rectContainsPoint(rect, locationInNode)) {                                                                                                                                                                                   
-                        console.log("Combo Touches: "+self.gummyComboTouches);                    
+                    if (cc.rectContainsPoint(rect, locationInNode)) {                                                                                                                                                                                                                              
                         if(!target.isPopped) { 
                             target.setVisible( false );                                                         
                             target.isPopped = true;
@@ -343,8 +339,7 @@ var GummyBubbles = {
                 if (cc.rectContainsPoint(rect, locationInNode)) {
                             for(var i = 0; i < self.gummyBubblesStored.length; i++) {                                    
                                 if(!self.gummyBubblesStored[i].isRemoved && !target.isRemoved) {
-                                    if(self.gummyBubblesStored[i].getTag() === target.getTag()) {
-                                        console.log("Touch Ended One "+self.gummyBubblesStored[i].getTag()+"  "+target.getTag());                                                                                                                                                              
+                                    if(self.gummyBubblesStored[i].getTag() === target.getTag()) {                                                                                                                                                                                                      
                                         target.removeFromParent(); 
                                         target.isRemoved = true;
                                         self.gummyBubblesStored[i] = { isPopped: true , isRemoved: true };
@@ -473,7 +468,7 @@ var GummyBubbles = {
            
             s.removeFromParent();            
         }    
-        console.log("test");
+                
         var stars = cc.ParticleSystem( "res/images/fireworks.plist" );
         stars.setScale( "1."+comboNumber );
         stars.setPosition( loc.x , loc.y );
@@ -486,7 +481,7 @@ var GummyBubbles = {
         var removeCombo = function(combo) {
             combo.removeFromParent();            
         }                                  
-        console.log("COMBO NUMBER: "+comboNumber);           
+                   
         var bubbleCombo = new cc.Sprite( pathToAssets + '/x'+ comboNumber + self.resScaledTimes + '.png' );                
         bubbleCombo.setScale( 0.3 );
         bubbleCombo.setLocalZOrder(101);
@@ -519,21 +514,18 @@ var GummyBubbles = {
         if(this.scene.gamescene && this.isGameActive) {
             for(var i = 0; i < this.gummyBubblesStored.length; i++) {
                 var bub = this.gummyBubblesStored[i];
-                if(bub.isPopped) {
-                    console.log("Popped");               
+                if(bub.isPopped) {                                   
                     howManyPopped++;
                 }
-                else {
-                    console.log("Not Popped");
+                else {                    
                     this.gummyMisses--;
                     this.scene.studio.missesTxt.setString( "Chances: "+ this.gummyMisses);
                     this.scene.studio.gummiesTxt.setString( "Gummies: "+ this.gummyScore);
                 }                
                 
-                if(!bub.isRemoved) bub.removeFromParent();
-                console.log("GAME - BUBBLE REMOVED!!!!");
+                if(!bub.isRemoved) bub.removeFromParent();                
             } 
-            console.log("H: "+howManyPopped+"  P: "+poppedTotal+"  B: "+this.gummyInBasket);
+            
             if(howManyPopped === poppedTotal && this.gummyInBasket === poppedTotal) {            
                 this.gummyLevel++;
                 this.scene.levelChange();
@@ -546,8 +538,7 @@ var GummyBubbles = {
         else {
             for(var i = 0; i < this.gummyBubblesStored.length; i++) {
                 var bub = this.gummyBubblesStored[i];
-                if(!bub.isRemoved) bub.removeFromParent();
-                console.log("MAIN - BUBBLE REMOVED!!!!"); 
+                if(!bub.isRemoved) bub.removeFromParent();                
             }
         } 
         
@@ -560,8 +551,7 @@ var GummyBubbles = {
                     Physics.space.removeShape(shape);
                     Physics.space.removeBody(body);
                     sprite.removeFromParent();                                                    
-                }
-                console.log("REMOVING THE PHYSIC BODY!!!");
+                }                
         }            
                         
         this.gummyBubbleTag = 1;
@@ -610,9 +600,7 @@ var GummyBubbles = {
         this.touchTransition = false;
         this.gummyBubbleCollide = false;
         this.poppedLength = 0;        
-        this.basket = null;
-        
-        if(this.timer) clearTimeout(this.timer);
+        this.basket = null;                
         
         if(!this.scene.gamescene && !this.isGameActive) {
             this.gummyBubbleSpeed = 10;                

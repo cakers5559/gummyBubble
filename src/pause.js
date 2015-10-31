@@ -38,16 +38,15 @@ var PauseScene = cc.Scene.extend({
                     exitBtn.setScale( 1.0 );
                     exitBtn.setPositionY( size.height / 4 + (exitBtn.height/2) );                                                                                                                                                                                     
                     //exitBtn.setPosition( cc.p(-100, 0) );                                                                                                   
-        }
-                  		        
+        }                  		        
        
         retryBtn.addTouchEventListener( function(sender, type) {
             switch (type)
             {
-            case ccui.Widget.TOUCH_BEGAN:                    
+            case ccui.Widget.TOUCH_BEGAN:  
+                    if(GummyBubbles.timer) clearTimeout(GummyBubbles.timer);                  
                     cc.audioEngine.setEffectsVolume( 3.25 );
-                    cc.audioEngine.playEffect( "res/audio/click.mp3" );                   
-                    console.log("Retry the pause");
+                    cc.audioEngine.playEffect( "res/audio/click.mp3" );                                       
                     cc.director.resume();              
                     cc.director.popToSceneStackLevel(1);
                     cc.director.replaceScene(new GameScene());                                                           
@@ -73,14 +72,14 @@ var PauseScene = cc.Scene.extend({
             switch (type)
             {
             case ccui.Widget.TOUCH_BEGAN:
+                    if(GummyBubbles.timer) clearTimeout(GummyBubbles.timer);
                     GummyBubbles.gummyPaused = false;
                     cc.audioEngine.setEffectsVolume( 3.25 );
-                    cc.audioEngine.playEffect( "res/audio/click.mp3" );                                                                                                                               
-                    console.log("Exit the pause"); 
+                    cc.audioEngine.playEffect( "res/audio/click.mp3" );                                                                                                                                                    
                     GummyBubbles.scene.gamescene = null;                   
                     cc.director.resume();              
                     cc.director.popToSceneStackLevel(1);
-                    cc.director.replaceScene(new MainScene());                                                                                                                                                                 
+                    cc.director.replaceScene(new MainScene());                                                                                                                                                                                     
                 break;        
             }
         }, this );
@@ -93,9 +92,8 @@ var PauseScene = cc.Scene.extend({
      * perform some cleanup
      */  
     onExit: function() {                              
-        if(!GummyBubbles.gummyPaused) {
-            console.log("Clean it up");
-            GummyBubbles.isGameActive = false;
+        if(!GummyBubbles.gummyPaused) {            
+            GummyBubbles.isGameActive = false;            
             GummyBubbles.cleanUp();
         }           
     }              

@@ -208,14 +208,12 @@ var GameScene = cc.Scene.extend({
     }, 
     
     
-    levelChange: function() {  
-       console.log("THIS LEVEL IS: "+GummyBubbles.gummyLevel)
+    levelChange: function() {         
        if("level"+GummyBubbles.gummyLevel in this.Level) {
             GummyBubbles.gummyBubblesOnScreen = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][0];
             GummyBubbles.gummyBubbleSpeed = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][1];
        }
-       else {            
-            console.log("YOU WIN!!!");
+       else {                        
             GummyBubbles.gummyLevel--;
             GummyBubbles.gummyBubblesOnScreen = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][0];
             GummyBubbles.gummyBubbleSpeed = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][1];
@@ -223,6 +221,8 @@ var GameScene = cc.Scene.extend({
     }, 
     
     gameOver: function() {
+        if(GummyBubbles.timer) clearTimeout(GummyBubbles.timer);
+        
         var ls = cc.sys.localStorage;                
         ls.setItem("gummyScore", GummyBubbles.gummyScore);
         if (ls.getItem("bestScore") !== null) {        
@@ -246,8 +246,7 @@ var GameScene = cc.Scene.extend({
         {
         case ccui.Widget.TOUCH_BEGAN:  
             cc.audioEngine.setEffectsVolume( 3.25 );
-            cc.audioEngine.playEffect( "res/audio/click.mp3" );
-            console.log("Start the Game");            
+            cc.audioEngine.playEffect( "res/audio/click.mp3" );                        
             this.studio.tapScreen.removeFromParent();                      
             this.studio.instructionLayer.removeFromParent();                        
             this.initGame();            
