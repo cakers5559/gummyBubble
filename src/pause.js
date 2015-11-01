@@ -13,6 +13,8 @@ var PauseScene = cc.Scene.extend({
 		this._super();                                       
         var size = cc.winSize;                
         
+        BannerADCommunication.showBanner();
+        
         //add the scene to the view
         this.pausescene = ccs.load(res.PauseScene_json);                
         this.addChild(this.pausescene.node);                
@@ -60,9 +62,11 @@ var PauseScene = cc.Scene.extend({
             case ccui.Widget.TOUCH_BEGAN: 
                     cc.audioEngine.setEffectsVolume( 3.25 );
                     cc.audioEngine.playEffect( "res/audio/click.mp3" );                                                               
-                    GummyBubbles.gummyPaused = true;
-                    cc.director.popScene();
+                    GummyBubbles.gummyPaused = true; 
+                    GummyBubbles.touchTransition = false;
+                    console.log("TOUCH TRANSITION");                  
                     cc.director.resume();
+                    cc.director.popToSceneStackLevel(1);
                     cc.audioEngine.resumeMusic();                              
                 break;        
             }

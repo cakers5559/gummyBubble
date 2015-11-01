@@ -17,7 +17,8 @@ var GameScene = cc.Scene.extend({
      */
     onEnter:function () {
         this._super();                                                                       
-                
+        
+        BannerADCommunication.hideBanner();      
         GummyBubbles.isGameActive = true;
         this.didPause = false;
                         

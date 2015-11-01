@@ -5,15 +5,14 @@ var MainScene = cc.Scene.extend({
      * private variables
      */        
     mainscene: null,              
-       
            
     /*
      * initial setup, treat as contructor
      */
     onEnter:function () {
         this._super();                                       
-        var size = cc.winSize;
-        
+        var size = cc.winSize;                                        
+      
         // init Physics        
         Physics.initPhysics();        
         this.scheduleUpdate();                              
@@ -35,7 +34,7 @@ var MainScene = cc.Scene.extend({
         studioObj.bgLayer.setVisible( true );        
         
         studioObj.playBtn.setVisible( true );                
-        studioObj.playBtn.setPosition( size.width / 2 , (size.height / 2) / 2 );        
+        studioObj.playBtn.setPosition( size.width / 2 , (size.height / 2) - (size.height / 6)  );        
         studioObj.playBtn.addTouchEventListener( this.touchEvent, this );  
         
         studioObj.settingsBtn.addTouchEventListener( this.touchSettingsEvent, this );      
@@ -107,7 +106,7 @@ var MainScene = cc.Scene.extend({
             }
             else if (cc.view.getFrameSize().width >= 1334) {                             
                 setProperties( 'bg_medium' , 'play_btn_medium' , 'mediumRes' , '@2x' );
-                studioObj.playBtn.setScale( 0.7 );   
+                studioObj.playBtn.setScale( 1.0 );   
             }
             else if (cc.view.getFrameSize().width >= 1136) {                               
                 setProperties( 'bg_medium' , 'play_btn_small' , 'mediumRes' , '@2x' );                                                                            
@@ -188,9 +187,24 @@ var MainScene = cc.Scene.extend({
     /*
      * updater
      */        
-    update:function (dt) {
+    update: function (dt) {
         // chipmunk step
         Physics.space.step(dt);       
     }
 });
+
+var BannerADCommunication = {
+    
+    showBanner: function() {
+        if(cc.sys.IPHONE === cc.sys.platform || cc.sys.IPAD === cc.sys.platform) {
+            jsb.reflection.callStaticMethod("AppController", "showAdView");                                               
+        }
+    },
+    
+    hideBanner: function() {
+       if(cc.sys.IPHONE === cc.sys.platform || cc.sys.IPAD === cc.sys.platform) {
+            jsb.reflection.callStaticMethod("AppController", "hideAdView");                                               
+        } 
+    }   
+};
 

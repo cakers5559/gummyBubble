@@ -292,6 +292,7 @@ var GummyBubbles = {
                 
                 // move the basket to the tap location                                                                              
                 if(self.basket && !self.touchTransition) {
+                    console.log("FOLLOW THE TOUCHES");
                     self.touchTransition = true;
                     var screen = touch.getLocation();
                     

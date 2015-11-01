@@ -24,10 +24,16 @@
  ****************************************************************************/
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
+#import <GoogleMobileAds/GADBannerView.h>
 
-
-@interface RootViewController : UIViewController {
-
+@interface RootViewController : UIViewController<ADBannerViewDelegate, GADBannerViewDelegate> {
+    
 }
+
 - (BOOL)prefersStatusBarHidden;
+- (void)iADShowBanner;
+- (void)iADHideBanner;
+
+
 @end

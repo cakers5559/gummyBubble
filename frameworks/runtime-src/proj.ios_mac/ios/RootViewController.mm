@@ -22,11 +22,25 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
-
 #import "RootViewController.h"
 #import "cocos2d.h"
 #import "platform/ios/CCEAGLView-ios.h"
 #include "ide-support/SimpleConfigParser.h"
+
+
+// Constant for getting test ads on the simulator using the testDevices method.
+#define GAD_SIMULATOR_ID @"Simulator"
+
+
+@interface RootViewController ()
+{
+    BOOL _bannerIsVisible;
+    BOOL bannerDidDownload;
+    ADBannerView *_adBanner;
+    GADBannerView *admobBannerView;
+}
+@end
+
 
 @implementation RootViewController
 
@@ -46,13 +60,57 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _bannerIsVisible = NO;
 }
  
-*/
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    /*_adBanner = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, 480, 32)];
+    _adBanner.delegate = self;
+    */
+    
+    // UNCOMMENT BELOW TO TEST OR USE GOOGLE ADS
+    _adBanner = nil;
+    _bannerIsVisible = NO;
+    [self bannerView:_adBanner didFailToReceiveAdWithError:nil];
+}
+
+- (void)iADShowBanner {
+    [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+    
+    if(_adBanner != nil) {
+        // Assumes the banner view is just off the bottom of the screen.
+        _adBanner.frame = CGRectOffset(_adBanner.frame, 0, -_adBanner.frame.size.height);
+    }
+    else if(admobBannerView != nil) {
+        admobBannerView.frame = CGRectOffset(admobBannerView.frame, 0, -admobBannerView.frame.size.height);
+    }
+    
+    [UIView commitAnimations];
+}
+
+- (void)iADHideBanner {
+    [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+    
+    if(_adBanner != nil) {
+        // Assumes the banner view is just off the bottom of the screen.
+        _adBanner.frame = CGRectOffset(_adBanner.frame, 0, _adBanner.frame.size.height);
+    }
+    else if (admobBannerView != nil) {
+        admobBannerView.frame = CGRectOffset(admobBannerView.frame, 0, admobBannerView.frame.size.height);
+    }
+    
+    [UIView commitAnimations];
+}
+
 // Override to allow orientations other than the default portrait orientation.
 // This method is deprecated on ios6
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -118,6 +176,85 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    NSLog(@"GOT AN IOS AD");
+
+    if (!_bannerIsVisible)
+    {
+        // If banner isn't part of view hierarchy, add it
+        if (_adBanner.superview == nil)
+        {
+            [self.view addSubview:_adBanner];
+        }
+        
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+        
+        // Assumes the banner view is just off the bottom of the screen.
+        banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+        
+        [UIView commitAnimations];
+        
+        _bannerIsVisible = YES;
+    }
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    NSLog(@"Failed to retrieve ad iOS");
+    
+    // Set Google banner AdMob ads instead
+    [banner removeFromSuperview];
+    
+    admobBannerView = [[GADBannerView alloc]
+                        initWithFrame:CGRectMake((self.view.frame.size.width / 2) - 160,self.view.frame.size.height, 320, 50)];
+    
+    admobBannerView.adUnitID = @"ca-app-pub-7557251095062547/1325856917";
+    admobBannerView.rootViewController = self;
+    admobBannerView.delegate = self;
+    
+    [self.view addSubview:admobBannerView];
+    //[admobBannerView loadRequest:[GADRequest request]];
+    
+    
+    // SIMULATOR FOR TESTING ADS
+    GADRequest *request = [GADRequest request];
+    // Make the request for a test ad. Put in an identifier for
+    // the simulator as well as any devices you want to receive test ads.
+    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
+    [admobBannerView loadRequest:request];
+}
+
+- (void)adViewDidReceiveAd:(GADBannerView *)adView {
+    NSLog(@"adViewDidReceiveAd");
+    if (!_bannerIsVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+    
+        admobBannerView.frame = CGRectOffset(admobBannerView.frame, 0, -admobBannerView.frame.size.height);
+    
+        [UIView commitAnimations];
+        
+        _bannerIsVisible = YES;
+    }
+}
+
+- (void)adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error {
+    
+    NSLog(@"Fail To Get Google Add");
+    
+    if (_bannerIsVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+        
+        admobBannerView.frame = CGRectOffset(admobBannerView.frame, 0, admobBannerView.frame.size.height);
+        
+        [UIView commitAnimations];
+        
+        _bannerIsVisible = NO;
+    }
 }
 
 

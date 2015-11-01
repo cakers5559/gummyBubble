@@ -144,5 +144,17 @@ static AppDelegate s_sharedApplication;
 }
 
 
+#pragma mark -
+#pragma mark Advertisement methods
++ (void)hideAdView {
+    NSLog(@"HIDE THE BANNER PLEASE");
+    AppController  *appController = (AppController *)[[UIApplication sharedApplication] delegate];
+    [appController->viewController iADHideBanner];
+}
+
++ (void)showAdView {
+    AppController  *appController = (AppController *)[[UIApplication sharedApplication] delegate];
+    [appController->viewController iADShowBanner];
+}
 @end
 

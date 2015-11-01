@@ -17,7 +17,8 @@ var GameScene = cc.Scene.extend({
      */
     onEnter:function () {
         this._super();                                                                       
-                
+        
+        BannerADCommunication.hideBanner();      
         GummyBubbles.isGameActive = true;
         this.didPause = false;
                         
@@ -64,7 +65,8 @@ var GameScene = cc.Scene.extend({
                 console.log("PAUSED!!!");                                             
                 cc.director.pushScene(  new PauseScene() );                                                         
                 break;        
-        }                               
+        }              
+        return false;                 
     },  
     
     /*

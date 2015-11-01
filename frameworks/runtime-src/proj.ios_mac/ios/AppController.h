@@ -31,5 +31,8 @@
     RootViewController    *viewController;
 }
 
++ ( void ) showAdView;
++ ( void ) hideAdView;
+
 @end
 

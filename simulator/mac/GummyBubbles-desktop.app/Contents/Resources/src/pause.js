@@ -13,6 +13,8 @@ var PauseScene = cc.Scene.extend({
 		this._super();                                       
         var size = cc.winSize;                
         
+        BannerADCommunication.showBanner();
+        
         //add the scene to the view
         this.pausescene = ccs.load(res.PauseScene_json);                
         this.addChild(this.pausescene.node);                

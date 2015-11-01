@@ -13,6 +13,7 @@ var GameOverScene = cc.Scene.extend({
 		this._super();                                               
         var size = cc.winSize;                                
         
+        BannerADCommunication.showBanner();
         //add the scene to the view
         this.gameoverscene = ccs.load(res.GameOverScene_json);                
         this.addChild(this.gameoverscene.node);                                              
