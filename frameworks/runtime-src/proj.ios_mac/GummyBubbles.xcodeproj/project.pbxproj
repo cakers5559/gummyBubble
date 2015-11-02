@@ -64,6 +64,8 @@
 		929166A91BE69F0F00FD2923 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929166A71BE69F0F00FD2923 /* EventKitUI.framework */; };
 		929166AB1BE69F1D00FD2923 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929166AA1BE69F1D00FD2923 /* StoreKit.framework */; };
 		929166B11BE69FB600FD2923 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929166B01BE69FB600FD2923 /* GoogleMobileAds.framework */; };
+		929166B41BE70E3300FD2923 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 929166B21BE70E3300FD2923 /* Default-Landscape.png */; };
+		929166B51BE70E3300FD2923 /* iPad-Retina–Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 929166B31BE70E3300FD2923 /* iPad-Retina–Landscape.png */; };
 		9F20C9E61A5BD38A006FB50B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20C9E11A5BBE85006FB50B /* Security.framework */; };
 		9FD1E6B11A51361B0009A6C5 /* ConsoleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD1E69E1A51361B0009A6C5 /* ConsoleWindow.xib */; };
 		9FD1E6B21A51361B0009A6C5 /* ConsoleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD1E6A01A51361B0009A6C5 /* ConsoleWindowController.m */; };
@@ -165,6 +167,8 @@
 		929166A71BE69F0F00FD2923 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/EventKitUI.framework; sourceTree = DEVELOPER_DIR; };
 		929166AA1BE69F1D00FD2923 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		929166B01BE69FB600FD2923 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		929166B21BE70E3300FD2923 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
+		929166B31BE70E3300FD2923 /* iPad-Retina–Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPad-Retina–Landscape.png"; sourceTree = "<group>"; };
 		9F20C9E11A5BBE85006FB50B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		9FD1E69E1A51361B0009A6C5 /* ConsoleWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsoleWindow.xib; sourceTree = "<group>"; };
 		9FD1E69F1A51361B0009A6C5 /* ConsoleWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleWindowController.h; sourceTree = "<group>"; };
@@ -468,6 +472,8 @@
 		D45446CC156DE73F00887EB5 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				929166B21BE70E3300FD2923 /* Default-Landscape.png */,
+				929166B31BE70E3300FD2923 /* iPad-Retina–Landscape.png */,
 				9252E6001BE46FD6005D3CAB /* Default-568h@2x.png */,
 				9252E6011BE46FD6005D3CAB /* Default-667h@2x.png */,
 				9252E6021BE46FD6005D3CAB /* Default-736h@3x.png */,
@@ -612,6 +618,8 @@
 				9252E6431BE47FCD005D3CAB /* icon-small.png in Resources */,
 				9252E63E1BE47FCD005D3CAB /* icon-60@3x.png in Resources */,
 				9252E6441BE47FCD005D3CAB /* icon-small@2x.png in Resources */,
+				929166B41BE70E3300FD2923 /* Default-Landscape.png in Resources */,
+				929166B51BE70E3300FD2923 /* iPad-Retina–Landscape.png in Resources */,
 				8CB447F8AA9DE9CE73CFA875 /* script in Resources */,
 				9252E6411BE47FCD005D3CAB /* icon-76.png in Resources */,
 				9252E6471BE47FCD005D3CAB /* icon@2x.png in Resources */,

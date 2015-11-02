@@ -60,6 +60,7 @@ var PauseScene = cc.Scene.extend({
             switch (type)
             {
             case ccui.Widget.TOUCH_BEGAN: 
+                    GummyBubbles.basketInit();
                     cc.audioEngine.setEffectsVolume( 3.25 );
                     cc.audioEngine.playEffect( "res/audio/click.mp3" );                                                               
                     GummyBubbles.gummyPaused = true; 

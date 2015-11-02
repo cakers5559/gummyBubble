@@ -291,7 +291,7 @@ var GummyBubbles = {
             onTouchBegan: function (touch, event) {     
                 
                 // move the basket to the tap location                                                                              
-                if(self.basket && !self.touchTransition) {
+                if(self.basket && !self.touchTransition && !self.gummyPaused) {
                     console.log("FOLLOW THE TOUCHES");
                     self.touchTransition = true;
                     var screen = touch.getLocation();
@@ -301,7 +301,7 @@ var GummyBubbles = {
                     }
                     
                     var actionTo = cc.moveTo( 0.1 , cc.p(screen.x, self.basket.y));
-                    self.basket.runAction(cc.sequence(actionTo, cc.callFunc(touchDone, this)));                                                                                         
+                    self.basket.runAction(cc.sequence(actionTo, cc.callFunc(touchDone, self)));                                                                                         
                 }
                 
                 // event.getCurrentTarget() returns the *listener's* sceneGraphPriority node.   

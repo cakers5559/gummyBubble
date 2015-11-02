@@ -39,7 +39,7 @@ var GameOverScene = cc.Scene.extend({
                     //pausePanel.setPosition( cc.p(-100, 0) );
                     gameOverTxt.setPositionY( size.height - (gameOverTxt.height + 20) );
                     gameOverTxt.setScale( 1.0 );
-                    gummyScoreTxt.setPositionY( size.height - (size.height / 5) );
+                    gummyScoreTxt.setPositionY( size.height / 5 );
                     gummyScoreTxt.setScale( 2.0 );
                     gummyBasket.setPositionY( size.height - (gummyBasket.height + 30) );
                     gummyBasket.setScale( 1.0 );

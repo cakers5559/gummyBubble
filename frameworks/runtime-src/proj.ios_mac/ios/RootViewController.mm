@@ -73,11 +73,12 @@
 {
     [super viewDidAppear:animated];
     
-    /*_adBanner = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, 480, 32)];
-    _adBanner.delegate = self;
-    */
-    
     // UNCOMMENT BELOW TO TEST OR USE GOOGLE ADS
+    /*_adBanner = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, 480, 32)];
+    _adBanner.delegate = self;*/
+    
+    
+    
     _adBanner = nil;
     _bannerIsVisible = NO;
     [self bannerView:_adBanner didFailToReceiveAdWithError:nil];
@@ -207,6 +208,7 @@
     
     // Set Google banner AdMob ads instead
     [banner removeFromSuperview];
+    _adBanner = nil;
     
     admobBannerView = [[GADBannerView alloc]
                         initWithFrame:CGRectMake((self.view.frame.size.width / 2) - 160,self.view.frame.size.height, 320, 50)];
@@ -223,6 +225,7 @@
     GADRequest *request = [GADRequest request];
     // Make the request for a test ad. Put in an identifier for
     // the simulator as well as any devices you want to receive test ads.
+    //request.testDevices = @[ @"a12940d2c37740ebfbfd9a8c0f07a78f" ];
     request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
     [admobBannerView loadRequest:request];
 }

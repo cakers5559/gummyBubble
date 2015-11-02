@@ -78,6 +78,9 @@ var MainScene = cc.Scene.extend({
         studioObj.settingsBtn = studioObj.panel_settings.getChildByName( "settings_btn" );
         studioObj.settingsBtn.setPositionX( studioObj.settingsBtn.width - ( studioObj.settingsBtn.width / 2) );
         
+        // FUTURE FEATURE
+        studioObj.settingsBtn.setVisible( false );
+        
         var setProperties = function(screen, btn, res, scale) {
                 console.log(screen + "  " + btn);
                 studioObj.bgLayer = scene.node.getChildByName( screen );

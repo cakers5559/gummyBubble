@@ -60,6 +60,7 @@ var GameScene = cc.Scene.extend({
          switch (type)
             {
             case ccui.Widget.TOUCH_BEGAN:                                
+                GummyBubbles.basket.removeFromParent();
                 cc.audioEngine.setEffectsVolume( 3.25 );
                 cc.audioEngine.playEffect( "res/audio/click.mp3" );       
                 console.log("PAUSED!!!");                                             
@@ -340,6 +341,12 @@ var GameScene = cc.Scene.extend({
             easy: [5,5],
             normal:	[5,3],
             hard: [6,2],
+        },
+        
+        level8 : {
+            easy: [5,4],
+            normal:	[6,3],
+            hard: [7,2],
         }
         
         
