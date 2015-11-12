@@ -311,7 +311,7 @@ var GummyBubbles = {
                             
                             if(target.isBomb) self.bombExplode(target.getPosition() , self);                                                            
                             
-                            self.bubblePop(target.getPosition() , target.childGummyPath, target.getTag(), target.bubbleScale);                          
+                            self.bubblePop(target.getPosition() , target.childGummyPath, target.getTag(), target.bubbleScale, target.isBomb);                          
                             self.gummyComboTouches++;
                         }                        
                         return true; 
@@ -411,7 +411,7 @@ var GummyBubbles = {
     /*
      * effect for when a bubble is popped
      */
-    bubblePop: function(loc, gummyPath, tagNumber, scale) {               
+    bubblePop: function(loc, gummyPath, tagNumber, scale, bomb) {               
         // unload the sound file from memory when it no longer needs to be used
         cc.audioEngine.setEffectsVolume( 3.25 );
         cc.audioEngine.playEffect( "res/audio/pop.mp3" );
@@ -437,7 +437,12 @@ var GummyBubbles = {
         
         // create gummy                  
         var gummy = Physics.createPhysicsSprite(gummyPath , locX , locY , tagNumber);        
-        gummy.setScale(scale);        
+        gummy.setScale(scale);                
+        gummy.isBomb = false;
+        if(bomb) {
+            gummy.setVisible( false );
+            gummy.isBomb = true;
+        }
         this.scene.addChild(gummy);
         
         /*var playSound = function() {
@@ -453,12 +458,9 @@ var GummyBubbles = {
         cc.audioEngine.playEffect( "res/audio/explode.mp3" );      
           
         
-        var flasher = setInterval(function(){ myTimer() }, 50);
-
-        //var self = this;
-        
-        function myTimer() {
-            console.log('tick');
+        var flasher = setInterval(function(){ flashOnOff() }, 50);
+                
+        function flashOnOff() {            
             if(!self.scene.studio.bombFlash.isVisible()) self.scene.studio.bombFlash.setVisible(true);
             else self.scene.studio.bombFlash.setVisible(false);            
         }

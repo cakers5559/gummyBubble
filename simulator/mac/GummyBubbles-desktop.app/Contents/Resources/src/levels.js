@@ -34,7 +34,7 @@ var LevelsScene = cc.Scene.extend({
         sunbrust.runAction(seq.repeatForever()); */                         
         
         var levelTxt = this.levelsscene.node.getChildByName( 'levels_txt' );                                                            
-        var title = '30 Gummies to unlock next basket!';        
+        var title = '30 gummies to unlock next basket!';        
         
         if(bestScore >= 30) title = '60 Gummies to unlock next basket!';
         else if (bestScore >= 60) title = 'Choose a basket.';

@@ -255,7 +255,7 @@ var GameScene = cc.Scene.extend({
             var gummyRect = GummyBubbles.gummyPoppedItems[i].sprite.getBoundingBox();
             var basketRect = GummyBubbles.basket.getBoundingBox();
             //var bigger = cc.rect          
-            if (cc.rectContainsPoint(basketRect, gummyRect)) {                            
+            if (cc.rectContainsPoint(basketRect, gummyRect) && !GummyBubbles.gummyPoppedItems[i].sprite.isBomb) {                            
                 var sprite = GummyBubbles.gummyPoppedItems[i].sprite;
                 var body = GummyBubbles.gummyPoppedItems[i].body;
                 var shape = GummyBubbles.gummyPoppedItems[i].shape;                                             
@@ -265,7 +265,7 @@ var GameScene = cc.Scene.extend({
                     Physics.space.removeBody(body);
                     sprite.removeFromParent();                                                    
                 }
-                GummyBubbles.gummyPoppedItems.splice( i , 1);
+                GummyBubbles.gummyPoppedItems.splice( i , 1);                                
                 GummyBubbles.gummyScore++; 
                 GummyBubbles.gummyInBasket++;                                               
                 this.studio.gummiesTxt.setString( "Gummies: "+ GummyBubbles.gummyScore);                                 
