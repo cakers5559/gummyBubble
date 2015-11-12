@@ -64,7 +64,7 @@
             "Tag": 455,
             "ActionTag": 370568056,
             "Size": {
-              "X": 200.0,
+              "X": 199.9999,
               "Y": 200.0
             },
             "Name": "bg_color",
@@ -141,12 +141,12 @@
               "Y": -0.0021
             },
             "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
+              "X": 1.6552,
+              "Y": 1.656
             },
             "LeftMargin": -2.3481,
-            "RightMargin": 2.3481,
-            "TopMargin": 2.5619,
+            "RightMargin": -871.6519,
+            "TopMargin": -489.4381,
             "BottomMargin": -2.5619,
             "Tag": 2781,
             "ActionTag": -1604815211,
@@ -181,13 +181,13 @@
               "Y": 0.0055
             },
             "PreSize": {
-              "X": 0.6042,
-              "Y": 0.6039
+              "X": 1.0,
+              "Y": 1.0
             },
             "HorizontalEdge": "BothEdge",
-            "LeftMargin": 11.04,
-            "RightMargin": 862.96,
-            "TopMargin": 487.8743,
+            "LeftMargin": 6.67,
+            "RightMargin": -6.67,
+            "TopMargin": -4.1257,
             "BottomMargin": 4.1257,
             "Tag": 431,
             "ActionTag": 1749652499,
@@ -222,13 +222,13 @@
               "Y": -0.015
             },
             "PreSize": {
-              "X": 0.5145,
-              "Y": 0.5153
+              "X": 0.8516,
+              "Y": 0.8533
             },
             "HorizontalEdge": "BothEdge",
-            "LeftMargin": 3.9744,
-            "RightMargin": 1068.0256,
-            "TopMargin": 611.6,
+            "LeftMargin": 2.4012,
+            "RightMargin": 195.5988,
+            "TopMargin": 119.6,
             "BottomMargin": -9.6,
             "Tag": 439,
             "ActionTag": 812577999,
@@ -263,13 +263,13 @@
               "Y": -0.0061
             },
             "PreSize": {
-              "X": 0.4348,
-              "Y": 0.5153
+              "X": 0.7196,
+              "Y": 0.8533
             },
             "HorizontalEdge": "BothEdge",
-            "LeftMargin": 0.6624,
-            "RightMargin": 1247.3376,
-            "TopMargin": 605.878,
+            "LeftMargin": 0.4002,
+            "RightMargin": 373.5998,
+            "TopMargin": 113.878,
             "BottomMargin": -3.878,
             "Tag": 447,
             "ActionTag": -546113980,

@@ -6,8 +6,7 @@ var GameScene = cc.Scene.extend({
      */        
     gamescene: null,
     gamelevel: null,
-    level: 1,
-    didPause: false,
+    level: 1,    
     studio: {}, 
     gummies: [],            
        
@@ -15,16 +14,16 @@ var GameScene = cc.Scene.extend({
     /*
      * initial setup, treat as contructor
      */
-    onEnter:function () {
-        this._super();                                                                       
-        
-        BannerADCommunication.hideBanner();      
-        GummyBubbles.isGameActive = true;
-        this.didPause = false;
-                        
-        if(!GummyBubbles.gummyPaused) {           
-            this.levelChange();
-            
+    onEnter:function () {                                                                                       
+        BannerADCommunication.atGameScreen();        
+        BannerADCommunication.hideBanner(); 
+             
+        GummyBubbles.isGameActive = true;        
+           
+        if(!GummyBubbles.gummyPaused) {
+            this._super();
+                       
+            this.levelChange();            
             // init Physics        
             Physics.initPhysics();        
             this.scheduleUpdate();                              
@@ -49,7 +48,9 @@ var GameScene = cc.Scene.extend({
                     this.studio.missesTxt.setPositionY( this.studio.missesTxt.y + 125 );
                     this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 125 );
                     this.studio.pauseBtn.setPositionY( this.studio.pauseBtn.y + 125 );
-            }                                         
+            } 
+            
+            this.stageSetup(gummyStage);                                          
         }          
         
         GummyBubbles.gummyPaused = false;                                                                          
@@ -59,12 +60,12 @@ var GameScene = cc.Scene.extend({
     onPause: function(sender, type) {         
          switch (type)
             {
-            case ccui.Widget.TOUCH_BEGAN:                                
-                GummyBubbles.basket.removeFromParent();
+            case ccui.Widget.TOUCH_BEGAN:                                                                
+                //GummyBubbles.basket = null;                
+                cc.director.pause();
                 cc.audioEngine.setEffectsVolume( 3.25 );
-                cc.audioEngine.playEffect( "res/audio/click.mp3" );       
-                console.log("PAUSED!!!");                                             
-                cc.director.pushScene(  new PauseScene() );                                                         
+                cc.audioEngine.playEffect( "res/audio/click.mp3" );                                                                
+                cc.director.pushScene( new PauseScene() );                                                         
                 break;        
         }              
         return false;                 
@@ -73,15 +74,13 @@ var GameScene = cc.Scene.extend({
     /*
      * perform some cleanup
      */  
-    onExit: function() {
-        console.log("AINA EXITING");        
-        // stops the background music                   
-            console.log("CHRISTOPHER EXITING");
+    onExit: function() {                
+        // stops the background music                               
             GummyBubbles.isGameActive = false;
             cc.audioEngine.stopMusic();
             Physics.space.removeCollisionHandler(  1  , 2 );                    
-            GummyBubbles.cleanUp();        
-            this.unschedule();              
+            //GummyBubbles.cleanUp(true);        
+            //this.unschedule();              
     },         
     
     
@@ -89,25 +88,13 @@ var GameScene = cc.Scene.extend({
      * start the game
      */  
     initGame : function() {
+        BannerADCommunication.hideBanner();        
         cc.audioEngine.playMusic( "res/audio/sunny_day.mp3", true );
         cc.audioEngine.setMusicVolume( 0.10 );
-                                
-        var moveAnimation = function( time , pXY , tag ) {
-            var move = cc.moveBy( time , pXY );
-            var move_back = move.reverse();
-            var delay = cc.delayTime(0.25);
-            var move_seq = cc.sequence( move, move_back );
-            move_seq.setTag(tag);
-            var move_rep = move_seq.repeatForever(); 
-            return move_rep;        
-        };
-                       
-        this.studio.clouds.runAction( moveAnimation( 400.0 , cc.p(0 - this.studio.clouds.width , this.studio.clouds.y), 104 ) );  
-        this.studio.mountains.runAction( moveAnimation( 20.0 , cc.p( 40  , this.studio.mountains.y) , 105 ) );                                
-                
+                                                           
         // create the gummies basket
         GummyBubbles.basketInit();
-        console.log("The Gummy Mode is: "+GummyBubbles.gummyBubblesOnScreen + "  "+ GummyBubbles.gummyBubbleSpeed);
+                
         // start shooting out gummy bubbles                
         for(var g = 0; g < GummyBubbles.gummyBubblesOnScreen; g++) {                        
             var gummyRandom = GummyBubbles.generateRandomNumber();            
@@ -117,10 +104,10 @@ var GameScene = cc.Scene.extend({
         
         // add physics collision handler
         Physics.space.addCollisionHandler( 1 , 2,
-                Physics.collisionBegin.bind(this),
                 null,
                 null,
-                Physics.collisionEnd.bind(this)
+                null,
+                null
         );                                   
     },
     
@@ -132,10 +119,9 @@ var GameScene = cc.Scene.extend({
         var size = cc.winSize;
         var studioObj = {};
         
-        studioObj.tapScreen = scene.node.getChildByName( "tap_to_start_screen" );        
-        studioObj.panel_level = scene.node.getChildByName( "panel_level_"+this.level.toString() );                                                         
-        studioObj.clouds = studioObj.panel_level.getChildByName( "clouds" );                
-        studioObj.mountains = studioObj.panel_level.getChildByName( "mountains" ); 
+        studioObj.tapScreen = scene.node.getChildByName( "tap_to_start_screen" );
+        studioObj.bombFlash = scene.node.getChildByName( "bomb_flash" );                
+        studioObj.panel_level = scene.node.getChildByName( "panel_level_"+this.level.toString() );                                                                 
         studioObj.pauseBtn = studioObj.panel_level.getChildByName( "pause_btn" );
         studioObj.gummiesTxt = studioObj.panel_level.getChildByName( "gummies_txt" );
         studioObj.missesTxt = studioObj.panel_level.getChildByName( "misses_txt" );             
@@ -144,7 +130,7 @@ var GameScene = cc.Scene.extend({
         studioObj.missesTxt.width = studioObj.missesTxt.width + 150;
         studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width - ( studioObj.pauseBtn.width / 2) );
         studioObj.gummiesTxt.setPositionX( size.width - ( studioObj.gummiesTxt.width + 20 ) );
-        studioObj.missesTxt.setPositionX( size.width / 2 );                                                                       
+        studioObj.missesTxt.setPositionX( size.width / 2 );                                                                                               
         
         var setProperties = function(screen, btn, res, scale) {                
                 studioObj.instructionLayer = scene.node.getChildByName( screen );                                
@@ -204,8 +190,7 @@ var GameScene = cc.Scene.extend({
         
         stars.setScale( 0.3 );
         stars.setPosition( x , y );        
-        this.addChild(stars);  
-        console.log("YOUR GUMMY SCORE IS: "+GummyBubbles.gummyScore);
+        this.addChild(stars);          
         var starsDelay = cc.delayTime(1.0);                
         stars.runAction(cc.sequence(starsDelay, cc.callFunc(removeStars, stars)));                                      
     }, 
@@ -213,13 +198,13 @@ var GameScene = cc.Scene.extend({
     
     levelChange: function() {         
        if("level"+GummyBubbles.gummyLevel in this.Level) {
-            GummyBubbles.gummyBubblesOnScreen = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][0];
-            GummyBubbles.gummyBubbleSpeed = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][1];
+            GummyBubbles.gummyBubblesOnScreen = this.Level["level"+GummyBubbles.gummyLevel][gummyStage][0];
+            GummyBubbles.gummyBubbleSpeed = this.Level["level"+GummyBubbles.gummyLevel][gummyStage][1];
        }
        else {                        
             GummyBubbles.gummyLevel--;
-            GummyBubbles.gummyBubblesOnScreen = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][0];
-            GummyBubbles.gummyBubbleSpeed = this.Level["level"+GummyBubbles.gummyLevel][gummyMode][1];
+            GummyBubbles.gummyBubblesOnScreen = this.Level["level"+GummyBubbles.gummyLevel][gummyStage][0];
+            GummyBubbles.gummyBubbleSpeed = this.Level["level"+GummyBubbles.gummyLevel][gummyStage][1];
        }
     }, 
     
@@ -288,12 +273,60 @@ var GameScene = cc.Scene.extend({
             }
         }
         
-        if(GummyBubbles.gummyMisses <= 0) {
-            console.log("GAME OVER!");                        
+        if(GummyBubbles.gummyMisses <= 0) {                                    
             this.gameOver();
             GummyBubbles.gummyMisses = 1;            
         }     
     },
+    
+    
+    /**************************************
+     * Setup the selected stage elements
+     **************************************/
+    stageSetup: function(stage) {
+        var moveAnimation = function( time , pXY , tag ) {
+            var move = cc.moveBy( time , pXY );
+            var move_back = move.reverse();
+            var delay = cc.delayTime(0.25);
+            var move_seq = cc.sequence( move, move_back );
+            move_seq.setTag(tag);
+            var move_rep = move_seq.repeatForever(); 
+            return move_rep;        
+        };
+                
+        switch (stage) {
+            case 'stage1':                               
+                this.studio.clouds = this.studio.panel_level.getChildByName( "clouds" );                
+                this.studio.clouds.setVisible(true);
+                this.studio.clouds.runAction( moveAnimation( 400.0 , cc.p(0 - this.studio.clouds.width , this.studio.clouds.y), 104 ) );
+                
+                this.studio.mountains = this.studio.panel_level.getChildByName( "mountains" );                        
+                this.studio.mountains.setVisible(true);
+                this.studio.mountains.runAction( moveAnimation( 20.0 , cc.p( 40  , this.studio.mountains.y) , 105 ) );
+                
+                this.studio.bgLevel = this.studio.panel_level.getChildByName("bg_level_1");
+                this.studio.bgLevel.setVisible(true);        
+            break;
+            case 'stage2':
+                this.studio.clouds = this.studio.panel_level.getChildByName( "clouds" );                
+                this.studio.clouds.setVisible(true);
+                this.studio.clouds.runAction( moveAnimation( 400.0 , cc.p(0 - this.studio.clouds.width , this.studio.clouds.y), 104 ) );
+                
+            
+                this.studio.bgLevel = this.studio.panel_level.getChildByName("bg_level_2");
+                this.studio.bgLevel.setVisible(true);  
+            break;       
+            case 'stage3':
+                this.studio.clouds = this.studio.panel_level.getChildByName( "clouds" );                
+                this.studio.clouds.setVisible(true);
+                this.studio.clouds.runAction( moveAnimation( 400.0 , cc.p(0 - this.studio.clouds.width , this.studio.clouds.y), 104 ) );
+                
+            
+                this.studio.bgLevel = this.studio.panel_level.getChildByName("bg_level_3");
+                this.studio.bgLevel.setVisible(true);  
+            break;            
+        }                
+    },            
     
     
     /*************************
@@ -301,55 +334,59 @@ var GameScene = cc.Scene.extend({
      * ************************ */
     Level : {
 	
-        level1 : {
-            easy: [1,6],
-            normal:	[1,4],
-            hard: [2,4],
+        level1 : {            
+            stage1:	[1,4,0],
+            stage2: [2,4,0],
+            stage3: [2,4,0]
         },
         
-        level2 : {
-            easy: [2,6],
-            normal:	[2,3],
-            hard: [3,4],
+        level2 : {            
+            stage1:	[2,4,0],
+            stage2: [2,4,1],
+            stage3: [2,4,1]
         },
         
-        level3 : {
-            easy: [2,4],
-            normal:	[2,3],
-            hard: [3,4],
+        level3 : {            
+            stage1:	[3,3,0],
+            stage2: [3,3,0],
+            stage3: [3,3,0]
         },
         
-        level4 : {
-            easy: [3,4],
-            normal:	[3,3],
-            hard: [4,5],
+        level4 : {            
+            stage1:	[3,3,0],
+            stage2: [3,3,1],
+            stage3: [3,3,1]
         },
         
-        level5 : {
-            easy: [4,4],
-            normal:	[4,2],
-            hard: [5,3],
+        level5 : {            
+            stage1:	[4,3,0],
+            stage2: [4,3,0],
+            stage3: [4,3,0]
         },
         
-        level6 : {
-            easy: [5,4],
-            normal:	[5,2],
-            hard: [6,1],
+        level6 : {            
+            stage1:	[4,2,0],
+            stage2: [4,2,1],
+            stage3: [4,2,1]
         },
         
-        level7 : {
-            easy: [5,5],
-            normal:	[5,3],
-            hard: [6,2],
+        level7 : {            
+            stage1:	[6,2,0],
+            stage2: [6,2,1],
+            stage3: [6,2,1]
         },
         
-        level8 : {
-            easy: [5,4],
-            normal:	[6,3],
-            hard: [7,2],
-        }
+        level8 : {            
+            stage1:	[8,3,0],
+            stage2: [8,3,1],
+            stage3: [8,3,1]
+        },
         
-        
+        level9 : {           
+            stage1:	[8,2,0],
+            stage2: [8,2,1],
+            stage3: [8,2,1]
+        }                
     }	       
 });
  

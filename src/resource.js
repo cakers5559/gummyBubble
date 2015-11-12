@@ -3,7 +3,8 @@ var res = {
     GameScene_json : "res/GameScene.json",
     SettingsScene_json : "res/SettingScene.json",
     PauseScene_json : "res/PauseScene.json",
-    GameOverScene_json : "res/GameOverScene.json",   
+    GameOverScene_json : "res/GameOverScene.json",
+    LevelsScene_json : "res/LevelsScene.json",   
     bubble: "res/main_menu_assets",
     
     //Levels one json

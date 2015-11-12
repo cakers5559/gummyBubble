@@ -146,8 +146,17 @@ static AppDelegate s_sharedApplication;
 
 #pragma mark -
 #pragma mark Advertisement methods
++ (void)atGameScreen{
+    AppController  *appController = (AppController *)[[UIApplication sharedApplication] delegate];
+    [appController->viewController atGameScreen];
+}
+
++ (void)awayFromGameScreen {
+    AppController  *appController = (AppController *)[[UIApplication sharedApplication] delegate];
+    [appController->viewController awayFromGameScreen];
+}
+
 + (void)hideAdView {
-    NSLog(@"HIDE THE BANNER PLEASE");
     AppController  *appController = (AppController *)[[UIApplication sharedApplication] delegate];
     [appController->viewController iADHideBanner];
 }

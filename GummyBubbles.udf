@@ -14,7 +14,7 @@
         <LuaEncryptSign Value="" />
         <Android_PackageName Value="org.cocos.GummyBubbles" />
         <AndroidkeyStore Value="" />
-        <AndroidVersion Value="" />
+        <AndroidVersion Value="android-10" />
         <iOS_Target Value="GummyBubbles-mobile" />
         <iOS_BundleID Value="iPhone Developer: kenneth bland (W9WPW5QJ9C)" />
         <Platform Value="Web" />

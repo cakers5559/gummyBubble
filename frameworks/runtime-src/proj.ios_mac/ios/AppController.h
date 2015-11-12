@@ -31,6 +31,8 @@
     RootViewController    *viewController;
 }
 
++ (void)atGameScreen;
++ (void)awayFromGameScreen;
 + ( void ) showAdView;
 + ( void ) hideAdView;
 

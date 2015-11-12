@@ -15,11 +15,16 @@
         "Tag": 3482,
         "Children": [
           {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/level-bg-1111x937@2x.png",
+              "Plist": ""
+            },
             "ComboBoxIndex": 1,
             "SingleColor": {
-              "R": 0,
-              "G": 0,
-              "B": 0
+              "R": 74,
+              "G": 144,
+              "B": 226
             },
             "FirstColor": {
               "R": 150,
@@ -41,11 +46,7 @@
               "ScaleX": 1.0,
               "ScaleY": 1.0
             },
-            "CColor": {
-              "R": 74,
-              "G": 144,
-              "B": 226
-            },
+            "CColor": {},
             "IconVisible": false,
             "PrePosition": {
               "X": 0.5,
@@ -276,9 +277,9 @@
             },
             "OutlineEnabled": true,
             "ShadowColor": {
-              "R": 110,
-              "G": 110,
-              "B": 110
+              "R": 0,
+              "G": 0,
+              "B": 0
             },
             "ShadowOffsetX": 2.0,
             "ShadowOffsetY": -2.0,
@@ -392,7 +393,8 @@
         "Bobbleboddy.ttf",
         "images/largeRes/basket-114x86@3x.png",
         "images/largeRes/blank_button_dark-161x62@3x.png",
-        "images/largeRes/blank_button-161x62@3x.png"
+        "images/largeRes/blank_button-161x62@3x.png",
+        "images/level-bg-1111x937@2x.png"
       ],
       "ctype": "GameProjectData"
     }

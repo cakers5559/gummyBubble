@@ -13,7 +13,9 @@ var GameOverScene = cc.Scene.extend({
 		this._super();                                               
         var size = cc.winSize;                                
         
-        BannerADCommunication.showBanner();
+        BannerADCommunication.awayFromGameScreen();
+        BannerADCommunication.showBanner();                
+        
         //add the scene to the view
         this.gameoverscene = ccs.load(res.GameOverScene_json);                
         this.addChild(this.gameoverscene.node);                                              
@@ -39,7 +41,7 @@ var GameOverScene = cc.Scene.extend({
                     //pausePanel.setPosition( cc.p(-100, 0) );
                     gameOverTxt.setPositionY( size.height - (gameOverTxt.height + 20) );
                     gameOverTxt.setScale( 1.0 );
-                    gummyScoreTxt.setPositionY( size.height - (size.height / 5) );
+                    gummyScoreTxt.setPositionY( size.height / 5 );
                     gummyScoreTxt.setScale( 2.0 );
                     gummyBasket.setPositionY( size.height - (gummyBasket.height + 30) );
                     gummyBasket.setScale( 1.0 );
@@ -60,6 +62,7 @@ var GameOverScene = cc.Scene.extend({
             {
             case ccui.Widget.TOUCH_BEGAN:                     
                     GummyBubbles.gummyBubbleCollide = false;
+                    GummyBubbles.scene.gamescene = null;
                     cc.audioEngine.setEffectsVolume( 3.25 );
                     cc.audioEngine.playEffect( "res/audio/click.mp3" );                                       
                     cc.director.resume();              
@@ -67,6 +70,8 @@ var GameOverScene = cc.Scene.extend({
                     cc.director.replaceScene(new GameScene());                                                          
                 break;        
             }
+            
+            return true;
         }, this );              
         
         exitBtn.addTouchEventListener( function(sender, type) {
@@ -81,6 +86,8 @@ var GameOverScene = cc.Scene.extend({
                     cc.director.replaceScene(new MainScene());                                                                                                                                                                    
                 break;        
             }
+            
+            return true;
         }, this );
         
         cc.director.pause();

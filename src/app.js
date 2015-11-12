@@ -12,6 +12,8 @@ var MainScene = cc.Scene.extend({
     onEnter:function () {
         this._super();                                       
         var size = cc.winSize;                                        
+                
+        //BannerADCommunication.awayFromGameScreen();
       
         // init Physics        
         Physics.initPhysics();        
@@ -55,10 +57,10 @@ var MainScene = cc.Scene.extend({
         
         // add physics collision handler
         Physics.space.addCollisionHandler( 1 , 2,
-                Physics.collisionBegin.bind(this),
                 null,
                 null,
-                Physics.collisionEnd.bind(this)
+                null,
+                null
         );   
         
         if(GummyBubbles.gummyExit) cc.director.popToSceneStackLevel(1);                                  
@@ -81,8 +83,7 @@ var MainScene = cc.Scene.extend({
         // FUTURE FEATURE
         studioObj.settingsBtn.setVisible( false );
         
-        var setProperties = function(screen, btn, res, scale) {
-                console.log(screen + "  " + btn);
+        var setProperties = function(screen, btn, res, scale) {                
                 studioObj.bgLayer = scene.node.getChildByName( screen );
                 studioObj.playBtn = scene.node.getChildByName( btn );
                 GummyBubbles.resFolderName =  (res) ? res : GummyBubbles.resFolderName;
@@ -109,10 +110,11 @@ var MainScene = cc.Scene.extend({
             }
             else if (cc.view.getFrameSize().width >= 1334) {                             
                 setProperties( 'bg_medium' , 'play_btn_medium' , 'mediumRes' , '@2x' );
-                studioObj.playBtn.setScale( 1.0 );   
+                studioObj.playBtn.setScale( 0.75 );   
             }
             else if (cc.view.getFrameSize().width >= 1136) {                               
-                setProperties( 'bg_medium' , 'play_btn_small' , 'mediumRes' , '@2x' );                                                                            
+                setProperties( 'bg_medium' , 'play_btn_small' , 'mediumRes' , '@2x' );
+                studioObj.playBtn.setScale( 1.3 );                                                                            
             }
             else if (cc.view.getFrameSize().width >= 1024) {  
                 setProperties( 'bg_medium' , 'play_btn_small' , 'mediumRes' , '@2x' );
@@ -141,12 +143,14 @@ var MainScene = cc.Scene.extend({
             cc.audioEngine.playEffect( "res/audio/click.mp3" );                       
             Physics.space.removeCollisionHandler(  1  , 2 );
             GummyBubbles.cleanUp();
-            this.unschedule();   
-            console.log("PLAY BUTTON TOUCHED!");            
+            this.unschedule();                           
             cc.director.popToSceneStackLevel(1);
-            cc.director.replaceScene( new GameScene());                        
+            //cc.director.replaceScene( new GameScene());
+            cc.director.replaceScene( new LevelsScene());                        
             break;        
         }
+        
+        return true;
     }, 
     
     
@@ -161,25 +165,25 @@ var MainScene = cc.Scene.extend({
             cc.audioEngine.playEffect( "res/audio/click.mp3" );           
             Physics.space.removeCollisionHandler(  1  , 2 );
             GummyBubbles.cleanUp();
-            this.unschedule();   
-            console.log("Setting TOUCHED!");            
+            this.unschedule();                           
             cc.director.runScene( new cc.TransitionFade( 1.0, new SettingsScene() ) );
                         
             break;        
         }
+        
+        return true;
     }, 
     
     
     /*
      * perform some cleanup
      */  
-    onExit : function() {        
-        console.log("EXITING!");
+    onExit : function() {                
         Physics.space.removeCollisionHandler(  1  , 2 );        
         GummyBubbles.cleanUp();        
         // stops the background music
         
-        cc.audioEngine.stopMusic( );
+        //cc.audioEngine.stopMusic( );
         this.unschedule();
         this.removeAllChildrenWithCleanup( true ); 
         cc.director.resume();                                 
@@ -207,6 +211,18 @@ var BannerADCommunication = {
     hideBanner: function() {
        if(cc.sys.IPHONE === cc.sys.platform || cc.sys.IPAD === cc.sys.platform) {
             jsb.reflection.callStaticMethod("AppController", "hideAdView");                                               
+        } 
+    },
+    
+    atGameScreen: function() {
+        if(cc.sys.IPHONE === cc.sys.platform || cc.sys.IPAD === cc.sys.platform) {
+            jsb.reflection.callStaticMethod("AppController", "atGameScreen");                                               
+        }
+    },
+    
+    awayFromGameScreen: function() {
+       if(cc.sys.IPHONE === cc.sys.platform || cc.sys.IPAD === cc.sys.platform) {
+            jsb.reflection.callStaticMethod("AppController", "awayFromGameScreen");                                               
         } 
     }   
 };

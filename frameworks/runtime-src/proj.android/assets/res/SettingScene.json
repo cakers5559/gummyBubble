@@ -1,0 +1,496 @@
+{
+  "ID": "035ce117-3901-44a6-8abd-3f72fb203694",
+  "Version": "2.3.2.3",
+  "Name": "SettingScene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 3482,
+        "Children": [
+          {
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 74,
+              "G": 144,
+              "B": 226
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5
+            },
+            "Position": {
+              "X": 1104.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 3483,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/largeRes/sunbrust-736x414@3x.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5
+                },
+                "Position": {
+                  "X": 498.4817,
+                  "Y": -470.5698
+                },
+                "Scale": {
+                  "ScaleX": 0.4784,
+                  "ScaleY": 0.4784
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2258,
+                  "Y": -0.3789
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "HorizontalEdge": "BothEdge",
+                "LeftMargin": -1001.5183,
+                "RightMargin": 209.5183,
+                "TopMargin": -1287.4302,
+                "BottomMargin": -470.5698,
+                "Tag": 3484,
+                "ActionTag": -1925562501,
+                "Size": {
+                  "X": 3000.0,
+                  "Y": 3000.0
+                },
+                "Alpha": 12,
+                "Name": "sunbrust",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 284772710,
+            "Size": {
+              "X": 2208.0,
+              "Y": 1242.0
+            },
+            "Name": "setting_panel",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FontSize": 72,
+            "ButtonText": "Normal",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button-161x62@3x.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 453,
+            "Scale9Height": 164,
+            "DisplayState": false,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 461.5637,
+              "Y": 269.4478
+            },
+            "Scale": {
+              "ScaleX": 0.3597,
+              "ScaleY": 0.3597
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.209,
+              "Y": 0.2169
+            },
+            "PreSize": {
+              "X": 0.2188,
+              "Y": 0.1498
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 220.0637,
+            "RightMargin": 1504.9363,
+            "TopMargin": 879.5522,
+            "BottomMargin": 176.4477,
+            "Tag": 3485,
+            "ActionTag": -1492377467,
+            "Size": {
+              "X": 483.0,
+              "Y": 186.0
+            },
+            "Name": "normal_btn",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 72,
+            "ButtonText": "Kiddies",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button-161x62@3x.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 453,
+            "Scale9Height": 164,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 461.5637,
+              "Y": 355.7991
+            },
+            "Scale": {
+              "ScaleX": 0.3597,
+              "ScaleY": 0.3597
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.209,
+              "Y": 0.2865
+            },
+            "PreSize": {
+              "X": 0.2188,
+              "Y": 0.1498
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 220.0637,
+            "RightMargin": 1504.9363,
+            "TopMargin": 793.2009,
+            "BottomMargin": 262.7991,
+            "Tag": 3486,
+            "ActionTag": -1313419742,
+            "Size": {
+              "X": 483.0,
+              "Y": 186.0
+            },
+            "Name": "kiddies_btn",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 72,
+            "ButtonText": "Craze",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button-161x62@3x.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 453,
+            "Scale9Height": 164,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 461.5637,
+              "Y": 185.8902
+            },
+            "Scale": {
+              "ScaleX": 0.3597,
+              "ScaleY": 0.3597
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.209,
+              "Y": 0.1497
+            },
+            "PreSize": {
+              "X": 0.2188,
+              "Y": 0.1498
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 220.0637,
+            "RightMargin": 1504.9363,
+            "TopMargin": 963.1097,
+            "BottomMargin": 92.8902,
+            "Tag": 3487,
+            "ActionTag": 402511199,
+            "Size": {
+              "X": 483.0,
+              "Y": 186.0
+            },
+            "Name": "craze_btn",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 100,
+            "LabelText": "Gummy Difficulty",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "HorizontalAlignmentType": "HT_Center",
+            "OutlineSize": 3,
+            "OutlineColor": {
+              "R": 127,
+              "G": 127,
+              "B": 127
+            },
+            "OutlineEnabled": true,
+            "ShadowColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "ShadowOffsetX": 5.0,
+            "ShadowOffsetY": -10.0,
+            "ShadowEnabled": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 467.5627,
+              "Y": 503.05
+            },
+            "Scale": {
+              "ScaleX": 0.4941,
+              "ScaleY": 0.4941
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2118,
+              "Y": 0.405
+            },
+            "PreSize": {
+              "X": 0.3347,
+              "Y": 0.091
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "TopEdge",
+            "LeftMargin": 96.5627,
+            "RightMargin": 1369.4374,
+            "TopMargin": 679.45,
+            "BottomMargin": 443.5501,
+            "Tag": 3579,
+            "ActionTag": -62075805,
+            "Size": {
+              "X": 796.0,
+              "Y": 123.0
+            },
+            "Name": "settings_txt",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/home-dark-53x54@3x.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/home-53x54@3x.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 129,
+            "Scale9Height": 140,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 51.605,
+              "Y": 590.4725
+            },
+            "Scale": {
+              "ScaleX": 0.374,
+              "ScaleY": 0.374
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0234,
+              "Y": 0.4754
+            },
+            "PreSize": {
+              "X": 0.072,
+              "Y": 0.1304
+            },
+            "LeftMargin": -27.895,
+            "RightMargin": 2076.895,
+            "TopMargin": 570.5275,
+            "BottomMargin": 509.4725,
+            "Tag": 3617,
+            "ActionTag": 523517927,
+            "Size": {
+              "X": 159.0,
+              "Y": 162.0
+            },
+            "Name": "home_btn",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 2208.0,
+          "Y": 1242.0
+        },
+        "Name": "SettingScene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Bobbleboddy.ttf",
+        "Default/Button_Disable.png",
+        "images/largeRes/blank_button_dark-161x62@3x.png",
+        "images/largeRes/blank_button-161x62@3x.png",
+        "images/largeRes/home-53x54@3x.png",
+        "images/largeRes/home-dark-53x54@3x.png",
+        "images/largeRes/sunbrust-736x414@3x.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}

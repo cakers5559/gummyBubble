@@ -7,7 +7,7 @@
         <Size X="2208.0000" Y="1242.0000" />
         <Children>
           <AbstractNodeData Name="bg_color" Visible="False" ActionTag="370568056" Tag="455" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="1019.8067" RightMargin="988.1934" TopMargin="528.0587" BottomMargin="513.9413" StretchWidthEnable="True" StretchHeightEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-            <Size X="200.0000" Y="200.0000" />
+            <Size X="199.9999" Y="200.0000" />
             <AnchorPoint ScaleX="0.5022" ScaleY="0.5000" />
             <Position X="1120.2467" Y="613.9413" />
             <Scale ScaleX="23.9170" ScaleY="15.1649" />
@@ -30,44 +30,44 @@
             <FileData Type="Normal" Path="images/largeRes/sunbrust-736x414@3x.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bg_super_large" ActionTag="-1604815211" VisibleForFrame="False" Tag="2781" IconVisible="True" LeftMargin="-2.3481" RightMargin="2.3481" TopMargin="2.5619" BottomMargin="-2.5619" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="bg_super_large" ActionTag="-1604815211" VisibleForFrame="False" Tag="2781" IconVisible="True" LeftMargin="-2.3481" RightMargin="-871.6519" TopMargin="-489.4381" BottomMargin="-2.5619" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
             <Size X="2208.0000" Y="1242.0000" />
             <AnchorPoint />
             <Position X="-2.3481" Y="-2.5619" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="-0.0011" Y="-0.0021" />
-            <PreSize X="1.0000" Y="1.0000" />
+            <PreSize X="1.6552" Y="1.6560" />
             <FileData Type="Normal" Path="main_menu_assets/layers/bg_super_large.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bg_large" ActionTag="1749652499" VisibleForFrame="False" Tag="431" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="11.0400" RightMargin="862.9600" TopMargin="487.8743" BottomMargin="4.1257" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="bg_large" ActionTag="1749652499" VisibleForFrame="False" Tag="431" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="6.6700" RightMargin="-6.6700" TopMargin="-4.1257" BottomMargin="4.1257" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
             <Size X="1334.0000" Y="750.0000" />
             <AnchorPoint />
             <Position X="11.0400" Y="4.1257" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.0050" Y="0.0055" />
-            <PreSize X="0.6042" Y="0.6039" />
+            <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="main_menu_assets/layers/bg_large.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bg_medium" ActionTag="812577999" VisibleForFrame="False" Tag="439" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="3.9744" RightMargin="1068.0256" TopMargin="611.6000" BottomMargin="-9.6000" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="bg_medium" ActionTag="812577999" VisibleForFrame="False" Tag="439" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="2.4012" RightMargin="195.5988" TopMargin="119.6000" BottomMargin="-9.6000" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint />
             <Position X="3.9744" Y="-9.6000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.0018" Y="-0.0150" />
-            <PreSize X="0.5145" Y="0.5153" />
+            <PreSize X="0.8516" Y="0.8533" />
             <FileData Type="Normal" Path="main_menu_assets/layers/bg_medium.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bg_small" ActionTag="-546113980" VisibleForFrame="False" Tag="447" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="0.6624" RightMargin="1247.3376" TopMargin="605.8780" BottomMargin="-3.8780" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="bg_small" ActionTag="-546113980" VisibleForFrame="False" Tag="447" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="0.4002" RightMargin="373.5998" TopMargin="113.8780" BottomMargin="-3.8780" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
             <Size X="960.0000" Y="640.0000" />
             <AnchorPoint />
             <Position X="0.6624" Y="-3.8780" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.0003" Y="-0.0061" />
-            <PreSize X="0.4348" Y="0.5153" />
+            <PreSize X="0.7196" Y="0.8533" />
             <FileData Type="Normal" Path="main_menu_assets/layers/bg_small.csd" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="panel_settings" ActionTag="1508507939" Tag="3658" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" TouchEnable="True" StretchWidthEnable="True" StretchHeightEnable="True" BackColorAlpha="151" ColorAngle="90.0000" ctype="PanelObjectData">

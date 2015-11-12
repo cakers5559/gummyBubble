@@ -1,0 +1,312 @@
+{
+  "ID": "d46dcba2-5b2b-4182-8b00-fe522a85252a",
+  "Version": "2.3.2.3",
+  "Name": "pause_small",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 1157,
+        "Children": [
+          {
+            "BackColorAlpha": 102,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 1158,
+            "ActionTag": 774452958,
+            "Size": {
+              "X": 960.0,
+              "Y": 640.0
+            },
+            "Alpha": 229,
+            "Name": "pause_small",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FontSize": 72,
+            "ButtonText": "Continue",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button-161x62@3x.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 453,
+            "Scale9Height": 164,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 470.322,
+              "Y": 306.4344
+            },
+            "Scale": {
+              "ScaleX": 0.3597,
+              "ScaleY": 0.3597
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4899,
+              "Y": 0.4788
+            },
+            "PreSize": {
+              "X": 0.2188,
+              "Y": 0.1498
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 228.822,
+            "RightMargin": 248.178,
+            "TopMargin": 240.5656,
+            "BottomMargin": 213.4344,
+            "Tag": 60,
+            "ActionTag": 97094385,
+            "Size": {
+              "X": 483.0,
+              "Y": 186.0
+            },
+            "Name": "continue_btn",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 72,
+            "ButtonText": "Retry",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button-161x62@3x.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 453,
+            "Scale9Height": 164,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 470.322,
+              "Y": 392.7857
+            },
+            "Scale": {
+              "ScaleX": 0.3597,
+              "ScaleY": 0.3597
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4899,
+              "Y": 0.6137
+            },
+            "PreSize": {
+              "X": 0.2188,
+              "Y": 0.1498
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 228.822,
+            "RightMargin": 248.178,
+            "TopMargin": 154.2143,
+            "BottomMargin": 299.7857,
+            "Tag": 61,
+            "ActionTag": 1966804478,
+            "Size": {
+              "X": 483.0,
+              "Y": 186.0
+            },
+            "Name": "retry_btn",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 72,
+            "ButtonText": "Exit",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button-161x62@3x.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 453,
+            "Scale9Height": 164,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 470.322,
+              "Y": 222.8769
+            },
+            "Scale": {
+              "ScaleX": 0.3597,
+              "ScaleY": 0.3597
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4899,
+              "Y": 0.3482
+            },
+            "PreSize": {
+              "X": 0.2188,
+              "Y": 0.1498
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 228.822,
+            "RightMargin": 248.178,
+            "TopMargin": 324.1231,
+            "BottomMargin": 129.8769,
+            "Tag": 62,
+            "ActionTag": 1345624168,
+            "Size": {
+              "X": 483.0,
+              "Y": 186.0
+            },
+            "Name": "exit_btn",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "pause_layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "../../../Bobbleboddy.ttf",
+        "../../../images/largeRes/blank_button_dark-161x62@3x.png",
+        "../../../images/largeRes/blank_button-161x62@3x.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

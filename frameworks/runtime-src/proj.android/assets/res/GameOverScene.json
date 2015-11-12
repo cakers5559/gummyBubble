@@ -1,0 +1,401 @@
+{
+  "ID": "2692a6d5-0aad-4ab9-b36e-1614eef3a617",
+  "Version": "2.3.2.3",
+  "Name": "GameOverScene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 3482,
+        "Children": [
+          {
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5
+            },
+            "Position": {
+              "X": 1104.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 74,
+              "G": 144,
+              "B": 226
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 3483,
+            "ActionTag": 284772710,
+            "Size": {
+              "X": 2208.0,
+              "Y": 1242.0
+            },
+            "Name": "gameover_panel",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FontSize": 72,
+            "ButtonText": "Retry",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button-161x62@3x.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 453,
+            "Scale9Height": 164,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 461.472,
+              "Y": 336.7996
+            },
+            "Scale": {
+              "ScaleX": 0.3597,
+              "ScaleY": 0.3597
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.209,
+              "Y": 0.2712
+            },
+            "PreSize": {
+              "X": 0.2188,
+              "Y": 0.1498
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 219.9721,
+            "RightMargin": 1505.0278,
+            "TopMargin": 812.2004,
+            "BottomMargin": 243.7996,
+            "Tag": 3486,
+            "ActionTag": -1313419742,
+            "Size": {
+              "X": 483.0,
+              "Y": 186.0
+            },
+            "Name": "retry_btn",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 72,
+            "ButtonText": "Exit",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button_dark-161x62@3x.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/blank_button-161x62@3x.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 453,
+            "Scale9Height": 164,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 461.472,
+              "Y": 239.8904
+            },
+            "Scale": {
+              "ScaleX": 0.3597,
+              "ScaleY": 0.3597
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.209,
+              "Y": 0.1931
+            },
+            "PreSize": {
+              "X": 0.2188,
+              "Y": 0.1498
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 219.9721,
+            "RightMargin": 1505.0278,
+            "TopMargin": 909.1096,
+            "BottomMargin": 146.8904,
+            "Tag": 3487,
+            "ActionTag": 402511199,
+            "Size": {
+              "X": 483.0,
+              "Y": 186.0
+            },
+            "Name": "exit_btn",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/basket-114x86@3x.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 468.0117,
+              "Y": 458.7229
+            },
+            "Scale": {
+              "ScaleX": 0.4484,
+              "ScaleY": 0.4484
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.212,
+              "Y": 0.3693
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 297.0117,
+            "RightMargin": 1568.9883,
+            "TopMargin": 654.2771,
+            "BottomMargin": 329.7229,
+            "Tag": 1251,
+            "ActionTag": 1925700977,
+            "Size": {
+              "X": 342.0,
+              "Y": 258.0
+            },
+            "Name": "gummy_basket",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 72,
+            "LabelText": "Game Over",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "OutlineColor": {
+              "R": 77,
+              "G": 77,
+              "B": 77
+            },
+            "OutlineEnabled": true,
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "ShadowEnabled": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 461.4329,
+              "Y": 447.5857
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "G": 165,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.209,
+              "Y": 0.3604
+            },
+            "PreSize": {
+              "X": 0.1603,
+              "Y": 0.0684
+            },
+            "LeftMargin": 284.4329,
+            "RightMargin": 1569.5671,
+            "TopMargin": 750.9143,
+            "BottomMargin": 404.0857,
+            "Tag": 1250,
+            "ActionTag": -1394652984,
+            "Size": {
+              "X": 354.0,
+              "Y": 87.0
+            },
+            "Name": "game_over_txt",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 40,
+            "LabelText": "Text Label",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "HorizontalAlignmentType": "HT_Center",
+            "OutlineColor": {
+              "R": 77,
+              "G": 77,
+              "B": 77
+            },
+            "OutlineEnabled": true,
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 381.984,
+              "Y": 94.9644
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.173,
+              "Y": 0.0813
+            },
+            "PreSize": {
+              "X": 0.0426,
+              "Y": 0.0185
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "TopEdge",
+            "LeftMargin": 312.9839,
+            "RightMargin": 1757.0161,
+            "TopMargin": 1122.5356,
+            "BottomMargin": 82.4644,
+            "Tag": 284,
+            "ActionTag": 1806008376,
+            "Size": {
+              "X": 180.0,
+              "Y": 49.0
+            },
+            "Name": "gummy_score",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 2208.0,
+          "Y": 1242.0
+        },
+        "Name": "GameOverScene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Bobbleboddy.ttf",
+        "images/largeRes/basket-114x86@3x.png",
+        "images/largeRes/blank_button_dark-161x62@3x.png",
+        "images/largeRes/blank_button-161x62@3x.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}

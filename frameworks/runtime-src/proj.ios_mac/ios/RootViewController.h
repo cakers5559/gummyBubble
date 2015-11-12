@@ -32,6 +32,8 @@
 }
 
 - (BOOL)prefersStatusBarHidden;
+- (void)atGameScreen;
+- (void)awayFromGameScreen;
 - (void)iADShowBanner;
 - (void)iADHideBanner;
 

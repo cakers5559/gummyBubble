@@ -38,7 +38,7 @@
           <AbstractNodeData Name="panel_level_1" ActionTag="1761969222" Tag="1230" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" StretchWidthEnable="True" StretchHeightEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="2208.0000" Y="1242.0000" />
             <Children>
-              <AbstractNodeData Name="mountains" ActionTag="-444028172" Tag="1146" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="-105.3216" RightMargin="979.3215" TopMargin="458.8396" BottomMargin="33.1604" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="mountains" ActionTag="-444028172" VisibleForFrame="False" Tag="1146" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="-105.3216" RightMargin="979.3215" TopMargin="458.8396" BottomMargin="33.1604" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
                 <Size X="1334.0000" Y="750.0000" />
                 <AnchorPoint />
                 <Position X="-105.3216" Y="33.1604" />
@@ -46,9 +46,9 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0477" Y="0.0267" />
                 <PreSize X="0.6042" Y="0.6039" />
-                <FileData Type="Normal" Path="game_screen_assets/layers/level_1/mountains.csd" Plist="" />
+                <FileData Type="Normal" Path="game_screen_assets/layers/levels/mountains.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="bg_level_1" ActionTag="-155669652" Tag="1632" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="10.5386" RightMargin="863.4614" TopMargin="491.5753" BottomMargin="0.4247" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="bg_level_1" ActionTag="-155669652" VisibleForFrame="False" Tag="1632" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="10.5386" RightMargin="863.4614" TopMargin="491.5753" BottomMargin="0.4247" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
                 <Size X="1334.0000" Y="750.0000" />
                 <AnchorPoint />
                 <Position X="10.5386" Y="0.4247" />
@@ -56,9 +56,29 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.0048" Y="0.0003" />
                 <PreSize X="0.6042" Y="0.6039" />
-                <FileData Type="Normal" Path="game_screen_assets/layers/level_1/bg_large_level_1.csd" Plist="" />
+                <FileData Type="Normal" Path="game_screen_assets/layers/levels/bg_large_level_1.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="clouds" ActionTag="-200723507" Tag="573" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="-109.7376" RightMargin="109.7375" TopMargin="-66.1389" BottomMargin="66.1389" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="bg_level_2" ActionTag="-297450740" VisibleForFrame="False" Tag="115" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="-48.5696" RightMargin="922.5696" TopMargin="496.5695" BottomMargin="-4.5695" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+                <Size X="1334.0000" Y="750.0000" />
+                <AnchorPoint />
+                <Position X="-48.5696" Y="-4.5695" />
+                <Scale ScaleX="0.9833" ScaleY="0.9833" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.0220" Y="-0.0037" />
+                <PreSize X="0.6042" Y="0.6039" />
+                <FileData Type="Normal" Path="game_screen_assets/layers/levels/bg_large_level_2.csd" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="bg_level_3" ActionTag="-256626410" VisibleForFrame="False" Tag="504" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="-42.0073" RightMargin="916.0073" TopMargin="530.5386" BottomMargin="-38.5386" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+                <Size X="1334.0000" Y="750.0000" />
+                <AnchorPoint />
+                <Position X="-42.0073" Y="-38.5386" />
+                <Scale ScaleX="0.9040" ScaleY="0.9040" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.0190" Y="-0.0310" />
+                <PreSize X="0.6042" Y="0.6039" />
+                <FileData Type="Normal" Path="game_screen_assets/layers/levels/bg_large_level_3.csd" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="clouds" ActionTag="-200723507" VisibleForFrame="False" Tag="573" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="-109.7376" RightMargin="109.7375" TopMargin="-66.1389" BottomMargin="66.1389" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
                 <Size X="2208.0000" Y="1242.0000" />
                 <AnchorPoint />
                 <Position X="-109.7376" Y="66.1389" />
@@ -66,7 +86,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0497" Y="0.0533" />
                 <PreSize X="1.0000" Y="1.0000" />
-                <FileData Type="Normal" Path="game_screen_assets/layers/level_1/clouds_layer.csd" Plist="" />
+                <FileData Type="Normal" Path="game_screen_assets/layers/levels/clouds_layer.csd" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="pause_btn" ActionTag="1899077289" Tag="1183" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="0.8108" RightMargin="2101.1892" TopMargin="601.0432" BottomMargin="532.9568" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="76" Scale9Height="86" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="106.0000" Y="108.0000" />
@@ -168,6 +188,19 @@
             <PrePosition />
             <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="bomb_flash" ActionTag="1329686356" VisibleForFrame="False" Tag="638" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="-62.4709" RightMargin="2070.4709" TopMargin="1076.9819" BottomMargin="-34.9819" StretchWidthEnable="True" StretchHeightEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="200.0000" Y="200.0000" />
+            <AnchorPoint />
+            <Position X="-62.4709" Y="-34.9819" />
+            <Scale ScaleX="11.6499" ScaleY="6.7000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="-0.0283" Y="-0.0282" />
+            <PreSize X="0.0906" Y="0.1610" />
+            <SingleColor A="255" R="255" G="255" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />

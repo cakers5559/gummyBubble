@@ -35,7 +35,8 @@
 @interface RootViewController ()
 {
     BOOL _bannerIsVisible;
-    BOOL bannerDidDownload;
+    BOOL _androidADIsVisible;
+    BOOL dontShowBanner;
     ADBannerView *_adBanner;
     GADBannerView *admobBannerView;
 }
@@ -65,6 +66,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _bannerIsVisible = NO;
+    dontShowBanner = NO;
 }
  
 
@@ -73,43 +75,88 @@
 {
     [super viewDidAppear:animated];
     
-    // UNCOMMENT BELOW TO TEST OR USE GOOGLE ADS
-    /*_adBanner = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, 480, 32)];
-    _adBanner.delegate = self;*/
+    CGRect Rect =[[UIScreen mainScreen] bounds];
+    
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // COMMENT BELOW TO TEST OR USE GOOGLE ADS
+        _adBanner = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-64, Rect.size.width, 64)];
+    }
+    else {
+        _adBanner = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-32, Rect.size.width, 32)];
+    }
+    
+    _adBanner.delegate = self;
     
     
-    
-    _adBanner = nil;
-    _bannerIsVisible = NO;
-    [self bannerView:_adBanner didFailToReceiveAdWithError:nil];
+    // UNCOMMENT BELOW CODE FOR TESTING GOOGLE ADS
+    //_adBanner = nil;
+    //_bannerIsVisible = NO;
+    //[self bannerView:_adBanner didFailToReceiveAdWithError:nil];
 }
 
+- (void)atGameScreen {
+    dontShowBanner = YES;
+}
+
+- (void)awayFromGameScreen {
+    dontShowBanner = NO;
+}
+
+
 - (void)iADShowBanner {
-    [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+    //if (!_bannerIsVisible) {
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
     
-    if(_adBanner != nil) {
-        // Assumes the banner view is just off the bottom of the screen.
-        _adBanner.frame = CGRectOffset(_adBanner.frame, 0, -_adBanner.frame.size.height);
-    }
-    else if(admobBannerView != nil) {
-        admobBannerView.frame = CGRectOffset(admobBannerView.frame, 0, -admobBannerView.frame.size.height);
-    }
+        if(_adBanner != nil) {
+            if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+                // Assumes the banner view is just off the bottom of the screen.
+                _adBanner.frame = CGRectMake(0, self.view.frame.size.height-64, self.view.frame.size.width, 64);
+                //CGRectOffset(_adBanner.frame, 0, -32);
+            }
+            else {
+                // Assumes the banner view is just off the bottom of the screen.
+                _adBanner.frame = CGRectMake(0, self.view.frame.size.height-32, self.view.frame.size.width, 32);
+
+            }
+        }
+        else if(admobBannerView != nil) {
+            if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+                admobBannerView.frame =  CGRectMake((self.view.frame.size.width / 2) - 364,self.view.frame.size.height-90, 728, 90);
+            }
+            else {
+                admobBannerView.frame =  CGRectMake((self.view.frame.size.width / 2) - 160,self.view.frame.size.height-50, 320, 50);
+            }
+        }
     
-    [UIView commitAnimations];
+        [UIView commitAnimations];
+        
+        //_bannerIsVisible = YES;
+    //}
 }
 
 - (void)iADHideBanner {
-    [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+    //if (_bannerIsVisible) {
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
     
-    if(_adBanner != nil) {
-        // Assumes the banner view is just off the bottom of the screen.
-        _adBanner.frame = CGRectOffset(_adBanner.frame, 0, _adBanner.frame.size.height);
-    }
-    else if (admobBannerView != nil) {
-        admobBannerView.frame = CGRectOffset(admobBannerView.frame, 0, admobBannerView.frame.size.height);
-    }
+        if(_adBanner != nil) {
+            // Assumes the banner view is just off the bottom of the screen.
+            _adBanner.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 32);
+            //CGRectOffset(_adBanner.frame, 0, _adBanner.frame.size.height);
+        }
+        else if (admobBannerView != nil) {
+            if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+                admobBannerView.frame =  CGRectMake((self.view.frame.size.width / 2) - 364,self.view.frame.size.height, 728, 90);
+            }
+            else {
+                admobBannerView.frame =  CGRectMake((self.view.frame.size.width / 2) - 160,self.view.frame.size.height, 320, 50);
+            }
+        }
     
-    [UIView commitAnimations];
+        [UIView commitAnimations];
+        
+        //_bannerIsVisible = NO;
+        
+   // }
 }
 
 // Override to allow orientations other than the default portrait orientation.
@@ -181,82 +228,107 @@
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
-    NSLog(@"GOT AN IOS AD");
-
     if (!_bannerIsVisible)
     {
+        //NSLog(@"Load iOS AD");
         // If banner isn't part of view hierarchy, add it
         if (_adBanner.superview == nil)
         {
             [self.view addSubview:_adBanner];
+            
+            if(dontShowBanner) {
+                // Assumes the banner view is just off the bottom of the screen.
+                banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
+            }
         }
-        
-        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-        
-        // Assumes the banner view is just off the bottom of the screen.
-        banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
-        
-        [UIView commitAnimations];
         
         _bannerIsVisible = YES;
     }
 }
 
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
+    
+    
+    _adBanner.frame = CGRectOffset(_adBanner.frame, 0, _adBanner.frame.size.height);
+    
+    
+    return YES;
+}
+
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner {
+    
+    //_adBanner = banner;
+    
+    _adBanner.frame = CGRectOffset(_adBanner.frame, 0, -_adBanner.frame.size.height);
+}
+
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
-    NSLog(@"Failed to retrieve ad iOS");
+    //NSLog(@"Failed to retrieve ad iOS");
     
     // Set Google banner AdMob ads instead
     [banner removeFromSuperview];
     _adBanner = nil;
     
-    admobBannerView = [[GADBannerView alloc]
-                        initWithFrame:CGRectMake((self.view.frame.size.width / 2) - 160,self.view.frame.size.height, 320, 50)];
     
-    admobBannerView.adUnitID = @"ca-app-pub-7557251095062547/1325856917";
-    admobBannerView.rootViewController = self;
-    admobBannerView.delegate = self;
+    if(admobBannerView == nil){
+        if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+            admobBannerView = [[GADBannerView alloc]
+                           initWithFrame:CGRectMake((self.view.frame.size.width / 2) - 364,self.view.frame.size.height-90, 728, 90)];
+        }
+        else {
+            admobBannerView = [[GADBannerView alloc]
+                           initWithFrame:CGRectMake((self.view.frame.size.width / 2) - 160,self.view.frame.size.height-50, 320, 50)];
+        }
     
-    [self.view addSubview:admobBannerView];
-    //[admobBannerView loadRequest:[GADRequest request]];
-    
+        admobBannerView.adUnitID = @"ca-app-pub-7557251095062547/2802590115";
+        admobBannerView.rootViewController = self;
+        admobBannerView.delegate = self;
+        [admobBannerView loadRequest:[GADRequest request]];
+    }
     
     // SIMULATOR FOR TESTING ADS
-    GADRequest *request = [GADRequest request];
+    //GADRequest *request = [GADRequest request];
     // Make the request for a test ad. Put in an identifier for
     // the simulator as well as any devices you want to receive test ads.
     //request.testDevices = @[ @"a12940d2c37740ebfbfd9a8c0f07a78f" ];
-    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
-    [admobBannerView loadRequest:request];
+    //request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
+    //request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID,@"TheIDAppearingInLogs",nil];
+    //[admobBannerView loadRequest:request];
 }
 
 - (void)adViewDidReceiveAd:(GADBannerView *)adView {
-    NSLog(@"adViewDidReceiveAd");
-    if (!_bannerIsVisible)
+
+    if (!_androidADIsVisible)
     {
-        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-    
-        admobBannerView.frame = CGRectOffset(admobBannerView.frame, 0, -admobBannerView.frame.size.height);
-    
-        [UIView commitAnimations];
+        //NSLog(@"Google Receive adViewDidReceiveAd");
         
-        _bannerIsVisible = YES;
+        if (admobBannerView.superview == nil)
+        {
+            [self.view addSubview:admobBannerView];
+            
+            if(dontShowBanner) {
+                dontShowBanner = NO;
+                adView.frame = CGRectOffset(adView.frame, 0, adView.frame.size.height);
+            }
+        }
+        
+        _androidADIsVisible = YES;
     }
 }
 
 - (void)adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error {
     
-    NSLog(@"Fail To Get Google Add");
-    
-    if (_bannerIsVisible)
+    if (_androidADIsVisible)
     {
-        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+        //NSLog(@"Fail To Get Google Add");
+        //[UIView beginAnimations:@"animateAdBannerOff" context:NULL];
         
         admobBannerView.frame = CGRectOffset(admobBannerView.frame, 0, admobBannerView.frame.size.height);
         
-        [UIView commitAnimations];
+        //[UIView commitAnimations];
         
-        _bannerIsVisible = NO;
+        _androidADIsVisible = NO;
     }
 }
 

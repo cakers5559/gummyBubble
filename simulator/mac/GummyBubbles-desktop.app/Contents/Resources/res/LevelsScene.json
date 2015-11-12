@@ -1,0 +1,148 @@
+{
+  "ID": "dae81444-dae9-438c-861e-c7f12ac5c214",
+  "Version": "2.3.2.3",
+  "Name": "LevelsScene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 103,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/level-bg-1111x937@2x.png",
+              "Plist": ""
+            },
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 74,
+              "G": 144,
+              "B": 226
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "StretchWidthEnable": true,
+            "StretchHeightEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "Tag": 104,
+            "ActionTag": -2136310686,
+            "Size": {
+              "X": 2208.0,
+              "Y": 1242.0
+            },
+            "Name": "level_panel",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FontSize": 50,
+            "LabelText": "1000 Gummies to unlock next basket!",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "Bobbleboddy.ttf",
+              "Plist": ""
+            },
+            "HorizontalAlignmentType": "HT_Center",
+            "OutlineColor": {
+              "R": 26,
+              "G": 26,
+              "B": 26
+            },
+            "OutlineEnabled": true,
+            "ShadowColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "ShadowOffsetX": -5.0,
+            "ShadowOffsetY": -3.0,
+            "ShadowEnabled": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1143.5232,
+              "Y": 1099.6238
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "G": 165,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5179,
+              "Y": 0.8854
+            },
+            "PreSize": {
+              "X": 0.0639,
+              "Y": 0.0491
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": 1072.9791,
+            "RightMargin": 994.0209,
+            "TopMargin": 111.8762,
+            "BottomMargin": 1069.1238,
+            "Tag": 45,
+            "ActionTag": 1030907352,
+            "Size": {
+              "X": 818.0,
+              "Y": 61.0
+            },
+            "Name": "levels_txt",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 2208.0,
+          "Y": 1242.0
+        },
+        "Name": "LevelsScene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Bobbleboddy.ttf",
+        "images/level-bg-1111x937@2x.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}

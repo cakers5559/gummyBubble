@@ -11,10 +11,11 @@
             <AnchorPoint ScaleX="0.5000" />
             <Position X="1104.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="74" G="144" B="226" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" />
             <PreSize X="1.0000" Y="1.0000" />
-            <SingleColor A="255" R="0" G="0" B="0" />
+            <FileData Type="Normal" Path="images/level-bg-1111x937@2x.png" Plist="" />
+            <SingleColor A="255" R="74" G="144" B="226" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
@@ -72,7 +73,7 @@
             <PreSize X="0.1603" Y="0.0684" />
             <FontResource Type="Normal" Path="Bobbleboddy.ttf" Plist="" />
             <OutlineColor A="255" R="77" G="77" B="77" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <ShadowColor A="255" R="0" G="0" B="0" />
           </AbstractNodeData>
           <AbstractNodeData Name="gummy_score" ActionTag="1806008376" Tag="284" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="312.9839" RightMargin="1757.0161" TopMargin="1122.5356" BottomMargin="82.4644" FontSize="40" LabelText="Text Label" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="180.0000" Y="49.0000" />

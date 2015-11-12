@@ -1,6 +1,3 @@
-// Global var for setting game diffculty
-var gummyMode = "normal";
-
 // SettingsScene Class 
 var SettingsScene = cc.Scene.extend({
     
@@ -105,8 +102,7 @@ var SettingsScene = cc.Scene.extend({
         case ccui.Widget.TOUCH_BEGAN:       
             cc.audioEngine.setEffectsVolume( 3.25 );
             cc.audioEngine.playEffect( "res/audio/click.mp3" );                 
-            GummyBubbles.cleanUp();            
-            console.log("Back Home TOUCHED!");            
+            GummyBubbles.cleanUp();                                    
             cc.director.replaceScene( new cc.TransitionFade( 1.0, new MainScene() ) );                        
             break;        
         }

@@ -14,7 +14,7 @@ var GummyBubbles = {
     gummyBubblesTypes: ['UP-DOWN','DOWN-UP','LEFT-RIGHT','RIGHT-LEFT','LEFT-UP-DIAGONAL-DOWN','RIGHT-UP-DIAGONAL-DOWN',
                         'LEFT-DOWN-DIAGONAL-UP','RIGHT-DOWN-DIAGONAL-UP','LEFT-CURVE-UP-DOWN','LEFT-CURVE-DOWN-UP',
                         'RIGHT-CURVE-UP-DOWN','RIGHT-CURVE-DOWN-UP','LEFT-RIGHT-SHAKE','RIGHT-LEFT-SHAKE'],
-    gummyBubbleImages: ['bear-41x42','worm-34x42','fish-41x41'],
+    gummyBubbleImages: ['bear-41x42','worm-34x42','fish-41x41','bomb'],
     gummyBubbleTag: 1,
     gummyBubbleTags: [], 
     gummyBubblesStored: [],                   
@@ -29,7 +29,7 @@ var GummyBubbles = {
     touchTransition: false,
     gummyMisses: 1,
     poppedLength: 0, 
-    timer: null,                           
+    timer: null,                              
     
 	/************************************************************
      * Starts up the GummyBubbles shooter
@@ -63,74 +63,60 @@ var GummyBubbles = {
          
         // bubble movement transition               
         switch (bubbleType) {
-            case 'LEFT-RIGHT':
-                console.log("LEFT TO RIGHT");
+            case 'LEFT-RIGHT':                
                 startPoints = [ LEFT , MIDDLEY ];
                 endPoints = [ RIGHT , MIDDLEY];                  
             break;
-            case 'RIGHT-LEFT':               
-                console.log("RIGHT TO LEFT");                               
+            case 'RIGHT-LEFT':                                                              
                 startPoints = [ RIGHT , MIDDLEY ];
                 endPoints = [ LEFT , MIDDLEY]; 
             break;
-            case 'UP-DOWN':
-                console.log("UP TO DOWN");
+            case 'UP-DOWN':                
                 startPoints = [ MIDDLEX , UP + (size.height/3) ];
                 endPoints = [ MIDDLEX , DOWN - (size.height/3) ];                  
             break;
-            case 'DOWN-UP':               
-                console.log("DOWN TO UP");                               
+            case 'DOWN-UP':                                                              
                 startPoints = [ MIDDLEX , DOWN - (size.height/3) ];
                 endPoints = [ MIDDLEX , UP + (size.height/3) ]; 
             break;
-            case 'LEFT-UP-DIAGONAL-DOWN':
-                console.log("LEFT UP DIAGONAL TO DOWN");
+            case 'LEFT-UP-DIAGONAL-DOWN':                
                 startPoints = [ LEFT , UP ];
                 endPoints = [ RIGHT , DOWN ];
             break;
-            case 'LEFT-DOWN-DIAGONAL-UP':
-                console.log("LEFT DOWN DIAGONAL TO UP");
+            case 'LEFT-DOWN-DIAGONAL-UP':                
                 startPoints = [ LEFT , DOWN ];
                 endPoints = [ RIGHT , UP ];
             break;
-            case 'RIGHT-UP-DIAGONAL-DOWN':
-                console.log("RIGHT UP DIAGONAL TO DOWN");
+            case 'RIGHT-UP-DIAGONAL-DOWN':                
                 startPoints = [ RIGHT , UP ];
                 endPoints = [ LEFT , DOWN ];
             break;
-            case 'RIGHT-DOWN-DIAGONAL-UP':
-                console.log("RIGHT DOWN DIAGONAL TO UP");
+            case 'RIGHT-DOWN-DIAGONAL-UP':                
                 startPoints = [ RIGHT , DOWN ];
                 endPoints = [ LEFT , UP ];
             break;
-            case 'LEFT-CURVE-UP-DOWN':
-                console.log("LEFT CURVE FROM UP TO DOWN");
+            case 'LEFT-CURVE-UP-DOWN':                
                 startPoints = [ LEFT , DOWN ];
                 bezierTo = [ cc.p( LEFT , DOWN ) , cc.p( MIDDLEX , UP ) , cc.p( RIGHT , DOWN ) ];                
             break;
-            case 'LEFT-CURVE-DOWN-UP':
-                console.log("LEFT CURVE FROM DOWN TO UP");
+            case 'LEFT-CURVE-DOWN-UP':                
                 startPoints = [ LEFT , UP ];
                 bezierTo = [ cc.p( LEFT , UP ) , cc.p( MIDDLEX , DOWN ) , cc.p( RIGHT , UP ) ];                
             break;
-            case 'RIGHT-CURVE-UP-DOWN':
-                console.log("RIGHT CURVE UP TO DOWN");
+            case 'RIGHT-CURVE-UP-DOWN':                
                 startPoints = [ RIGHT , DOWN ];
                 bezierTo = [ cc.p( RIGHT , DOWN ) , cc.p( MIDDLEX , UP ) , cc.p( LEFT , DOWN ) ];                
             break;
-            case 'RIGHT-CURVE-DOWN-UP':
-                console.log("RIGHT CURVE DOWN TO UP");
+            case 'RIGHT-CURVE-DOWN-UP':                
                 startPoints = [ RIGHT , UP ];
                 bezierTo = [ cc.p( RIGHT , UP ) , cc.p( MIDDLEX , DOWN ) , cc.p( LEFT , UP ) ];                
             break;
-            case 'LEFT-RIGHT-SHAKE':
-                console.log("LEFT TO RIGHT SHAKE");
+            case 'LEFT-RIGHT-SHAKE':                
                 startPoints = [ LEFT , MIDDLEY ];
                 endPoints = [ RIGHT , MIDDLEY]; 
                 shake = true;                 
             break;
-            case 'RIGHT-LEFT-SHAKE':
-                console.log("RIGHT TO LEFT SHAKE");
+            case 'RIGHT-LEFT-SHAKE':                
                 startPoints = [ RIGHT , MIDDLEY ];
                 endPoints = [ LEFT , MIDDLEY]; 
                 shake = true;                 
@@ -156,13 +142,15 @@ var GummyBubbles = {
         //{            
             cc.eventManager.addListener(this.bubbleTouchEvent(this), bubble);
         //}
-                        
+                                          
         // create gummy
-        var gummyRandom = Math.floor(Math.random() * (this.gummyBubbleImages.length));          
+        var gummyChoices = (gummyStage === 'stage2' || gummyStage === 'stage3') ? this.gummyBubbleImages.length : (this.gummyBubbleImages.length - 1);        
+        var gummyRandom = Math.floor(Math.random() * (gummyChoices));          
         var gummy = new cc.Sprite( pathToAssets + '/' + this.gummyBubbleImages[gummyRandom] + this.resScaledTimes + '.png' );
         bubble.addChild(gummy);
         bubble.childGummyPath = pathToAssets + '/' + this.gummyBubbleImages[gummyRandom] + this.resScaledTimes + '.png';
         bubble.bubbleScale = imageScale;
+        bubble.isBomb = (this.gummyBubbleImages[gummyRandom] === 'bomb') ? true : false;
         gummy.setPosition( bubble.width / 2 , bubble.height / 2 );       
         gummy.setOpacity( 150 ); 
         
@@ -203,9 +191,11 @@ var GummyBubbles = {
         var bubblePulseBack = new cc.ScaleTo( 1, imageScale ); 
         bubble.runAction(cc.sequence(bubblePulse, bubblePulseBack).repeatForever()); 
         
+        
+        var bombOrBubble = (this.gummyBubbleImages[gummyRandom] === 'bomb') ? 'lighten_match' : 'shoot_out_bubble';                
         var playSound = function() {
             cc.audioEngine.setEffectsVolume( 0.05 );
-            cc.audioEngine.playEffect( "res/audio/shoot_out_bubble.mp3" );            
+            cc.audioEngine.playEffect( "res/audio/"+bombOrBubble+".mp3" );            
         }
         
         if (this.gummyBubbleTags.length === this.gummyBubblesOnScreen) {                       
@@ -257,8 +247,8 @@ var GummyBubbles = {
     getImageScale: function() {
         // Set the Bubble scale base on device        
         var imageScale = 1;                        
-        if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) imageScale = 1.2;        
-        else if (this.resScaledTimes === '@3x' && cc.view.getFrameSize().width !== 2048 && cc.view.getFrameSize().height !== 1536) imageScale = 0.6;       
+        if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) imageScale = 1.0;        
+        else if (this.resScaledTimes === '@3x' && cc.view.getFrameSize().width !== 2048 && cc.view.getFrameSize().height !== 1536) imageScale = 0.5;       
         else if (this.resScaledTimes === '@2x') imageScale = 0.75;
         else if (cc.view.getFrameSize().width == 960 && cc.view.getFrameSize().height == 640) imageScale = 1.4;    
         
@@ -288,10 +278,11 @@ var GummyBubbles = {
     bubbleTouchEvent: function(self) {
         return {
             event: cc.EventListener.TOUCH_ONE_BY_ONE,
+            swallowTouches: false,
             onTouchBegan: function (touch, event) {     
                 
                 // move the basket to the tap location                                                                              
-                if(self.basket && !self.touchTransition) {
+                if(self.basket && !self.touchTransition && !self.gummyPaused) {                    
                     self.touchTransition = true;
                     var screen = touch.getLocation();
                     
@@ -300,7 +291,7 @@ var GummyBubbles = {
                     }
                     
                     var actionTo = cc.moveTo( 0.1 , cc.p(screen.x, self.basket.y));
-                    self.basket.runAction(cc.sequence(actionTo, cc.callFunc(touchDone, this)));                                                                                         
+                    self.basket.runAction(cc.sequence(actionTo, cc.callFunc(touchDone, self)));                                                                                         
                 }
                 
                 // event.getCurrentTarget() returns the *listener's* sceneGraphPriority node.   
@@ -317,6 +308,9 @@ var GummyBubbles = {
                             target.setVisible( false );                                                         
                             target.isPopped = true;
                             target.stopActionByTag(target.getTag());                                                        
+                            
+                            if(target.isBomb) self.bombExplode(target.getPosition() , self);                                                            
+                            
                             self.bubblePop(target.getPosition() , target.childGummyPath, target.getTag(), target.bubbleScale);                          
                             self.gummyComboTouches++;
                         }                        
@@ -338,7 +332,7 @@ var GummyBubbles = {
     
                 if (cc.rectContainsPoint(rect, locationInNode)) {
                             for(var i = 0; i < self.gummyBubblesStored.length; i++) {                                    
-                                if(!self.gummyBubblesStored[i].isRemoved && !target.isRemoved) {
+                                if(!self.gummyBubblesStored[i].isRemoved && !target.isRemoved && !target.isBomb) {
                                     if(self.gummyBubblesStored[i].getTag() === target.getTag()) {                                                                                                                                                                                                      
                                         target.removeFromParent(); 
                                         target.isRemoved = true;
@@ -348,18 +342,16 @@ var GummyBubbles = {
                                             var comboNum = self.gummyComboTouches;
                                             self.gummyComboTouches = 0;
                                             self.comboEffect(pos , comboNum , self);
-                                            self.gummyScore += self.gummyComboTouches*2;                                
-                                                                                                                                                                    
+                                            self.gummyScore += self.gummyComboTouches*2;                                                                                                                                                                                                    
                                         }
                                     }
                                 }                                
                               }                                      
                             self.gummyComboTouches = 0;                                                                                                                                                            
-                            return true; 
+                            //return true; 
                 } 
-                                                                                                                 
-                               
-               return false;
+                                                                                                                                                
+               return true;
             }
         }
     },
@@ -437,7 +429,7 @@ var GummyBubbles = {
         // bubble splash   
         var bubbleSplash = new cc.Sprite( pathToAssets + '/bubble-pop-133x134' + this.resScaledTimes + '.png' );        
         this.scene.addChild(bubbleSplash);
-        
+        bubbleSplash.setScale(scale);
         bubbleSplash.setPosition( locX , locY ); 
         
         var splashOut = cc.fadeOut(1.0);                
@@ -455,7 +447,33 @@ var GummyBubbles = {
         
         setTimeout(playSound , 500);*/                                                                                          
     }, 
-    
+        
+    bombExplode: function(loc, self) {  
+        cc.audioEngine.setEffectsVolume( 3.25 );
+        cc.audioEngine.playEffect( "res/audio/explode.mp3" );      
+          
+        
+        var flasher = setInterval(function(){ myTimer() }, 50);
+
+        //var self = this;
+        
+        function myTimer() {
+            console.log('tick');
+            if(!self.scene.studio.bombFlash.isVisible()) self.scene.studio.bombFlash.setVisible(true);
+            else self.scene.studio.bombFlash.setVisible(false);            
+        }
+        
+        var explosion = cc.ParticleSystem( "res/images/explosion.plist" );        
+        explosion.setPosition( loc.x , loc.y );
+        explosion.setLocalZOrder(100);        
+        self.scene.addChild(explosion);                                                  
+        
+        var stopFlash = function() {
+            clearInterval(flasher);            
+        }
+        
+        var stopFlashing = setTimeout(stopFlash, 1000);
+    },    
     
     comboEffect: function(loc , comboNumber , self) { 
         cc.audioEngine.setEffectsVolume( 0.10 );
@@ -492,7 +510,7 @@ var GummyBubbles = {
         var nodeAction = cc.scaleTo( 0.5, 0.7, 0.7 );               
         bubbleCombo.runAction(cc.sequence(nodeAction, comboOut, cc.callFunc(removeCombo, bubbleCombo)));
         
-        self.gummyMisses = self.gummyMisses + Math.floor(comboNumber/2);
+        self.gummyMisses = (self.gummyMisses >= 10) ? self.gummyMisses : self.gummyMisses + Math.floor(comboNumber/2);
         self.scene.studio.missesTxt.setString( "Chances: "+ self.gummyMisses);
                                                                                                                      
     },                                        
@@ -505,18 +523,20 @@ var GummyBubbles = {
         var poppedTotal = this.gummyBubblesStored.length;
         var howManyPopped = 0;
         
-        // clean up                   
-        /*for(var i = 0; i < this.gummyBubbleTags.length; i++) {            
-            if(this.scene.mainscene) this.scene.mainscene.node.removeChildByTag( this.gummyBubbleTags[i] );
-            else this.scene.gamescene.node.removeChildByTag( this.gummyBubbleTags[i] );                            
-        } */                                       
-        
-        if(this.scene.gamescene && this.isGameActive) {
-            for(var i = 0; i < this.gummyBubblesStored.length; i++) {
+        // clean up                                                                     
+        if(this.scene.gamescene && this.isGameActive) {            
+            for(var i = 0; i < this.gummyBubblesStored.length; i++) {                
                 var bub = this.gummyBubblesStored[i];
-                if(bub.isPopped) {                                   
-                    howManyPopped++;
+                                
+                if(bub.isBomb && bub.isPopped){
+                    this.gummyMisses = 0;
+                }                
+                else if(bub.isBomb) {                    
+                    poppedTotal--;                                          
                 }
+                else if(bub.isPopped) {                                   
+                    howManyPopped++;
+                }                
                 else {                    
                     this.gummyMisses--;
                     this.scene.studio.missesTxt.setString( "Chances: "+ this.gummyMisses);
@@ -526,7 +546,7 @@ var GummyBubbles = {
                 if(!bub.isRemoved) bub.removeFromParent();                
             } 
             
-            if(howManyPopped === poppedTotal && this.gummyInBasket === poppedTotal) {            
+            if(howManyPopped === poppedTotal /*&& this.gummyInBasket === poppedTotal*/) {            
                 this.gummyLevel++;
                 this.scene.levelChange();
             }
@@ -542,17 +562,17 @@ var GummyBubbles = {
             }
         } 
         
-        for( var i = 0; i < this.gummyPoppedItems.length; i++) { 
-                var sprite = this.gummyPoppedItems[i].sprite;
-                var body = this.gummyPoppedItems[i].body;
-                var shape = this.gummyPoppedItems[i].shape;                                             
-                
-                if(body) {                                        
-                    Physics.space.removeShape(shape);
-                    Physics.space.removeBody(body);
-                    sprite.removeFromParent();                                                    
-                }                
-        }            
+            for( var i = 0; i < this.gummyPoppedItems.length; i++) { 
+                    var sprite = this.gummyPoppedItems[i].sprite;
+                    var body = this.gummyPoppedItems[i].body;
+                    var shape = this.gummyPoppedItems[i].shape;                                             
+                    
+                    if(body) {                                        
+                        Physics.space.removeShape(shape);
+                        Physics.space.removeBody(body);
+                        sprite.removeFromParent();                                                    
+                    }                
+            }                
                         
         this.gummyBubbleTag = 1;
         this.gummyBubbleTags = [];
@@ -588,7 +608,7 @@ var GummyBubbles = {
     },
     
     
-    cleanUp: function() {        
+    cleanUp: function(pauseBasket) {        
         this.gummyBubbleTag = 1;
         this.gummyBubbleTags = [];
         this.gummyLastRandomNumbers = [];
@@ -600,6 +620,7 @@ var GummyBubbles = {
         this.touchTransition = false;
         this.gummyBubbleCollide = false;
         this.poppedLength = 0;        
+        
         this.basket = null;                
         
         if(!this.scene.gamescene && !this.isGameActive) {

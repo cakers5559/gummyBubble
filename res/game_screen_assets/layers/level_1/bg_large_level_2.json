@@ -1,0 +1,118 @@
+{
+  "ID": "64babb02-ab53-46a3-96bb-143880298e24",
+  "Version": "2.3.2.3",
+  "Name": "bg_large_level_2",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 294,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/mediumRes/level-two-landscape@2x.png",
+              "Plist": ""
+            },
+            "Scale9Width": 2222,
+            "Scale9Height": 930,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 662.3433,
+              "Y": 11.1129
+            },
+            "Scale": {
+              "ScaleX": 0.5946,
+              "ScaleY": 0.5946
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4965,
+              "Y": 0.0148
+            },
+            "PreSize": {
+              "X": 1.6657,
+              "Y": 1.24
+            },
+            "LeftMargin": -448.6567,
+            "RightMargin": -439.3433,
+            "TopMargin": 273.8871,
+            "BottomMargin": -453.8871,
+            "Tag": 298,
+            "ActionTag": 179411442,
+            "Size": {
+              "X": 2222.0,
+              "Y": 930.0
+            },
+            "Name": "landscape",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/snow.plist",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {},
+            "Position": {
+              "X": 654.9047,
+              "Y": 364.1125
+            },
+            "Scale": {
+              "ScaleX": 1.2354,
+              "ScaleY": 1.2354
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.4909,
+              "Y": 0.4855
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 654.9047,
+            "RightMargin": 679.0953,
+            "TopMargin": 385.8875,
+            "BottomMargin": 364.1125,
+            "Tag": 454,
+            "ActionTag": -95829388,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "snow",
+            "ctype": "ParticleObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1334.0,
+          "Y": 750.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "../../../images/mediumRes/level-two-landscape@2x.png",
+        "../../../images/snow.plist"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}
