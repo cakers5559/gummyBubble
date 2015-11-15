@@ -63,7 +63,7 @@
 		</data>
 		<key>Resources/res/GameScene.json</key>
 		<data>
-		N9fnGO5TYuAatyr/bcLQx5Li5mU=
+		zP3XJQscsBTFfHkGzA0sudB2byk=
 		</data>
 		<key>Resources/res/LevelsScene.json</key>
 		<data>
@@ -117,6 +117,10 @@
 		<data>
 		9qUBgvBxfqXylZZCAlmz7ENd//U=
 		</data>
+		<key>Resources/res/audio/raining.mp3</key>
+		<data>
+		YQ2iZpSlj9bx0Zx9LMSpIpEjIl8=
+		</data>
 		<key>Resources/res/audio/shoot_out_bubble.mp3</key>
 		<data>
 		Cefbq8aWYfoi3tYVwZU3PZ0+KDk=
@@ -124,6 +128,10 @@
 		<key>Resources/res/audio/sunny_day.mp3</key>
 		<data>
 		aSCFNA2dUhwgzVqETMzexmiA52w=
+		</data>
+		<key>Resources/res/audio/windy.mp3</key>
+		<data>
+		4EvKUHbaxw6JSJFYJjcBGeMR0M8=
 		</data>
 		<key>Resources/res/game_screen_assets/layers/how_to_play_screen/how_to_play_large.json</key>
 		<data>
@@ -179,7 +187,7 @@
 		</data>
 		<key>Resources/res/game_screen_assets/layers/levels/bg_large_level_3.json</key>
 		<data>
-		azkC2kozpqY8VHkd6mia8StaLYg=
+		NQKyKf53l1FlHsGAn5qN6i9KPWw=
 		</data>
 		<key>Resources/res/game_screen_assets/layers/levels/bg_medium_level_1.json</key>
 		<data>
@@ -512,6 +520,10 @@
 		<key>Resources/res/images/mediumRes/x8@2x.png</key>
 		<data>
 		tg/UaO3EME7CqH0HtvjWmcpuh40=
+		</data>
+		<key>Resources/res/images/rain.plist</key>
+		<data>
+		Jp5QqIM7jkOVpxykwbvqDHbPTIE=
 		</data>
 		<key>Resources/res/images/score.plist</key>
 		<data>
@@ -887,11 +899,11 @@
 		</data>
 		<key>Resources/src/app.js</key>
 		<data>
-		n4ZmFNQo5umx3bViPOi0XNi/hy0=
+		O/HKxA792tDaTFy4wPOtlpnSTwc=
 		</data>
 		<key>Resources/src/game.js</key>
 		<data>
-		Y0tbJKEjUk9jVeHoV+QuxGp2Ltk=
+		df54myGwMYPZ+8KHBEUouKSiwYA=
 		</data>
 		<key>Resources/src/gameOver.js</key>
 		<data>
@@ -899,11 +911,11 @@
 		</data>
 		<key>Resources/src/gummyBubbles.js</key>
 		<data>
-		iCO+G7ERJTqehWAHZsm93AdNNRo=
+		65FNogvFoMNdOXOPWd0ONa+JXe4=
 		</data>
 		<key>Resources/src/levels.js</key>
 		<data>
-		oF+dL/KeVzjx4j+rZDx15nhf1bw=
+		WntS35MBvZ+vsC0wCxaJPV/YzxU=
 		</data>
 		<key>Resources/src/pause.js</key>
 		<data>
@@ -992,7 +1004,7 @@
 		</data>
 		<key>Resources/res/GameScene.json</key>
 		<data>
-		N9fnGO5TYuAatyr/bcLQx5Li5mU=
+		zP3XJQscsBTFfHkGzA0sudB2byk=
 		</data>
 		<key>Resources/res/LevelsScene.json</key>
 		<data>
@@ -1046,6 +1058,10 @@
 		<data>
 		9qUBgvBxfqXylZZCAlmz7ENd//U=
 		</data>
+		<key>Resources/res/audio/raining.mp3</key>
+		<data>
+		YQ2iZpSlj9bx0Zx9LMSpIpEjIl8=
+		</data>
 		<key>Resources/res/audio/shoot_out_bubble.mp3</key>
 		<data>
 		Cefbq8aWYfoi3tYVwZU3PZ0+KDk=
@@ -1053,6 +1069,10 @@
 		<key>Resources/res/audio/sunny_day.mp3</key>
 		<data>
 		aSCFNA2dUhwgzVqETMzexmiA52w=
+		</data>
+		<key>Resources/res/audio/windy.mp3</key>
+		<data>
+		4EvKUHbaxw6JSJFYJjcBGeMR0M8=
 		</data>
 		<key>Resources/res/game_screen_assets/layers/how_to_play_screen/how_to_play_large.json</key>
 		<data>
@@ -1108,7 +1128,7 @@
 		</data>
 		<key>Resources/res/game_screen_assets/layers/levels/bg_large_level_3.json</key>
 		<data>
-		azkC2kozpqY8VHkd6mia8StaLYg=
+		NQKyKf53l1FlHsGAn5qN6i9KPWw=
 		</data>
 		<key>Resources/res/game_screen_assets/layers/levels/bg_medium_level_1.json</key>
 		<data>
@@ -1441,6 +1461,10 @@
 		<key>Resources/res/images/mediumRes/x8@2x.png</key>
 		<data>
 		tg/UaO3EME7CqH0HtvjWmcpuh40=
+		</data>
+		<key>Resources/res/images/rain.plist</key>
+		<data>
+		Jp5QqIM7jkOVpxykwbvqDHbPTIE=
 		</data>
 		<key>Resources/res/images/score.plist</key>
 		<data>
@@ -1816,11 +1840,11 @@
 		</data>
 		<key>Resources/src/app.js</key>
 		<data>
-		n4ZmFNQo5umx3bViPOi0XNi/hy0=
+		O/HKxA792tDaTFy4wPOtlpnSTwc=
 		</data>
 		<key>Resources/src/game.js</key>
 		<data>
-		Y0tbJKEjUk9jVeHoV+QuxGp2Ltk=
+		df54myGwMYPZ+8KHBEUouKSiwYA=
 		</data>
 		<key>Resources/src/gameOver.js</key>
 		<data>
@@ -1828,11 +1852,11 @@
 		</data>
 		<key>Resources/src/gummyBubbles.js</key>
 		<data>
-		iCO+G7ERJTqehWAHZsm93AdNNRo=
+		65FNogvFoMNdOXOPWd0ONa+JXe4=
 		</data>
 		<key>Resources/src/levels.js</key>
 		<data>
-		oF+dL/KeVzjx4j+rZDx15nhf1bw=
+		WntS35MBvZ+vsC0wCxaJPV/YzxU=
 		</data>
 		<key>Resources/src/pause.js</key>
 		<data>

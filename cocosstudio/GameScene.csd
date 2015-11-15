@@ -58,20 +58,20 @@
                 <PreSize X="0.6042" Y="0.6039" />
                 <FileData Type="Normal" Path="game_screen_assets/layers/levels/bg_large_level_1.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="bg_level_2" ActionTag="-297450740" VisibleForFrame="False" Tag="115" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="-48.5696" RightMargin="922.5696" TopMargin="496.5695" BottomMargin="-4.5695" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="bg_level_2" ActionTag="-297450740" VisibleForFrame="False" Tag="115" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="-48.5760" RightMargin="922.5760" TopMargin="496.5695" BottomMargin="-4.5695" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
                 <Size X="1334.0000" Y="750.0000" />
                 <AnchorPoint />
-                <Position X="-48.5696" Y="-4.5695" />
+                <Position X="-48.5760" Y="-4.5695" />
                 <Scale ScaleX="0.9833" ScaleY="0.9833" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0220" Y="-0.0037" />
                 <PreSize X="0.6042" Y="0.6039" />
                 <FileData Type="Normal" Path="game_screen_assets/layers/levels/bg_large_level_2.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="bg_level_3" ActionTag="-256626410" VisibleForFrame="False" Tag="504" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="-42.0073" RightMargin="916.0073" TopMargin="530.5386" BottomMargin="-38.5386" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="bg_level_3" ActionTag="-256626410" VisibleForFrame="False" Tag="504" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="-41.9520" RightMargin="915.9520" TopMargin="530.5386" BottomMargin="-38.5386" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
                 <Size X="1334.0000" Y="750.0000" />
                 <AnchorPoint />
-                <Position X="-42.0073" Y="-38.5386" />
+                <Position X="-41.9520" Y="-38.5386" />
                 <Scale ScaleX="0.9040" ScaleY="0.9040" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0190" Y="-0.0310" />
@@ -192,11 +192,11 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bomb_flash" ActionTag="1329686356" VisibleForFrame="False" Tag="638" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="-62.4709" RightMargin="2070.4709" TopMargin="1076.9819" BottomMargin="-34.9819" StretchWidthEnable="True" StretchHeightEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="bomb_flash" ActionTag="1329686356" VisibleForFrame="False" Tag="638" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="-62.4708" RightMargin="2070.4707" TopMargin="1076.9777" BottomMargin="-34.9777" StretchWidthEnable="True" StretchHeightEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="200.0000" Y="200.0000" />
             <AnchorPoint />
-            <Position X="-62.4709" Y="-34.9819" />
-            <Scale ScaleX="11.6499" ScaleY="6.7000" />
+            <Position X="-62.4708" Y="-34.9777" />
+            <Scale ScaleX="11.6500" ScaleY="9.9262" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="-0.0283" Y="-0.0282" />
             <PreSize X="0.0906" Y="0.1610" />

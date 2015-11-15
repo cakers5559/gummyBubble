@@ -142,9 +142,9 @@ var GummyBubbles = {
         //{            
             cc.eventManager.addListener(this.bubbleTouchEvent(this), bubble);
         //}
-                                          
+                                                  
         // create gummy
-        var gummyChoices = (gummyStage === 'stage2' || gummyStage === 'stage3') ? this.gummyBubbleImages.length : (this.gummyBubbleImages.length - 1);        
+        var gummyChoices = (gummyStage !== 'stage1') ? this.gummyBubbleImages.length : (this.gummyBubbleImages.length - 1);        
         var gummyRandom = Math.floor(Math.random() * (gummyChoices));          
         var gummy = new cc.Sprite( pathToAssets + '/' + this.gummyBubbleImages[gummyRandom] + this.resScaledTimes + '.png' );
         bubble.addChild(gummy);

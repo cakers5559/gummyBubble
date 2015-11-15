@@ -1,6 +1,3 @@
-// Global var for setting game diffculty
-var gummyStage = "stage1";
-
 // LevelsScene Class 
 var LevelsScene = cc.Scene.extend({
     
@@ -36,8 +33,8 @@ var LevelsScene = cc.Scene.extend({
         var levelTxt = this.levelsscene.node.getChildByName( 'levels_txt' );                                                            
         var title = '30 gummies to unlock next basket!';        
         
-        if(bestScore >= 30) title = '60 Gummies to unlock next basket!';
-        else if (bestScore >= 60) title = 'Choose a basket.';
+        if(bestScore >= 30) title = '20 Gummies to unlock next basket!';
+        else if (bestScore >= 20) title = 'Choose a basket.';
         
         levelTxt.setPosition(size.width / 2 , size.height - (size.height / 4));
         levelTxt.setString(title);   
@@ -53,7 +50,7 @@ var LevelsScene = cc.Scene.extend({
         var stages = [
           { unlockScore: 0, event: this.stageOne},
           { unlockScore: 30, event: this.stageTwo},
-          { unlockScore: 60, event: this.stageThree}
+          { unlockScore: 50, event: this.stageThree}
         ]; 
         
         var menuItems = [];                               
@@ -86,17 +83,21 @@ var LevelsScene = cc.Scene.extend({
         
     stageOne: function() {
         console.log("Level One");
-        gummyStage = "stage2";        
+        gummyStage = "stage1";        
         cc.director.replaceScene( new GameScene());  
     },
     
     
     stageTwo: function() {
         console.log("Level Two");  
+        gummyStage = "stage2";        
+        cc.director.replaceScene( new GameScene());  
     },
     
     
     stageThree: function() {
-        console.log("Level Three");  
+        console.log("Level Three"); 
+        gummyStage = "stage3";        
+        cc.director.replaceScene( new GameScene());   
     }           
 });

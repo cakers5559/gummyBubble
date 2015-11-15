@@ -40,25 +40,26 @@
       <ObjectData Name="bg_layer_dark" Tag="455" ctype="GameLayerObjectData">
         <Size X="1334.0000" Y="750.0000" />
         <Children>
-          <AbstractNodeData Name="bg_color" ActionTag="1667344726" Tag="457" IconVisible="False" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="bg_color" ActionTag="1667344726" Tag="457" IconVisible="False" LeftMargin="0.0020" RightMargin="-0.0020" TopMargin="0.0009" BottomMargin="-0.0009" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="1334.0000" Y="750.0000" />
             <Children>
-              <AbstractNodeData Name="Image_2" ActionTag="173734514" Tag="458" IconVisible="False" LeftMargin="944.3280" RightMargin="271.6720" TopMargin="81.9429" BottomMargin="550.0571" Scale9Width="118" Scale9Height="118" ctype="ImageViewObjectData">
-                <Size X="118.0000" Y="118.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1003.3280" Y="609.0571" />
+              <AbstractNodeData Name="Particle_3" ActionTag="1045271323" Tag="1359" IconVisible="True" LeftMargin="760.8929" RightMargin="573.1071" TopMargin="396.4753" BottomMargin="353.5247" ctype="ParticleObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <AnchorPoint />
+                <Position X="760.8929" Y="353.5247" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7521" Y="0.8121" />
-                <PreSize X="0.0885" Y="0.1573" />
-                <FileData Type="Normal" Path="images/mediumRes/moon@2x.png" Plist="" />
+                <PrePosition X="0.5704" Y="0.4714" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="images/rain.plist" Plist="" />
+                <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Position X="0.0020" Y="-0.0009" />
+            <Scale ScaleX="1.0000" ScaleY="1.6667" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
+            <PrePosition X="0.0000" Y="0.0000" />
             <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="9" G="47" B="92" />
             <FirstColor A="255" R="150" G="200" B="255" />
@@ -74,6 +75,16 @@
             <PrePosition X="0.4652" Y="0.2701" />
             <PreSize X="1.1034" Y="0.5867" />
             <FileData Type="Normal" Path="images/mediumRes/landscape-736x220@2x.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Image_2" ActionTag="173734514" Tag="458" IconVisible="False" LeftMargin="944.3281" RightMargin="271.6719" TopMargin="-28.0574" BottomMargin="660.0574" Scale9Width="118" Scale9Height="118" ctype="ImageViewObjectData">
+            <Size X="118.0000" Y="118.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1003.3281" Y="719.0574" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.7521" Y="0.9587" />
+            <PreSize X="0.0885" Y="0.1573" />
+            <FileData Type="Normal" Path="images/mediumRes/moon@2x.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="star_1" ActionTag="1967251879" Tag="580" IconVisible="False" LeftMargin="452.5139" RightMargin="859.4861" TopMargin="312.0792" BottomMargin="415.9208" ctype="SpriteObjectData">
             <Size X="22.0000" Y="22.0000" />

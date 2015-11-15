@@ -145,8 +145,8 @@ var MainScene = cc.Scene.extend({
             GummyBubbles.cleanUp();
             this.unschedule();                           
             cc.director.popToSceneStackLevel(1);
-            //cc.director.replaceScene( new GameScene());
-            cc.director.replaceScene( new LevelsScene());                        
+            cc.director.replaceScene( new GameScene());
+            //cc.director.replaceScene( new LevelsScene());                        
             break;        
         }
         

@@ -139,6 +139,7 @@
           <Image Name="level-bg-1111x937@2x.png" />
           <PlistParticleFile Name="snow.plist" />
           <PlistParticleFile Name="explosion.plist" />
+          <PlistParticleFile Name="rain.plist" />
         </Folder>
         <Project Name="GameScene.csd" Type="Scene" />
         <TTF Name="Bobbleboddy.ttf" />
@@ -154,6 +155,8 @@
           <Audio Name="combo.mp3" />
           <Audio Name="explode.mp3" />
           <Audio Name="lighten_match.mp3" />
+          <Audio Name="raining.mp3" />
+          <Audio Name="windy.mp3" />
         </Folder>
         <Project Name="SettingScene.csd" Type="Scene" />
         <Project Name="GameOverScene.csd" Type="Scene" />

@@ -1,3 +1,6 @@
+// Global var for setting game diffculty
+var gummyStage = "stage1";
+
 // GameScene Class 
 var GameScene = cc.Scene.extend({
 
@@ -48,11 +51,10 @@ var GameScene = cc.Scene.extend({
                     this.studio.missesTxt.setPositionY( this.studio.missesTxt.y + 125 );
                     this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 125 );
                     this.studio.pauseBtn.setPositionY( this.studio.pauseBtn.y + 125 );
-            } 
-            
-            this.stageSetup(gummyStage);                                          
-        }          
+            }                                                                   
+        }     
         
+        this.stageSetup(gummyStage);             
         GummyBubbles.gummyPaused = false;                                                                          
     },
     
@@ -78,7 +80,8 @@ var GameScene = cc.Scene.extend({
         // stops the background music                               
             GummyBubbles.isGameActive = false;
             cc.audioEngine.stopMusic();
-            Physics.space.removeCollisionHandler(  1  , 2 );                    
+            Physics.space.removeCollisionHandler(  1  , 2 );
+            gummyStage = 'stage1';                    
             //GummyBubbles.cleanUp(true);        
             //this.unschedule();              
     },         
@@ -88,9 +91,7 @@ var GameScene = cc.Scene.extend({
      * start the game
      */  
     initGame : function() {
-        BannerADCommunication.hideBanner();        
-        cc.audioEngine.playMusic( "res/audio/sunny_day.mp3", true );
-        cc.audioEngine.setMusicVolume( 0.10 );
+        BannerADCommunication.hideBanner();                
                                                            
         // create the gummies basket
         GummyBubbles.basketInit();
@@ -195,6 +196,22 @@ var GameScene = cc.Scene.extend({
         stars.runAction(cc.sequence(starsDelay, cc.callFunc(removeStars, stars)));                                      
     }, 
     
+    fireworks: function(size) {
+        cc.audioEngine.setEffectsVolume( 3.25 );
+        cc.audioEngine.playEffect( "res/audio/gotitem.mp3" );
+        
+        var fireworks = cc.ParticleSystem( "res/images/fireworks.plist" );        
+        
+        var removeFireworks = function(s) {
+            s.removeFromParent();            
+        }    
+        
+        fireworks.setScale( 1.0 );
+        fireworks.setPosition( size.width / 2 , size.height / 2 );        
+        this.addChild(fireworks);          
+        var fireworksDelay = cc.delayTime(1.0);                
+        fireworks.runAction(cc.sequence(fireworksDelay, cc.callFunc(removefireworks, fireworks)));   
+    },    
     
     levelChange: function() {         
        if("level"+GummyBubbles.gummyLevel in this.Level) {
@@ -269,7 +286,23 @@ var GameScene = cc.Scene.extend({
                 GummyBubbles.gummyScore++; 
                 GummyBubbles.gummyInBasket++;                                               
                 this.studio.gummiesTxt.setString( "Gummies: "+ GummyBubbles.gummyScore);                                 
-                this.scoreEffect( GummyBubbles.basket.x , GummyBubbles.basket.height+40 );        
+                this.scoreEffect( GummyBubbles.basket.x , GummyBubbles.basket.height+40 );
+                
+                if(GummyBubbles.gummyScore === 7) {
+                    GummyBubbles.gummyLevel = 1;
+                    gummyStage = "stage3";
+                    this.stageSetup("stage3");
+                }        
+                else if(GummyBubbles.gummyScore === 3) {
+                    GummyBubbles.gummyLevel = 1;
+                    gummyStage = "stage2";
+                    //this.fireworks(cc.winSize);
+                    this.stageSetup("stage2");
+                }
+                /*else if(gummyStage !== 'stage1') {
+                    console.log("Not stage one on start: "+gummyStage);                   
+                    this.stageSetup("stage1");
+                }*/
             }
         }
         
@@ -283,7 +316,9 @@ var GameScene = cc.Scene.extend({
     /**************************************
      * Setup the selected stage elements
      **************************************/
-    stageSetup: function(stage) {
+    stageSetup: function(stage) {        
+        cc.audioEngine.stopMusic();                        
+        var size = cc.winSize;
         var moveAnimation = function( time , pXY , tag ) {
             var move = cc.moveBy( time , pXY );
             var move_back = move.reverse();
@@ -293,39 +328,70 @@ var GameScene = cc.Scene.extend({
             var move_rep = move_seq.repeatForever(); 
             return move_rep;        
         };
+        
+        var stageEffect = function(obj) {
+            obj.studio.bombFlash.setVisible(true);
+            var flasher = setTimeout(flashOnOff, 500);
+            var self = obj;
+            
+            var label = new cc.LabelTTF( "Level 2", "res/Bobbleboddy.ttf", 100 );
+            label.x = size.width / 2;
+            label.y = size.height / 2;
+            label.setFontFillColor('#000000');                                    
+            obj.addChild(label);
+            
+            function flashOnOff() {            
+                console.log("test it out");
+                self.studio.bombFlash.setVisible(false);                        
+            }
+        }                
+                
+        if ('bgLevel' in this.studio) {
+            for(var i = 1; i <= 3; i++) {
+                this.studio.bgLevel = this.studio.panel_level.getChildByName("bg_level_"+i);
+                this.studio.bgLevel.setVisible(false);   
+            }
+        }
+        
+        if ('mountains' in this.studio) {
+            this.studio.mountains = this.studio.panel_level.getChildByName( "mountains" );                        
+            this.studio.mountains.setVisible(false);
+        }       
+        
+        if (!('clouds' in this.studio)) {
+                    this.studio.clouds = this.studio.panel_level.getChildByName( "clouds" );                
+                    this.studio.clouds.setVisible(true);
+                    this.studio.clouds.runAction( moveAnimation( 400.0 , cc.p(0 - this.studio.clouds.width , this.studio.clouds.y), 104 ) );
+        }     
                 
         switch (stage) {
-            case 'stage1':                               
-                this.studio.clouds = this.studio.panel_level.getChildByName( "clouds" );                
-                this.studio.clouds.setVisible(true);
-                this.studio.clouds.runAction( moveAnimation( 400.0 , cc.p(0 - this.studio.clouds.width , this.studio.clouds.y), 104 ) );
-                
+            case 'stage1': 
+                cc.audioEngine.playMusic( "res/audio/sunny_day.mp3", true );                
+                                                        
                 this.studio.mountains = this.studio.panel_level.getChildByName( "mountains" );                        
                 this.studio.mountains.setVisible(true);
-                this.studio.mountains.runAction( moveAnimation( 20.0 , cc.p( 40  , this.studio.mountains.y) , 105 ) );
+                //this.studio.mountains.runAction( moveAnimation( 20.0 , cc.p( 40  , this.studio.mountains.y) , 105 ) );
                 
                 this.studio.bgLevel = this.studio.panel_level.getChildByName("bg_level_1");
                 this.studio.bgLevel.setVisible(true);        
             break;
-            case 'stage2':
-                this.studio.clouds = this.studio.panel_level.getChildByName( "clouds" );                
-                this.studio.clouds.setVisible(true);
-                this.studio.clouds.runAction( moveAnimation( 400.0 , cc.p(0 - this.studio.clouds.width , this.studio.clouds.y), 104 ) );
-                
-            
+            case 'stage2':                
+                stageEffect(this);
+                cc.audioEngine.playMusic( "res/audio/windy.mp3", true );
+                                                                                                                       
                 this.studio.bgLevel = this.studio.panel_level.getChildByName("bg_level_2");
-                this.studio.bgLevel.setVisible(true);  
+                this.studio.bgLevel.setVisible(true);                                  
             break;       
             case 'stage3':
-                this.studio.clouds = this.studio.panel_level.getChildByName( "clouds" );                
-                this.studio.clouds.setVisible(true);
-                this.studio.clouds.runAction( moveAnimation( 400.0 , cc.p(0 - this.studio.clouds.width , this.studio.clouds.y), 104 ) );
-                
-            
+                stageEffect(this);
+                cc.audioEngine.playMusic( "res/audio/raining.mp3", true );
+               
                 this.studio.bgLevel = this.studio.panel_level.getChildByName("bg_level_3");
                 this.studio.bgLevel.setVisible(true);  
             break;            
-        }                
+        }                                  
+        console.log(stage);        
+        cc.audioEngine.setMusicVolume( 0.10 );              
     },            
     
     
