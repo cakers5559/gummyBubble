@@ -187,8 +187,8 @@ var GummyBubbles = {
         }                               
             
         // Scales bubble in and out for pulse effect
-        var bubblePulse = (gummyStage === 'stage3') ? new cc.ScaleTo( 1, imageScale - 0.4) : new cc.ScaleTo( 1, imageScale + 0.1);
-        var bubblePulseBack = (gummyStage === 'stage3') ? new cc.ScaleTo( 1, imageScale - 0.5 ) : new cc.ScaleTo( 1, imageScale); 
+        var bubblePulse = (gummyStage === 'stage3') ? new cc.ScaleTo( 1, imageScale - 0.2) : new cc.ScaleTo( 1, imageScale + 0.1);
+        var bubblePulseBack = (gummyStage === 'stage3') ? new cc.ScaleTo( 1, imageScale - 0.3 ) : new cc.ScaleTo( 1, imageScale); 
         bubble.runAction(cc.sequence(bubblePulse, bubblePulseBack).repeatForever()); 
         
         

@@ -275,14 +275,16 @@ var GameScene = cc.Scene.extend({
                 this.studio.gummiesTxt.setString( "Gummies: "+ GummyBubbles.gummyScore);                                 
                 this.scoreEffect( GummyBubbles.basket.x , GummyBubbles.basket.height+40 );
                 
-                if(GummyBubbles.gummyScore === 60) {
+                if(GummyBubbles.gummyScore === 20) {
                     GummyBubbles.gummyLevel = 1;
                     gummyStage = "stage3";
+                    this.levelChange();
                     this.stageSetup("stage3");
                 }        
-                else if(GummyBubbles.gummyScore === 30) {
+                else if(GummyBubbles.gummyScore === 10) {
                     GummyBubbles.gummyLevel = 1;
-                    gummyStage = "stage2";                    
+                    gummyStage = "stage2";
+                    this.levelChange();                    
                     this.stageSetup("stage2");
                 }
                 /*else if(gummyStage !== 'stage1') {
@@ -424,55 +426,55 @@ var GameScene = cc.Scene.extend({
         level1 : {            
             stage1:	[1,4,0],
             stage2: [2,4,0],
-            stage3: [2,4,0]
+            stage3: [3,4,0]
         },
         
         level2 : {            
             stage1:	[2,4,0],
             stage2: [2,4,1],
-            stage3: [2,4,1]
+            stage3: [4,4,1]
         },
         
         level3 : {            
             stage1:	[3,3,0],
             stage2: [3,3,0],
-            stage3: [3,3,0]
+            stage3: [5,3,0]
         },
         
         level4 : {            
             stage1:	[3,3,0],
             stage2: [3,3,1],
-            stage3: [3,3,1]
+            stage3: [6,3,1]
         },
         
         level5 : {            
             stage1:	[4,3,0],
             stage2: [4,3,0],
-            stage3: [4,3,0]
+            stage3: [7,3,0]
         },
         
         level6 : {            
             stage1:	[4,2,0],
             stage2: [4,2,1],
-            stage3: [4,2,1]
+            stage3: [8,2,1]
         },
         
         level7 : {            
             stage1:	[6,2,0],
             stage2: [6,2,1],
-            stage3: [6,2,1]
+            stage3: [9,2,1]
         },
         
         level8 : {            
-            stage1:	[8,3,0],
-            stage2: [8,3,1],
-            stage3: [8,3,1]
+            stage1:	[8,2,0],
+            stage2: [9,2,1],
+            stage3: [10,3,1]
         },
         
         level9 : {           
             stage1:	[8,2,0],
-            stage2: [8,2,1],
-            stage3: [8,2,1]
+            stage2: [9,2,1],
+            stage3: [10,2,1]
         }                
     }	       
 });
