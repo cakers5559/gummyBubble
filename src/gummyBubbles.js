@@ -130,7 +130,7 @@ var GummyBubbles = {
         // create bubble   
         var bubble = new cc.Sprite( pathToAssets + '/bubble-89x84' + this.resScaledTimes + '.png' );        
         this.scene.addChild(bubble , 1000);
-        bubble.setPosition( startPoints[0] , startPoints[1] );
+        bubble.setPosition( startPoints[0] , startPoints[1] );        
         bubble.setScale(imageScale);
         bubble.setTag( this.gummyBubbleTag );
         bubble.isPopped = false;
@@ -148,7 +148,7 @@ var GummyBubbles = {
         var gummyRandom = Math.floor(Math.random() * (gummyChoices));          
         var gummy = new cc.Sprite( pathToAssets + '/' + this.gummyBubbleImages[gummyRandom] + this.resScaledTimes + '.png' );
         bubble.addChild(gummy);
-        bubble.childGummyPath = pathToAssets + '/' + this.gummyBubbleImages[gummyRandom] + this.resScaledTimes + '.png';
+        bubble.childGummyPath = pathToAssets + '/' + this.gummyBubbleImages[gummyRandom] + this.resScaledTimes + '.png';       
         bubble.bubbleScale = imageScale;
         bubble.isBomb = (this.gummyBubbleImages[gummyRandom] === 'bomb') ? true : false;
         gummy.setPosition( bubble.width / 2 , bubble.height / 2 );       
@@ -187,8 +187,8 @@ var GummyBubbles = {
         }                               
             
         // Scales bubble in and out for pulse effect
-        var bubblePulse = new cc.ScaleTo( 1, imageScale + 0.1);
-        var bubblePulseBack = new cc.ScaleTo( 1, imageScale ); 
+        var bubblePulse = (gummyStage === 'stage3') ? new cc.ScaleTo( 1, imageScale - 0.4) : new cc.ScaleTo( 1, imageScale + 0.1);
+        var bubblePulseBack = (gummyStage === 'stage3') ? new cc.ScaleTo( 1, imageScale - 0.5 ) : new cc.ScaleTo( 1, imageScale); 
         bubble.runAction(cc.sequence(bubblePulse, bubblePulseBack).repeatForever()); 
         
         
@@ -313,8 +313,8 @@ var GummyBubbles = {
                             
                             self.bubblePop(target.getPosition() , target.childGummyPath, target.getTag(), target.bubbleScale, target.isBomb);                          
                             self.gummyComboTouches++;
-                        }                        
-                        return true; 
+                            return true;
+                        }                                                 
                     }                                                                                                                                                                                           
                 return false;                                                      
             },
@@ -501,8 +501,29 @@ var GummyBubbles = {
         var removeCombo = function(combo) {
             combo.removeFromParent();            
         }                                  
+        
+        var comboString = '/x'+ comboNumber;
+        var chanceNumber = self.gummyMisses + comboNumber;
+        
+        if(comboNumber === 2) {
+            comboString = '/1'  
+            chanceNumber = self.gummyMisses + 1;  
+        }
+        else if(comboNumber === 3) {
+            comboString = '/2'
+            chanceNumber = self.gummyMisses + 2;    
+        }
+        else if(comboNumber === 4) {
+            comboString = '/x2'
+            chanceNumber = self.gummyMisses * 2;
+        }
+        else if(comboNumber === 5 || comboNumber === 6) {
+            comboString = '/x3'
+            chanceNumber = self.gummyMisses * 3;
+        }
+        
                    
-        var bubbleCombo = new cc.Sprite( pathToAssets + '/x'+ comboNumber + self.resScaledTimes + '.png' );                
+        var bubbleCombo = new cc.Sprite( pathToAssets + comboString + self.resScaledTimes + '.png' );                
         bubbleCombo.setScale( 0.3 );
         bubbleCombo.setLocalZOrder(101);
         self.scene.addChild(bubbleCombo);                        
@@ -512,8 +533,14 @@ var GummyBubbles = {
         var nodeAction = cc.scaleTo( 0.5, 0.7, 0.7 );               
         bubbleCombo.runAction(cc.sequence(nodeAction, comboOut, cc.callFunc(removeCombo, bubbleCombo)));
         
-        self.gummyMisses = (self.gummyMisses >= 10) ? self.gummyMisses : self.gummyMisses + Math.floor(comboNumber/2);
-        self.scene.studio.missesTxt.setString( "Chances: "+ self.gummyMisses);
+        self.gummyMisses = (self.gummyMisses >= 10) ? 10 : chanceNumber;
+        
+        if(self.gummyMisses >= 10) {
+            self.scene.studio.missesTxt.setString( "Maxed Out!");
+        }
+        else {
+            self.scene.studio.missesTxt.setString( "Chances: "+ self.gummyMisses);
+        }
                                                                                                                      
     },                                        
     

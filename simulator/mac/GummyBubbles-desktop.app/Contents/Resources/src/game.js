@@ -275,12 +275,12 @@ var GameScene = cc.Scene.extend({
                 this.studio.gummiesTxt.setString( "Gummies: "+ GummyBubbles.gummyScore);                                 
                 this.scoreEffect( GummyBubbles.basket.x , GummyBubbles.basket.height+40 );
                 
-                if(GummyBubbles.gummyScore === 7) {
+                if(GummyBubbles.gummyScore === 60) {
                     GummyBubbles.gummyLevel = 1;
                     gummyStage = "stage3";
                     this.stageSetup("stage3");
                 }        
-                else if(GummyBubbles.gummyScore === 3) {
+                else if(GummyBubbles.gummyScore === 30) {
                     GummyBubbles.gummyLevel = 1;
                     gummyStage = "stage2";                    
                     this.stageSetup("stage2");

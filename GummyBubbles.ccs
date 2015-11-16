@@ -69,6 +69,8 @@
             <Image Name="moon@3x.png" />
             <Image Name="star@3x.png" />
             <Image Name="bomb@3x.png" />
+            <Image Name="1@3x.png" />
+            <Image Name="2@3x.png" />
           </Folder>
           <Folder Name="mediumRes">
             <Image Name="basket-114x86@2x.png" />
@@ -101,6 +103,8 @@
             <Image Name="moon@2x.png" />
             <Image Name="star@2x.png" />
             <Image Name="bomb@2x.png" />
+            <Image Name="1@2x.png" />
+            <Image Name="2@2x.png" />
           </Folder>
           <Folder Name="smallRes">
             <Image Name="basket-114x86.png" />
@@ -133,6 +137,8 @@
             <Image Name="moon.png" />
             <Image Name="star.png" />
             <Image Name="bomb.png" />
+            <Image Name="1.png" />
+            <Image Name="2.png" />
           </Folder>
           <PlistParticleFile Name="score.plist" />
           <PlistParticleFile Name="fireworks.plist" />

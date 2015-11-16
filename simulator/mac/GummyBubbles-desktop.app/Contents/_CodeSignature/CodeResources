@@ -237,6 +237,14 @@
 		<data>
 		yDdw0BlyakcVRnIQz1719m0q9+E=
 		</data>
+		<key>Resources/res/images/largeRes/1@3x.png</key>
+		<data>
+		TXRHNekrSEwurtZUI8fLXx28G24=
+		</data>
+		<key>Resources/res/images/largeRes/2@3x.png</key>
+		<data>
+		9y2dbVvTkfMA8gAoNcX77hJDzCU=
+		</data>
 		<key>Resources/res/images/largeRes/basket-114x86@3x.png</key>
 		<data>
 		n/TTUh1sdqpU7Ib3igQ2126BmiA=
@@ -397,6 +405,14 @@
 		<data>
 		PDcvN1qLF/SItME1lOAD6aRdPpE=
 		</data>
+		<key>Resources/res/images/mediumRes/1@2x.png</key>
+		<data>
+		Q7QQPIkYM/Mp8TTmw1QbyerM85g=
+		</data>
+		<key>Resources/res/images/mediumRes/2@2x.png</key>
+		<data>
+		Z1nNKebtpRQGJMLrLnbnPMDZ+C8=
+		</data>
 		<key>Resources/res/images/mediumRes/basket-114x86@2x.png</key>
 		<data>
 		qT4vrdxctjGRyia//GiJZmvyIUY=
@@ -540,6 +556,14 @@
 		<key>Resources/res/images/score.plist</key>
 		<data>
 		NWaiL7i+vCcdoNpZXsJGvtnNL5w=
+		</data>
+		<key>Resources/res/images/smallRes/1.png</key>
+		<data>
+		r7D0D7UxsenfBEW/BV2smzCJKHU=
+		</data>
+		<key>Resources/res/images/smallRes/2.png</key>
+		<data>
+		yt1cIGOqkYbzpx2yqsQn2PuZ2Ug=
 		</data>
 		<key>Resources/res/images/smallRes/basket-114x86.png</key>
 		<data>
@@ -915,7 +939,7 @@
 		</data>
 		<key>Resources/src/game.js</key>
 		<data>
-		ZWLPCoDZySPqsmMsMFkHYTzsr8M=
+		UaV1UhWGt9atrBIKEp0H7ndvd4A=
 		</data>
 		<key>Resources/src/gameOver.js</key>
 		<data>
@@ -923,7 +947,7 @@
 		</data>
 		<key>Resources/src/gummyBubbles.js</key>
 		<data>
-		65FNogvFoMNdOXOPWd0ONa+JXe4=
+		X553MD/eKr38QhK1P/h/ADPMTXs=
 		</data>
 		<key>Resources/src/levels.js</key>
 		<data>
@@ -1190,6 +1214,14 @@
 		<data>
 		yDdw0BlyakcVRnIQz1719m0q9+E=
 		</data>
+		<key>Resources/res/images/largeRes/1@3x.png</key>
+		<data>
+		TXRHNekrSEwurtZUI8fLXx28G24=
+		</data>
+		<key>Resources/res/images/largeRes/2@3x.png</key>
+		<data>
+		9y2dbVvTkfMA8gAoNcX77hJDzCU=
+		</data>
 		<key>Resources/res/images/largeRes/basket-114x86@3x.png</key>
 		<data>
 		n/TTUh1sdqpU7Ib3igQ2126BmiA=
@@ -1350,6 +1382,14 @@
 		<data>
 		PDcvN1qLF/SItME1lOAD6aRdPpE=
 		</data>
+		<key>Resources/res/images/mediumRes/1@2x.png</key>
+		<data>
+		Q7QQPIkYM/Mp8TTmw1QbyerM85g=
+		</data>
+		<key>Resources/res/images/mediumRes/2@2x.png</key>
+		<data>
+		Z1nNKebtpRQGJMLrLnbnPMDZ+C8=
+		</data>
 		<key>Resources/res/images/mediumRes/basket-114x86@2x.png</key>
 		<data>
 		qT4vrdxctjGRyia//GiJZmvyIUY=
@@ -1493,6 +1533,14 @@
 		<key>Resources/res/images/score.plist</key>
 		<data>
 		NWaiL7i+vCcdoNpZXsJGvtnNL5w=
+		</data>
+		<key>Resources/res/images/smallRes/1.png</key>
+		<data>
+		r7D0D7UxsenfBEW/BV2smzCJKHU=
+		</data>
+		<key>Resources/res/images/smallRes/2.png</key>
+		<data>
+		yt1cIGOqkYbzpx2yqsQn2PuZ2Ug=
 		</data>
 		<key>Resources/res/images/smallRes/basket-114x86.png</key>
 		<data>
@@ -1868,7 +1916,7 @@
 		</data>
 		<key>Resources/src/game.js</key>
 		<data>
-		ZWLPCoDZySPqsmMsMFkHYTzsr8M=
+		UaV1UhWGt9atrBIKEp0H7ndvd4A=
 		</data>
 		<key>Resources/src/gameOver.js</key>
 		<data>
@@ -1876,7 +1924,7 @@
 		</data>
 		<key>Resources/src/gummyBubbles.js</key>
 		<data>
-		65FNogvFoMNdOXOPWd0ONa+JXe4=
+		X553MD/eKr38QhK1P/h/ADPMTXs=
 		</data>
 		<key>Resources/src/levels.js</key>
 		<data>

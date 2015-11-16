@@ -313,8 +313,8 @@ var GummyBubbles = {
                             
                             self.bubblePop(target.getPosition() , target.childGummyPath, target.getTag(), target.bubbleScale, target.isBomb);                          
                             self.gummyComboTouches++;
-                        }                        
-                        return true; 
+                            return true;
+                        }                                                 
                     }                                                                                                                                                                                           
                 return false;                                                      
             },
@@ -501,8 +501,21 @@ var GummyBubbles = {
         var removeCombo = function(combo) {
             combo.removeFromParent();            
         }                                  
+        
+        var comboString = '/x'+ comboNumber;
+        var chanceNumber = self.gummyMisses * comboNumber;
+        
+        if(comboNumber === 2) {
+            comboString = '/1'  
+            chanceNumber = self.gummyMisses + 1;  
+        }
+        else if(comboNumber === 3) {
+            comboString = '/2'
+            chanceNumber = self.gummyMisses + 2    
+        }
+        
                    
-        var bubbleCombo = new cc.Sprite( pathToAssets + '/x'+ comboNumber + self.resScaledTimes + '.png' );                
+        var bubbleCombo = new cc.Sprite( pathToAssets + comboString + self.resScaledTimes + '.png' );                
         bubbleCombo.setScale( 0.3 );
         bubbleCombo.setLocalZOrder(101);
         self.scene.addChild(bubbleCombo);                        
@@ -512,7 +525,7 @@ var GummyBubbles = {
         var nodeAction = cc.scaleTo( 0.5, 0.7, 0.7 );               
         bubbleCombo.runAction(cc.sequence(nodeAction, comboOut, cc.callFunc(removeCombo, bubbleCombo)));
         
-        self.gummyMisses = (self.gummyMisses >= 10) ? self.gummyMisses : self.gummyMisses + Math.floor(comboNumber/2);
+        self.gummyMisses = (self.gummyMisses >= 10) ? self.gummyMisses : chanceNumber;
         self.scene.studio.missesTxt.setString( "Chances: "+ self.gummyMisses);
                                                                                                                      
     },                                        
