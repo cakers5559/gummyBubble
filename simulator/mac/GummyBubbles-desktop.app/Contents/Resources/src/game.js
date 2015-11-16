@@ -9,7 +9,8 @@ var GameScene = cc.Scene.extend({
      */        
     gamescene: null,
     gamelevel: null,
-    level: 1,    
+    level: 1,
+    label: null,    
     studio: {}, 
     gummies: [],            
        
@@ -51,10 +52,12 @@ var GameScene = cc.Scene.extend({
                     this.studio.missesTxt.setPositionY( this.studio.missesTxt.y + 125 );
                     this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 125 );
                     this.studio.pauseBtn.setPositionY( this.studio.pauseBtn.y + 125 );
-            }                                                                   
+            }
+            
+            this.stageSetup(gummyStage);                                                                   
         }     
         
-        this.stageSetup(gummyStage);             
+                     
         GummyBubbles.gummyPaused = false;                                                                          
     },
     
@@ -80,8 +83,7 @@ var GameScene = cc.Scene.extend({
         // stops the background music                               
             GummyBubbles.isGameActive = false;
             cc.audioEngine.stopMusic();
-            Physics.space.removeCollisionHandler(  1  , 2 );
-            gummyStage = 'stage1';                    
+            Physics.space.removeCollisionHandler(  1  , 2 );                                
             //GummyBubbles.cleanUp(true);        
             //this.unschedule();              
     },         
@@ -195,24 +197,7 @@ var GameScene = cc.Scene.extend({
         var starsDelay = cc.delayTime(1.0);                
         stars.runAction(cc.sequence(starsDelay, cc.callFunc(removeStars, stars)));                                      
     }, 
-    
-    fireworks: function(size) {
-        cc.audioEngine.setEffectsVolume( 3.25 );
-        cc.audioEngine.playEffect( "res/audio/gotitem.mp3" );
-        
-        var fireworks = cc.ParticleSystem( "res/images/fireworks.plist" );        
-        
-        var removeFireworks = function(s) {
-            s.removeFromParent();            
-        }    
-        
-        fireworks.setScale( 1.0 );
-        fireworks.setPosition( size.width / 2 , size.height / 2 );        
-        this.addChild(fireworks);          
-        var fireworksDelay = cc.delayTime(1.0);                
-        fireworks.runAction(cc.sequence(fireworksDelay, cc.callFunc(removefireworks, fireworks)));   
-    },    
-    
+          
     levelChange: function() {         
        if("level"+GummyBubbles.gummyLevel in this.Level) {
             GummyBubbles.gummyBubblesOnScreen = this.Level["level"+GummyBubbles.gummyLevel][gummyStage][0];
@@ -226,6 +211,8 @@ var GameScene = cc.Scene.extend({
     }, 
     
     gameOver: function() {
+        gummyStage = 'stage1';
+        
         if(GummyBubbles.timer) clearTimeout(GummyBubbles.timer);
         
         var ls = cc.sys.localStorage;                
@@ -295,8 +282,7 @@ var GameScene = cc.Scene.extend({
                 }        
                 else if(GummyBubbles.gummyScore === 3) {
                     GummyBubbles.gummyLevel = 1;
-                    gummyStage = "stage2";
-                    this.fireworks(cc.winSize);
+                    gummyStage = "stage2";                    
                     this.stageSetup("stage2");
                 }
                 /*else if(gummyStage !== 'stage1') {
@@ -328,23 +314,56 @@ var GameScene = cc.Scene.extend({
             var move_rep = move_seq.repeatForever(); 
             return move_rep;        
         };
-        
+               
         var stageEffect = function(obj) {
             obj.studio.bombFlash.setVisible(true);
             var flasher = setTimeout(flashOnOff, 500);
             var self = obj;
             
-            var label = new cc.LabelTTF( "Level 2", "res/Bobbleboddy.ttf", 100 );
-            label.x = size.width / 2;
-            label.y = size.height / 2;
-            label.setFontFillColor('#000000');                                    
-            obj.addChild(label);
+            var stageLvl = gummyStage.substring( gummyStage.length-1 , gummyStage.length );
+            
+            obj.label = new cc.LabelTTF( "Level "+stageLvl, "res/Bobbleboddy.ttf", 100 );
+            obj.label.x = size.width / 2;
+            obj.label.y = size.height / 2;            
+            obj.label.setColor( new cc.Color(254, 195, 51, 255) );
+            obj.label.enableShadow({width: -5, height: -5}, 100, 4, false);
+            //obj.label.enableStroke({ r : 0, g : 0, b : 0 }, 14);
+            obj.label.setFontName("bubbleboddy");   
+            obj.label.setLocalZOrder(10000);  
+                                                                               
+            var removeLabel = function(label) {
+                label.removeFromParent();            
+            }                                  
+                           
+            var labelOut = cc.fadeOut(0.5);
+            var nodeAction = cc.scaleTo( 0.5, 0.7, 0.7 );               
+            obj.label.runAction(cc.sequence(nodeAction, labelOut, cc.callFunc(removeLabel, obj.label)));       
+                                                      
+            obj.addChild(obj.label);
             
             function flashOnOff() {            
                 console.log("test it out");
                 self.studio.bombFlash.setVisible(false);                        
             }
-        }                
+        } 
+        
+        var fireSparks = function(obj) {
+            cc.audioEngine.setEffectsVolume( 3.25 );
+            cc.audioEngine.playEffect( "res/audio/fire_crackers.mp3" );
+            cc.audioEngine.playEffect( "res/audio/tada.mp3" );
+            
+            var fireworks = cc.ParticleSystem( "res/images/firesparks.plist" );        
+            
+            var removeFireworks = function(s) {
+                s.removeFromParent();            
+            }    
+            
+            fireworks.setScale( 1.0 );
+            fireworks.setPosition( size.width / 2 , size.height / 2 );        
+            obj.addChild(fireworks);          
+            var fireworksDelay = cc.delayTime(2.0);                
+            fireworks.runAction(cc.sequence(fireworksDelay, cc.callFunc(removeFireworks, fireworks)));  
+        }               
                 
         if ('bgLevel' in this.studio) {
             for(var i = 1; i <= 3; i++) {
@@ -377,6 +396,7 @@ var GameScene = cc.Scene.extend({
             break;
             case 'stage2':                
                 stageEffect(this);
+                fireSparks(this);
                 cc.audioEngine.playMusic( "res/audio/windy.mp3", true );
                                                                                                                        
                 this.studio.bgLevel = this.studio.panel_level.getChildByName("bg_level_2");
@@ -384,6 +404,7 @@ var GameScene = cc.Scene.extend({
             break;       
             case 'stage3':
                 stageEffect(this);
+                fireSparks(this);
                 cc.audioEngine.playMusic( "res/audio/raining.mp3", true );
                
                 this.studio.bgLevel = this.studio.panel_level.getChildByName("bg_level_3");

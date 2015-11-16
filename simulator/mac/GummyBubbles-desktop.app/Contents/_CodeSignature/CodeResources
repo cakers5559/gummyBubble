@@ -97,6 +97,10 @@
 		<data>
 		ogvnTbopaHlq1wxO8FoowVY54/k=
 		</data>
+		<key>Resources/res/audio/fire_crackers.mp3</key>
+		<data>
+		yC/inh1723PCw7FcVsgh6yfwkks=
+		</data>
 		<key>Resources/res/audio/gotitem.mp3</key>
 		<data>
 		NKN//wutO+WZ3R4TQk+LFx7XeTI=
@@ -128,6 +132,10 @@
 		<key>Resources/res/audio/sunny_day.mp3</key>
 		<data>
 		aSCFNA2dUhwgzVqETMzexmiA52w=
+		</data>
+		<key>Resources/res/audio/tada.mp3</key>
+		<data>
+		HIAdEzi77IlzGcX2N6BYj576yR8=
 		</data>
 		<key>Resources/res/audio/windy.mp3</key>
 		<data>
@@ -220,6 +228,10 @@
 		<key>Resources/res/images/explosion.plist</key>
 		<data>
 		XD6nVlquo2ABFmSiC6b55WFC/Kc=
+		</data>
+		<key>Resources/res/images/firesparks.plist</key>
+		<data>
+		movNt8cAz2D3zURfDthhg7uClQE=
 		</data>
 		<key>Resources/res/images/fireworks.plist</key>
 		<data>
@@ -903,7 +915,7 @@
 		</data>
 		<key>Resources/src/game.js</key>
 		<data>
-		df54myGwMYPZ+8KHBEUouKSiwYA=
+		ZWLPCoDZySPqsmMsMFkHYTzsr8M=
 		</data>
 		<key>Resources/src/gameOver.js</key>
 		<data>
@@ -1038,6 +1050,10 @@
 		<data>
 		ogvnTbopaHlq1wxO8FoowVY54/k=
 		</data>
+		<key>Resources/res/audio/fire_crackers.mp3</key>
+		<data>
+		yC/inh1723PCw7FcVsgh6yfwkks=
+		</data>
 		<key>Resources/res/audio/gotitem.mp3</key>
 		<data>
 		NKN//wutO+WZ3R4TQk+LFx7XeTI=
@@ -1069,6 +1085,10 @@
 		<key>Resources/res/audio/sunny_day.mp3</key>
 		<data>
 		aSCFNA2dUhwgzVqETMzexmiA52w=
+		</data>
+		<key>Resources/res/audio/tada.mp3</key>
+		<data>
+		HIAdEzi77IlzGcX2N6BYj576yR8=
 		</data>
 		<key>Resources/res/audio/windy.mp3</key>
 		<data>
@@ -1161,6 +1181,10 @@
 		<key>Resources/res/images/explosion.plist</key>
 		<data>
 		XD6nVlquo2ABFmSiC6b55WFC/Kc=
+		</data>
+		<key>Resources/res/images/firesparks.plist</key>
+		<data>
+		movNt8cAz2D3zURfDthhg7uClQE=
 		</data>
 		<key>Resources/res/images/fireworks.plist</key>
 		<data>
@@ -1844,7 +1868,7 @@
 		</data>
 		<key>Resources/src/game.js</key>
 		<data>
-		df54myGwMYPZ+8KHBEUouKSiwYA=
+		ZWLPCoDZySPqsmMsMFkHYTzsr8M=
 		</data>
 		<key>Resources/src/gameOver.js</key>
 		<data>

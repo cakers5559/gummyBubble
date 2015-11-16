@@ -140,6 +140,7 @@
           <PlistParticleFile Name="snow.plist" />
           <PlistParticleFile Name="explosion.plist" />
           <PlistParticleFile Name="rain.plist" />
+          <PlistParticleFile Name="firesparks.plist" />
         </Folder>
         <Project Name="GameScene.csd" Type="Scene" />
         <TTF Name="Bobbleboddy.ttf" />
@@ -157,6 +158,8 @@
           <Audio Name="lighten_match.mp3" />
           <Audio Name="raining.mp3" />
           <Audio Name="windy.mp3" />
+          <Audio Name="fire_crackers.mp3" />
+          <Audio Name="tada.mp3" />
         </Folder>
         <Project Name="SettingScene.csd" Type="Scene" />
         <Project Name="GameOverScene.csd" Type="Scene" />
