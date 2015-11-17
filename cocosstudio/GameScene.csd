@@ -115,10 +115,10 @@
                 <OutlineColor A="255" R="127" G="127" B="127" />
                 <ShadowColor A="255" R="0" G="0" B="0" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gummies_txt" ActionTag="-528661809" Tag="1184" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="TopEdge" LeftMargin="893.2155" RightMargin="1115.7845" TopMargin="628.0600" BottomMargin="564.9400" FontSize="40" LabelText="Gummies: 0" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
-                <Size X="199.0000" Y="49.0000" />
+              <AbstractNodeData Name="gummies_txt" ActionTag="-528661809" Tag="1184" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="TopEdge" LeftMargin="893.2155" RightMargin="1115.7845" TopMargin="628.0600" BottomMargin="564.9400" FontSize="40" LabelText="Gummies: 0/40" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+                <Size X="259.0000" Y="49.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="893.2155" Y="589.4400" />
+                <Position X="833.2155" Y="589.4400" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4045" Y="0.4746" />

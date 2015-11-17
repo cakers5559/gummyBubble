@@ -569,7 +569,7 @@ var GummyBubbles = {
                 else {                    
                     this.gummyMisses--;
                     this.scene.studio.missesTxt.setString( "Chances: "+ this.gummyMisses);
-                    this.scene.studio.gummiesTxt.setString( "Gummies: "+ this.gummyScore);
+                    this.scene.studio.gummiesTxt.setString( "Gummies: "+ this.gummyScore + "/" + this.scene.gummyLvl);
                 }                
                 
                 if(!bub.isRemoved) bub.removeFromParent();                

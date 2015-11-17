@@ -9,8 +9,9 @@ var GameScene = cc.Scene.extend({
      */        
     gamescene: null,
     gamelevel: null,
-    level: 1,
-    label: null,    
+    level: 1,    
+    label: null,
+    gummyLvl: 40,    
     studio: {}, 
     gummies: [],            
        
@@ -48,9 +49,10 @@ var GameScene = cc.Scene.extend({
             this.studio.pauseBtn.addTouchEventListener( this.onPause, this );                
             this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 10 );
             this.studio.missesTxt.setPositionY( this.studio.missesTxt.y + 10 );
+                      
             if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) {
                     this.studio.missesTxt.setPositionY( this.studio.missesTxt.y + 125 );
-                    this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 125 );
+                    this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 125 );                    
                     this.studio.pauseBtn.setPositionY( this.studio.pauseBtn.y + 125 );
             }
             
@@ -127,13 +129,13 @@ var GameScene = cc.Scene.extend({
         studioObj.panel_level = scene.node.getChildByName( "panel_level_"+this.level.toString() );                                                                 
         studioObj.pauseBtn = studioObj.panel_level.getChildByName( "pause_btn" );
         studioObj.gummiesTxt = studioObj.panel_level.getChildByName( "gummies_txt" );
-        studioObj.missesTxt = studioObj.panel_level.getChildByName( "misses_txt" );             
+        studioObj.missesTxt = studioObj.panel_level.getChildByName( "misses_txt" );                     
         studioObj.pauseScreen = scene.node.getChildByName( "pause_layer" ); 
         studioObj.gummiesTxt.width = studioObj.gummiesTxt.width + 150;        
         studioObj.missesTxt.width = studioObj.missesTxt.width + 150;
         studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width - ( studioObj.pauseBtn.width / 2) );
         studioObj.gummiesTxt.setPositionX( size.width - ( studioObj.gummiesTxt.width + 20 ) );
-        studioObj.missesTxt.setPositionX( size.width / 2 );                                                                                               
+        studioObj.missesTxt.setPositionX( size.width / 2 );                                                                                                       
         
         var setProperties = function(screen, btn, res, scale) {                
                 studioObj.instructionLayer = scene.node.getChildByName( screen );                                
@@ -154,7 +156,7 @@ var GameScene = cc.Scene.extend({
                     studioObj.tapScreen.setPosition( cc.p(-100, 0) );  
                     studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width );                     
                     studioObj.gummiesTxt.setPositionX( 690.00 );
-                    studioObj.missesTxt.setPositionX( 590.00 );                
+                    studioObj.missesTxt.setPositionX( 590.00 );                                    
                 }
                 
                 // iphone plus
@@ -272,25 +274,28 @@ var GameScene = cc.Scene.extend({
                 GummyBubbles.gummyPoppedItems.splice( i , 1);                                
                 GummyBubbles.gummyScore++; 
                 GummyBubbles.gummyInBasket++;                                               
-                this.studio.gummiesTxt.setString( "Gummies: "+ GummyBubbles.gummyScore);                                 
+                                                                                                              
                 this.scoreEffect( GummyBubbles.basket.x , GummyBubbles.basket.height+40 );
                 
-                if(GummyBubbles.gummyScore === 20) {
+                if(GummyBubbles.gummyScore === 120) {
+                    //nothing now for update 
+                }                
+                else if(GummyBubbles.gummyScore === 80) {
+                    this.gummyLvl = 120;
                     GummyBubbles.gummyLevel = 1;
                     gummyStage = "stage3";
                     this.levelChange();
                     this.stageSetup("stage3");
                 }        
-                else if(GummyBubbles.gummyScore === 10) {
+                else if(GummyBubbles.gummyScore === 40) {
+                    this.gummyLvl = 80
                     GummyBubbles.gummyLevel = 1;
                     gummyStage = "stage2";
                     this.levelChange();                    
                     this.stageSetup("stage2");
-                }
-                /*else if(gummyStage !== 'stage1') {
-                    console.log("Not stage one on start: "+gummyStage);                   
-                    this.stageSetup("stage1");
-                }*/
+                }                
+                
+                this.studio.gummiesTxt.setString( "Gummies: "+ GummyBubbles.gummyScore + "/" + this.gummyLvl);               
             }
         }
         
@@ -430,9 +435,9 @@ var GameScene = cc.Scene.extend({
         },
         
         level2 : {            
-            stage1:	[2,4,0],
-            stage2: [2,4,1],
-            stage3: [4,4,1]
+            stage1:	[2,3,0],
+            stage2: [2,3,1],
+            stage3: [4,3,1]
         },
         
         level3 : {            

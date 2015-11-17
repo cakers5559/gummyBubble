@@ -499,7 +499,7 @@
               },
               {
                 "FontSize": 40,
-                "LabelText": "Gummies: 0",
+                "LabelText": "Gummies: 0/40",
                 "FontResource": {
                   "Type": "Normal",
                   "Path": "Bobbleboddy.ttf",
@@ -525,7 +525,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 893.2155,
+                  "X": 833.2155,
                   "Y": 589.44
                 },
                 "Scale": {
@@ -551,7 +551,7 @@
                 "Tag": 1184,
                 "ActionTag": -528661809,
                 "Size": {
-                  "X": 199.0,
+                  "X": 259.0,
                   "Y": 49.0
                 },
                 "Name": "gummies_txt",
