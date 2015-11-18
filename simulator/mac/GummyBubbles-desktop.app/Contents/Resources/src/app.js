@@ -12,7 +12,11 @@ var MainScene = cc.Scene.extend({
     onEnter:function () {
         this._super();                                       
         var size = cc.winSize;                                        
-                
+          
+          
+        if( cc.sys.ANDROID === cc.sys.platform ) {
+            console.log("ANDROID DEVICE");
+        }      
         //BannerADCommunication.awayFromGameScreen();
       
         // init Physics        

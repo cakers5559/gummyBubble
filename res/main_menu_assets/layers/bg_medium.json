@@ -1,6 +1,6 @@
 {
   "ID": "d0725011-8a7f-4ca8-adcb-5324374e9a1a",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "bg_medium",
   "Content": {
     "Content": {
@@ -293,7 +293,7 @@
         "../../images/mediumRes/landscape-736x220@2x.png",
         "../../images/mediumRes/mountains-620x317@2x.png"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Layer"

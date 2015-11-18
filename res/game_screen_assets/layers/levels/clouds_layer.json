@@ -1,6 +1,6 @@
 {
   "ID": "99b681d1-41c7-413b-b25c-d71e4df64f45",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "clouds_layer",
   "Content": {
     "Content": {
@@ -822,7 +822,7 @@
         "../../../images/largeRes/cloud-70x38@3x.png",
         "../../../images/mediumRes/cloud-70x38@2x.png"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Layer"

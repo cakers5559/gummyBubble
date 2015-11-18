@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Scene" Name="LevelsScene" ID="dae81444-dae9-438c-861e-c7f12ac5c214" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="LevelsScene" Type="Scene" ID="dae81444-dae9-438c-861e-c7f12ac5c214" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -36,4 +36,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Layer" Name="how_to_play_medium" ID="3cffda6f-6697-486e-ba8e-fb2140647d99" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="how_to_play_medium" Type="Layer" ID="3cffda6f-6697-486e-ba8e-fb2140647d99" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -19,7 +19,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="tap_screen" ActionTag="1091575318" Tag="209" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="353.0000" RightMargin="353.0000" TopMargin="51.0100" BottomMargin="529.9900" FontSize="50" LabelText="Tap Screen to Start	" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="tap_screen" ActionTag="1091575318" Tag="209" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="353.0000" RightMargin="353.0000" TopMargin="51.0100" BottomMargin="529.9900" FontSize="50" LabelText="Tap Screen to Start " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="430.0000" Y="59.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="568.0000" Y="559.4900" />
@@ -45,4 +45,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

@@ -1,6 +1,6 @@
 {
   "ID": "2bfd3e6c-8b76-4e46-b0fa-cc75d618fdb9",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "bg_small_level_1",
   "Content": {
     "Content": {
@@ -339,7 +339,7 @@
         "../../../images/smallRes/mountains-620x317.png",
         "../../../images/smallRes/sun-84x84.png"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Layer"

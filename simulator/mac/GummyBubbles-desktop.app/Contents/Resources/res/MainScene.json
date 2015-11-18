@@ -1,6 +1,6 @@
 {
   "ID": "a2ee0952-26b5-49ae-8bf9-4f1d6279b798",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "MainScene",
   "Content": {
     "Content": {
@@ -124,6 +124,8 @@
               "Path": "main_menu_assets/layers/bg_super_large.json",
               "Plist": ""
             },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
             "InnerActionSpeed": 2.0,
             "AnchorPoint": {},
             "Position": {
@@ -164,6 +166,8 @@
               "Path": "main_menu_assets/layers/bg_large.json",
               "Plist": ""
             },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
             "InnerActionSpeed": 2.0,
             "AnchorPoint": {},
             "Position": {
@@ -205,6 +209,8 @@
               "Path": "main_menu_assets/layers/bg_medium.json",
               "Plist": ""
             },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
             "InnerActionSpeed": 2.0,
             "AnchorPoint": {},
             "Position": {
@@ -246,6 +252,8 @@
               "Path": "main_menu_assets/layers/bg_small.json",
               "Plist": ""
             },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
             "InnerActionSpeed": 2.0,
             "AnchorPoint": {},
             "Position": {
@@ -722,7 +730,7 @@
         "main_menu_assets/layers/bg_small.json",
         "main_menu_assets/layers/bg_super_large.json"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Scene"

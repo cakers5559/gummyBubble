@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Scene" Name="MainScene" ID="a2ee0952-26b5-49ae-8bf9-4f1d6279b798" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="MainScene" Type="Scene" ID="a2ee0952-26b5-49ae-8bf9-4f1d6279b798" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -30,7 +30,7 @@
             <FileData Type="Normal" Path="images/largeRes/sunbrust-736x414@3x.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bg_super_large" ActionTag="-1604815211" VisibleForFrame="False" Tag="2781" IconVisible="True" LeftMargin="-2.3481" RightMargin="-871.6519" TopMargin="-489.4381" BottomMargin="-2.5619" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="bg_super_large" ActionTag="-1604815211" VisibleForFrame="False" Tag="2781" IconVisible="True" LeftMargin="-2.3481" RightMargin="-871.6519" TopMargin="-489.4381" BottomMargin="-2.5619" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="2.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="2208.0000" Y="1242.0000" />
             <AnchorPoint />
             <Position X="-2.3481" Y="-2.5619" />
@@ -40,7 +40,7 @@
             <PreSize X="1.6552" Y="1.6560" />
             <FileData Type="Normal" Path="main_menu_assets/layers/bg_super_large.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bg_large" ActionTag="1749652499" VisibleForFrame="False" Tag="431" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="6.6700" RightMargin="-6.6700" TopMargin="-4.1257" BottomMargin="4.1257" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="bg_large" ActionTag="1749652499" VisibleForFrame="False" Tag="431" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="6.6700" RightMargin="-6.6700" TopMargin="-4.1257" BottomMargin="4.1257" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="2.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="1334.0000" Y="750.0000" />
             <AnchorPoint />
             <Position X="11.0400" Y="4.1257" />
@@ -50,7 +50,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="main_menu_assets/layers/bg_large.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bg_medium" ActionTag="812577999" VisibleForFrame="False" Tag="439" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="2.4012" RightMargin="195.5988" TopMargin="119.6000" BottomMargin="-9.6000" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="bg_medium" ActionTag="812577999" VisibleForFrame="False" Tag="439" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="2.4012" RightMargin="195.5988" TopMargin="119.6000" BottomMargin="-9.6000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="2.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint />
             <Position X="3.9744" Y="-9.6000" />
@@ -60,7 +60,7 @@
             <PreSize X="0.8516" Y="0.8533" />
             <FileData Type="Normal" Path="main_menu_assets/layers/bg_medium.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bg_small" ActionTag="-546113980" VisibleForFrame="False" Tag="447" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="0.4002" RightMargin="373.5998" TopMargin="113.8780" BottomMargin="-3.8780" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="bg_small" ActionTag="-546113980" VisibleForFrame="False" Tag="447" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="0.4002" RightMargin="373.5998" TopMargin="113.8780" BottomMargin="-3.8780" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="2.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="960.0000" Y="640.0000" />
             <AnchorPoint />
             <Position X="0.6624" Y="-3.8780" />
@@ -164,4 +164,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

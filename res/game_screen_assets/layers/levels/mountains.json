@@ -1,6 +1,6 @@
 {
   "ID": "d015d238-218b-4113-b14a-70a8d9454db1",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "mountains",
   "Content": {
     "Content": {
@@ -70,7 +70,7 @@
       "UsedResources": [
         "../../../images/mediumRes/mountains-620x317@2x.png"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Layer"

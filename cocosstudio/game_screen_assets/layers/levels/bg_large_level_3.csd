@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Layer" Name="bg_large_level_3" ID="3821b969-2d28-4329-9ef7-b5b3591ee432" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="bg_large_level_3" Type="Layer" ID="3821b969-2d28-4329-9ef7-b5b3591ee432" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="645" Speed="1.0000">
@@ -59,7 +59,7 @@
             <Position X="0.0020" Y="-0.0009" />
             <Scale ScaleX="1.0000" ScaleY="1.6667" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0000" Y="0.0000" />
+            <PrePosition />
             <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="9" G="47" B="92" />
             <FirstColor A="255" R="150" G="200" B="255" />
@@ -189,4 +189,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

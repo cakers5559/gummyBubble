@@ -155,7 +155,7 @@ var GameScene = cc.Scene.extend({
                     studioObj.panel_level.setPosition( cc.p(-100, 0) ); 
                     studioObj.tapScreen.setPosition( cc.p(-100, 0) );  
                     studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width );                     
-                    studioObj.gummiesTxt.setPositionX( 690.00 );
+                    studioObj.gummiesTxt.setPositionX( 640.00 );
                     studioObj.missesTxt.setPositionX( 590.00 );                                    
                 }
                 
@@ -278,16 +278,16 @@ var GameScene = cc.Scene.extend({
                 this.scoreEffect( GummyBubbles.basket.x , GummyBubbles.basket.height+40 );
                 
                 if(GummyBubbles.gummyScore === 120) {
-                    //nothing now 
+                    //nothing now for update 
                 }                
-                else if(GummyBubbles.gummyScore === 10) {
+                else if(GummyBubbles.gummyScore === 80) {
                     this.gummyLvl = 120;
                     GummyBubbles.gummyLevel = 1;
                     gummyStage = "stage3";
                     this.levelChange();
                     this.stageSetup("stage3");
                 }        
-                else if(GummyBubbles.gummyScore === 5) {
+                else if(GummyBubbles.gummyScore === 40) {
                     this.gummyLvl = 80
                     GummyBubbles.gummyLevel = 1;
                     gummyStage = "stage2";

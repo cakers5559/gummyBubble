@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Layer" Name="clouds_layer" ID="99b681d1-41c7-413b-b25c-d71e4df64f45" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="clouds_layer" Type="Layer" ID="99b681d1-41c7-413b-b25c-d71e4df64f45" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="670" Speed="1.0000">
@@ -228,4 +228,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

@@ -155,7 +155,7 @@ var GameScene = cc.Scene.extend({
                     studioObj.panel_level.setPosition( cc.p(-100, 0) ); 
                     studioObj.tapScreen.setPosition( cc.p(-100, 0) );  
                     studioObj.pauseBtn.setPositionX( studioObj.pauseBtn.width );                     
-                    studioObj.gummiesTxt.setPositionX( 690.00 );
+                    studioObj.gummiesTxt.setPositionX( 640.00 );
                     studioObj.missesTxt.setPositionX( 590.00 );                                    
                 }
                 

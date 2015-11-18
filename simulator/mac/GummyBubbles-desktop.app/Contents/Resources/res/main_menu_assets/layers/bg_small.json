@@ -1,6 +1,6 @@
 {
   "ID": "8b7de06f-39a0-4821-9443-8e528d8cafca",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "bg_small",
   "Content": {
     "Content": {
@@ -293,7 +293,7 @@
         "../../images/smallRes/cloud-70x38.png",
         "../../images/smallRes/mountains-620x317.png"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Layer"

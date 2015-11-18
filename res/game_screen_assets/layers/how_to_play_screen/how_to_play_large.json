@@ -1,6 +1,6 @@
 {
   "ID": "cc7245a9-e5a8-45f7-a43a-d165d4f852c3",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "how_to_play_large",
   "Content": {
     "Content": {
@@ -65,7 +65,7 @@
           },
           {
             "FontSize": 65,
-            "LabelText": "Tap Screen to Start\t",
+            "LabelText": "Tap Screen to Start ",
             "FontResource": {
               "Type": "Normal",
               "Path": "Bobbleboddy.ttf",
@@ -174,7 +174,7 @@
         "../../../Bobbleboddy.ttf",
         "../../../images/mediumRes/how_to_play-512x392@2x.png"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Layer"

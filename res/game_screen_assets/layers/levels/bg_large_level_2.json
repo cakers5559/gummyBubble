@@ -1,6 +1,6 @@
 {
   "ID": "64babb02-ab53-46a3-96bb-143880298e24",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "bg_large_level_2",
   "Content": {
     "Content": {
@@ -111,7 +111,7 @@
         "../../../images/mediumRes/level-two-landscape@2x.png",
         "../../../images/snow.plist"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Layer"

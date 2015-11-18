@@ -1,6 +1,6 @@
 {
   "ID": "2692a6d5-0aad-4ab9-b36e-1614eef3a617",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "GameOverScene",
   "Content": {
     "Content": {
@@ -396,7 +396,7 @@
         "images/largeRes/blank_button-161x62@3x.png",
         "images/level-bg-1111x937@2x.png"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Scene"

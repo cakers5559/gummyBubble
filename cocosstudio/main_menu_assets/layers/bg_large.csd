@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Layer" Name="bg_large" ID="2b83bb4f-f878-44a6-8b05-389880945cfa" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="bg_large" Type="Layer" ID="2b83bb4f-f878-44a6-8b05-389880945cfa" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -74,4 +74,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

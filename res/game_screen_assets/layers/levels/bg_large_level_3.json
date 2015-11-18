@@ -1,6 +1,6 @@
 {
   "ID": "3821b969-2d28-4329-9ef7-b5b3591ee432",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "bg_large_level_3",
   "Content": {
     "Content": {
@@ -714,7 +714,7 @@
         "../../../images/rain.plist",
         "../../../images/smallRes/star.png"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Layer"

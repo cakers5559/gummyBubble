@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Scene" Name="PauseScene" ID="2afebdd6-6c93-4178-baae-7732a2a27497" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="PauseScene" Type="Scene" ID="2afebdd6-6c93-4178-baae-7732a2a27497" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -72,4 +72,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

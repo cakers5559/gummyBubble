@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Scene" Name="GameScene" ID="9c683865-49e8-402e-9941-705a4145b464" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="GameScene" Type="Scene" ID="9c683865-49e8-402e-9941-705a4145b464" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="17" Speed="1.0000">
@@ -35,10 +35,10 @@
       <ObjectData Name="GameScene" Visible="False" Tag="175" ctype="GameNodeObjectData">
         <Size X="2208.0000" Y="1242.0000" />
         <Children>
-          <AbstractNodeData Name="panel_level_1" ActionTag="1761969222" Tag="1230" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" StretchWidthEnable="True" StretchHeightEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="panel_level_1" ActionTag="1761969222" Tag="1230" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" StretchWidthEnable="True" StretchHeightEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="2208.0000" Y="1242.0000" />
             <Children>
-              <AbstractNodeData Name="mountains" ActionTag="-444028172" VisibleForFrame="False" Tag="1146" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="-105.3216" RightMargin="979.3215" TopMargin="458.8396" BottomMargin="33.1604" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="mountains" ActionTag="-444028172" VisibleForFrame="False" Tag="1146" IconVisible="True" HorizontalEdge="BothEdge" LeftMargin="-105.3216" RightMargin="979.3215" TopMargin="458.8396" BottomMargin="33.1604" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                 <Size X="1334.0000" Y="750.0000" />
                 <AnchorPoint />
                 <Position X="-105.3216" Y="33.1604" />
@@ -48,7 +48,7 @@
                 <PreSize X="0.6042" Y="0.6039" />
                 <FileData Type="Normal" Path="game_screen_assets/layers/levels/mountains.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="bg_level_1" ActionTag="-155669652" VisibleForFrame="False" Tag="1632" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="10.5386" RightMargin="863.4614" TopMargin="491.5753" BottomMargin="0.4247" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="bg_level_1" ActionTag="-155669652" VisibleForFrame="False" Tag="1632" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="10.5386" RightMargin="863.4614" TopMargin="491.5753" BottomMargin="0.4247" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="2.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                 <Size X="1334.0000" Y="750.0000" />
                 <AnchorPoint />
                 <Position X="10.5386" Y="0.4247" />
@@ -58,7 +58,7 @@
                 <PreSize X="0.6042" Y="0.6039" />
                 <FileData Type="Normal" Path="game_screen_assets/layers/levels/bg_large_level_1.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="bg_level_2" ActionTag="-297450740" VisibleForFrame="False" Tag="115" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="-48.5760" RightMargin="922.5760" TopMargin="496.5695" BottomMargin="-4.5695" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="bg_level_2" ActionTag="-297450740" VisibleForFrame="False" Tag="115" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="-48.5760" RightMargin="922.5760" TopMargin="496.5695" BottomMargin="-4.5695" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                 <Size X="1334.0000" Y="750.0000" />
                 <AnchorPoint />
                 <Position X="-48.5760" Y="-4.5695" />
@@ -68,7 +68,7 @@
                 <PreSize X="0.6042" Y="0.6039" />
                 <FileData Type="Normal" Path="game_screen_assets/layers/levels/bg_large_level_2.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="bg_level_3" ActionTag="-256626410" VisibleForFrame="False" Tag="504" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="-41.9520" RightMargin="915.9520" TopMargin="530.5386" BottomMargin="-38.5386" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="bg_level_3" ActionTag="-256626410" VisibleForFrame="False" Tag="504" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="-41.9520" RightMargin="915.9520" TopMargin="530.5386" BottomMargin="-38.5386" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                 <Size X="1334.0000" Y="750.0000" />
                 <AnchorPoint />
                 <Position X="-41.9520" Y="-38.5386" />
@@ -78,7 +78,7 @@
                 <PreSize X="0.6042" Y="0.6039" />
                 <FileData Type="Normal" Path="game_screen_assets/layers/levels/bg_large_level_3.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="clouds" ActionTag="-200723507" VisibleForFrame="False" Tag="573" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="-109.7376" RightMargin="109.7375" TopMargin="-66.1389" BottomMargin="66.1389" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="clouds" ActionTag="-200723507" VisibleForFrame="False" Tag="573" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="-109.7376" RightMargin="109.7375" TopMargin="-66.1389" BottomMargin="66.1389" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                 <Size X="2208.0000" Y="1242.0000" />
                 <AnchorPoint />
                 <Position X="-109.7376" Y="66.1389" />
@@ -103,26 +103,26 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="misses_txt" ActionTag="113688738" Tag="9275" IconVisible="False" LeftMargin="872.1462" RightMargin="1143.8538" TopMargin="629.6240" BottomMargin="563.3760" FontSize="40" LabelText="Chances: 1" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
-                <Size X="184.0000" Y="49.0000" />
+              <AbstractNodeData Name="misses_txt" ActionTag="113688738" Tag="9275" IconVisible="False" LeftMargin="875.1462" RightMargin="1146.8538" TopMargin="629.6240" BottomMargin="563.3760" FontSize="40" LabelText="Chances: 1" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+                <Size X="186.0000" Y="49.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="968.1462" Y="587.8760" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4385" Y="0.4733" />
-                <PreSize X="0.0684" Y="0.0378" />
+                <PreSize X="0.0842" Y="0.0395" />
                 <FontResource Type="Normal" Path="Bobbleboddy.ttf" Plist="" />
                 <OutlineColor A="255" R="127" G="127" B="127" />
                 <ShadowColor A="255" R="0" G="0" B="0" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gummies_txt" ActionTag="-528661809" Tag="1184" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="TopEdge" LeftMargin="893.2155" RightMargin="1115.7845" TopMargin="628.0600" BottomMargin="564.9400" FontSize="40" LabelText="Gummies: 0/40" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
-                <Size X="259.0000" Y="49.0000" />
+              <AbstractNodeData Name="gummies_txt" ActionTag="-528661809" Tag="1184" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="TopEdge" LeftMargin="830.2155" RightMargin="1115.7845" TopMargin="628.0600" BottomMargin="564.9400" FontSize="40" LabelText="Gummies: 0/40" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+                <Size X="262.0000" Y="49.0000" />
                 <AnchorPoint ScaleY="0.5000" />
-                <Position X="833.2155" Y="589.4400" />
+                <Position X="830.2155" Y="589.4400" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4045" Y="0.4746" />
-                <PreSize X="0.0498" Y="0.0185" />
+                <PrePosition X="0.3760" Y="0.4746" />
+                <PreSize X="0.1187" Y="0.0395" />
                 <FontResource Type="Normal" Path="Bobbleboddy.ttf" Plist="" />
                 <OutlineColor A="255" R="127" G="127" B="127" />
                 <ShadowColor A="255" R="0" G="0" B="0" />
@@ -139,7 +139,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="how_to_play_super_large" CanEdit="False" ActionTag="-791219751" VisibleForFrame="False" Tag="221" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="how_to_play_super_large" CanEdit="False" ActionTag="-791219751" VisibleForFrame="False" Tag="221" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="2.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="2208.0000" Y="1242.0000" />
             <AnchorPoint />
             <Position />
@@ -149,7 +149,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="game_screen_assets/layers/how_to_play_screen/how_to_play_super_large.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="how_to_play_large" CanEdit="False" ActionTag="-1391247423" VisibleForFrame="False" Tag="258" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" RightMargin="874.0000" TopMargin="492.0000" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="how_to_play_large" CanEdit="False" ActionTag="-1391247423" VisibleForFrame="False" Tag="258" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" RightMargin="874.0000" TopMargin="492.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="2.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="1334.0000" Y="750.0000" />
             <AnchorPoint />
             <Position />
@@ -159,7 +159,7 @@
             <PreSize X="0.6042" Y="0.6039" />
             <FileData Type="Normal" Path="game_screen_assets/layers/how_to_play_screen/how_to_play_large.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="how_to_play_medium" CanEdit="False" ActionTag="1440023423" VisibleForFrame="False" Tag="263" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" RightMargin="1072.0000" TopMargin="602.0000" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="how_to_play_medium" CanEdit="False" ActionTag="1440023423" VisibleForFrame="False" Tag="263" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" RightMargin="1072.0000" TopMargin="602.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="2.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint />
             <Position />
@@ -169,7 +169,7 @@
             <PreSize X="0.5145" Y="0.5153" />
             <FileData Type="Normal" Path="game_screen_assets/layers/how_to_play_screen/how_to_play_medium.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="how_to_play_small" CanEdit="False" ActionTag="-1765824072" VisibleForFrame="False" Tag="268" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" RightMargin="1248.0000" TopMargin="602.0000" InnerActionSpeed="2.0000" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="how_to_play_small" CanEdit="False" ActionTag="-1765824072" VisibleForFrame="False" Tag="268" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" RightMargin="1248.0000" TopMargin="602.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="2.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="960.0000" Y="640.0000" />
             <AnchorPoint />
             <Position />
@@ -179,7 +179,7 @@
             <PreSize X="0.4348" Y="0.5153" />
             <FileData Type="Normal" Path="game_screen_assets/layers/how_to_play_screen/how_to_play_small.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="tap_to_start_screen" CanEdit="False" ActionTag="-1627601985" Alpha="0" Tag="1423" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" TouchEnable="True" StretchWidthEnable="True" StretchHeightEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="tap_to_start_screen" CanEdit="False" ActionTag="-1627601985" Alpha="0" Tag="1423" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" TouchEnable="True" StretchWidthEnable="True" StretchHeightEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="2208.0000" Y="1242.0000" />
             <AnchorPoint />
             <Position />
@@ -192,7 +192,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bomb_flash" ActionTag="1329686356" VisibleForFrame="False" Tag="638" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="-62.4708" RightMargin="2070.4707" TopMargin="1076.9777" BottomMargin="-34.9777" StretchWidthEnable="True" StretchHeightEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="bomb_flash" ActionTag="1329686356" VisibleForFrame="False" Tag="638" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="-62.4708" RightMargin="2070.4707" TopMargin="1076.9777" BottomMargin="-34.9777" StretchWidthEnable="True" StretchHeightEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="200.0000" Y="200.0000" />
             <AnchorPoint />
             <Position X="-62.4708" Y="-34.9777" />
@@ -209,4 +209,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

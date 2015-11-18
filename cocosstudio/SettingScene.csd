@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Scene" Name="SettingScene" ID="035ce117-3901-44a6-8abd-3f72fb203694" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="SettingScene" Type="Scene" ID="035ce117-3901-44a6-8abd-3f72fb203694" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -111,4 +111,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

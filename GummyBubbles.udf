@@ -1,4 +1,4 @@
-<UserData Version="2.3.2.3">
+<UserData Version="2.3.3.0">
   <Properties>
     <Item Key="CocosRecentOperation">
       <Value ctype="CocosRecentOperation">
@@ -26,6 +26,16 @@
         <KeystoreAliasPassword Value="" />
         <EnableSourceMap Value="False" />
         <EnableHTML5Advanced Value="False" />
+      </Value>
+    </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="LevelsScene.csd" />
+          <FilePathData Path="GameScene.csd" />
+          <FilePathData Path="game_screen_assets/layers/levels/bg_large_level_3.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="GameScene.csd" />
       </Value>
     </Item>
   </Properties>

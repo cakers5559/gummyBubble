@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Layer" Name="how_to_play_large" ID="cc7245a9-e5a8-45f7-a43a-d165d4f852c3" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="how_to_play_large" Type="Layer" ID="cc7245a9-e5a8-45f7-a43a-d165d4f852c3" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -19,7 +19,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="tap_screen" ActionTag="-701386705" Tag="205" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="247.9781" RightMargin="225.0219" TopMargin="44.5058" BottomMargin="588.4942" FontSize="65" LabelText="Tap Screen to Start	" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="tap_screen" ActionTag="-701386705" Tag="205" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="247.9781" RightMargin="225.0219" TopMargin="44.5058" BottomMargin="588.4942" FontSize="65" LabelText="Tap Screen to Start " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="558.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="678.4781" Y="667.4942" />
@@ -45,4 +45,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

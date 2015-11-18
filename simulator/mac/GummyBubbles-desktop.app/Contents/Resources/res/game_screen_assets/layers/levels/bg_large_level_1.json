@@ -1,6 +1,6 @@
 {
   "ID": "ae3fb395-65b6-4583-9a92-5cd609c50001",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "bg_large_level_1",
   "Content": {
     "Content": {
@@ -219,7 +219,7 @@
         "../../../images/largeRes/sun-84x84@3x.png",
         "../../../images/mediumRes/landscape-736x220@2x.png"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Layer"

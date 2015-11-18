@@ -1,6 +1,6 @@
 {
   "ID": "dae81444-dae9-438c-861e-c7f12ac5c214",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "LevelsScene",
   "Content": {
     "Content": {
@@ -141,7 +141,7 @@
         "Bobbleboddy.ttf",
         "images/level-bg-1111x937@2x.png"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Scene"
