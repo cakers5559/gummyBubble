@@ -227,9 +227,13 @@ var GummyBubbles = {
             this.scene.addChild(this.basket , 1000);                                     
             this.basket.setScale(imageScale);
             
-            if(cc.view.getFrameSize().width === 960) {
+            if(cc.view.getFrameSize().width === 960 && cc.view.getFrameSize().height === 640 ) {
                 this.basket.setPosition( size.width / 2 , this.basket.height / 2 );
                 this.basket.setScale(imageScale - 0.2);
+            }
+            if(cc.view.getFrameSize().width === 960 && cc.view.getFrameSize().height === 540 ) {
+                this.basket.setPosition( size.width / 2 , this.basket.height / 3.1 );
+                this.basket.setScale(imageScale - 0.1);
             }           
             else if(cc.view.getFrameSize().width >= 2208) this.basket.setPosition( size.width / 2 , this.basket.height / 4 );    		    
             else this.basket.setPosition( size.width / 2 , this.basket.height / 3 );               

@@ -1,0 +1,346 @@
+{
+  "ID": "ef8ca31c-4546-498b-a1e5-28ae6013f4fc",
+  "Version": "2.3.3.0",
+  "Name": "bg_super_large_level_1",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 0.0833,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 48,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/mountains-620x317@3x.png",
+              "Plist": ""
+            },
+            "Scale9Width": 1860,
+            "Scale9Height": 951,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1266.6398,
+              "Y": 593.6924
+            },
+            "Scale": {
+              "ScaleX": 1.0276,
+              "ScaleY": 1.2116
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5737,
+              "Y": 0.478
+            },
+            "PreSize": {
+              "X": 0.8424,
+              "Y": 0.7657
+            },
+            "LeftMargin": 336.6398,
+            "RightMargin": 11.3604,
+            "TopMargin": 172.8076,
+            "BottomMargin": 118.1924,
+            "Tag": 65,
+            "ActionTag": -619870181,
+            "Size": {
+              "X": 1860.0,
+              "Y": 951.0
+            },
+            "Name": "mountains",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/landscape-736x220@3x.png",
+              "Plist": ""
+            },
+            "Scale9Width": 2208,
+            "Scale9Height": 660,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -196.512,
+              "Y": 297.8811
+            },
+            "Scale": {
+              "ScaleX": 1.1625,
+              "ScaleY": 1.1625
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": -0.089,
+              "Y": 0.2398
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 0.5314
+            },
+            "HorizontalEdge": "BothEdge",
+            "LeftMargin": -196.4428,
+            "RightMargin": 196.4427,
+            "TopMargin": 614.1189,
+            "BottomMargin": -32.1189,
+            "Tag": 64,
+            "ActionTag": -1490592521,
+            "Size": {
+              "X": 2208.0,
+              "Y": 660.0
+            },
+            "Name": "landscape",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/cloud-70x38@3x.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.2933,
+              "Y": 1078.5519
+            },
+            "Scale": {
+              "ScaleX": 1.4523,
+              "ScaleY": 1.4523
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1451,
+              "Y": 0.8684
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 215.2933,
+            "RightMargin": 1782.7067,
+            "TopMargin": 106.4481,
+            "BottomMargin": 1021.5519,
+            "Tag": 57,
+            "ActionTag": 1468514032,
+            "Size": {
+              "X": 210.0,
+              "Y": 114.0
+            },
+            "Name": "cloud_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/cloud-70x38@3x.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 856.2571,
+              "Y": 765.5847
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3878,
+              "Y": 0.6164
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 751.2571,
+            "RightMargin": 1246.7429,
+            "TopMargin": 419.4153,
+            "BottomMargin": 708.5847,
+            "Tag": 59,
+            "ActionTag": 1542492019,
+            "Size": {
+              "X": 210.0,
+              "Y": 114.0
+            },
+            "Name": "cloud_2",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/cloud-70x38@3x.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1895.0836,
+              "Y": 1104.1604
+            },
+            "Scale": {
+              "ScaleX": 1.0366,
+              "ScaleY": 1.0366
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8583,
+              "Y": 0.889
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 1790.0836,
+            "RightMargin": 207.9164,
+            "TopMargin": 80.8396,
+            "BottomMargin": 1047.1604,
+            "Tag": 60,
+            "ActionTag": 536615189,
+            "Size": {
+              "X": 210.0,
+              "Y": 114.0
+            },
+            "Name": "cloud_3",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/cloud-70x38@3x.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 971.681,
+              "Y": 1092.6179
+            },
+            "Scale": {
+              "ScaleX": 0.5969,
+              "ScaleY": 0.5969
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4401,
+              "Y": 0.8797
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 866.681,
+            "RightMargin": 1131.319,
+            "TopMargin": 92.3821,
+            "BottomMargin": 1035.6179,
+            "Tag": 61,
+            "ActionTag": 1730283779,
+            "Size": {
+              "X": 210.0,
+              "Y": 114.0
+            },
+            "Name": "cloud_4",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/largeRes/sun-84x84@3x.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1564.4597,
+              "Y": 1050.3827
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7085,
+              "Y": 0.8457
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 1438.4597,
+            "RightMargin": 517.5403,
+            "TopMargin": 65.6173,
+            "BottomMargin": 924.3827,
+            "Tag": 1204,
+            "ActionTag": -382197599,
+            "Size": {
+              "X": 252.0,
+              "Y": 252.0
+            },
+            "Name": "Sprite_1",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 2208.0,
+          "Y": 1242.0
+        },
+        "Name": "bg_super_large",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "../../../images/largeRes/cloud-70x38@3x.png",
+        "../../../images/largeRes/landscape-736x220@3x.png",
+        "../../../images/largeRes/mountains-620x317@3x.png",
+        "../../../images/largeRes/sun-84x84@3x.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

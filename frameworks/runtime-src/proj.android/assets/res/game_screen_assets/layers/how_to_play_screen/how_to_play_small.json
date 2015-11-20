@@ -1,6 +1,6 @@
 {
   "ID": "289de477-b1cd-477c-826e-e15094d6a160",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "how_to_play_small",
   "Content": {
     "Content": {
@@ -32,28 +32,30 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "TouchEnable": true,
             "AnchorPoint": {},
             "Position": {
               "X": 0.0,
-              "Y": 0.0
+              "Y": 2.3819
             },
             "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
+              "ScaleX": 1.1861,
+              "ScaleY": 1.2754
             },
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
               "X": 0.0,
-              "Y": 0.0
+              "Y": 0.0037
             },
             "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
+              "X": 1.0,
+              "Y": 1.0
             },
-            "RightMargin": 2008.0,
-            "TopMargin": 1042.0,
+            "TopMargin": -2.3819,
+            "BottomMargin": 2.3819,
             "Tag": 208,
             "ActionTag": 1662950656,
             "Size": {
@@ -65,7 +67,7 @@
           },
           {
             "FontSize": 40,
-            "LabelText": "Tap Screen to Start\t",
+            "LabelText": "Tap Screen to Start ",
             "FontResource": {
               "Type": "Normal",
               "Path": "Bobbleboddy.ttf",
@@ -87,7 +89,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 488.2602,
+              "X": 488.256,
               "Y": 561.9943
             },
             "Scale": {
@@ -101,19 +103,19 @@
               "Y": 0.8781
             },
             "PreSize": {
-              "X": 0.3899,
-              "Y": 0.0942
+              "X": 0.3594,
+              "Y": 0.0734
             },
             "HorizontalEdge": "BothEdge",
             "VerticalEdge": "TopEdge",
-            "LeftMargin": 317.7602,
-            "RightMargin": 301.2399,
+            "LeftMargin": 315.756,
+            "RightMargin": 299.244,
             "TopMargin": 54.5057,
             "BottomMargin": 538.4943,
             "Tag": 210,
             "ActionTag": -2038979879,
             "Size": {
-              "X": 341.0,
+              "X": 345.0,
               "Y": 47.0
             },
             "Name": "tap_screen",
@@ -148,12 +150,12 @@
               "Y": 0.3631
             },
             "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
+              "X": 1.0667,
+              "Y": 1.225
             },
             "LeftMargin": -146.3981,
             "RightMargin": 82.3981,
-            "TopMargin": 15.6182,
+            "TopMargin": 15.6181,
             "BottomMargin": -159.6181,
             "Tag": 685,
             "ActionTag": -1205251509,
@@ -176,7 +178,7 @@
         "../../../Bobbleboddy.ttf",
         "../../../images/mediumRes/how_to_play-512x392@2x.png"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Layer"

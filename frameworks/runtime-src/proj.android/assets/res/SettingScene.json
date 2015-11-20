@@ -1,6 +1,6 @@
 {
   "ID": "035ce117-3901-44a6-8abd-3f72fb203694",
-  "Version": "2.3.2.3",
+  "Version": "2.3.3.0",
   "Name": "SettingScene",
   "Content": {
     "Content": {
@@ -489,7 +489,7 @@
         "images/largeRes/home-dark-53x54@3x.png",
         "images/largeRes/sunbrust-736x414@3x.png"
       ],
-      "ctype": "GameProjectData"
+      "ctype": "GameFileData"
     }
   },
   "Type": "Scene"

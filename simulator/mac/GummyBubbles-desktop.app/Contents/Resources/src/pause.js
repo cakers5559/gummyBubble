@@ -55,7 +55,17 @@ var PauseScene = cc.Scene.extend({
                     retryBtn.setPositionY( size.height - (size.height / 2.9) );                            
                     exitBtn.setPositionY( size.height / 3.2 );
                        
-        }                  		        
+        }
+        else if (cc.view.getFrameSize().width === 1280 && cc.view.getFrameSize().height === 800) {
+                continueBtn.setPositionY( size.height / 2 );
+                retryBtn.setPositionY( size.height - (size.height / 2.9) );                            
+                exitBtn.setPositionY( size.height / 2.9 );
+        }     
+        else if(cc.view.getFrameSize().width == 800 || cc.view.getFrameSize().width == 854) {				 
+                 retryBtn.setScale( 0.3 );                                     
+                 continueBtn.setScale( 0.3 );                    
+                 exitBtn.setScale( 0.3 );                 
+		}                   		        
        
         retryBtn.addTouchEventListener( function(sender, type) {
             switch (type)

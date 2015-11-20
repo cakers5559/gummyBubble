@@ -114,4 +114,3 @@
 /Users/lukaizhi/Documents/CocosProjects/GummyBubbles/frameworks/runtime-src/proj.android/bin/classes/org/cocos2dx/lib/GameControllerUtils.class \
 /Users/lukaizhi/Documents/CocosProjects/GummyBubbles/frameworks/runtime-src/proj.android/bin/classes/org/cocos2dx/lib/ResizeLayout$1.class \
 /Users/lukaizhi/Documents/CocosProjects/GummyBubbles/frameworks/runtime-src/proj.android/bin/classes/org/cocos2dx/lib/ResizeLayout.class \
-/Users/lukaizhi/Documents/CocosProjects/GummyBubbles/frameworks/runtime-src/proj.android/bin/dexedLibs/annotations-e811e80a9bf44f230d4826fab0c82e82.jar \

@@ -31,7 +31,7 @@
 		</data>
 		<key>Resources/main.js</key>
 		<data>
-		qWDWZLosg647Y+byJNy2khUD4nQ=
+		UImp/oODnpeaB+y1nk4qrnfFNNU=
 		</data>
 		<key>Resources/project.json</key>
 		<data>
@@ -147,11 +147,11 @@
 		</data>
 		<key>Resources/res/game_screen_assets/layers/how_to_play_screen/how_to_play_medium.json</key>
 		<data>
-		guTUGbmBvtY9KUuGwr4GtbaByZ8=
+		DUCZwUI1SE54i5Uk/GNsjmIRtwk=
 		</data>
 		<key>Resources/res/game_screen_assets/layers/how_to_play_screen/how_to_play_small.json</key>
 		<data>
-		sJqeirsYQsxWrAMRPFvAiajrgbc=
+		F7Atco4gTFYejQmV/PYn5cd0v9U=
 		</data>
 		<key>Resources/res/game_screen_assets/layers/how_to_play_screen/how_to_play_super_large.json</key>
 		<data>
@@ -935,19 +935,19 @@
 		</data>
 		<key>Resources/src/app.js</key>
 		<data>
-		RYe2jck3KuH1Nhc42bkGB54Qvew=
+		d9m61FMUunmdgpgPPCpZZIf4vvY=
 		</data>
 		<key>Resources/src/game.js</key>
 		<data>
-		n/yeYrfiubLbZ7l7kANV/ByliZc=
+		OC+nGssDYi+Z77s8PRluv2R1S/c=
 		</data>
 		<key>Resources/src/gameOver.js</key>
 		<data>
-		zelaGgAUIW8nmVb+aSplunJtSSs=
+		B51FelbyegC/3D73RyQAOqIo824=
 		</data>
 		<key>Resources/src/gummyBubbles.js</key>
 		<data>
-		d/vpHAscjM5E+4/IqcpeO/Kkl08=
+		KhXpO5Dk51aKat1s/U11ku7nVIY=
 		</data>
 		<key>Resources/src/levels.js</key>
 		<data>
@@ -955,7 +955,7 @@
 		</data>
 		<key>Resources/src/pause.js</key>
 		<data>
-		qaEnamEzt5TgVZWJ0wz4ZdK9imw=
+		ZzTtzr24v7MTbJBq5DHPtwGAHjE=
 		</data>
 		<key>Resources/src/physics.js</key>
 		<data>
@@ -1008,7 +1008,7 @@
 		</data>
 		<key>Resources/main.js</key>
 		<data>
-		qWDWZLosg647Y+byJNy2khUD4nQ=
+		UImp/oODnpeaB+y1nk4qrnfFNNU=
 		</data>
 		<key>Resources/project.json</key>
 		<data>
@@ -1124,11 +1124,11 @@
 		</data>
 		<key>Resources/res/game_screen_assets/layers/how_to_play_screen/how_to_play_medium.json</key>
 		<data>
-		guTUGbmBvtY9KUuGwr4GtbaByZ8=
+		DUCZwUI1SE54i5Uk/GNsjmIRtwk=
 		</data>
 		<key>Resources/res/game_screen_assets/layers/how_to_play_screen/how_to_play_small.json</key>
 		<data>
-		sJqeirsYQsxWrAMRPFvAiajrgbc=
+		F7Atco4gTFYejQmV/PYn5cd0v9U=
 		</data>
 		<key>Resources/res/game_screen_assets/layers/how_to_play_screen/how_to_play_super_large.json</key>
 		<data>
@@ -1912,19 +1912,19 @@
 		</data>
 		<key>Resources/src/app.js</key>
 		<data>
-		RYe2jck3KuH1Nhc42bkGB54Qvew=
+		d9m61FMUunmdgpgPPCpZZIf4vvY=
 		</data>
 		<key>Resources/src/game.js</key>
 		<data>
-		n/yeYrfiubLbZ7l7kANV/ByliZc=
+		OC+nGssDYi+Z77s8PRluv2R1S/c=
 		</data>
 		<key>Resources/src/gameOver.js</key>
 		<data>
-		zelaGgAUIW8nmVb+aSplunJtSSs=
+		B51FelbyegC/3D73RyQAOqIo824=
 		</data>
 		<key>Resources/src/gummyBubbles.js</key>
 		<data>
-		d/vpHAscjM5E+4/IqcpeO/Kkl08=
+		KhXpO5Dk51aKat1s/U11ku7nVIY=
 		</data>
 		<key>Resources/src/levels.js</key>
 		<data>
@@ -1932,7 +1932,7 @@
 		</data>
 		<key>Resources/src/pause.js</key>
 		<data>
-		qaEnamEzt5TgVZWJ0wz4ZdK9imw=
+		ZzTtzr24v7MTbJBq5DHPtwGAHjE=
 		</data>
 		<key>Resources/src/physics.js</key>
 		<data>

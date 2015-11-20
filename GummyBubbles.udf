@@ -4,7 +4,7 @@
       <Value ctype="CocosRecentOperation">
         <LastPublishType Value="Resource" />
         <IsLastPublish Value="True" />
-        <LastRunType Value="Mac" />
+        <LastRunType Value="Android" />
       </Value>
     </Item>
     <Item Key="PackageParamsKey">
@@ -18,7 +18,7 @@
         <iOS_Target Value="GummyBubbles-mobile" />
         <iOS_BundleID Value="iPhone Developer: kenneth bland (W9WPW5QJ9C)" />
         <Platform Value="Web" />
-        <RunPlatform Value="Mac" />
+        <RunPlatform Value="Android" />
         <FrameworkVersion Value="cocos2d-x-3.8" />
         <IsDebugKeystore Value="True" />
         <KeystorePassword Value="" />
@@ -34,8 +34,10 @@
           <FilePathData Path="LevelsScene.csd" />
           <FilePathData Path="GameScene.csd" />
           <FilePathData Path="game_screen_assets/layers/levels/bg_large_level_3.csd" />
+          <FilePathData Path="game_screen_assets/layers/how_to_play_screen/how_to_play_small.csd" />
+          <FilePathData Path="game_screen_assets/layers/how_to_play_screen/how_to_play_medium.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="GameScene.csd" />
+        <ActiveDocument Path="game_screen_assets/layers/how_to_play_screen/how_to_play_medium.csd" />
       </Value>
     </Item>
   </Properties>

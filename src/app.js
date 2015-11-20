@@ -116,12 +116,23 @@ var MainScene = cc.Scene.extend({
                 setProperties( 'bg_medium' , 'play_btn_medium' , 'mediumRes' , '@2x' );
                 studioObj.playBtn.setScale( 0.75 );   
             }
+            else if (cc.view.getFrameSize().width === 1280 && cc.view.getFrameSize().height === 800) {
+                setProperties( 'bg_medium' , 'play_btn_small' , 'mediumRes' , '@2x' );
+                studioObj.bgLayer.setScale( 1.1 );
+                studioObj.playBtn.setScale( 1.2 );
+            }
             else if (cc.view.getFrameSize().width >= 1136) {                               
                 setProperties( 'bg_medium' , 'play_btn_small' , 'mediumRes' , '@2x' );
                 studioObj.playBtn.setScale( 1.3 );                                                                            
             }
             else if (cc.view.getFrameSize().width >= 1024) {  
                 setProperties( 'bg_medium' , 'play_btn_small' , 'mediumRes' , '@2x' );
+            }
+            else if (cc.view.getFrameSize().width == 800 || cc.view.getFrameSize().width == 854) {
+                setProperties( 'bg_medium' , 'play_btn_small' );
+                
+                if( cc.view.getFrameSize().width == 854 ) studioObj.bgLayer.setScale( 0.8 );
+                else studioObj.bgLayer.setScale( 0.7 );
             }
             else {                               
                 setProperties( 'bg_small' , 'play_btn_small');               

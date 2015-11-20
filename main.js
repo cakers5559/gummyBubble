@@ -88,6 +88,50 @@ cc.game.onStart = function(){
             
             searchPaths.push("res/main_menu_assets/images/largeRes");
             searchPaths.push("src");
+        }        
+        else if (cc.view.getFrameSize().width === 1024 && cc.view.getFrameSize().height === 768) {                       
+            if (true == isLandscape)
+            {
+                cc.view.setDesignResolutionSize(1024, 768, cc.ResolutionPolicy.SHOW_ALL);
+            }
+            else
+            {
+                cc.view.setDesignResolutionSize(768, 1024, cc.ResolutionPolicy.SHOW_ALL);
+            }
+            
+            searchPaths.push("res/main_menu_assets/images/mediumRes");
+            searchPaths.push("src");
+        }
+        // Android devices
+        else if (cc.view.getFrameSize().width === 1280 && cc.view.getFrameSize().height === 800) {
+            if (true == isLandscape)
+            {
+                cc.view.setDesignResolutionSize(1280, 800, cc.ResolutionPolicy.SHOW_ALL);
+            }           
+            
+            searchPaths.push("res/main_menu_assets/images/mediumRes");
+            searchPaths.push("src");
+        }
+        else if (cc.view.getFrameSize().width === 800 && cc.view.getFrameSize().height === 480 || 
+                cc.view.getFrameSize().width === 854 && cc.view.getFrameSize().height === 480 ||
+                cc.view.getFrameSize().width === 960 && cc.view.getFrameSize().height === 540 ||
+                cc.view.getFrameSize().width === 1024 && cc.view.getFrameSize().height === 600) {
+            if (true == isLandscape)
+            {
+                cc.view.setDesignResolutionSize(cc.view.getFrameSize().width, cc.view.getFrameSize().height, cc.ResolutionPolicy.SHOW_ALL);
+            }           
+            
+            searchPaths.push("res/main_menu_assets/images/mediumRes");
+            searchPaths.push("src");
+        }
+        else if (cc.view.getFrameSize().width === 800 && cc.view.getFrameSize().height === 480) {
+            if (true == isLandscape)
+            {
+                cc.view.setDesignResolutionSize(800, 480, cc.ResolutionPolicy.SHOW_ALL);
+            }           
+            
+            searchPaths.push("res/main_menu_assets/images/mediumRes");
+            searchPaths.push("src");
         }
         else if (cc.view.getFrameSize().width >= 640 && cc.view.getFrameSize().height >= 640) //iphone hd or above and android high res screens
         {

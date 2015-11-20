@@ -1,0 +1,721 @@
+{
+  "ID": "3821b969-2d28-4329-9ef7-b5b3591ee432",
+  "Version": "2.3.3.0",
+  "Name": "bg_large_level_3",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 645,
+        "Speed": 1.0,
+        "Timelines": [
+          {
+            "ActionTag": 872339399,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 620.6393,
+                "Y": 202.6113,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 670.639,
+                "Y": 202.6113,
+                "FrameIndex": 322,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 620.64,
+                "Y": 202.6113,
+                "FrameIndex": 645,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 872339399,
+            "Property": "Scale",
+            "Frames": [
+              {
+                "X": 0.9805,
+                "Y": 0.9805,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 0.9805,
+                "Y": 0.9805,
+                "FrameIndex": 322,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 0.9805,
+                "Y": 0.9805,
+                "FrameIndex": 645,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 872339399,
+            "Property": "RotationSkew",
+            "Frames": [
+              {
+                "X": 0.0,
+                "Y": 0.0,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 0.0,
+                "Y": 0.0,
+                "FrameIndex": 322,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 0.0,
+                "Y": 0.0,
+                "FrameIndex": 645,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          }
+        ],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 455,
+        "Children": [
+          {
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 9,
+              "G": 47,
+              "B": 92
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.002,
+              "Y": -0.0009
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.6667
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "LeftMargin": 0.002,
+            "RightMargin": -0.002,
+            "TopMargin": 0.0009,
+            "BottomMargin": -0.0009,
+            "Tag": 457,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/rain.plist",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 760.8929,
+                  "Y": 353.5247
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.5704,
+                  "Y": 0.4714
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 760.8929,
+                "RightMargin": 573.1071,
+                "TopMargin": 396.4753,
+                "BottomMargin": 353.5247,
+                "Tag": 1359,
+                "ActionTag": 1045271323,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "Particle_3",
+                "ctype": "ParticleObjectData"
+              }
+            ],
+            "ActionTag": 1667344726,
+            "Size": {
+              "X": 1334.0,
+              "Y": 750.0
+            },
+            "Name": "bg_color",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/mediumRes/landscape-736x220@2x.png",
+              "Plist": ""
+            },
+            "Scale9Width": 1472,
+            "Scale9Height": 440,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 620.6393,
+              "Y": 202.6113
+            },
+            "Scale": {
+              "ScaleX": 0.9805,
+              "ScaleY": 0.9805
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4652,
+              "Y": 0.2701
+            },
+            "PreSize": {
+              "X": 1.1034,
+              "Y": 0.5867
+            },
+            "LeftMargin": -115.3607,
+            "RightMargin": -22.6393,
+            "TopMargin": 327.3887,
+            "BottomMargin": -17.3887,
+            "Tag": 456,
+            "ActionTag": 872339399,
+            "Size": {
+              "X": 1472.0,
+              "Y": 440.0
+            },
+            "Name": "landscape",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/mediumRes/moon@2x.png",
+              "Plist": ""
+            },
+            "Scale9Width": 118,
+            "Scale9Height": 118,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1003.3281,
+              "Y": 719.0574
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7521,
+              "Y": 0.9587
+            },
+            "PreSize": {
+              "X": 0.0885,
+              "Y": 0.1573
+            },
+            "LeftMargin": 944.3281,
+            "RightMargin": 271.6719,
+            "TopMargin": -28.0574,
+            "BottomMargin": 660.0574,
+            "Tag": 458,
+            "ActionTag": 173734514,
+            "Size": {
+              "X": 118.0,
+              "Y": 118.0
+            },
+            "Name": "Image_2",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/star.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 463.5139,
+              "Y": 426.9208
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3475,
+              "Y": 0.5692
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 452.5139,
+            "RightMargin": 859.4861,
+            "TopMargin": 312.0792,
+            "BottomMargin": 415.9208,
+            "Tag": 580,
+            "ActionTag": 1967251879,
+            "Size": {
+              "X": 22.0,
+              "Y": 22.0
+            },
+            "Name": "star_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/star.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 142.1643,
+              "Y": 658.735
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1066,
+              "Y": 0.8783
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 131.1643,
+            "RightMargin": 1180.8357,
+            "TopMargin": 80.265,
+            "BottomMargin": 647.735,
+            "Tag": 581,
+            "ActionTag": 797573375,
+            "Size": {
+              "X": 22.0,
+              "Y": 22.0
+            },
+            "Name": "star_2",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/star.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 227.5676,
+              "Y": 510.2961
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1706,
+              "Y": 0.6804
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 216.5676,
+            "RightMargin": 1095.4325,
+            "TopMargin": 228.7039,
+            "BottomMargin": 499.2961,
+            "Tag": 582,
+            "ActionTag": 461210249,
+            "Size": {
+              "X": 22.0,
+              "Y": 22.0
+            },
+            "Name": "star_3",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/star.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 430.9086,
+              "Y": 640.4343
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.323,
+              "Y": 0.8539
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 419.9086,
+            "RightMargin": 892.0914,
+            "TopMargin": 98.5657,
+            "BottomMargin": 629.4343,
+            "Tag": 583,
+            "ActionTag": 687549231,
+            "Size": {
+              "X": 22.0,
+              "Y": 22.0
+            },
+            "Name": "star_4",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/star.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 853.858,
+              "Y": 632.3007
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6401,
+              "Y": 0.8431
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 842.858,
+            "RightMargin": 469.142,
+            "TopMargin": 106.6993,
+            "BottomMargin": 621.3007,
+            "Tag": 584,
+            "ActionTag": 1242677039,
+            "Size": {
+              "X": 22.0,
+              "Y": 22.0
+            },
+            "Name": "star_5",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/star.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 672.8844,
+              "Y": 526.5634
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5044,
+              "Y": 0.7021
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 661.8844,
+            "RightMargin": 650.1156,
+            "TopMargin": 212.4366,
+            "BottomMargin": 515.5634,
+            "Tag": 585,
+            "ActionTag": -1334921829,
+            "Size": {
+              "X": 22.0,
+              "Y": 22.0
+            },
+            "Name": "star_6",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/star.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1248.3396,
+              "Y": 666.8687
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9358,
+              "Y": 0.8892
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 1237.3396,
+            "RightMargin": 74.6604,
+            "TopMargin": 72.1313,
+            "BottomMargin": 655.8687,
+            "Tag": 586,
+            "ActionTag": 1743284095,
+            "Size": {
+              "X": 22.0,
+              "Y": 22.0
+            },
+            "Name": "star_7",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/star.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1185.3038,
+              "Y": 512.3295
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8885,
+              "Y": 0.6831
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 1174.3038,
+            "RightMargin": 137.6962,
+            "TopMargin": 226.6705,
+            "BottomMargin": 501.3295,
+            "Tag": 587,
+            "ActionTag": 675973424,
+            "Size": {
+              "X": 22.0,
+              "Y": 22.0
+            },
+            "Name": "star_8",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/smallRes/star.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 672.8844,
+              "Y": 687.2028
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5044,
+              "Y": 0.9163
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 661.8844,
+            "RightMargin": 650.1156,
+            "TopMargin": 51.7972,
+            "BottomMargin": 676.2028,
+            "Tag": 588,
+            "ActionTag": -1565609653,
+            "Size": {
+              "X": 22.0,
+              "Y": 22.0
+            },
+            "Name": "star_9",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1334.0,
+          "Y": 750.0
+        },
+        "Name": "bg_layer_dark",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "../../../images/mediumRes/landscape-736x220@2x.png",
+        "../../../images/mediumRes/moon@2x.png",
+        "../../../images/rain.plist",
+        "../../../images/smallRes/star.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

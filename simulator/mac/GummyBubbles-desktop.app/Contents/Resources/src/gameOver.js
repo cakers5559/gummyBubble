@@ -50,6 +50,25 @@ var GameOverScene = cc.Scene.extend({
                     exitBtn.setScale( 1.0 );
                     exitBtn.setPositionY( (size.height / 2) - exitBtn.height );                                                                                                                                                                                                                                                                                                            
         }
+        else if(cc.view.getFrameSize().width == 800 || cc.view.getFrameSize().width == 854) {				 
+                 gummyBasket.setPositionY( size.height - 65 );
+                 gameOverTxt.setPositionY( size.height - 65 );
+                 gummyBasket.setScale( 0.3 );
+                 retryBtn.setScale( 0.3 );                                                                        
+                 exitBtn.setScale( 0.3 );                                                                                                        
+                 gummyScoreTxt.setPositionY( size.height / 3 );
+                 gummyScoreTxt.setScale( 0.8 );                                                                  
+		}
+        else if(cc.view.getFrameSize().width === 1280 && cc.view.getFrameSize().height === 800) {
+                 exitBtn.setPositionY( exitBtn.y + 50 );
+                 retryBtn.setPositionY( retryBtn.y + 50 );
+                 gameOverTxt.setPositionY( gameOverTxt.y + 50 );
+                 gummyBasket.setPositionY( gummyBasket.y + 50 )
+        }
+        else if(cc.view.getFrameSize().height == 600 && cc.view.getFrameSize().width == 1024 ||
+                cc.view.getFrameSize().height == 540 && cc.view.getFrameSize().width == 960 ) {
+                 gummyScoreTxt.setPositionY( size.height / 4 );
+        }
         
         var ls = cc.sys.localStorage; 
         var gummyScore = ls.getItem("gummyScore");

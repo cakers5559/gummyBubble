@@ -6,27 +6,27 @@
       <ObjectData Name="how_to_play_medium" Tag="203" ctype="GameLayerObjectData">
         <Size X="1136.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="bg_how_to_play" CanEdit="False" ActionTag="64790723" Tag="207" IconVisible="False" RightMargin="2008.0000" TopMargin="1042.0000" TouchEnable="True" BackColorAlpha="191" ComboBoxIndex="1" ColorAngle="90.0000" ScrollDirectionType="0" ctype="PageViewObjectData">
+          <AbstractNodeData Name="bg_how_to_play" ActionTag="64790723" Tag="207" IconVisible="False" LeftMargin="-0.0001" RightMargin="0.0001" TopMargin="14.0000" BottomMargin="-14.0000" TouchEnable="True" BackColorAlpha="191" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" ctype="PageViewObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint />
-            <Position />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Position X="-0.0001" Y="-14.0000" />
+            <Scale ScaleX="1.2076" ScaleY="1.3052" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
+            <PrePosition X="0.0000" Y="-0.0219" />
+            <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="0" G="0" B="0" />
             <FirstColor A="255" R="150" G="150" B="100" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="tap_screen" ActionTag="1091575318" Tag="209" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="353.0000" RightMargin="353.0000" TopMargin="51.0100" BottomMargin="529.9900" FontSize="50" LabelText="Tap Screen to Start " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="430.0000" Y="59.0000" />
+          <AbstractNodeData Name="tap_screen" ActionTag="1091575318" Tag="209" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="352.0000" RightMargin="352.0000" TopMargin="51.0100" BottomMargin="529.9900" FontSize="50" LabelText="Tap Screen to Start " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="432.0000" Y="59.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="568.0000" Y="559.4900" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.8742" />
-            <PreSize X="0.3899" Y="0.0942" />
+            <PreSize X="0.3803" Y="0.0922" />
             <FontResource Type="Normal" Path="Bobbleboddy.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />

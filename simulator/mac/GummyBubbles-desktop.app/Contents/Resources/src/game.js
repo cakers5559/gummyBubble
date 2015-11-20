@@ -50,7 +50,8 @@ var GameScene = cc.Scene.extend({
             this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 10 );
             this.studio.missesTxt.setPositionY( this.studio.missesTxt.y + 10 );
                       
-            if (cc.view.getFrameSize().width == 2048 && cc.view.getFrameSize().height == 1536) {
+            if (cc.view.getFrameSize().width === 2048 && cc.view.getFrameSize().height === 1536 ||
+                cc.view.getFrameSize().width === 1024 && cc.view.getFrameSize().height === 768) {
                     this.studio.missesTxt.setPositionY( this.studio.missesTxt.y + 125 );
                     this.studio.gummiesTxt.setPositionY( this.studio.gummiesTxt.y + 125 );                    
                     this.studio.pauseBtn.setPositionY( this.studio.pauseBtn.y + 125 );
@@ -164,12 +165,61 @@ var GameScene = cc.Scene.extend({
 					studioObj.instructionLayer.setScale( 0.5 );                    
 				}                                                                                                                     
             }
+            else if(cc.view.getFrameSize().height == 600 && cc.view.getFrameSize().width == 1024 ) {                
+                setProperties( 'how_to_play_small' , 'pause_btn_medium' , 'mediumRes' , '' );    
+                studioObj.missesTxt.setPositionY( studioObj.missesTxt.y - 50 );
+                studioObj.gummiesTxt.setPositionY( studioObj.gummiesTxt.y - 50 );                    
+                studioObj.pauseBtn.setPositionY( studioObj.pauseBtn.y - 50 );
+            }
+            else if (cc.view.getFrameSize().width == 1024) {                             
+                setProperties( 'how_to_play_small' , 'pause_btn_medium' , 'mediumRes' , '@2x' );                
+            }            
             else if (cc.view.getFrameSize().width >= 1334) {                             
                 setProperties( 'how_to_play_medium' , 'pause_btn_medium' , 'mediumRes' , '@2x' );                
             }
+            else if (cc.view.getFrameSize().width === 1280 && cc.view.getFrameSize().height === 800) {
+                setProperties( 'how_to_play_medium' , 'pause_btn_medium' , 'mediumRes' , '@2x' );
+                studioObj.panel_level.setScale( 1.1 );
+                studioObj.tapScreen.setPositionX( size.width / 2 );  
+                studioObj.missesTxt.setPositionY( studioObj.missesTxt.y + 75 );
+                studioObj.gummiesTxt.setPositionY( studioObj.gummiesTxt.y + 75 );                    
+                studioObj.pauseBtn.setPositionY( studioObj.pauseBtn.y + 75 ); 
+                
+                studioObj.gummiesTxt.setPositionX( 730.00 );
+                studioObj.missesTxt.setPositionX( (size.width / 2) - (studioObj.missesTxt.width / 4) );   
+            }
             else if (cc.view.getFrameSize().width >= 1136) {                               
                 setProperties( 'how_to_play_medium' , 'pause_btn_small' , 'mediumRes' , '@2x' );                                                            
-            }
+            }    
+            else if (cc.view.getFrameSize().width == 960 && cc.view.getFrameSize().height == 540 ) {                                               
+                setProperties( 'how_to_play_small' , 'pause_btn_small' , 'mediumRes' , '@2x' );
+                studioObj.panel_level.setScale( 0.82 );                
+                studioObj.gummiesTxt.setPositionX( 730.00 );  
+                studioObj.missesTxt.setPositionY( studioObj.missesTxt.y +25 );
+                studioObj.gummiesTxt.setPositionY( studioObj.gummiesTxt.y + 25 );                    
+                studioObj.pauseBtn.setPositionY( studioObj.pauseBtn.y + 25 );
+                studioObj.missesTxt.setPositionX( (size.width / 2) + (studioObj.missesTxt.width / 4 ) );                                                                    
+            }            
+            else if(cc.view.getFrameSize().width == 800 || cc.view.getFrameSize().width == 854 ) {
+				setProperties( 'how_to_play_medium' , 'pause_btn_small' );
+                
+                if( cc.view.getFrameSize().width == 854 ) {
+                    studioObj.panel_level.setScale( 0.74 );                                 
+                }
+                else {
+                    studioObj.panel_level.setScale( 0.7 );  
+                    studioObj.missesTxt.setPositionY( studioObj.missesTxt.y + 50 );
+                    studioObj.gummiesTxt.setPositionY( studioObj.gummiesTxt.y + 50 );                    
+                    studioObj.pauseBtn.setPositionY( studioObj.pauseBtn.y + 50 );              
+                }
+                
+                studioObj.instructionLayer.setScale( 0.7 );  
+                
+                if(cc.view.getFrameSize().width == 854) studioObj.gummiesTxt.setPositionX( 710.00 );
+                else studioObj.gummiesTxt.setPositionX( 700.00 );
+                
+                studioObj.missesTxt.setPositionX( (size.width / 2) + (studioObj.missesTxt.width / 2 ) );                                                                   
+		    }     
             else {                               
                 setProperties( 'how_to_play_small' , 'pause_btn_small');               
             }                           

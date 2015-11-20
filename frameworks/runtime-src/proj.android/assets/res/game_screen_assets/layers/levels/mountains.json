@@ -1,0 +1,77 @@
+{
+  "ID": "d015d238-218b-4113-b14a-70a8d9454db1",
+  "Version": "2.3.3.0",
+  "Name": "mountains",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 1113,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/mediumRes/mountains-620x317@2x.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 671.2594,
+              "Y": 372.9211
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5032,
+              "Y": 0.4972
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 51.2594,
+            "RightMargin": 42.7406,
+            "TopMargin": 60.0789,
+            "BottomMargin": 55.9211,
+            "Tag": 1114,
+            "ActionTag": 1342996327,
+            "Size": {
+              "X": 1240.0,
+              "Y": 634.0
+            },
+            "Name": "Sprite_1",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1334.0,
+          "Y": 750.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "../../../images/mediumRes/mountains-620x317@2x.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}
